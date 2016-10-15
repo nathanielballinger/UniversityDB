@@ -1,11 +1,15 @@
-<html>
+<html ng-app>
   <head>
     <title>Angular QuickStart JS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="static/css/site.css">
     <!-- 1. Load libraries -->
     <!-- IE required polyfill -->
-    <script src="static/angular_packages/core-js/client/shim.min.js"></script>
+    <script src="static/packages/angular.min.js"></script>
+    
+    
+    
+    <!--<script src="static/angular_packages/core-js/client/shim.min.js"></script>
     <script src="static/angular_packages/zone.js/dist/zone.js"></script>
     <script src="static/angular_packages/reflect-metadata/Reflect.js"></script>
     <script src="static/angular_packages/rxjs/bundles/Rx.js"></script>
@@ -13,7 +17,7 @@
     <script src="static/angular_packages/@angular/common/bundles/common.umd.js"></script>
     <script src="static/angular_packages/@angular/compiler/bundles/compiler.umd.js"></script>
     <script src="static/angular_packages/@angular/platform-browser/bundles/platform-browser.umd.js"></script>
-    <script src="static/angular_packages/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>
+    <script src="static/angular_packages/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>-->
     <!-- 2. Load our 'modules' -->
     <script src='/static/app/app.component.js'></script>
     <script src='/static/app/app.module.js'></script>
@@ -21,6 +25,8 @@
   </head>
   <!-- 3. Display the application -->
   <body>
-    <my-app>Loading...</my-app>
+    <p>Nothing here {{'yet' + '!'}}</p>
+    <p>1 + 2 = {{1 + 2}}</p>
+    <!--<my-app>Loading...</my-app>-->
   </body>
 </html>
