@@ -12,7 +12,7 @@ addons:
       - deadsnakes
 
 before_install:
-  - sudo apt_get update -q
+  - sudo apt-get update -q
   - make pkgs
 
 install:
