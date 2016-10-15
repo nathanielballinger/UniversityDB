@@ -36,4 +36,4 @@ notifications:
   email: false
   slack: 
     rooms:
-      - cs373f-idb:QaAbYCyhgZdVXO9RRyiBYyas#travis
+      - cs373f:QaAbYCyhgZdVXO9RRyiBYyas#travis
