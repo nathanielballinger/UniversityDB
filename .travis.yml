@@ -1,12 +1,19 @@
+sudo: required
+dist: trusty
+
 language: python
 
 python:
    - "3.5"
 
-sudo: false
+addons:
+  apt:
+    sources:
+      - deadsnakes
 
-notifications:
-  slack: cs373-fall-2016:f1ee6147133ced08526bf02db3240f5ce8d8519b
+before_install:
+  - sudo apt_get update -q
+  - make pkgs
 
 install:
     - pip install --upgrade pip
@@ -22,6 +29,11 @@ before_script:
     - coverage --version
     - pylint   --version
 
+script:
+  - make test
+
 notifications:
   email: false
-  slack: cs373f:QaAbYCyhgZdVXO9RRyiBYyas
+  slack: 
+    rooms:
+      - cs373f-idb:QaAbYCyhgZdVXO9RRyiBYyas#travis
