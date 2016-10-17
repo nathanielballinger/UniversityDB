@@ -42,17 +42,6 @@ myApp.controller('gamesCtrl', function($scope, $http){
     $scope.init = function() {
         console.log("Hello World from games");
     }
-    // $scope.showGames = function() {
-    //     $http({
-    //         method: 'POST',
-    //         url: '/getGames',
-    //     }).then(function(response){
-    //         $scope.games = response.data;
-    //         console.log('mm', $scope.machines);
-    //     }, function(error){
-    //         console.log(error)
-    //     })
-    // }
 })
 
 myApp.controller('platformsCtrl', function($scope, $http){
@@ -69,17 +58,6 @@ myApp.controller('platformsCtrl', function($scope, $http){
     $scope.init = function() {
         console.log("Hello World from platforms");
     }
-    // $scope.showGames = function() {
-    //     $http({
-    //         method: 'POST',
-    //         url: '/getGames',
-    //     }).then(function(response){
-    //         $scope.games = response.data;
-    //         console.log('mm', $scope.machines);
-    //     }, function(error){
-    //         console.log(error)
-    //     })
-    // }
 })
 
 myApp.controller('charactersCtrl', function($scope, $http){
@@ -96,16 +74,5 @@ myApp.controller('charactersCtrl', function($scope, $http){
     $scope.init = function() {
         console.log("Hello World from characters");
     }
-    // $scope.showGames = function() {
-    //     $http({
-    //         method: 'POST',
-    //         url: '/getGames',
-    //     }).then(function(response){
-    //         $scope.games = response.data;
-    //         console.log('mm', $scope.machines);
-    //     }, function(error){
-    //         console.log(error)
-    //     })
-    // }
 })
 

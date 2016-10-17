@@ -1,4 +1,4 @@
-from flask import Flask, send_file, url_for, jsonify
+from flask import Flask, send_file, url_for, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 import json
@@ -128,7 +128,24 @@ def getCharacterable():
 	for key, value in characterDict.items():
 		obj.append(value)
 	return jsonify(obj)
+
+@app.route("/getGame/",methods=["GET"])
+def getGame():
+	id = request.args.get('id')
+	obj = jsonify(gameDict[id])
+	return jsonify(obj)
+
+@app.route("/getCharacter/",methods=["GET"])
+def getCharacter():
+	id = request.args.get('id')
+	obj = jsonify(characterDict[id])
+	return jsonify(obj)
 	
+@app.route("/getPlatform/",methods=["GET"])
+def getPlatform():
+	id = request.args.get('id')
+	obj = jsonify(platformDict[id])
+	return jsonify(obj)
 
 
 
