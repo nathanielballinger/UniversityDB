@@ -1,12 +1,22 @@
 from flask import Flask, send_file, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
+import json
+import urllib.request
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
+
+myDict = dict()
+api_key="d0d1072f35f6c08b0ce0d7249c1c1d94d500c913"
+game1URL = "http://www.giantbomb.com/api/game/1/?api_key="+api_key+"&format=json&field_list=id,name,original_release_date,genres,developers,original_rating"
+game2URL = "http://www.giantbomb.com/api/game/2/?api_key="+api_key+"&format=json&field_list=id,name,original_release_date,genres,developers,original_rating"
+game3URL = "http://www.giantbomb.com/api/game/3/?api_key="+api_key+"&format=json&field_list=id,name,original_release_date,genres,developers,original_rating"
+charactersURL = "http://www.giantbomb.com/api/characters/?api_key="+api_key+"&format=json"
+platformsURL = "http://www.giantbomb.com/api/platforms/?api_key="+api_key+"&format=json"
 
 #Many to many relationship table between characters and games
 #char_game = db.Table('char_game', db.Column('character_id', db.Integer, db.ForeignKey('Character.id'),db.column('game_id',db.Integer,db.ForeignKey('Game.id'))))
@@ -33,8 +43,6 @@ class Game(db.Model):
 
 	aliases = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
-
-
 	def __repr__(self):
 		return '<Game>'
 
@@ -81,6 +89,12 @@ class Character(db.Model):
 def index():
 	return send_file("templates/index.html")
 
+@app.route("/getGameTable/",methods=["GET"])
+def getGameTable():
+	
+
+
+
 def shell_context():
 	context = {
 		'app': app,
@@ -94,4 +108,4 @@ def shell_context():
 manager.add_command('shell', Shell(make_context=shell_context))
 
 if __name__ == "__main__":
-        manager.run()
+	manager.run()
