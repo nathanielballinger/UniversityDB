@@ -1,8 +1,6 @@
 'use strict';   // See note about 'use strict'; below
 
-var myApp = angular.module('myApp', [
- 'ngRoute',
-]);
+var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(['$routeProvider',
      function($routeProvider) {
