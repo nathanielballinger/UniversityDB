@@ -9,11 +9,11 @@ db = SQLAlchemy(app)
 manager = Manager(app)
 
 #Many to many relationship table between characters and games
-character = db.Table('characters', db.Column('character_id', db.Integer, db.ForeignKey('character.id'),db.column('game_id',db.Integer,db.ForeignKey('game.id'))))
-
-#Many to many relationship table between characters and platforms
+#char_game = db.Table('characters', db.Column('character_id', db.Integer, db.ForeignKey('character.id'),db.column('game_id',db.Integer,db.ForeignKey('game.id'))))
 
 #Many to many relationship table between games and platforms
+#plat_game = db.Table('characters', db.Column('character_id', db.Integer, db.ForeignKey('character.id'),db.column('platform_id',db.Integer,db.ForeignKey('platform.id'))))
+
 class Game(db.Model):
 	__tablename__ = 'games'
 	#Column values are name, release date, genre, developers/publisher, rating of first release
@@ -27,8 +27,10 @@ class Game(db.Model):
 	description = db.Column(db.String)
 	review = db.Column(db.String)
 	#Image
-	#Platforms
-	#Characters
+	#Define relationship with platforms. Links to table. Backref creates new property of platforms that list all games
+	#platforms = db.relationship('Platform', secondary = plat_game, backref = db.backref('games'))
+	#characters = db.relationship('Character', secondary = char_game, backref = db.backref('games'))
+
 	aliases = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
 
