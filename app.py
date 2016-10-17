@@ -8,6 +8,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
 db = SQLAlchemy(app)
 manager = Manager(app)
 
+#Many to many relationship table between characters and games
+character = db.Table('characters', db.Column('character_id', db.Integer, db.ForeignKey('character.id'),db.column('game_id',db.Integer,db.ForeignKey('game.id'))))
+
+#Many to many relationship table between characters and platforms
+
+#Many to many relationship table between games and platforms
 class Game(db.Model):
 	__tablename__ = 'games'
 	#Column values are name, release date, genre, developers/publisher, rating of first release
@@ -16,14 +22,15 @@ class Game(db.Model):
 	release_date = db.Column(db.String)
 	genre = db.Column(db.String)
 	developers = db.Column(db.String)
-	rating = db.Column(db.Float)
-	#Page values are description, review, image, platforms, characters, aliases
+	rating = db.Column(db.String)
+	#Page values are description, review, image, platforms, characters, aliases, site detail url
 	description = db.Column(db.String)
 	review = db.Column(db.String)
 	#Image
 	#Platforms
 	#Characters
 	aliases = db.Column(db.String)
+	site_detail_url = db.Column(db.String)
 
 
 	def __repr__(self):
@@ -56,7 +63,7 @@ class Character(db.Model):
 	birthday = db.Column(db.String)
 	gender = db.Column(db.String)
 	deck = db.Column(db.String)
-	game_first_appeared = db.Column(db.String)
+	game_first_appeared = db.relationship('Game', )
 	#Page Values are Description, Image, Site_Detail_URL, aliases
 	description = db.Column(db.String)
 	#Image
