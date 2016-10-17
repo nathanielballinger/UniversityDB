@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, send_file, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 
@@ -7,30 +7,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
-"""
-class Book(db.Model):
-	__tablename__ = 'books'
-	id = db.Column(db.Integer, primary_key=True)
-	title = db.Column(db.String)
-	author_id = db.Column(db.Integer, db.ForeignKey('authors.id'))
-	price = db.Column(db.Float)
-	type = db.Column(db.String)
-
-	def __repr__(self):
-		return '<Book %r>' % self.title
-
-class Author(db.Model):
-	__tablename__ = 'authors'
-	id = db.Column(db.Integer, primary_key=True)
-	name = db.Column(db.String)
-	birth_date = db.Column(db.Date)
-	bio = db.Column(db.Text)
-	books = db.relationship('Book', backref='author')
-
-	def __repr__(self):
-		return '<Author %r>' % self.name
-"""
-
 
 class Game(db.Model):
 	__tablename__ = 'games'
@@ -72,24 +48,9 @@ class Character(db.Model):
 		return '<Character>'
 
 
-@app.route('/')
+@app.route("/")
 def index():
-        return render_template('index.html')
-
-@app.route('/games/')
-def games():
-	b = Game.query.all()
-	return render_template('games.html', games=b)
-
-@app.route('/platforms')
-def platforms():
-	a = Platform.query.all()
-	return render_template('platforms.html', platforms=a)
-
-@app.route('/characters')
-def characters():
-	c = Character.query.all()
-	return render_template('characters.html', characters=c)
+	return send_file("templates/index.html")
 
 def shell_context():
 	context = {
