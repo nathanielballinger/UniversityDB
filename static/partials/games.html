@@ -11,9 +11,21 @@
             </tr>            
         </thead>
         <tbody>
-            <tr ng-repeat="x in names">
-                <td>{{ x.Name }}</td>
-                <td>{{ x.Country }}</td>
+            <tr ng-repeat="x in games track by $index">
+                <td>{{$index + 1}}</td>
+                <td>{{ x.name }}</td>
+                <td>{{ x.original_release_date }}</td>
+                <td>{{ x.genres[0].name }}</td>
+                <td>{{ x.developers[0].name }}</td>
+                <td>{{ x.platforms[0].name }}</td>
+            </tr>
+            <!--<tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td></td>
@@ -30,15 +42,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            </tr>-->
         </tbody>
 
     </table>

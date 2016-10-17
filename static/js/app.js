@@ -30,8 +30,11 @@ myApp.config(['$routeProvider',
 
 
 myApp.controller('gamesCtrl', function($scope, $http){
-    $http.get("http://www.w3schools.com/angular/customers.php")
-    .then(function (response) {$scope.names = response.data.records;})
+    $http.get("/getGameTable")
+    .then(function (response) {
+        $scope.games = response.data;
+        console.log($scope.games)
+    })
 
     $scope.info = {};
 
@@ -53,6 +56,13 @@ myApp.controller('gamesCtrl', function($scope, $http){
 })
 
 myApp.controller('platformsCtrl', function($scope, $http){
+
+    $http.get("/getPlatformTable")
+    .then(function (response) {
+        $scope.games = response.data;
+        console.log($scope.games)
+    })
+
     $scope.info = {};
 
 
@@ -73,6 +83,13 @@ myApp.controller('platformsCtrl', function($scope, $http){
 })
 
 myApp.controller('charactersCtrl', function($scope, $http){
+
+    $http.get("/getCharacterTable")
+    .then(function (response) {
+        $scope.games = response.data;
+        console.log($scope.games)
+    })
+
     $scope.info = {};
 
 
