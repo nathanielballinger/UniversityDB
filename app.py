@@ -91,6 +91,7 @@ def index():
 
 @app.route("/getGameTable/",methods=["GET"])
 def getGameTable():
+	pass
 	
 
 
