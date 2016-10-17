@@ -12,15 +12,80 @@ myApp.config(['$routeProvider',
                  templateUrl: '../static/partials/about.html',
              }).
              when('/games', {
-                 templateUrl: '../static/partials/list.html',
+                 templateUrl: '../static/partials/games.html',
+                 controller: 'gamesCtrl'
              }).
              when('/platforms', {
-                 templateUrl: '../static/partials/list.html',
+                 templateUrl: '../static/partials/platforms.html',
+                 controller: 'platformsCtrl',
              }).
              when('/characters', {
-                 templateUrl: '../static/partials/list.html',
+                 templateUrl: '../static/partials/characters.html',
+                 controller: 'charactersCtrl',
              }).
              otherwise({
                  redirectTo: '/'
              });
     }]);
+
+
+myApp.controller('gamesCtrl', function($scope, $http){
+    $scope.info = {};
+
+
+    $scope.init = function() {
+        console.log("Hello World from games");
+    }
+    // $scope.showGames = function() {
+    //     $http({
+    //         method: 'POST',
+    //         url: '/getGames',
+    //     }).then(function(response){
+    //         $scope.games = response.data;
+    //         console.log('mm', $scope.machines);
+    //     }, function(error){
+    //         console.log(error)
+    //     })
+    // }
+})
+
+myApp.controller('platformsCtrl', function($scope, $http){
+    $scope.info = {};
+
+
+    $scope.init = function() {
+        console.log("Hello World from platforms");
+    }
+    // $scope.showGames = function() {
+    //     $http({
+    //         method: 'POST',
+    //         url: '/getGames',
+    //     }).then(function(response){
+    //         $scope.games = response.data;
+    //         console.log('mm', $scope.machines);
+    //     }, function(error){
+    //         console.log(error)
+    //     })
+    // }
+})
+
+myApp.controller('charactersCtrl', function($scope, $http){
+    $scope.info = {};
+
+
+    $scope.init = function() {
+        console.log("Hello World from characters");
+    }
+    // $scope.showGames = function() {
+    //     $http({
+    //         method: 'POST',
+    //         url: '/getGames',
+    //     }).then(function(response){
+    //         $scope.games = response.data;
+    //         console.log('mm', $scope.machines);
+    //     }, function(error){
+    //         console.log(error)
+    //     })
+    // }
+})
+
