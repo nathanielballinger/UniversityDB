@@ -1,6 +1,6 @@
-<html>
+<html ng-app="myApp">
   <head>
-    <title>We need a name</title>
+    <title>We need a new name</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="static/css/site.css">
     <link rel="stylesheet" href="static/packages/bootstrap/css/bootstrap.min.css">
@@ -8,14 +8,15 @@
     <!-- IE required polyfill -->
     <script src="static/packages/angular-1.5.8/angular.min.js"></script>
     <script src="static/packages/angular-1.5.8/angular-route.min.js"></script>
-    <script src="static/js/app.js"></script>
-    </head>
-    <!-- 3. Display the application -->
-    <body ng-app="myApp">
-
-    <div ng-view></div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="static/packages/jquery-3.1.1.min.js"></script>
     <script src="static/packages/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/controllers.js"></script>  
+  </head>
+  <!-- 3. Display the application -->
+  <body>
+    <div ng-include="'static/partials/header.html'">
+    </div>
+    <div ng-view></div>
   </body>
 </html>
