@@ -9,10 +9,10 @@ db = SQLAlchemy(app)
 manager = Manager(app)
 
 #Many to many relationship table between characters and games
-#char_game = db.Table('characters', db.Column('character_id', db.Integer, db.ForeignKey('character.id'),db.column('game_id',db.Integer,db.ForeignKey('game.id'))))
+#char_game = db.Table('char_game', db.Column('character_id', db.Integer, db.ForeignKey('Character.id'),db.column('game_id',db.Integer,db.ForeignKey('Game.id'))))
 
 #Many to many relationship table between games and platforms
-#plat_game = db.Table('characters', db.Column('character_id', db.Integer, db.ForeignKey('character.id'),db.column('platform_id',db.Integer,db.ForeignKey('platform.id'))))
+#plat_game = db.Table('plat_game', db.Column('character_id', db.Integer, db.ForeignKey('character.id'),db.column('platform_id',db.Integer,db.ForeignKey('platform.id'))))
 
 class Game(db.Model):
 	__tablename__ = 'games'
@@ -53,6 +53,7 @@ class Platform(db.Model):
 	abbreviations = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
 	#Image
+
 
 	def __repr__(self):
 		return '<Platform>'
