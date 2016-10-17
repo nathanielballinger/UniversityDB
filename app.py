@@ -17,6 +17,14 @@ class Game(db.Model):
 	genre = db.Column(db.String)
 	developers = db.Column(db.String)
 	rating = db.Column(db.Float)
+	#Page values are description, review, image, platforms, characters, aliases
+	description = db.Column(db.String)
+	review = db.Column(db.String)
+	#Image
+	#Platforms
+	#Characters
+	aliases = db.Column(db.String)
+
 
 	def __repr__(self):
 		return '<Game>'
@@ -30,6 +38,12 @@ class Platform(db.Model):
 	company = db.Column(db.String)
 	starting_price = db.Column(db.String)
 	number_units_sold = db.Column(db.Integer)
+	#Page values are description, online support flag, abbreviations, site_detail_url, Image
+	description = db.Column(db.String)
+	online_support = db.Column(db.String)
+	abbreviations = db.Column(db.String)
+	site_detail_url = db.Column(db.String)
+	#Image
 
 	def __repr__(self):
 		return '<Platform>'
@@ -43,6 +57,11 @@ class Character(db.Model):
 	gender = db.Column(db.String)
 	deck = db.Column(db.String)
 	game_first_appeared = db.Column(db.String)
+	#Page Values are Description, Image, Site_Detail_URL, aliases
+	description = db.Column(db.String)
+	#Image
+	site_detail_url = db.Column(db.String)
+	aliases = db.Column(db.String)
 
 	def __repr__(self):
 		return '<Character>'
