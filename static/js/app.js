@@ -33,7 +33,7 @@ myApp.config(['$routeProvider',
              }).
              when('/platform/:id', {
                  templateUrl: '../static/partials/platform.html',
-                 controller: 'platformtrl',
+                 controller: 'platformCtrl',
              }).
              otherwise({
                  redirectTo: '/'
@@ -62,8 +62,8 @@ myApp.controller('platformsCtrl', function($scope, $http){
 
     $http.get("/getPlatformTable")
     .then(function (response) {
-        $scope.games = response.data;
-        console.log($scope.games)
+        $scope.platforms = response.data;
+        console.log($scope.platforms)
     })
 
     $scope.info = {};
