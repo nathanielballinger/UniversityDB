@@ -40,9 +40,8 @@ myApp.config(['$routeProvider',
              });
     }]);
 
-var scope;
-myApp.controller('headerCtrl', function($scope, $http) {
-    //debug; remove after
+//var scope;
+myApp.controller('headerCtrl', function($scope, $http, $location) {
     $scope.navCollapsed = false;
     $scope.refs = [];
     $scope.currSelection = "Home";
@@ -52,7 +51,13 @@ myApp.controller('headerCtrl', function($scope, $http) {
     for (var i = 0; i < pageNames.length; i++) {   
         temp.push({"name":pageNames[i], "href":pageRefs[i]});
     }
-    scope = $scope;
+
+    $scope.isActive = function(viewLocation) {
+        return viewLocation == $location.path();
+    };
+
+    //debug; remove after
+    //scope = $scope;
 })
 
 //Controller for all games
