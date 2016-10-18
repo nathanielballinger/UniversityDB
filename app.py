@@ -10,14 +10,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
 db = SQLAlchemy(app)
 manager = Manager(app)
 
-myDict = dict()
-api_key="d0d1072f35f6c08b0ce0d7249c1c1d94d500c913"
-game1URL = "http://www.giantbomb.com/api/game/1/?api_key="+api_key+"&format=json&field_list=id,name,original_release_date,genres,developers,original_rating"
-game2URL = "http://www.giantbomb.com/api/game/2/?api_key="+api_key+"&format=json&field_list=id,name,original_release_date,genres,developers,original_rating"
-game3URL = "http://www.giantbomb.com/api/game/3/?api_key="+api_key+"&format=json&field_list=id,name,original_release_date,genres,developers,original_rating"
-charactersURL = "http://www.giantbomb.com/api/characters/?api_key="+api_key+"&format=json"
-platformsURL = "http://www.giantbomb.com/api/platforms/?api_key="+api_key+"&format=json"
 
+
+#Code to load up temp data from JSON files
 gameDict = dict()
 for x in range(1,4):
 	with open('static/json/game'+str(x)+'.json') as data_file:
@@ -108,6 +103,8 @@ class Character(db.Model):
 def index():
 	return send_file("templates/index.html")
 
+
+#Get request for a list of all games
 @app.route("/getGameTable/",methods=["GET"])
 def getGameTable():
 	obj = []
@@ -115,6 +112,7 @@ def getGameTable():
 		obj.append(value)
 	return jsonify(obj)
 
+#Get request for a list of all platforms
 @app.route("/getPlatformTable/",methods=["GET"])
 def getPlatformTable():
 	obj = []
@@ -122,6 +120,7 @@ def getPlatformTable():
 		obj.append(value)
 	return jsonify(obj)
 
+#Get request for a list of all Characters
 @app.route("/getCharacterTable/",methods=["GET"])
 def getCharacterable():
 	obj = []
@@ -129,18 +128,21 @@ def getCharacterable():
 		obj.append(value)
 	return jsonify(obj)
 
+#GET Reqyest for a single Game
 @app.route("/getGame/",methods=["GET"])
 def getGame():
 	game_id = int(request.args.get('id'))
 	obj = jsonify(gameDict[game_id])
 	return obj
 
+#GET Reqyest for a single character
 @app.route("/getCharacter/",methods=["GET"])
 def getCharacter():
 	char_id = int(request.args.get('id'))
 	obj = jsonify(characterDict[char_id])
 	return obj
 	
+#GET Reqyest for a single Platform
 @app.route("/getPlatform/",methods=["GET"])
 def getPlatform():
 	platform_id = int(request.args.get('id'))
