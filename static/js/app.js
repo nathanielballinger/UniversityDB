@@ -40,6 +40,20 @@ myApp.config(['$routeProvider',
              });
     }]);
 
+var scope;
+myApp.controller('headerCtrl', function($scope, $http) {
+    //debug; remove after
+    $scope.navCollapsed = false;
+    $scope.refs = [];
+    $scope.currSelection = "Home";
+    var pageNames = ["Games", "Platforms", "Characters", "About"];
+    var pageRefs = ["/#/games", "/#/platforms", "/#/characters", "/#/about"];
+    var temp = $scope.refs; 
+    for (var i = 0; i < pageNames.length; i++) {   
+        temp.push({"name":pageNames[i], "href":pageRefs[i]});
+    }
+    scope = $scope;
+})
 
 //Controller for all games
 myApp.controller('gamesCtrl', function($scope, $http){
