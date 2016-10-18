@@ -132,7 +132,6 @@ def getCharacterable():
 @app.route("/getGame/",methods=["GET"])
 def getGame():
 	game_id = int(request.args.get('id'))
-	print(gameDict[game_id])
 	obj = jsonify(gameDict[game_id])
 	return obj
 
