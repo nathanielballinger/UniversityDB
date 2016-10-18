@@ -23,15 +23,15 @@ myApp.config(['$routeProvider',
                  templateUrl: '../static/partials/characters.html',
                  controller: 'charactersCtrl',
              }).
-             when('/game/:param1', {
+             when('/game/:id', {
                  templateUrl: '../static/partials/game.html',
                  controller: 'gameCtrl',
              }).
-             when('/character/:param1', {
+             when('/character/:id', {
                  templateUrl: '../static/partials/character.html',
                  controller: 'characterCtrl',
              }).
-             when('/platform/:param1', {
+             when('/platform/:id', {
                  templateUrl: '../static/partials/platform.html',
                  controller: 'platformtrl',
              }).
@@ -92,10 +92,11 @@ myApp.controller('charactersCtrl', function($scope, $http){
 })
 
 //Controller for one Game
-myApp.controller('gameCtrl', ['$scope','$routeParams', function($scope, $routeParams) {
-    param1 = $routeParams.param1;
+myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
 
-    $http.get("/getGame")
+    var gameId = $routeParams.id
+
+    $http.get("/getGame/?id="+gameId)
     .then(function (response) {
         $scope.game = response.data;
         console.log($scope.game)
@@ -111,10 +112,10 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', function($scope, $routePa
 }]);
 
 //Controller for one Character
-myApp.controller('characterCtrl', ['$scope','$routeParams', function($scope, $routeParams) {
-    param1 = $routeParams.param1;
+myApp.controller('characterCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
+    var characterId = $routeParams.id;
 
-    $http.get("/getCharacter")
+    $http.get("/getCharacter/?id="+characterId)
     .then(function (response) {
         $scope.character = response.data;
         console.log($scope.character)
@@ -130,10 +131,10 @@ myApp.controller('characterCtrl', ['$scope','$routeParams', function($scope, $ro
 }]);
 
 //Controller for one Platform
-myApp.controller('platformCtrl', ['$scope','$routeParams', function($scope, $routeParams) {
-    param1 = $routeParams.param1;
+myApp.controller('platformCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
+    var platformId = $routeParams.id;
 
-    $http.get("/getPlatform")
+    $http.get("/getPlatform/?id="+platformId)
     .then(function (response) {
         $scope.games = response.data;
         console.log($scope.games)

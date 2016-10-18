@@ -131,21 +131,22 @@ def getCharacterable():
 
 @app.route("/getGame/",methods=["GET"])
 def getGame():
-	id = request.args.get('id')
-	obj = jsonify(gameDict[id])
-	return jsonify(obj)
+	game_id = int(request.args.get('id'))
+	print(gameDict[game_id])
+	obj = jsonify(gameDict[game_id])
+	return obj
 
 @app.route("/getCharacter/",methods=["GET"])
 def getCharacter():
-	id = request.args.get('id')
-	obj = jsonify(characterDict[id])
-	return jsonify(obj)
+	char_id = int(request.args.get('id'))
+	obj = jsonify(characterDict[char_id])
+	return obj
 	
 @app.route("/getPlatform/",methods=["GET"])
 def getPlatform():
-	id = request.args.get('id')
-	obj = jsonify(platformDict[id])
-	return jsonify(obj)
+	platform_id = int(request.args.get('id'))
+	obj = jsonify(platformDict[platform_id])
+	return obj
 
 
 
