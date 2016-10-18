@@ -44,7 +44,6 @@ myApp.config(['$routeProvider',
 myApp.controller('headerCtrl', function($scope, $http, $location) {
     $scope.navCollapsed = false;
     $scope.refs = [];
-    $scope.currSelection = "Home";
     var pageNames = ["Games", "Platforms", "Characters", "About"];
     var pageRefs = ["/#/games", "/#/platforms", "/#/characters", "/#/about"];
     var temp = $scope.refs; 

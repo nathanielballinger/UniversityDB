@@ -11,7 +11,7 @@
   </div>
 
   <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
-    <ul ng-repeat="x in refs" ng-click="currSelection = x.name" class="nav navbar-nav">
+    <ul ng-repeat="x in refs" class="nav navbar-nav">
       <li ng-class="{active : isActive(x.href.slice(2))}"><a href="{{x.href}}">{{x.name}}</a></li>
     </ul>
   </div>
