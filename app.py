@@ -1,6 +1,7 @@
 from flask import Flask, send_file, url_for, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
+from sqlalchemy.ext.declarative import declarative_base
 import json
 import urllib.request
 
@@ -31,12 +32,13 @@ for x in range(1,4):
 		data = json.load(data_file)['results']
 		platformDict[data['id']] = data
 
-
+#LINES  35 - 101 Are the SQLAlchemy Models
+Base = declarative_base()
 #Many to many relationship table between characters and games
-#char_game = db.Table('char_game', db.Column('character_id', db.Integer, db.ForeignKey('Character.id'),db.column('game_id',db.Integer,db.ForeignKey('Game.id'))))
+char_game = db.Table(db.Column('char_id',db.Integer, db.ForeignKey('characters.id')),db.Column('game_id',db.Integer,db.ForeignKey('games.id')))
 
 #Many to many relationship table between games and platforms
-#plat_game = db.Table('plat_game', db.Column('character_id', db.Integer, db.ForeignKey('character.id'),db.column('platform_id',db.Integer,db.ForeignKey('platform.id'))))
+plat_game = db.Table(db.Column('character_id', db.Integer, db.ForeignKey('characters.id')),db.Column('platform_id',db.Integer,db.ForeignKey('platforms.id')))
 
 class Game(db.Model):
 	__tablename__ = 'games'
@@ -50,18 +52,18 @@ class Game(db.Model):
 	#Page values are description, review, image, platforms, characters, aliases, site detail url
 	description = db.Column(db.String)
 	review = db.Column(db.String)
-	#Image
+	image = db.Column(db.String)
 	#Define relationship with platforms. Links to table. Backref creates new property of platforms that list all games
-	#platforms = db.relationship('Platform', secondary = plat_game, backref = db.backref('games'))
-	#characters = db.relationship('Character', secondary = char_game, backref = db.backref('games'))
+	platforms = db.relationship('Platform', secondary = plat_game, backref = db.backref('games'))
+	characters = db.relationship('Character', secondary = char_game, backref = db.backref('games'))
 
 	aliases = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
 	def __repr__(self):
-		return '<Game>'
+		return '<Game %r>' % name
 
 class Platform(db.Model):
-	__tablename__ = 'platform'
+	__tablename__ = 'platforms'
 	#Column values are name, release date, company, starting price, number of sold units
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String)
@@ -74,11 +76,11 @@ class Platform(db.Model):
 	online_support = db.Column(db.String)
 	abbreviations = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
-	#Image
+	image = db.Column(db.String)
 
 
 	def __repr__(self):
-		return '<Platform>'
+		return '<Platform %r>' % name
 
 class Character(db.Model):
 	__tablename__ = 'characters'
@@ -88,15 +90,15 @@ class Character(db.Model):
 	birthday = db.Column(db.String)
 	gender = db.Column(db.String)
 	deck = db.Column(db.String)
-	game_first_appeared = db.relationship('Game', )
+	game_first_appeared = db.relationship('Game', backref = 'person')
 	#Page Values are Description, Image, Site_Detail_URL, aliases
 	description = db.Column(db.String)
-	#Image
+	image = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
 	aliases = db.Column(db.String)
 
 	def __repr__(self):
-		return '<Character>'
+		return '<Character %r>' % name 
 
 
 @app.route("/")
