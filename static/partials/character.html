@@ -1,3 +1,9 @@
-<div class="container">
-    <p>Hello World</p>
+<div data-ng-controller="characterCtrl">
+    <div class="container">
+        <p>Hello World</p>
+        <p ng-bind-html="character.description"></p>
+        <!--<div>
+            {{character.description}}
+        </div>-->
+    </div>
 </div>

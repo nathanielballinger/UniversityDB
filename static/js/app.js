@@ -1,6 +1,6 @@
 'use strict';   // See note about 'use strict'; below
 
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize']);
 
 myApp.config(['$routeProvider',
      function($routeProvider) {
@@ -154,8 +154,8 @@ myApp.controller('platformCtrl', ['$scope','$routeParams', '$http', function($sc
 
     $http.get("/getPlatform/?id="+platformId)
     .then(function (response) {
-        $scope.games = response.data;
-        console.log($scope.games)
+        $scope.platform = response.data;
+        console.log($scope.platform)
     })
 
     $scope.info = {};
