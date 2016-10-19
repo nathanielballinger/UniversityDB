@@ -1,9 +1,27 @@
-<div data-ng-controller="characterCtrl">
-    <div class="container">
-        <p>Hello World</p>
-        <p ng-bind-html="character.description"></p>
-        <!--<div>
-            {{character.description}}
-        </div>-->
-    </div>
+<div data-ng-controller="characterCtrl" class="container-fluid">
+	<div class="row">
+		<h1 align="center"><b> {{character.name.toUpperCase()}} PROFILE </b></h1>
+		<div class="col-md-6">
+			<img src="{{character.image.super_url}}" align="center">
+		</div>
+		
+		<div class="col-md-6">
+			<p> Name: {{character.name}}</p>
+	        <p> Aliases: {{character.aliases.split("\r\n").join(", ")}}</p>
+	        <p> Birthday: {{character.birthday}} </p>
+	        <p> Gender: {{character.gender}} </p>
+	        <p> Description: {{character.deck}} </p>
+			<p>First appearance in: <a href="#/game/{{character.first_appeared_in_game.id}}"> {{character.first_appeared_in_game.name}} </a> </p> 
+			<p><span ng-repeat="friend in character.friends">
+	    		{{$first ? 'Friends: ' : ''}}<a href="#/character/{{friend.id}}">{{friend.name}}</a>{{$last ? '' : ', '}}
+			</span></p>
+	        <p><span ng-repeat="enemy in character.enemies">
+	    		{{$first ? 'Enemies: ' : ''}}<a href="#/character/{{enemy.id}}">{{enemy.name}}</a>{{$last ? '' : ', '}}
+			</span></p>
+		</div>
+
+		<div class="col-md-12">
+			<h1 align="center"><b> DETAILS </b></h1>
+			<p ng-bind-html="character.description"> </p>
+	</div>
 </div>

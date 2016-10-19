@@ -42,7 +42,7 @@ myApp.config(['$routeProvider',
 
 //var scope;
 myApp.controller('headerCtrl', function($scope, $http, $location) {
-    $scope.navCollapsed = false;
+    $scope.navCollapsed = true;
     $scope.refs = [];
     var pageNames = ["Games", "Platforms", "Characters", "About"];
     var pageRefs = ["/#/games", "/#/platforms", "/#/characters", "/#/about"];
@@ -129,6 +129,26 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
 
 }]);
 
+
+function formatCharObj(character) {
+    // Fix all the null and empty string values 
+    for (var key in character) {
+        if(character.hasOwnProperty(key)) {
+            var val = character[key];
+            if(val == null)
+                character[key] = "Unknown";
+            if((typeof val === 'string' || val instanceof String) && val.length ==0)
+                character[key] = "Unknown";
+        }
+    }
+
+    if(character.gender == 1) 
+        character.gender = "Male";
+    else
+        character.gender = "Female";
+    return character;
+}
+
 //Controller for one Character
 myApp.controller('characterCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
     var characterId = $routeParams.id;
@@ -136,11 +156,9 @@ myApp.controller('characterCtrl', ['$scope','$routeParams', '$http', function($s
     $http.get("/getCharacter/?id="+characterId)
     .then(function (response) {
         $scope.character = response.data;
-        console.log($scope.character)
+        $scope.character = formatCharObj($scope.character);
+        console.log($scope.character);
     })
-
-    $scope.info = {};
-
 
     $scope.init = function() {
         console.log("Hello World from character");
