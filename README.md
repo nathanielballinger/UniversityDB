@@ -1,5 +1,5 @@
-# Flask Tutorial
+We followed the [wiki section](https://github.com/brpowell/flask-example/wiki) to set up our website. In order to run it locally please follow these insructions
 
-Sample code and tutorial for a basic Flask application
+Our domain is vgidb.me
 
-Read the tutorial in the [wiki section](https://github.com/brpowell/flask-example/wiki)
+
