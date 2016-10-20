@@ -1,0 +1,62 @@
+{
+    "error": "OK",
+    "limit": 1,
+    "offset": 0,
+    "number_of_page_results": 1,
+    "number_of_total_results": 1,
+    "status_code": 1,
+    "results": {
+        "aliases": "Clarence Callahan",
+        "birthday": null,
+        "deck": "Clarence \"Razor\" Callahan is the main antagonist of players in Need for Speed: Most Wanted.",
+        "description": "<h2>Overview<\/h2><p>Razor is a ruthless and relentless racer who prowls around <a href=\"\/rockport-city\/3035-39\/\" data-ref-id=\"3035-39\">Rockport City<\/a>. Initially he is 15th on the Blacklist - a list of the most wanted street racers in the city. However, he takes on the player character who happens to be driving a BMW M3 GTR. He uses his Ford Mustang GT, but tampers with the M3 in order to ensure the player loses. After this, Razor takes the car and uses it himself in order to rocket to the number one position on the Blacklist.<\/p><p>At the end of the game, <a href=\"\/mia-townsend\/3005-4522\/\" data-ref-id=\"3005-4522\">Mia Townsend<\/a> reveals her true identity, as an undercover police officer in the Rockport Police Department. While Razor is cunning enough to ensure he is always escaping from trouble, he is unable to escape being arrested. Mia allows the player to grab the M3 and flee, before the rest of the police arrive.<\/p><p>Razor is a muscular man who is covered in tattoos over both of his arms. His initial car is a black Mustang with a flame design on it. However, this Mustang is not seen outside of the first race and is likely only there to serve that single purpose. <\/p>",
+        "enemies": [
+            {
+                "api_detail_url": "http:\/\/www.giantbomb.com\/api\/enemy\/3005-4522\/",
+                "id": 4522,
+                "name": "Mia Townsend",
+                "site_detail_url": "http:\/\/www.giantbomb.com\/mia-townsend\/3005-4522\/"
+            },
+            {
+                "api_detail_url": "http:\/\/www.giantbomb.com\/api\/enemy\/3005-1487\/",
+                "id": 1487,
+                "name": "Sergeant Cross",
+                "site_detail_url": "http:\/\/www.giantbomb.com\/sergeant-cross\/3005-1487\/"
+            }
+        ],
+        "first_appeared_in_game": {
+            "api_detail_url": "http:\/\/www.giantbomb.com\/api\/game\/3030-12976\/",
+            "id": 12976,
+            "name": "Need for Speed: Most Wanted"
+        },
+        "friends": [],
+        "games": [
+            {
+                "api_detail_url": "http:\/\/www.giantbomb.com\/api\/game\/3030-51194\/",
+                "id": 51194,
+                "name": "Need for Speed: No Limits",
+                "site_detail_url": "http:\/\/www.giantbomb.com\/need-for-speed-no-limits\/3030-51194\/"
+            },
+            {
+                "api_detail_url": "http:\/\/www.giantbomb.com\/api\/game\/3030-12976\/",
+                "id": 12976,
+                "name": "Need for Speed: Most Wanted",
+                "site_detail_url": "http:\/\/www.giantbomb.com\/need-for-speed-most-wanted\/3030-12976\/"
+            }
+        ],
+        "gender": 1,
+        "id": 3,
+        "image": {
+            "icon_url": "http:\/\/www.giantbomb.com\/api\/image\/square_avatar\/471099-42_razor.jpg",
+            "medium_url": "http:\/\/www.giantbomb.com\/api\/image\/scale_medium\/471099-42_razor.jpg",
+            "screen_url": "http:\/\/www.giantbomb.com\/api\/image\/screen_medium\/471099-42_razor.jpg",
+            "small_url": "http:\/\/www.giantbomb.com\/api\/image\/scale_small\/471099-42_razor.jpg",
+            "super_url": "http:\/\/www.giantbomb.com\/api\/image\/scale_large\/471099-42_razor.jpg",
+            "thumb_url": "http:\/\/www.giantbomb.com\/api\/image\/scale_avatar\/471099-42_razor.jpg",
+            "tiny_url": "http:\/\/www.giantbomb.com\/api\/image\/square_mini\/471099-42_razor.jpg"
+        },
+        "name": "Razor Callahan",
+        "site_detail_url": "http:\/\/www.giantbomb.com\/razor-callahan\/3005-3\/"
+    },
+    "version": "0"
+}

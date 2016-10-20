@@ -1,0 +1,25 @@
+<div data-ng-controller="charactersCtrl" data-ng-init="init()" class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <td>Name</td>
+                <td>Game First Appeared</td>
+                <td>Desc</td>
+                <td>Birthday</td>
+                <td>Gender</td>
+            </tr>            
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in games track by $index">
+                <td>{{$index + 1}}</td>
+                <td><a href="/#/character/{{+x.id}}">{{ x.name }}</a></td>
+                <td>{{ x.first_appeared_in_game.name }}</td>
+                <td>{{ x.deck }}</td>
+                <td>{{ x.birthday || "Unknown" }}</td>
+                <td>{{ x.gender }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

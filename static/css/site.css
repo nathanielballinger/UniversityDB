@@ -1,0 +1,40 @@
+table, th, td {
+	border: 1px solid black;
+}
+
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+body {
+  margin: 2em;
+  padding-top: 55px;
+}
+
+img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.img-rounded{
+  height: 250px;
+  width: 250px;
+}
+
+.col-md-6{
+  color: black;
+  padding: 20px;
+  text-align: left;
+}
+
+#front-page-jumbo {
+	margin-top: 20px;
+}
+ /*
+  * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
+  * for the full set of master styles used by the documentation samples
+  */

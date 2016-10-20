@@ -1,0 +1,25 @@
+<div data-ng-controller="gamesCtrl" data-ng-init="init()" class="container">
+    <table class="table table-responsive table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <td>Name</td>
+                <td>Release Date</td>
+                <td>Genre</td>
+                <td>Developer/Publisher</td>
+                <td>Platform</td>
+            </tr>            
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in games track by $index">
+                <td>{{$index + 1}}</td>
+                <td><a href="/#/game/{{+x.id}}">{{ x.name }}</a></td>
+                <td>{{ x.original_release_date }}</td>
+                <td>{{ x.genres[0].name }}</td>
+                <td>{{ x.developers[0].name }}</td>
+                <td>{{ x.platforms[0].name }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
