@@ -2,6 +2,10 @@
 
 var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize']);
 
+myApp.constant('_',
+    window._
+);
+
 myApp.config(['$routeProvider',
      function($routeProvider) {
          $routeProvider.
@@ -62,6 +66,9 @@ myApp.controller('headerCtrl', function($scope, $http, $location) {
 
 //Controller for all games
 myApp.controller('gamesCtrl', function($scope, $http){
+    
+    $scope.order = true;
+    $scope.sortVar = "Name"
     $http.get("/getGameTable")
     .then(function (response) {
         $scope.games = response.data;
@@ -70,43 +77,112 @@ myApp.controller('gamesCtrl', function($scope, $http){
 
     $scope.info = {};
 
+    $scope.swapOrder = function() {
+        $scope.order = !$scope.order;
+        $scope.games.reverse();
+    }
+
 
     $scope.init = function() {
         console.log("Hello World from games");
     }
+
+    $scope.sortBy = function(sorter) {
+        $scope.sortVar = sorter;
+        $scope.games = _.sortBy($scope.games, function(game){
+            switch(sorter){
+                case "Name":
+                    return game.name
+                case "Release Date":
+                    return game.original_release_date
+                case "Genre":
+                    return game.genres[0].name
+                case "Developer/Publisher":
+                    return game.developers[0].name
+                case "Platform":
+                    return game.platforms[0].name
+            }
+        });
+    }
 })
 
 //Controller for all Platforms
-myApp.controller('platformsCtrl', function($scope, $http){
+myApp.controller('platformsCtrl', function($scope, $http, _){
 
+    $scope.order = true;
+    $scope.sortVar = "Name"
     $http.get("/getPlatformTable")
     .then(function (response) {
         $scope.platforms = response.data;
+        $scope.sortBy($scope.sortVar);
         console.log($scope.platforms)
     })
 
     $scope.info = {};
 
+    $scope.swapOrder = function() {
+        $scope.order = !$scope.order;
+        $scope.platforms.reverse();
+    }
+
 
     $scope.init = function() {
         console.log("Hello World from platforms");
+    }
+
+    $scope.sortBy = function(sorter) {
+        $scope.sortVar = sorter;
+        $scope.platforms = _.sortBy($scope.platforms, function(platform){
+            switch(sorter){
+                case "Name":
+                    return platform.name
+                case "Release Date":
+                    return platform.release_date
+                case "Company":
+                    return platform.company.name
+                case "Starting Price":
+                    return parseInt(platform.original_price)
+            }
+        });
     }
 })
 
 //Controller for all characters
 myApp.controller('charactersCtrl', function($scope, $http){
-
+    $scope.order = true;
+    $scope.sortVar = "Name";
     $http.get("/getCharacterTable")
     .then(function (response) {
-        $scope.games = response.data;
-        console.log($scope.games)
+        $scope.characters = response.data;
+        console.log($scope.characters)
     })
 
     $scope.info = {};
 
 
+    $scope.swapOrder = function() {
+        $scope.order = !$scope.order;
+        $scope.characters.reverse();
+    }
+
     $scope.init = function() {
         console.log("Hello World from characters");
+    }
+
+    $scope.sortBy = function(sorter) {
+        $scope.sortVar = sorter;
+        $scope.characters = _.sortBy($scope.characters, function(platform){
+            switch(sorter){
+                case "Name":
+                    return platform.name
+                case "First Game":
+                    return platform.release_date
+                case "Birthday":
+                    return platform.first_appeared_in_game.name
+                case "Gender":
+                    return platform.gender
+            }
+        });
     }
 })
 
