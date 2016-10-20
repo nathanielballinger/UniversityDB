@@ -10,6 +10,7 @@ myApp.config(['$routeProvider',
              }).
              when('/about', {
                  templateUrl: '../static/partials/about.html',
+                 controller: 'aboutCtrl'
              }).
              when('/games', {
                  templateUrl: '../static/partials/games.html',
@@ -143,7 +144,8 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
 
     $http.get("/getGame/?id="+gameId)
     .then(function (response) {
-        $scope.game = fixNullEmpty(response.data);
+        var data = response.data;
+        $scope.game = fixNullEmpty(data);
         console.log($scope.game)
     })
 
@@ -157,12 +159,13 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
 }]);
 
 //Controller for one Character
-myApp.controller('characterCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
+myApp.controller('characterCtrl', ['$scope','$routeParams', '$http', '$location', function($scope, $routeParams, $http, $location) {
     var characterId = $routeParams.id;
 
     $http.get("/getCharacter/?id="+characterId)
     .then(function (response) {
-        $scope.character = fixNullEmpty(response.data);
+        var data = response.data;
+        $scope.character = fixNullEmpty(data);
         console.log($scope.character);
     })
 
@@ -178,8 +181,43 @@ myApp.controller('platformCtrl', ['$scope','$routeParams', '$http', function($sc
 
     $http.get("/getPlatform/?id="+platformId)
     .then(function (response) {
-        $scope.platform = response.data;
+        var data = response.data;
+        $scope.platform = fixNullEmpty(data);
         console.log($scope.platform)
+    })
+
+    $scope.info = {};
+
+
+    $scope.init = function() {
+        console.log("Hello World from platform");
+    }
+
+}]);
+
+//Controller for about page
+myApp.controller('aboutCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
+    $scope.contri = {
+        "Eitan-Yarmush" : 0,
+        "Kwong98" : 0,
+        "ctc837" : 0,
+        "abhirathod95" : 0,
+        "nathanielballinger" : 0
+    }
+    var usernameToName = {
+        "Eitan-Yarmush" : "eitan",
+        "Kwong98" : "keith",
+        "ctc837" : "chris",
+        "abhirathod95" : "abhi",
+        "nathanielballinger" : "nathan"
+    }
+    $http.get("https://api.github.com/repos/nathanielballinger/cs373-idb/contributors")
+    .then(function (response) {
+        var data = response.data;
+        for(var i = 0; i < data.length; i++) {
+            var username = data[i].login;
+            $scope.contri[usernameToName[username]] = data[i].contributions;
+        }
     })
 
     $scope.info = {};

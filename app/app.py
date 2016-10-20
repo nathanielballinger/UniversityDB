@@ -22,7 +22,7 @@ for x in range(1,4):
 		data = json.load(data_file)['results']
 		gameDict[data['id']] = data
 
-characterDict = dict()
+characterDict = {}
 for x in range(1,4):
 	with open('static/json/character'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
