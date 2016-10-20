@@ -1,0 +1,655 @@
+commit 87fa96299386fc616a5aed174307a1ba2d39cb2b
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:22:12 2016 -0500
+
+    Modifying project structure
+
+commit 02a865e01b254e78de1a0b1744b6304c7c9fa025
+Merge: d267edf c2d61ae
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:20:28 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit d267edf290c6ee4b2a292b733b95a57a7201768c
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:20:14 2016 -0500
+
+    Modifying project structure
+
+commit c2d61ae8d8663bf1a4744f3478f2dd7571e6c0d8
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:18:33 2016 -0500
+
+    Rename Makefile to makefile
+
+commit 28104eb10ba3c7e29a1aecb8fdd46dfac07aa851
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:14:22 2016 -0500
+
+    Added UML to repo
+
+commit a72edeaf4c816bd02b6a52a680498f3bb8783232
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 13:00:44 2016 -0500
+
+    Fixes #29; Added in the information about data scraping from the wiki
+
+commit f032178a669095c51ee45909604bd55f7d926345
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 12:44:39 2016 -0500
+
+    Fixes #28; Added in more stuff in the about page and got the stats to work right
+
+commit 824e228af4be823917cb67cf2238f2e91b73dae0
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 12:08:29 2016 -0500
+
+    Fixes #27; Changed platform/game/character pages so that they don't display unparsed details
+
+commit c90295f0e30aac94acd56c562d10a956828e6577
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 12:04:44 2016 -0500
+
+    Fixes #26; Added in the number of issues from the github API
+
+commit 63241d6e3cabd9cbf80d1a9b9c34976df8ef9136
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 10:10:49 2016 -0500
+
+    Hotfixed number of commits for eitan
+
+commit 88062087485fa7caf71ec65a05b547c61361fde8
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 10:09:01 2016 -0500
+
+    Fixes #25; Added in number of github contributions to the about page
+
+commit 49dbac2e04fe16c885b1233c245322287370f10b
+Merge: 6e3fcfb 956b6cf
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Oct 20 09:30:04 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    "Merge"
+
+commit 956b6cfd490348258adbb9d0b9402f214213f3a1
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Oct 20 03:00:45 2016 -0500
+
+    tests.py and models.py updated
+
+commit 52a26a86ac4bd24e174a6eb73c14d077a79b1ed0
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:17:56 2016 -0500
+
+    Added titles to all the pages so it looks nicer
+
+commit 9b2640672f12fc610dccc1d06e3ec276b77a7b81
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:13:55 2016 -0500
+
+    Fixed up the about page
+
+commit dbf637a224abd709dce1c27383a3f70e5e284378
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:12:38 2016 -0500
+
+    Fixed up the front page a bit
+
+commit f736fbcad721bc0f18fbd6fee7d63eec70480818
+Merge: 5a44e7f f23a4df
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:06:31 2016 -0500
+
+    Merge branch 'dev'
+
+commit f23a4df8b8addda4da0f211426f32bc3ee136670
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:05:17 2016 -0500
+
+    Fixes #24; Fixed the title in navigation and tab
+
+commit 41f9edac300605ed5b78eee63b077d80c561f342
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 01:55:01 2016 -0500
+
+    Fixes #19; Created the platform page
+
+commit c771ffa95dab844f2b2b4495e7588f681ef56cf7
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 00:31:49 2016 -0500
+
+    Added models.html
+
+commit 67141470546c19780ae788b6a97cad0a3e90213a
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 00:09:02 2016 -0500
+
+    Chris makes changes to tests.py
+
+commit c6cc306ca7b11c7691d69d14822664f3c4eba0a3
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Oct 20 00:05:20 2016 -0500
+
+    Began test cases
+
+commit 5a44e7f8057d0fd8c23008232cfd068b2da3534c
+Merge: b9a4f77 405fc26
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Oct 20 04:34:24 2016 +0000
+
+    Merge branch 'master' of https://github.com/nathanielballinger/cs373f-idb
+    "Merging with master"
+
+commit b9a4f77a282622e256377b5ca2ecd688d6980f50
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Oct 20 04:34:05 2016 +0000
+
+    added app.wsgi
+
+commit b4e323848fc9188877b42ec764a812ff61ed4381
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Oct 20 04:33:23 2016 +0000
+
+    Now works on digital ocean server minus the relative path issue
+
+commit 405fc2637f273fe0f6040cdb69d7f1cfadb3f12b
+Author: Nathaniel E Ballinger <nathanielballinger@gmail.com>
+Date:   Wed Oct 19 22:59:46 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 6e3fcfb8e04d18e3f519f3c66b1d0d1e6729c1f9
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 22:17:01 2016 -0500
+
+    Rolled back stupid commit
+
+commit 85df6ba2a817de305130759f5795dfa6007fa653
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 22:15:36 2016 -0500
+
+    Made a couple changes to make server work
+
+commit 4754f46caa55f0e10c18a397dd6ae98ab76e78f2
+Merge: d5392c2 4cabda1
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Oct 20 02:35:07 2016 +0000
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb
+    "Ugly Merge"
+
+commit 4cabda1c0f91051161e714dc279cafdf584d7c12
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 21:32:46 2016 -0500
+
+    Totally changed the file structure to put all of the important files into app
+
+commit 0a9e2d0061c93e65af3d1c3bb727189fd9295f2d
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 21:28:32 2016 -0500
+
+    Changed the JSON files to be mortal kombat
+
+commit c8972852dc07f155efa521d1abf23462f5d61700
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Wed Oct 19 21:16:46 2016 -0500
+
+    Fixes #18; Fixes #23; Added in code to deal with no links provided for the images and fixed up the game page so that it displays the information neatly.
+
+commit f39e9304f7b510866edda388d0fcd3ce441701c1
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 21:15:03 2016 -0500
+
+    models.py update
+
+commit d5392c2674871da91698de07ccb71c9b6a967a9f
+Merge: d90d251 ec23805
+Author: Eitan Yarmush <barca7life@gmail.com>
+Date:   Wed Oct 19 21:07:27 2016 -0500
+
+    Merge pull request #22 from nathanielballinger/dev
+    
+    Dev
+
+commit ec23805eca67d1c209cb9299b22c2bbb7cf346ed
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 20:40:15 2016 -0500
+
+    Chris moved SQLAlchemy models to new file
+
+commit 2aac146b0b5df167521ffc74b467baead8803800
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 19:41:49 2016 -0500
+
+    added a coupe pictures and edited the about page a little:
+
+commit 85f199e23a3903dedb31d9a08840b013ae5d6c3b
+Merge: b7b9682 b727d3f
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 19:37:29 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    Merging
+
+commit b7b968220b0b75576d0cec922374e5792ee08c8c
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 19:37:25 2016 -0500
+
+    Changed about as well as added some photos
+    :
+
+commit b727d3fb285eaf68bc035219da529d538f10ee28
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Wed Oct 19 19:36:24 2016 -0500
+
+    Added in photo for about page
+
+commit 889a55ec72aa92bb27d2b0684f4864d3a8b362b9
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 19:08:50 2016 -0500
+
+    Chris fixing typos and adding more figures for the technical report
+
+commit c44d53a8b3be7ce62896600f57f597ea1f6523da
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 17:54:35 2016 -0500
+
+    Chris added another figure for report
+
+commit 2013f3b0267d64395b13d6fd5850dbad73aa280a
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 17:39:38 2016 -0500
+
+    Chris added photo for report
+
+commit 65bd09a63d5f0130f4728ed42485d906b595c169
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 17:14:30 2016 -0500
+
+    Added Chris Collier picture
+
+commit 693e99da6a9c5bad9a23070e2d28697b57436ae3
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Wed Oct 19 15:34:56 2016 -0500
+
+    Fixes #17; Created a simple page for each character that we have so far. Need to edit it more to make it look nicer and remove some of the duplicate/unnecessary information.
+
+commit 239106b7c3614b6e23af2dac52a47e5bbe374c05
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 12:54:43 2016 -0500
+
+    Chris changed table categories to reflect data
+
+commit 9902bf3347fe558c22eaf0fd5dae44009974240f
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 10:01:35 2016 -0500
+
+    Real quick push to show something cool
+
+commit fafb1f4c42683c1b93553a60eec4d717cb3ed7ce
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Oct 18 19:27:58 2016 -0500
+
+    Chris wrapping up SQLAlchemy models
+
+commit 213f56616b9efea7047f73fc5b7b98dd4dc26487
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Tue Oct 18 09:42:47 2016 -0500
+
+    I removed the next and prev buttons from the carosuel because they were not working and were unescesarry anyway
+
+commit b8cb133b634dface968238943285219e2b82d4db
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Tue Oct 18 09:28:56 2016 -0500
+
+    removed more comments
+
+commit 7f87973f5e98e2957fc1124b5036c674abb9669e
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Tue Oct 18 00:41:55 2016 -0500
+
+    Cleaned up unused variables in header controller
+
+commit 1763b60252be627f91c98c78e9432fa0e3162036
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Tue Oct 18 00:36:38 2016 -0500
+
+    Fixes #16; Added a quick padding css fix so that teverything always comes below the nav bar
+
+commit da4c419609f57890eb385cb888e746f41d280255
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Tue Oct 18 00:29:59 2016 -0500
+
+    Fixes #15; Changed the code so that the only item in the navigation that will be selected is the page you are on
+
+commit d763e9545d17fcccf1797e61d0cd4222684a3052
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Mon Oct 17 23:50:27 2016 -0500
+
+    Fixes #13; Made the navigation bar stick to the top. Now, it will scroll with the page so it's easily accessible
+
+commit 629dde74d779d3af900a6d396571ac9371b34214
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Mon Oct 17 23:46:08 2016 -0500
+
+    Fixes #12; Fixes #14; Added in the navigation bar and linked it to the pages. Just need to fix a bug and make it stick to the top
+
+commit 4866ca63102eed0b256f1fb1fec529f075e38b06
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 20:40:29 2016 -0500
+
+    Just went through and deleted a whole bunch of comments
+
+commit 4d07a4fb49636075f2fed881f4d8aa606d856a49
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 20:34:44 2016 -0500
+
+    Create character.html and platform.html as well as doing some dynamic linking between lists and individual pages
+
+commit a93b55d6e2df524527a3813221150cea05129102
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 19:22:47 2016 -0500
+
+    Removed a print statement:
+
+commit a20c1587a2f1592ca365bdce33f51da0df5b7f79
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 19:20:52 2016 -0500
+
+    All individual gets are working on front and back end, still need to do actual design
+
+commit 17706ff6c0ea3129b3dc7ddc6c58725fd64d400a
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 19:04:48 2016 -0500
+
+    Created controllers for all individual game, character, and platform pages. Not sure if any of it works but we'll def see soon
+
+commit 38ec3be125fc698eafdaf790710b3c1441486d86
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 18:54:52 2016 -0500
+
+    Added individual routes to flask API
+
+commit d3ce91f86d0f5a5aadfb393ba4b2cf527e119052
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 18:43:07 2016 -0500
+
+    Lists for characters, platforms, and games now display
+
+commit 878aeab2be0bb719ea48473d65c8bacedab0f740
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 17:46:33 2016 -0500
+
+    Changed Json files to be pretty
+
+commit e71c142cd8150d8d15ea05db7549e37dd9a22820
+Merge: 164ba6c 619a19d
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 17:35:05 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    "done"
+
+commit 619a19de58aed121e52b75c7ecb0e6779a140e70
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 17:34:45 2016 -0500
+
+    added all json files
+
+commit 164ba6cb3d3ffb9ef5f8516d3ce40c4e608ab849
+Merge: 87055c5 1ee18ce
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 17:32:18 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    "done"
+
+commit 87055c57f83908b45ca6bdee1f943d11a1432ced
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 17:31:54 2016 -0500
+
+    More changes to SQLAlchemy
+
+commit ffd56f45d2d4cf14830706eae6ad080c9e05035b
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 17:27:39 2016 -0500
+
+    Fixed small indent issue and started adding json for games and stuff
+
+commit 1ee18ced7665e052d703028f43f34b087dbd4fcb
+Merge: 175dc37 045ed36
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Mon Oct 17 17:26:09 2016 -0500
+
+    Merged app
+
+commit 175dc37616f01fd7587d1dc7fee4365a0122c1ae
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Mon Oct 17 17:24:20 2016 -0500
+
+    New stuff
+
+commit 045ed3672a0b3fe169dea3d7f689b68331607d17
+Merge: 9ebe396 af115d4
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 16:34:54 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+
+commit 9ebe3969c88c2dca9e4f13708d0a2aac5890f582
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 16:34:42 2016 -0500
+
+    Chris fix app.py
+
+commit af115d44b9434d1249ab818e9b8aebfa34aacf85
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 16:21:13 2016 -0500
+
+    Changed a lot of the lists stuff
+
+commit 2bd7bae65973d7168f2510117ba7e20623f79b1c
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 16:20:14 2016 -0500
+
+    Chris making more changes to SQLAlchemy Models
+
+commit ee111130a494177e58196d8bfea20651fb9bcca9
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 15:45:44 2016 -0500
+
+    Chris adding SQLAlchemy models
+
+commit f780e87856f3591dff4febcef4058d46a0597aac
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Mon Oct 17 15:21:03 2016 -0500
+
+    Delete CNAME
+
+commit 2b72684895ff3906163ff0a2d902fff2ae668222
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:16:20 2016 -0500
+
+    Fixing app.js
+    
+    Fixing app.js so that it routes to the right place
+
+commit f6c254a5d5ed91363bfa0b4834787175c544d906
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:09:31 2016 -0500
+
+    Adding in controllers
+    
+    Creating file for all the controllers we will be creating for angular
+
+commit 6eb9cbd6789e45498eb9a9d15c7e31bb6433519c
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:04:00 2016 -0500
+
+    Deleting copy of index.html
+    
+    No need for 2 index.html files, so removing the partial and keeping the template.
+
+commit 1143a7a1d81524583be5f49ce62c09b7926aa0d5
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:03:05 2016 -0500
+
+    Fixing index.html
+    
+    Updated the wrong index.html, so fixing it now.
+
+commit 358dc89c9f335532502d49ed6dece4a7f507a2e5
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:01:33 2016 -0500
+
+    Adding in jquery locally
+    
+    Adding in jquery into the packages instead of fetching it from google's servers (less requests).
+
+commit b3439f3cbec4c090b0e84df64d8022bc1ddf0af3
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:59:22 2016 -0500
+
+    shell for header partial
+    
+    Adding in the shell file for header partial. Need to update this to add in the menu for navigation
+
+commit d31f972cdf6205bae85f1a154ab7629639997fc0
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:58:14 2016 -0500
+
+    Adding in home/splash screen
+    
+    Adding in the splash screen partial
+
+commit ded02e2a78fae860c9d162c2c1dc658f84b4d78f
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:57:10 2016 -0500
+
+    Base html file
+    
+    Updating index.html to make it more of a base html file and separate the info into partials.
+
+commit 142b93ff4693926693acd09e65dab068b6d5dc0a
+Merge: cad0cf4 6501eb0
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:56:47 2016 -0500
+
+    Fixed merge conflict
+
+commit cad0cf428cea431e8f61b980cccc8b42d63cb2f3
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:55:46 2016 -0500
+
+    Changed up app to include lists
+
+commit 6501eb0abe8ec3336116468423ae6cfe1534b62d
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:55:21 2016 -0500
+
+    Updating routing
+    
+    Changed the code a little bit to update routing
+
+commit 977d1a3780742a784f39283a3f9ae2d38a6e6311
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:53:39 2016 -0500
+
+    Updating app.py
+    
+    Changed app.py so that the routing of the website can be done through AngularJS
+
+commit 2e7ad232a0502d6863d9af52a7f4f4901a915d44
+Merge: 452daa3 06b8ed9
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 14:41:42 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+
+commit 06b8ed9cac9ffce2e9a14a2d4a1ccb7582abf5ca
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:38:43 2016 -0500
+
+    Started list html page, Im pushing for merge purposes
+
+commit 452daa3eb68dd29901fd9999628b977f031e8b92
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 14:37:15 2016 -0500
+
+    Chris adds SQLAlchemy functions to app.py corresponding to pillars
+
+commit 537fdac46fd85fc441083ee2a7223414778a2742
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:21:45 2016 -0500
+
+    Routing now works properly using Angular JS
+
+commit 0db8d7c8572c905a1a3b9848067cf83d0d93546a
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:12:24 2016 -0500
+
+    Created about page and added a little intro thing to main index.html page
+
+commit dcd54ead7ed469f4439dec5eada7d38a6a60eb68
+Merge: 51b06df a3ed6b8
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Sun Oct 16 20:14:28 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    Forgot to pull earlier
+
+commit 51b06df267a6bd0b9b534b7b268cf1f4bfa0abd1
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Sun Oct 16 20:14:12 2016 -0500
+
+    Added bootstrap and added a temporary carosuel cuz it looks cool
+
+commit a3ed6b85590aa77665b317cd1cd0dd125e01ea55
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Sun Oct 16 18:02:32 2016 -0500
+
+    Create CNAME
+
+commit 891f190988c0385c8e426018037229682791207a
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Sat Oct 15 17:58:34 2016 -0500
+
+    Changed from angular 2 to angular 1
+
+commit 643838f171a21772235285a521216f8c5f063c16
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Sat Oct 15 17:26:49 2016 -0500
+
+    Configured flask, angular, bootstrap
+
+commit d90d251275afc07dc8d45ce136ac2ca46113433b
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Sat Oct 15 15:51:26 2016 -0500
+
+    Fixed slack notification
+
+commit 60992ea5f263964ce2df5bbcaadb72ee7ae66e71
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Sat Oct 15 15:45:00 2016 -0500
+
+    More travis
+
+commit 40d49c8e91763149f8cf7a2a4c718d1aa1641a43
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Sat Oct 15 15:42:51 2016 -0500
+
+    Trying it again
+
+commit 0e1b2f01ac858628996ea91d3c8b5dd8be3064a7
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Sat Oct 15 15:37:16 2016 -0500
+
+    Added makefile and gitignore. Updated Travis
+
+commit d3c9ebe62c86744a9e2cb78a5425c62a4fe18205
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Tue Oct 11 10:41:51 2016 -0500
+
+    Travis file. Needs script
