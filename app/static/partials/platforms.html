@@ -1,5 +1,25 @@
 <div data-ng-controller="platformsCtrl" data-ng-init="init()" class="container">
     <h1 align="center">Platforms</h1>
+    <div class="row">
+        <div class"col-md-6">
+            <p>Showing {{platforms.length}} platforms    
+        </div>
+        <div class"col-md-6">
+            <div class="btn-group">
+                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     {{sortVar}}<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="" ng-click="sortBy('Name')">Name</a></li>
+                    <li><a href="" ng-click="sortBy('Release Date')">Release Date</a></li>
+                    <li><a href="" ng-click="sortBy('Company')">Company</a></li>
+                    <li><a href="" ng-click="sortBy('Starting Price')">Starting Price</a></li>
+                </ul>
+            </div>
+            <button ng-click="swapOrder()" type="button" class="btn btn-default">Swap Order</button>
+
+        </div>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>

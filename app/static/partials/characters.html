@@ -1,5 +1,24 @@
 <div data-ng-controller="charactersCtrl" data-ng-init="init()" class="container">
     <h1 align="center">Characters</h1>
+    <div class="row">
+        <div class"col-md-6">
+            <p>Showing {{characters.length}} platforms    
+        </div>
+        <div class"col-md-6">
+            <div class="btn-group">
+                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{sortVar}}<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="" ng-click="sortBy('Name')">Name</a></li>
+                    <li><a href="" ng-click="sortBy('First Game')">First Game</a></li>
+                    <li><a href="" ng-click="sortBy('Birthday')">Birthday</a></li>
+                    <li><a href="" ng-click="sortBy('Gender')">Gender</a></li>
+                </ul>
+            </div>
+            <button ng-click="swapOrder()" type="button" class="btn btn-default">Swap Order</button>
+        </div>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -12,7 +31,7 @@
             </tr>            
         </thead>
         <tbody>
-            <tr ng-repeat="x in games track by $index">
+            <tr ng-repeat="x in characters track by $index">
                 <td>{{$index + 1}}</td>
                 <td><a href="/#/character/{{+x.id}}">{{ x.name }}</a></td>
                 <td>{{ x.first_appeared_in_game.name }}</td>
