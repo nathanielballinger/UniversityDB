@@ -216,6 +216,8 @@ myApp.controller('aboutCtrl', ['$scope','$routeParams', '$http', function($scope
         var data = response.data;
         for(var i = 0; i < data.length; i++) {
             var username = data[i].login;
+            if(username == "EItanya")
+                $scope.contri.eitan += data[i].contributions;
             $scope.contri[usernameToName[username]] = data[i].contributions;
         }
     })
