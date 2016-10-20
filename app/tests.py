@@ -1,5 +1,4 @@
 from io             import StringIO
-from urllib.request import urlopen
 from unittest       import main, TestCase
 from models 		import *
 
@@ -138,4 +137,11 @@ class TestCases (TestCase):
 		self.assertEqual(character4.id, " ")
 		self.assertEqual(character4.name, " ")
 		self.assertEqual(character4.game_first_appeared, " ")
+
+# ----
+# Main
+# ----
+
+if __name__ == '__main__' :
+	main()
 
