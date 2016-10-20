@@ -130,21 +130,21 @@ def getCharacterable():
 		obj.append(value)
 	return jsonify(obj)
 
-#GET Reqyest for a single Game
+#GET Request for a single Game
 @app.route("/getGame/",methods=["GET"])
 def getGame():
 	game_id = int(request.args.get('id'))
 	obj = jsonify(gameDict[game_id])
 	return obj
 
-#GET Reqyest for a single character
+#GET Request for a single character
 @app.route("/getCharacter/",methods=["GET"])
 def getCharacter():
 	char_id = int(request.args.get('id'))
 	obj = jsonify(characterDict[char_id])
 	return obj
 	
-#GET Reqyest for a single Platform
+#GET Request for a single Platform
 @app.route("/getPlatform/",methods=["GET"])
 def getPlatform():
 	platform_id = int(request.args.get('id'))
