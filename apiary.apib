@@ -1,0 +1,73 @@
+FORMAT: 1A
+HOST: http://vgidbapi.me/
+
+# VGIDB
+
+VGIDB_API is an API allowing users to access information about their favorite platform, character, or game.
+
+## Character [/character]
+
+### View Character [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Sonic The Hedgehog",
+                "birthday": "1994-6-15",
+                "gender": "male",
+                "aliases": "Gotta go fast!",
+                "game first appeared": "Sonic the hedgehog"
+            }
+        ]
+
+## Game [/game]
+
+### View Game [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Sonic Adventure 2 Battle",
+                "release_date": "6-15-1994,
+                "characters": [
+                    {
+                        "name": "Sonic the hedgehog",
+                        "gender": "male"
+                    }, {
+                        "name": "Amy Rose",
+                        "gender": "female"
+                    }, {
+                        "name": "Myles Tails Prower",
+                        "gender": "male"
+                    
+                    }
+                ],
+                "platforms": [
+                    {
+                        "name": "nintendo gamecube",
+                        "abbreviation": "GBA",
+                        "original release price": 250
+                    }
+                ]
+                
+            }
+        ]
+        
+## Platform [/platform]
+
+### View Platform [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Nintendo Gamecube",
+                "release date": "6-15-1994",
+                "company": "Nintendo",
+                "online_support": "No",
+                "Starting Price": 250
+                "Number of Units Sold": 500000
+            }
+        ]
