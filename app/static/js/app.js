@@ -109,17 +109,30 @@ myApp.controller('charactersCtrl', function($scope, $http){
     }
 })
 
+
+var listVals = ["friends", "enemies", "platforms", "genres", "developers", "characters"];
+
 function fixNullEmpty(obj) {
+    var defaultVal;
     // Fix all the null and empty string values 
     for (var key in obj) {
         if(obj.hasOwnProperty(key)) {
+            if (listVals.indexOf(key) > -1) 
+                defaultVal = [];
+            else
+                defaultVal = "Unknown";
+
             var val = obj[key];
             if(val == null)
-                obj[key] = "Unknown";
+                obj[key] = defaultVal;  
             if((typeof val === 'string' || val instanceof String) && val.length ==0)
-                obj[key] = "Unknown";
+                obj[key] = defaultVal;
         }
     }
+
+    // In case there is no image
+    if (obj.image == null || obj.image.super_url == null) 
+        obj.image ={"super_url" : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"};
     return obj;
 }
 
