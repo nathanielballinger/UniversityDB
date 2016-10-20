@@ -11,15 +11,15 @@ manager = Manager(app)
 
 Base = declarative_base()
 #Many to many relationship table between characters and games
-char_game = db.Table(db.Column('char_id',db.Integer, db.ForeignKey('characters.id')),db.Column('game_id',db.Integer,db.ForeignKey('games.id')))
+char_game = db.Table(db.Column('char_id',db.String, db.ForeignKey('characters.id')),db.Column('game_id',db.String,db.ForeignKey('games.id')))
 
 #Many to many relationship table between games and platforms
-plat_game = db.Table(db.Column('character_id', db.Integer, db.ForeignKey('characters.id')),db.Column('platform_id',db.Integer,db.ForeignKey('platforms.id')))
+plat_game = db.Table(db.Column('character_id', db.String, db.ForeignKey('characters.id')),db.Column('platform_id',db.String,db.ForeignKey('platforms.id')))
 
 class Game(db.Model):
 	__tablename__ = 'games'
 	#Column values are name, release date, genre, developers/publisher, rating of first release
-	id = db.Column(db.Integer, primary_key=True)
+	id = db.Column(db.String, primary_key=True)
 	name = db.Column(db.String)
 	release_date = db.Column(db.String)
 	genre = db.Column(db.String)
@@ -52,12 +52,12 @@ class Game(db.Model):
 class Platform(db.Model):
 	__tablename__ = 'platforms'
 	#Column values are name, release date, company, starting price, number of sold units
-	id = db.Column(db.Integer, primary_key=True)
+	id = db.Column(db.String, primary_key=True)
 	name = db.Column(db.String)
 	release_date = db.Column(db.String)
 	company = db.Column(db.String)
 	starting_price = db.Column(db.String)
-	number_units_sold = db.Column(db.Integer)
+	number_units_sold = db.Column(db.String)
 	#Page values are description, online support flag, abbreviations, site_detail_url, Image
 	description = db.Column(db.String)
 	online_support = db.Column(db.String)
@@ -82,7 +82,7 @@ class Platform(db.Model):
 class Character(db.Model):
 	__tablename__ = 'characters'
 	#Column values are name, birthday, gender, deck, game first appeared in
-	id = db.Column(db.Integer, primary_key=True)
+	id = db.Column(db.String, primary_key=True)
 	name = db.Column(db.String)
 	birthday = db.Column(db.String)
 	gender = db.Column(db.String)
