@@ -85,8 +85,6 @@ def getPlatform():
 	obj = jsonify(platformDict[platform_id])
 	return obj
 
-
-
 def shell_context():
 	context = {
 		'app': app,
