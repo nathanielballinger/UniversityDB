@@ -35,6 +35,19 @@ class Game(db.Model):
 
 	aliases = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
+
+	def __init__(self,id,name,release_date,genre,developers,rating,description,review,image,platforms,characters):
+		self.id = id
+		self.name = name
+		self.release_date = release_date
+		self.genre = genre
+		self.developers = developers
+		self.rating = rating
+		self.description = description
+		self.review = review
+		self.image = image
+		self.platforms = platforms
+		self.characters = characters
 	def __repr__(self):
 		return '<Game %r>' % name
 
@@ -54,6 +67,21 @@ class Platform(db.Model):
 	site_detail_url = db.Column(db.String)
 	image = db.Column(db.String)
 
+	def __init__(self,id,name,release_date,company,starting_price,number_units_sold,description,online_support,abbreviations,site_detail_url,image):
+		self.id = id
+		self.name = name
+		self.release_date = release_date
+		self.company = company
+		self.starting_price = starting_price
+		self.number_units_sold = number_units_sold
+		self.description = description
+		self.online_support = online_support
+		self.abbreviations = abbreviations
+		self.site_detail_url = site_detail_url
+		self.image = image
+
+
+
 
 	def __repr__(self):
 		return '<Platform %r>' % name
@@ -72,6 +100,18 @@ class Character(db.Model):
 	image = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
 	aliases = db.Column(db.String)
+
+	def __init__(self,id,name,birthday,gender,deck,game_first_appeared, description, image, site_detail_url, aliases):
+		self.id = id
+		self.name = name
+		self.gender = gender
+		self.deck
+		self.game_first_appeared
+		self.description = description
+		self.image = image
+		self.site_detail_url = site_detail_url
+		self.aliases = aliases
+
 
 	def __repr__(self):
 		return '<Character %r>' % name 
