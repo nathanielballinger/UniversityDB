@@ -109,6 +109,20 @@ myApp.controller('charactersCtrl', function($scope, $http){
     }
 })
 
+function fixNullEmpty(obj) {
+    // Fix all the null and empty string values 
+    for (var key in obj) {
+        if(obj.hasOwnProperty(key)) {
+            var val = obj[key];
+            if(val == null)
+                obj[key] = "Unknown";
+            if((typeof val === 'string' || val instanceof String) && val.length ==0)
+                obj[key] = "Unknown";
+        }
+    }
+    return obj;
+}
+
 //Controller for one Game
 myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
 
@@ -116,7 +130,7 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
 
     $http.get("/getGame/?id="+gameId)
     .then(function (response) {
-        $scope.game = response.data;
+        $scope.game = fixNullEmpty(response.data);
         console.log($scope.game)
     })
 
@@ -129,34 +143,13 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
 
 }]);
 
-
-function formatCharObj(character) {
-    // Fix all the null and empty string values 
-    for (var key in character) {
-        if(character.hasOwnProperty(key)) {
-            var val = character[key];
-            if(val == null)
-                character[key] = "Unknown";
-            if((typeof val === 'string' || val instanceof String) && val.length ==0)
-                character[key] = "Unknown";
-        }
-    }
-
-    if(character.gender == 1) 
-        character.gender = "Male";
-    else
-        character.gender = "Female";
-    return character;
-}
-
 //Controller for one Character
 myApp.controller('characterCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
     var characterId = $routeParams.id;
 
     $http.get("/getCharacter/?id="+characterId)
     .then(function (response) {
-        $scope.character = response.data;
-        $scope.character = formatCharObj($scope.character);
+        $scope.character = fixNullEmpty(response.data);
         console.log($scope.character);
     })
 

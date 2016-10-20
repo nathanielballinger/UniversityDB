@@ -9,7 +9,7 @@
 			<p> Name: {{character.name}}</p>
 	        <p> Aliases: {{character.aliases.split("\r\n").join(", ")}}</p>
 	        <p> Birthday: {{character.birthday}} </p>
-	        <p> Gender: {{character.gender}} </p>
+	        <p> Gender: {{character.gender == 1 ? 'Male' : 'Female'}} </p>
 	        <p> Description: {{character.deck}} </p>
 			<p>First appearance in: <a href="#/game/{{character.first_appeared_in_game.id}}"> {{character.first_appeared_in_game.name}} </a> </p> 
 			<p><span ng-repeat="friend in character.friends">
