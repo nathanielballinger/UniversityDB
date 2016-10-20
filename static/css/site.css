@@ -18,6 +18,11 @@ img {
     margin: auto;
 }
 
+.img-rounded{
+  height: 250px;
+  width: 250px;
+}
+
 .col-md-6{
   color: black;
   padding: 20px;
