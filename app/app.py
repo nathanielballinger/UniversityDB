@@ -16,19 +16,19 @@ manager = Manager(app)
 #Code to load up temp data from JSON files
 gameDict = dict()
 for x in range(1,4):
-	with open('/static/json/game'+str(x)+'.json') as data_file:
+	with open('static/json/game'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		gameDict[data['id']] = data
 
 characterDict = dict()
 for x in range(1,4):
-	with open('/static/json/character'+str(x)+'.json') as data_file:
+	with open('static/json/character'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		characterDict[data['id']] = data
 
 platformDict = dict()
 for x in range(1,4):
-	with open('/static/json/platform'+str(x)+'.json') as data_file:
+	with open('static/json/platform'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		platformDict[data['id']] = data
 
