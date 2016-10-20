@@ -106,8 +106,24 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h3>Data </h3>
-            <p> Need links to the data sources and  description of how each was scraped!</p>
+            <h3>Data Scraping</h3>
+            <p> Our data is being pulled from the Giant Bomb API. The Giant Bomb API is a RESTful API that responds to HTTP GET requests. They have a very wide variety of information over lots of video game related topics so we were able to get creative with our pillar selection. We ended up choosing the pillars that we did because we thought it would be interesting, useful, and different than any other group's topics. To get an API key we made an account and made an agreement to credit them in the work that we do. Once we had this key we were able to generate our JSON files by simply creating a variable in a .py file and executing curl commands on the command line to generate the JSON files. In order to acquire each JSON file we simply changed the URL of the game/platform/character we were trying to access. </p>
+
+            <p align="center">
+                <img src="static/img/Screen Shot 2016-10-19 at 5.30.16 PM.png"></img>
+                <b>Code snippet to generate JSON files</b>
+            </p>
+
+            <p>The API key is stored as a variable (not shown). In order to figure out which pillars and categories we decided from <a href="http://www.giantbomb.com/api/documentation#toc-0-5">here</a>. We repeated a similar process for characters and platforms. </p>
+
+            <p>After a few Visual Studio commands to pretty up the code, our JSON files looked as such:</p>
+
+            <p align="center">
+                <img src="static/img/Screen Shot 2016-10-19 at 5.52.27 PM.png"></img>
+                <b>Our JSON files from our GET Requests</b>
+            </p>
+
+            <p>This is only a small portion of the JSON snippet for a single game, but the rest can be inferred from above. With this data we can parse the JSON file to acquire the parts that we need and insert them into the HTML Web Page.</p>
         </div>
     </div>
 </div>
