@@ -8,15 +8,18 @@
 		<div class="col-md-6">
 			<p> Name: {{game.name}}</p>
 	        <p> Aliases: {{game.aliases.split("\r\n").join(", ")}}</p>
-	        <p> Birthday: {{game.birthday}} </p>
-	        <p> Gender: {{game.gender == 1 ? 'Male' : 'Female'}} </p>
-	        <p> Description: {{game.deck}} </p>
-			<p>First appearance in: <a href="#/game/{{game.first_appeared_in_game.id}}"> {{game.first_appeared_in_game.name}} </a> </p> 
-			<p><span ng-repeat="friend in game.friends">
-	    		{{$first ? 'Friends: ' : ''}}<a href="#/game/{{friend.id}}">{{friend.name}}</a>{{$last ? '' : ', '}}
+	        <p> Original Release date: {{game.original_release_date}} </p> 
+			<p><span ng-repeat="platform in game.platforms">
+	    		{{$first ? 'Platforms: ' : ''}}<a href="#/platform/{{platform.id}}">{{platform.name}}</a>{{$last ? '' : ', '}}
 			</span></p>
-	        <p><span ng-repeat="enemy in game.enemies">
-	    		{{$first ? 'Enemies: ' : ''}}<a href="#/game/{{enemy.id}}">{{enemy.name}}</a>{{$last ? '' : ', '}}
+	        <p><span ng-repeat="genre in game.genres">
+	    		{{$first ? 'Genres: ' : ''}}{{genre.name}}{{$last ? '' : ', '}}
+			</span></p>
+			<p><span ng-repeat="dev in game.developers">
+	    		{{$first ? 'Developers: ' : ''}}{{dev.name}}{{$last ? '' : ', '}}
+			</span></p>
+			<p><span ng-repeat="character in game.characters">
+	    		{{$first ? 'Characters: ' : ''}}<a href="#/character/{{character.id}}">{{character.name}}</a>{{$last ? '' : ', '}}
 			</span></p>
 		</div>
 
