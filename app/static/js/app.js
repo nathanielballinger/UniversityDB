@@ -196,29 +196,45 @@ myApp.controller('platformCtrl', ['$scope','$routeParams', '$http', function($sc
 }]);
 
 //Controller for about page
+var scope;
 myApp.controller('aboutCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
-    $scope.contri = {
-        "Eitan-Yarmush" : 0,
-        "Kwong98" : 0,
-        "ctc837" : 0,
-        "abhirathod95" : 0,
-        "nathanielballinger" : 0
-    }
     var usernameToName = {
         "Eitan-Yarmush" : "eitan",
         "Kwong98" : "keith",
         "ctc837" : "chris",
         "abhirathod95" : "abhi",
-        "nathanielballinger" : "nathan"
+        "nathanielballinger" : "nathan",
+        "total" : "total"
+    }
+
+    for (var key in usernameToName) {
+        $scope[usernameToName[key]] = {"contributions" : 0, "issues" : 0};
     }
     $http.get("https://api.github.com/repos/nathanielballinger/cs373-idb/contributors")
     .then(function (response) {
         var data = response.data;
         for(var i = 0; i < data.length; i++) {
             var username = data[i].login;
+            console.log(username);
             if(username == "EItanya")
-                $scope.contri.eitan += data[i].contributions;
-            $scope.contri[usernameToName[username]] = data[i].contributions;
+                $scope.eitan.contributions += data[i].contributions;
+            else 
+                $scope[usernameToName[username]].contributions = data[i].contributions;
+
+            $scope.total.contributions += data[i].contributions;
+        }
+    })
+
+    $http.get("https://api.github.com/repos/nathanielballinger/cs373-idb/issues?per_page=100&state=all")
+    .then(function (response) {
+        var data = response.data;
+        for(var i = 0; i < data.length; i++) {
+            var username = data[i].user.login;
+            if(username == "EItanya")
+                $scope.eitan.issues += 1;
+            else
+                $scope[usernameToName[username]].issues += 1;
+            $scope.total.issues += 1;
         }
     })
 
@@ -228,7 +244,7 @@ myApp.controller('aboutCtrl', ['$scope','$routeParams', '$http', function($scope
     $scope.init = function() {
         console.log("Hello World from platform");
     }
-
+    scope = $scope;
 }]);
 
 
