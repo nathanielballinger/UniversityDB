@@ -48,8 +48,6 @@ class Game(db.Model):
 		self.image = image
 		self.platforms = platforms
 		self.characters = characters
-	def __repr__(self):
-		return '<Game %r>' % name
 
 class Platform(db.Model):
 	__tablename__ = 'platforms'
@@ -81,11 +79,6 @@ class Platform(db.Model):
 		self.image = image
 
 
-
-
-	def __repr__(self):
-		return '<Platform %r>' % name
-
 class Character(db.Model):
 	__tablename__ = 'characters'
 	#Column values are name, birthday, gender, deck, game first appeared in
@@ -111,7 +104,3 @@ class Character(db.Model):
 		self.image = image
 		self.site_detail_url = site_detail_url
 		self.aliases = aliases
-
-
-	def __repr__(self):
-		return '<Character %r>' % name 
