@@ -1,3 +1,124 @@
+commit fac65a42b9030b36dead202dc6b71d9badd67d7d
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 19:32:41 2016 -0500
+
+    Update README.md
+
+commit edda4b083dadaf0b3744560cd1afd0ba2cab8a87
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 19:31:31 2016 -0500
+
+    Update README.md
+
+commit d61308921ae5b8fb67d7c4e89546c0dfff1f0640
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 19:30:23 2016 -0500
+
+    Added app.html
+
+commit f59506d1e4d22590af9d9f2f03e4f47e3db4e634
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 19:12:26 2016 -0500
+
+    Phase 1 turning process activated
+
+commit f5789458b174bdddf0b25d1ee65df7cf5a427a71
+Merge: 32b8eb6 5eedfaa
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 18:32:58 2016 -0500
+
+    Merge branch 'master' into dev
+
+commit 32b8eb63f9a0d83e15605c3db3b8cc248dcfd42b
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 18:32:32 2016 -0500
+
+    Make final last changes
+
+commit 5eedfaa40f5401a89ae3cac98003b88370c8e28b
+Author: Nathaniel E Ballinger <nathanielballinger@utexas.edu>
+Date:   Thu Oct 20 18:30:03 2016 -0500
+
+    Update README.md
+
+commit c39bdc304cb23754940f526baf51b04244e726e3
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 18:18:21 2016 -0500
+
+    Fixed apiary link
+
+commit b4a282cce630987f3223741bbab337d978f0f212
+Author: Nathaniel E Ballinger <nathanielballinger@utexas.edu>
+Date:   Thu Oct 20 18:06:28 2016 -0500
+
+    Update README.md
+
+commit 8d77aecc4cbeec5730738517582fbb7bb4d126fd
+Author: Nathaniel E Ballinger <nathanielballinger@utexas.edu>
+Date:   Thu Oct 20 18:02:04 2016 -0500
+
+    Update README.md
+
+commit 1a56cd6e5b5507cd2a5ce8b654761f7c5db6bf04
+Merge: cca3fef 011dec5
+Author: Eitan Yarmush <barca7life@gmail.com>
+Date:   Thu Oct 20 17:16:29 2016 -0500
+
+    Merge pull request #30 from nathanielballinger/dev
+    
+    Dev
+
+commit 011dec5d04e9d504bfdede37031d06f0ba930526
+Merge: c14bfeb cca3fef
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Oct 20 16:36:39 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    merge with dev
+
+commit c14bfeb1346f0816cdca3064853085492a3689c2
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Oct 20 16:36:33 2016 -0500
+
+    Made sorting possible and also added underscore.js, my favority thing
+
+commit cca3fefcf1f06d35783566242160f057f2fe5790
+Merge: 21a8c61 f89254b
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 15:42:25 2016 -0500
+
+    Merge branch 'master' into dev
+
+commit 21a8c612e7528f7d2cf8f199ecac01fb5136eb02
+Author: Nathaniel E Ballinger <nathanielballinger@utexas.edu>
+Date:   Thu Oct 20 15:38:28 2016 -0500
+
+    Update apiary.apib
+
+commit f89254bd673d84ad66ec58a5de45698627a30953
+Author: Nathaniel E Ballinger <nathanielballinger@gmail.com>
+Date:   Thu Oct 20 15:37:53 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit f4b7311d3c5571a84519677472c8f90db8e49f9a
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 15:37:16 2016 -0500
+
+    Fixed types, added test cases
+
+commit fcfddf6f2283c8c3b5ef7de5160245c9e80e9710
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 14:40:01 2016 -0500
+
+    Adding IDB1.log
+
+commit 144a14eb1844580bf484a9ab20dcb0d8a02bef49
+Author: Nathaniel E Ballinger <nathanielballinger@gmail.com>
+Date:   Thu Oct 20 14:25:24 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
 commit 87fa96299386fc616a5aed174307a1ba2d39cb2b
 Author: Christopher Collier <christopher.collier@utexas.edu>
 Date:   Thu Oct 20 13:22:12 2016 -0500
