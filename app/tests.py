@@ -107,7 +107,7 @@ class TestCases (TestCase):
 	def test_case_character_1(self):
 		character1 = Character("1", "Sub-Zero", "Male", "DECK", "Mortal Kombat", \
 			"Sub-Zero is a video game character from the Mortal Kombat series and one of the original characters in the first Mortal Kombat game in 1992. A mainstay of the series, Sub-Zero is the only character who has appeared in every main Mortal Kombat fighting game. The character also appears in many other Mortal Kombat media works such as the Mortal Kombat live action film series and animated series.", \
-			"IMAGE", "URL", "None")
+			"IMAGE", "URL", "None","None")
 
 		self.assertEqual(character1.id, "1")
 		self.assertEqual(character1.name, "Sub-Zero")
@@ -116,7 +116,7 @@ class TestCases (TestCase):
 	def test_case_character_2(self):
 		character2 = Character("2", "Mario", "Male", "DECK", "Donkey Kong", \
 			"Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by video game designer Shigeru Miyamoto. Serving as the company's mascot and the eponymous protagonist of the series, Mario has appeared in over 200 video games since his creation. Depicted as a short, pudgy, Italian plumber who resides in the Mushroom Kingdom, his adventures generally center upon rescuing Princess Peach from the Koopa villain Bowser. His younger brother is Luigi.", \
-			"IMAGE", "URL", "None")
+			"IMAGE", "URL", "None","None")
 
 		self.assertEqual(character2.id, "2")
 		self.assertEqual(character2.game_first_appeared, "Donkey Kong")
@@ -125,14 +125,14 @@ class TestCases (TestCase):
 	def test_case_character_3(self):
 		character3 = Character("3", "Brock", "Male", "DECK", "Pokémon Red and Blue", \
 			"Brock is a fictional character in the Pokémon franchise owned by Nintendo. In the Pokémon video games, he is the Gym Leader of Pewter City and mainly uses Rock-type Pokémon. In the anime series, Ash comes across a man that is later revealed to be Brock's father. He explains that Brock wanted to become a Pokémon Master but due to his father leaving, Brock had to take care of his many, many siblings and could not leave. This is why he became a gym leader, to stay close to his family. His father comes back and states he will take care of the family. Brock left his position as a Gym Leader to travel alongside Ash Ketchum and became a revered Pokémon Breeder. He later cultivates his skill in medicine. As of the latest Japanese episode, Brock is at Pewter City to train to be a Pokémon Doctor.", \
-			"IMAGE", "URL", "None")
+			"IMAGE", "URL", "None","None")
 
 		self.assertEqual(character3.id, "3")
 		self.assertEqual(character3.name, "Brock")
 		self.assertEqual(character3.game_first_appeared, "Pokémon Red and Blue")
 
 	def test_case_character_4(self):
-		character4 = Character(" "," "," "," "," "," "," "," "," ")
+		character4 = Character(" "," "," "," "," "," "," "," "," "," ")
 		
 		self.assertEqual(character4.id, " ")
 		self.assertEqual(character4.name, " ")
