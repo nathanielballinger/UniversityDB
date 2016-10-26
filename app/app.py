@@ -18,19 +18,19 @@ manager = Manager(app)
 #Code to load up temp data from JSON files
 gameDict = dict()
 for x in range(1,4):
-	with open('static/json/game'+str(x)+'.json') as data_file:
+	with open('app/static/json/game'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		gameDict[data['id']] = data
 
 characterDict = {}
 for x in range(1,4):
-	with open('static/json/character'+str(x)+'.json') as data_file:
+	with open('app/static/json/character'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		characterDict[data['id']] = data
 
 platformDict = dict()
 for x in range(1,4):
-	with open('static/json/platform'+str(x)+'.json') as data_file:
+	with open('app/static/json/platform'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		platformDict[data['id']] = data
 
@@ -84,6 +84,27 @@ def getPlatform():
 	platform_id = int(request.args.get('id'))
 	obj = jsonify(platformDict[platform_id])
 	return obj
+
+
+
+# api interface
+@app.route('/api/')
+def api_root():
+	data = {
+		'urls': {
+			'games_url': '/games',
+			'characters_url': '/characters',
+			'platforms_url': '/platforms'
+		}
+	}
+	return jsonify(data)
+
+@app.route('/api/games/')
+def api_games_all():
+	jsonData = {}
+	for data in Game.query:
+		jsonData[data.name] = data.serialize()
+	return jsonify(jsonData)
 
 def shell_context():
 	context = {

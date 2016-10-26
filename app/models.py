@@ -17,6 +17,9 @@ char_game = db.Table(db.Column('char_id',db.String, db.ForeignKey('characters.id
 #Many to many relationship table between games and platforms
 plat_game = db.Table(db.Column('character_id', db.String, db.ForeignKey('characters.id')),db.Column('platform_id',db.String,db.ForeignKey('platforms.id')))
 
+#Many to many relationship table between platforms and characters
+plat_char = db.Table(db.Column('platform_id', db.String, db.ForeignKey('platforms.id')),db.Column('character_id',db.String,db.ForeignKey('characters.id')))
+
 class Game(db.Model):
 	__tablename__ = 'games'
 	#Column values are name, release date, genre, developers/publisher, rating of first release
@@ -65,6 +68,9 @@ class Platform(db.Model):
 	abbreviations = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
 	image = db.Column(db.String)
+
+	games = db.relationship('Game', secondary = plat_game, backref = db.backref('platforms'))
+	characters = db.relationship('Character', secondary = plat_char, backref = db.backref('platforms'))
 
 	def __init__(self,id,name,release_date,company,starting_price,number_units_sold,description,online_support,abbreviations,site_detail_url,image):
 		self.id = id
