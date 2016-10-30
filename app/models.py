@@ -27,15 +27,15 @@ class Game(db.Model):
 	__tablename__ = 'games'
 	#Column values are name, release date, genre, developers/publisher, rating of first release
 	id = db.Column(db.String, primary_key=True)
-	name = db.Column(db.String)
-	release_date = db.Column(db.String)
-	genre = db.Column(db.String)
-	developers = db.Column(db.String)
-	rating = db.Column(db.String)
+	name = db.Column(db.String, default = None)
+	release_date = db.Column(db.String, default = None)
+	genre = db.Column(db.String, default = None)
+	developers = db.Column(db.String, default = None)
+	rating = db.Column(db.String, default = None)
 	#Page values are description, review, image, platforms, characters, aliases, site detail url
-	description = db.Column(db.String)
-	review = db.Column(db.String)
-	image = db.Column(db.String)
+	description = db.Column(db.String, default = None)
+	review = db.Column(db.String, default = None)
+	image = db.Column(db.String, default = None)
 	#Define relationship with platforms. Links to table. Backref creates new property of platforms that list all games
 	platforms = db.relationship('Platform', secondary = plat_game, backref = db.backref('games'))
 	characters = db.relationship('Character', secondary = char_game, backref = db.backref('games'))
@@ -159,7 +159,4 @@ for platform in platforms:
 for character in characters:
 	t = requests.get(character, headers = headers)
 """
-q = requests.get(platforms[0],headers = headers)
-print(q.json())
-v = requests.get(characters[0], headers = headers)
-#print(v.json())
+#Now we need to loop through every element in the json and add them to db
