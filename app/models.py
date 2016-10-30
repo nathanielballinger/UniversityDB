@@ -15,13 +15,13 @@ manager = Manager(app)
 
 Base = declarative_base()
 #Many to many relationship table between characters and games
-char_game = db.Table(db.Column('char_id',db.String, db.ForeignKey('characters.id')),db.Column('game_id',db.String,db.ForeignKey('games.id')))
+#char_game = db.Table(db.Column('char_id',db.String, db.ForeignKey('characters.id')),db.Column('game_id',db.String,db.ForeignKey('games.id')))
 
 #Many to many relationship table between games and platforms
-plat_game = db.Table(db.Column('character_id', db.String, db.ForeignKey('characters.id')),db.Column('platform_id',db.String,db.ForeignKey('platforms.id')))
+#plat_game = db.Table(db.Column('character_id', db.String, db.ForeignKey('characters.id')),db.Column('platform_id',db.String,db.ForeignKey('platforms.id')))
 
 #Many to many relationship table between platforms and characters
-plat_char = db.Table(db.Column('platform_id', db.String, db.ForeignKey('platforms.id')),db.Column('character_id',db.String,db.ForeignKey('characters.id')))
+#plat_char = db.Table(db.Column('platform_id', db.String, db.ForeignKey('platforms.id')),db.Column('character_id',db.String,db.ForeignKey('characters.id')))
 
 class Game(db.Model):
 	__tablename__ = 'games'
@@ -37,12 +37,12 @@ class Game(db.Model):
 	review = db.Column(db.String, default = None)
 	image = db.Column(db.String, default = None)
 	#Define relationship with platforms. Links to table. Backref creates new property of platforms that list all games
-	platforms = db.relationship('Platform', secondary = plat_game, backref = db.backref('games'))
-	characters = db.relationship('Character', secondary = char_game, backref = db.backref('games'))
+	#platforms = db.relationship('Platform', secondary = plat_game, backref = db.backref('games'))
+	#characters = db.relationship('Character', secondary = char_game, backref = db.backref('games'))
 
 	aliases = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
-
+	"""
 	def __init__(self,id,name,release_date,genre,developers,rating,description,review,image,platforms,characters):
 		self.id = id
 		self.name = name
@@ -55,7 +55,7 @@ class Game(db.Model):
 		self.image = image
 		self.platforms = platforms
 		self.characters = characters
-
+	"""
 	def __repr__(self):
 		return '<Game %r>' % self.name
 
@@ -63,21 +63,21 @@ class Platform(db.Model):
 	__tablename__ = 'platforms'
 	#Column values are name, release date, company, starting price, number of sold units
 	id = db.Column(db.String, primary_key=True)
-	name = db.Column(db.String)
-	release_date = db.Column(db.String)
-	company = db.Column(db.String)
-	starting_price = db.Column(db.String)
-	number_units_sold = db.Column(db.String)
+	name = db.Column(db.String, default = None)
+	release_date = db.Column(db.String, default = None)
+	company = db.Column(db.String, default = None)
+	starting_price = db.Column(db.String, default = None)
+	number_units_sold = db.Column(db.String, default = None)
 	#Page values are description, online support flag, abbreviations, site_detail_url, Image
-	description = db.Column(db.String)
-	online_support = db.Column(db.String)
-	abbreviations = db.Column(db.String)
-	site_detail_url = db.Column(db.String)
-	image = db.Column(db.String)
+	description = db.Column(db.String, default = None)
+	online_support = db.Column(db.String, default = None)
+	abbreviations = db.Column(db.String, default = None)
+	site_detail_url = db.Column(db.String, default = None)
+	image = db.Column(db.String, default = None)
 
-	games = db.relationship('Game', secondary = plat_game, backref = db.backref('platforms'))
-	characters = db.relationship('Character', secondary = plat_char, backref = db.backref('platforms'))
-
+	#games = db.relationship('Game', secondary = plat_game, backref = db.backref('platforms'))
+	#characters = db.relationship('Character', secondary = plat_char, backref = db.backref('platforms'))
+	"""
 	def __init__(self,id,name,release_date,company,starting_price,number_units_sold,description,online_support,abbreviations,site_detail_url,image):
 		self.id = id
 		self.name = name
@@ -90,7 +90,7 @@ class Platform(db.Model):
 		self.abbreviations = abbreviations
 		self.site_detail_url = site_detail_url
 		self.image = image
-
+	"""
 	def __repr__(self):
 		return '<Platform %r>' % self.name
 
@@ -99,29 +99,31 @@ class Character(db.Model):
 	__tablename__ = 'characters'
 	#Column values are name, birthday, gender, deck, game first appeared in
 	id = db.Column(db.String, primary_key=True)
-	name = db.Column(db.String)
-	birthday = db.Column(db.String)
-	gender = db.Column(db.String)
-	deck = db.Column(db.String)
-	game_first_appeared = db.relationship('Game', backref = 'person')
+	name = db.Column(db.String, default = None)
+	birthday = db.Column(db.String, default = None)
+	gender = db.Column(db.String, default = None)
+	deck = db.Column(db.String, default = None)
+	#first_appeared_in_game = db.relationship('Game', backref = 'person')
 	#Page Values are Description, Image, Site_Detail_URL, aliases
-	description = db.Column(db.String)
-	image = db.Column(db.String)
-	site_detail_url = db.Column(db.String)
-	aliases = db.Column(db.String)
-
-	def __init__(self,id,name,birthday,gender,deck,game_first_appeared, description, image, site_detail_url, aliases):
+	description = db.Column(db.String, default = None)
+	image = db.Column(db.String, default = None)
+	site_detail_url = db.Column(db.String, default = None)
+	aliases = db.Column(db.String, default = None)
+	"""
+	#Add first appeared in game back to init
+	def __init__(self,id,name,birthday,gender,deck, description, image, site_detail_url, aliases):
 		self.id = id
 		self.name = name
+		self.birthday = birthday
 		self.gender = gender
-		self.deck
-		self.game_first_appeared
+		self.deck = deck
+		#self.first_appeared_in_game = first_appeared_in_game
 		self.description = description
 		self.image = image
 		self.site_detail_url = site_detail_url
 		self.aliases = aliases
-
+	"""
 	def __repr__(self):
-		return '<Character %r> % self.name'
+		return '<Character %r>' % self.name
 
 
