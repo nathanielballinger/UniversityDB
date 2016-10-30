@@ -7,12 +7,7 @@ import requests
 import json
 import urllib.request 
 import time
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
-
-db = SQLAlchemy(app)
-manager = Manager(app)
+from models import db
 
 Base = declarative_base()
 
@@ -57,13 +52,18 @@ for character in characters:
 """
 
 v = requests.get(characters[0], headers = headers)
-data = v.json()
+character_data = v.json()
 for entry in data['results']:
-	c = Character(name = entry['name'], birthday = entry['birthday'], gender = entry['gender'], deck = entry['deck'], description = entry['description'], image = entry['image'], site_detail_url = entry['site_detail_url'], aliases = entry['aliases'])
+	image_dict = entry['image']
+	tiny_image = image_dict['tiny_url']
+	medium_image = image_dict['medium_url']
+	first_appeared = entry['first_appeared_in_game']['id']
+	c = Character(id = entry['id'], name = entry['name'], birthday = entry['birthday'], gender = entry['gender'], deck = entry['deck'], description = entry['description'], tiny_image = tiny_image, medium_image = medium_image, site_detail_url = entry['site_detail_url'], aliases = entry['aliases'],first_appeared_in_game = first_appeared)
+	print(first_appeared)
 	db.session.add(c)
 	db.session.commit()
-	print("Are we here")
+	print(c.id)
+print("fuck you")
 
-print ("fuck you")
 #Now we need to loop through every element in the json and add them to db
 

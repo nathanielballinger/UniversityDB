@@ -8,12 +8,14 @@ import json
 import urllib.request 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe1'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
 
 Base = declarative_base()
+
+db.create_all()
 #Many to many relationship table between characters and games
 #char_game = db.Table(db.Column('char_id',db.String, db.ForeignKey('characters.id')),db.Column('game_id',db.String,db.ForeignKey('games.id')))
 
@@ -26,7 +28,7 @@ Base = declarative_base()
 class Game(db.Model):
 	__tablename__ = 'games'
 	#Column values are name, release date, genre, developers/publisher, rating of first release
-	id = db.Column(db.String, primary_key=True)
+	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String, default = None)
 	release_date = db.Column(db.String, default = None)
 	genre = db.Column(db.String, default = None)
@@ -35,10 +37,13 @@ class Game(db.Model):
 	#Page values are description, review, image, platforms, characters, aliases, site detail url
 	description = db.Column(db.String, default = None)
 	review = db.Column(db.String, default = None)
-	image = db.Column(db.String, default = None)
+	tiny_image = db.Column(db.String, default = None)
+	medium_image = db.Column(db.String, default = None)
 	#Define relationship with platforms. Links to table. Backref creates new property of platforms that list all games
 	#platforms = db.relationship('Platform', secondary = plat_game, backref = db.backref('games'))
 	#characters = db.relationship('Character', secondary = char_game, backref = db.backref('games'))
+	platoforms = db.Column(db.String, default = None)
+	characters = db.Column(db.String, default = None)
 
 	aliases = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
@@ -62,7 +67,7 @@ class Game(db.Model):
 class Platform(db.Model):
 	__tablename__ = 'platforms'
 	#Column values are name, release date, company, starting price, number of sold units
-	id = db.Column(db.String, primary_key=True)
+	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String, default = None)
 	release_date = db.Column(db.String, default = None)
 	company = db.Column(db.String, default = None)
@@ -73,7 +78,9 @@ class Platform(db.Model):
 	online_support = db.Column(db.String, default = None)
 	abbreviations = db.Column(db.String, default = None)
 	site_detail_url = db.Column(db.String, default = None)
-	image = db.Column(db.String, default = None)
+	tiny_image = db.Column(db.String, default = None)
+	medium_image = db.Column(db.String, default = None)
+	games = db.Column(db.String, default = None)
 
 	#games = db.relationship('Game', secondary = plat_game, backref = db.backref('platforms'))
 	#characters = db.relationship('Character', secondary = plat_char, backref = db.backref('platforms'))
@@ -98,17 +105,19 @@ class Platform(db.Model):
 class Character(db.Model):
 	__tablename__ = 'characters'
 	#Column values are name, birthday, gender, deck, game first appeared in
-	id = db.Column(db.String, primary_key=True)
+	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String, default = None)
 	birthday = db.Column(db.String, default = None)
-	gender = db.Column(db.String, default = None)
+	gender = db.Column(db.Integer, default = None)
 	deck = db.Column(db.String, default = None)
 	#first_appeared_in_game = db.relationship('Game', backref = 'person')
 	#Page Values are Description, Image, Site_Detail_URL, aliases
 	description = db.Column(db.String, default = None)
-	image = db.Column(db.String, default = None)
+	tiny_image = db.Column(db.String, default = None)
+	medium_image = db.Column(db.String, default = None)
 	site_detail_url = db.Column(db.String, default = None)
 	aliases = db.Column(db.String, default = None)
+	first_appeared_in_game = db.Column(db.Integer, default = None)
 	"""
 	#Add first appeared in game back to init
 	def __init__(self,id,name,birthday,gender,deck, description, image, site_detail_url, aliases):
@@ -127,3 +136,5 @@ class Character(db.Model):
 		return '<Character %r>' % self.name
 
 
+if __name__ == "__main__":
+    manager.run()       # Update this line to use the manager
