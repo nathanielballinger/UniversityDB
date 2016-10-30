@@ -53,6 +53,9 @@ class Game(db.Model):
 		self.platforms = platforms
 		self.characters = characters
 
+	def __repr__(self):
+		return '<Game %r>' % self.name
+
 class Platform(db.Model):
 	__tablename__ = 'platforms'
 	#Column values are name, release date, company, starting price, number of sold units
@@ -85,6 +88,9 @@ class Platform(db.Model):
 		self.site_detail_url = site_detail_url
 		self.image = image
 
+	def __repr__(self):
+		return '<Platform %r>' % self.name
+
 
 class Character(db.Model):
 	__tablename__ = 'characters'
@@ -111,3 +117,6 @@ class Character(db.Model):
 		self.image = image
 		self.site_detail_url = site_detail_url
 		self.aliases = aliases
+
+	def __repr__(self):
+		return '<Character %r> % self.name'
