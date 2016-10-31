@@ -53,17 +53,41 @@ for character in characters:
 
 v = requests.get(characters[0], headers = headers)
 character_data = v.json()
-for entry in data['results']:
+for entry in character_data['results']:
 	image_dict = entry['image']
 	tiny_image = image_dict['tiny_url']
 	medium_image = image_dict['medium_url']
 	first_appeared = entry['first_appeared_in_game']['id']
 	c = Character(id = entry['id'], name = entry['name'], birthday = entry['birthday'], gender = entry['gender'], deck = entry['deck'], description = entry['description'], tiny_image = tiny_image, medium_image = medium_image, site_detail_url = entry['site_detail_url'], aliases = entry['aliases'],first_appeared_in_game = first_appeared)
-	print(first_appeared)
+	#print(first_appeared)
 	db.session.add(c)
 	db.session.commit()
-	print(c.id)
-print("fuck you")
+	#print(c.id)
+
+v = requests.get(games[0], headers = headers)
+game_data = v.json()
+for entry in game_data['results']:
+	image_dict = entry['image']
+	tiny_image = image_dict['tiny_url']
+	medium_image = image_dict['medium_url']
+	plat_string = ''
+	plat_data = entry['platforms']
+	for plat in plat_data:
+		plat_string += str(plat['id']) + '.'
+	g = Game(id = entry['id'], entry['name'], release_date = entry['original_release_date'], description = entry['description'], tiny_image = tiny_image, medium_image = medium_image, platforms = plat_string, aliases = entry['aliases'], site_detail_url = entry['site_detail_url'])
+	db.session.add(g)
+	db.session.commit()
+
+v = requests.get(platforms[0], headers = headers)
+platform_data = v.json()
+for entry in platform_data['results']:
+	image_dict = entry['image']
+	tiny_image = image_dict['tiny_url']
+	medium_image = image_dict['medium_url']
+	p = Platform(id = entry['id'], name = entry['name'], release_date = entry['release_date'], company = entry['company']['name'], starting_price = entry['original_price'], description = entry['description'], online_support = entry['online_support'], abbreviations = entry['abbrevation'], site_detail_url = entry['site_detail_url'], tiny_image = tiny_image, medium_image = medium_image)
+	db.session.add(g)
+	db.session.commit()
+
 
 #Now we need to loop through every element in the json and add them to db
 

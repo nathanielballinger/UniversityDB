@@ -31,19 +31,19 @@ class Game(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String, default = None)
 	release_date = db.Column(db.String, default = None)
-	genre = db.Column(db.String, default = None)
-	developers = db.Column(db.String, default = None)
-	rating = db.Column(db.String, default = None)
+	#genre = db.Column(db.String, default = None)
+	#developers = db.Column(db.String, default = None)
+	#rating = db.Column(db.String, default = None) #uhhh...it has the rating as in maturity level but not quality of game
 	#Page values are description, review, image, platforms, characters, aliases, site detail url
 	description = db.Column(db.String, default = None)
-	review = db.Column(db.String, default = None)
+	#review = db.Column(db.String, default = None)
 	tiny_image = db.Column(db.String, default = None)
 	medium_image = db.Column(db.String, default = None)
 	#Define relationship with platforms. Links to table. Backref creates new property of platforms that list all games
 	#platforms = db.relationship('Platform', secondary = plat_game, backref = db.backref('games'))
 	#characters = db.relationship('Character', secondary = char_game, backref = db.backref('games'))
-	platoforms = db.Column(db.String, default = None)
-	characters = db.Column(db.String, default = None)
+	platforms = db.Column(db.String, default = None)
+	#characters = db.Column(db.String, default = None)
 
 	aliases = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
@@ -72,10 +72,10 @@ class Platform(db.Model):
 	release_date = db.Column(db.String, default = None)
 	company = db.Column(db.String, default = None)
 	starting_price = db.Column(db.String, default = None)
-	number_units_sold = db.Column(db.String, default = None)
+	#number_units_sold = db.Column(db.String, default = None)
 	#Page values are description, online support flag, abbreviations, site_detail_url, Image
 	description = db.Column(db.String, default = None)
-	online_support = db.Column(db.String, default = None)
+	online_support = db.Column(db.Boolean, default = None)
 	abbreviations = db.Column(db.String, default = None)
 	site_detail_url = db.Column(db.String, default = None)
 	tiny_image = db.Column(db.String, default = None)
