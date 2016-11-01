@@ -42,6 +42,8 @@ class Game(db.Model):
 	def serialize(self):
 		result = get_dict_from_obj(self)
 		parsedPlatforms = re.split(r"\.", result["platforms"])
+		parsedCharacters = re.split(r"\.", result["character"])
+		result["character"] = parsedCharacters
 		result["platforms"] = parsedPlatforms
 		return result
 
