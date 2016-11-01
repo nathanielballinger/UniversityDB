@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 manager = Manager(app)
 
 
-
+"""
 #Code to load up temp data from JSON files
 gameDict = dict()
 for x in range(1,4):
@@ -33,6 +33,14 @@ for x in range(1,4):
 	with open('static/json/platform'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		platformDict[data['id']] = data
+"""
+gameDict = dict()
+for x in range(1,56877):
+	b = Game.query.filter_by(id = i).first()
+	if b is None:
+		continue
+characterDict = dict()
+platformDict = dict()
 
 
 @app.route("/")
