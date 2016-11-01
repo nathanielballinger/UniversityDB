@@ -48,6 +48,9 @@ def index():
 	return send_file("templates/index.html")
 
 
+
+### -------------OUTDATED! USE API CALLS NOW----------- ###
+
 #Get request for a list of all games
 @app.route("/getGameTable/",methods=["GET"])
 def getGameTable():
@@ -95,6 +98,8 @@ def getPlatform():
 
 
 
+### ------------------------------------------------- ###
+
 # api interface
 @app.route('/api/')
 def api_root():
@@ -109,10 +114,27 @@ def api_root():
 
 @app.route('/api/games/')
 def api_games_all():
-	jsonData = {}
-	for data in Game.query:
-		jsonData[data.name] = data.serialize()
-	return jsonify(jsonData)
+	return jsonify( dict(data.name, data.serialize()) for data in Game.query )
+
+@app.route('/api/games/<id>')
+def api_game_id(id):
+	return jsonify(Game.query.get(id).serialize())
+
+@app.route('/api/characters')
+def api_characters_all():
+	return jsonify( dict(data.name, data.serialize()) for data in Character.query )
+
+@app.route('/api/characters/<id>')
+def api_characters_id(id):
+	return jsonify(Character.query.get(id).serialize())
+
+@app.route('/api/platforms')
+def api_platforms_all():
+	return jsonify( dict(data.name, data.serialize()) for data in Platform.query )
+
+@app.route('/api/platforms/<id>')
+def api_platforms_id(id):
+	return jsonify(Platform.query.get(id).serialize())
 
 def shell_context():
 	context = {

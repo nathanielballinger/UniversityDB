@@ -5,7 +5,8 @@ from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 import requests
 import json
-import urllib.request 
+import urllib.request
+import re 
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe1'
@@ -15,7 +16,9 @@ manager = Manager(app)
 
 Base = declarative_base()
 
-db.create_all()
+def get_dict_from_obj(obj):
+	return dict((field, getattr(obj, field)) for field in dir(obj) if not field.startswith('_'))
+
 
 class Game(db.Model):
 	__tablename__ = 'games'
@@ -33,7 +36,13 @@ class Game(db.Model):
 	site_detail_url = db.Column(db.String)
 
 	def __repr__(self):
-		return '<Game %r>' % self.name
+		return '<Game %r>' % self.
+
+	def serialize(self):
+		result = get_dict_from_obj(self)
+		parsedPlatforms = re.split(r"\.", result["platforms"])
+		result["platforms"] = parsedPlatforms
+		return result
 
 class Platform(db.Model):
 	__tablename__ = 'platforms'
@@ -52,9 +61,15 @@ class Platform(db.Model):
 	tiny_image = db.Column(db.String, default = None)
 	medium_image = db.Column(db.String, default = None)
 	games = db.Column(db.String, default = None)
+
 	def __repr__(self):
 		return '<Platform %r>' % self.name
 
+	def serialize(self):
+		result = get_dict_from_obj(self)
+		parsedGames = re.split(r"\.", result["games"])
+		result["games"] = parsedGames
+		return result
 
 class Character(db.Model):
 	__tablename__ = 'characters'
@@ -74,6 +89,9 @@ class Character(db.Model):
 	
 	def __repr__(self):
 		return '<Character %r>' % self.name
+
+	def serialize(self):
+		return get_dict_from_obj(self)
 
 
 if __name__ == "__main__":
