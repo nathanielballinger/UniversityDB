@@ -9,7 +9,7 @@ import urllib.request
 import re 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe1'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
@@ -32,11 +32,12 @@ class Game(db.Model):
 	medium_image = db.Column(db.String, default = None)
 	#Define relationship with platforms. Links to table. Backref creates new property of platforms that list all games
 	platforms = db.Column(db.String, default = None)
+	character = db.Column(db.String, default = None)
 	aliases = db.Column(db.String)
 	site_detail_url = db.Column(db.String)
 
 	def __repr__(self):
-		return '<Game %r>' % self.
+		return '<Game %r>' % self.name
 
 	def serialize(self):
 		result = get_dict_from_obj(self)

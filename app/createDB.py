@@ -12,6 +12,7 @@ from models import db
 Base = declarative_base()
 db.drop_all()
 db.create_all()
+print("PASSED THE GAULTLET")
 api_key="d0d1072f35f6c08b0ce0d7249c1c1d94d500c913"
 
 gameFieldList = "&field_list=id,name,original_release_date,genres,developers,original_rating,description,review,image,platforms,characters,aliases,site_detail_url"
@@ -38,7 +39,7 @@ for x in range(0,332):
 
 #Gets json from API
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'}
-
+print("Adding to DB")
 for game in games:
 	v = requests.get(game,headers=headers)
 	game_data = v.json()
@@ -110,6 +111,7 @@ for character in characters:
 	time.sleep(1)
 print("LOADING CHARACTERS COMPLETE...MAKING SOME FINAL MODIFCATIONS")
 
+#List of games for each platform
 plat_array = ['']*164
 for i in range(1,56877):
 
@@ -134,7 +136,27 @@ for entry in plat_array:
 		counter +=1
 	else:
 		counter+=1
-print("LOADING COMPLETE")
+
+#List of characters for each game
+chr_array = ['']*56877
+for i in range(1,34113):
+
+	b = Character.query.filter_by(id = i).first()
+	if b is None:
+		continue
+	if b.first_appeared_in_game is None:
+		continue
+	the_game = b.first_appeared_in_game
+	chr_array[int(the_game)] = i
 
 
+counter = 1
+for entry in chr_array:
+	if entry is not '':
+		p = Game.query.filter_by(id = counter).first()
+		p.character = entry
+		db.session.commit()
+		counter +=1
+	else:
+		counter+=1
 
