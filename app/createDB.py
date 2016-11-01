@@ -39,7 +39,8 @@ for x in range(0,332):
 
 #Gets json from API
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'}
-print("Adding to DB")
+print("Adding to DB...this step will take approx 20 mins")
+counter = 0
 for game in games:
 	v = requests.get(game,headers=headers)
 	game_data = v.json()
@@ -61,10 +62,13 @@ for game in games:
 		g = Game(id = entry['id'], name = entry['name'], release_date = entry['original_release_date'], description = entry['description'], tiny_image = tiny_image, medium_image = medium_image, platforms = plat_string, aliases = entry['aliases'], site_detail_url = entry['site_detail_url'])
 		db.session.add(g)
 		db.session.commit()
+
 	time.sleep(1)
+	print(str(counter)+"/519 complete")
+	counter+=1
 
 print("LOADING GAMES COMPLETE")
-
+nc = 0
 for platform in platforms:
 	v = requests.get(platform, headers = headers)
 	platform_data = v.json()
@@ -84,11 +88,13 @@ for platform in platforms:
 		p = Platform(id = entry['id'], name = entry['name'], release_date = entry['release_date'], company = company, starting_price = entry['original_price'], description = entry['description'], install_base = entry['install_base'], online_support = entry['online_support'], abbreviations = entry['abbreviation'], site_detail_url = entry['site_detail_url'], tiny_image = tiny_image, medium_image = medium_image)
 		db.session.add(p)
 		db.session.commit()
-		print("I guess this shit worked")
 	time.sleep(1)
+	print(str(counter)+"/2 complete")
+	counter+=1
 
 print("LOADING PLATFORMS COMPLETE")
 
+dnc = 0
 for character in characters:
 	v = requests.get(character, headers = headers)
 	character_data = v.json()
@@ -109,6 +115,8 @@ for character in characters:
 		db.session.add(c)
 		db.session.commit()
 	time.sleep(1)
+	print(str(counter)+"331 complete")
+	counter+=1
 print("LOADING CHARACTERS COMPLETE...MAKING SOME FINAL MODIFCATIONS")
 
 #List of games for each platform
