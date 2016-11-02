@@ -15,7 +15,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
 db = SQLAlchemy(app)
 manager = Manager(app)
 
-def get_dict_from_obj(obj):
+def model_to_dict(obj):
 	fields = {}
 	for field in [entry for entry in dir(obj) if not entry.startswith('_') and entry != 'metadata']:
 		data = obj.__getattribute__(field)
@@ -57,7 +57,7 @@ class Game(db.Model):
 		return '<Game %r>' % self.name
 
 	def serialize(self):
-		result = get_dict_from_obj(self)
+		result = model_to_dict(self)
 		parsedPlatforms = []
 		parsedCharacters = []
 		if result["platforms"] is not None:
@@ -111,7 +111,7 @@ class Platform(db.Model):
 		return '<Platform %r>' % self.name
 
 	def serialize(self):
-		result = get_dict_from_obj(self)
+		result = model_to_dict(self)
 		parsedGames = re.split(r"\.", result["games"])
 		if result["games"] is not None:
 			parsedGames = re.split(r"\.", result["games"])
@@ -153,7 +153,7 @@ class Character(db.Model):
 		return '<Character %r>' % self.name
 
 	def serialize(self):
-		return get_dict_from_obj(self)
+		return model_to_dict(self)
 
 
 #if __name__ == "__main__":
