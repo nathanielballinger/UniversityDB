@@ -10,7 +10,7 @@ import re
 
 Base = declarative_base()
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:5432/swe'
 
 db = SQLAlchemy(app)
 manager = Manager(app)

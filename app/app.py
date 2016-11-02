@@ -17,7 +17,7 @@ manager = Manager(app)
 
 
 
-"""
+
 #Checking to make sure we loaded the data correctly
 for i in range(0,50):
 	g = Game.query.filter_by(id = i).first()
@@ -76,7 +76,7 @@ for i in range(0,50):
 	print(g.aliases)
 	print(g.first_appeared_in_game)
 
-"""
+
 
 """
 #Code to load up temp data from JSON files
