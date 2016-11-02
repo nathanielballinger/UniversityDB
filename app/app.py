@@ -5,22 +5,12 @@ from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 import json
 import re
-
-
-Base = declarative_base()
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
-
-db = SQLAlchemy(app)
-manager = Manager(app)
-
 import models
-from models import Game, Character, Platform
 
 
 
 
-
+"""
 #Checking to make sure we loaded the data correctly
 for i in range(0,50):
 	g = Game.query.filter_by(id = i).first()
@@ -79,7 +69,7 @@ for i in range(0,50):
 	print(g.aliases)
 	print(g.first_appeared_in_game)
 
-
+"""
 
 """
 #Code to load up temp data from JSON files
