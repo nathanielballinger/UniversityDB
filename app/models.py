@@ -50,12 +50,14 @@ class Game(db.Model):
 
 	def serialize(self):
 		result = get_dict_from_obj(self)
+		parsedPlatforms = []
+		parsedCharacters = []
 		if result["platforms"] is not None:
 			parsedPlatforms = re.split(r"\.", result["platforms"])
 			result["platforms"] = parsedPlatforms
-		parsedCharacters = re.split(r"\.", result["character"])
-		result["character"] = parsedCharacters
-		result["platforms"] = parsedPlatforms
+		if result["character"] is not None:
+			parsedCharacters = re.split(r"\.", result["character"])
+			result["character"] = parsedCharacters
 		return result
 
 class Platform(db.Model):
