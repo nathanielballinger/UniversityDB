@@ -6,13 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 import requests
 import json
 import urllib.request
-import re 
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
-
-db = SQLAlchemy(app)
-manager = Manager(app)
+from app import db
 
 Base = declarative_base()
 

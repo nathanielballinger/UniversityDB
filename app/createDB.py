@@ -7,7 +7,7 @@ import requests
 import json
 import urllib.request 
 import time
-from models import db
+from app import db
 
 Base = declarative_base()
 """

@@ -4,10 +4,76 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 import json
-from models import Game, Platform, Character
+
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+
+db = SQLAlchemy(app)
+manager = Manager(app)
+
+import models
+from models import Game, Character, Platform
 
 
 
+#Checking to make sure we loaded the data correctly
+for i in range(0,50):
+	g = Game.query.filter_by(id = i).first()
+	if g is None:
+		print("###############################")
+		print ("Game ID not found"+str(i))
+		continue
+	print("###################################")
+	print(i)
+	print (g)
+	print(g.name)
+	if (g.character is not None):
+		print("Character =" + g.character)
+	else:
+		print("We got nothin")
+
+for i in range(0,50):
+	g = Platform.query.filter_by(id = i).first()
+	if g is None:
+		print("###############################")
+		print ("Platform ID not found"+str(i))
+		continue
+	print("###################################")
+	print(i)
+	print (g)
+	print(g.name)
+	print(g.release_date)
+	print(g.company)
+	print(g.starting_price)
+	print(g.install_base)
+	print(g.description)
+	print(g.online_support)
+	print(g.abbreviations)
+	print(g.tiny_image)
+	print(g.medium_image)
+	print(g.site_detail_url)
+	print(g.games)
+
+
+for i in range(0,50):
+	g = Character.query.filter_by(id = i).first()
+	if g is None:
+		print("###############################")
+		print ("Character ID not found"+str(i))
+		continue
+	print("###################################")
+	print(i)
+	print (g)
+	print(g.name)
+	print(g.birthday)
+	print(g.deck)
+	print(g.description)
+	print(g.tiny_image)
+	print(g.medium_image)
+	print(g.site_detail_url)
+	print(g.aliases)
+	print(g.first_appeared_in_game)
 
 
 
@@ -32,10 +98,13 @@ for x in range(1,4):
 		platformDict[data['id']] = data
 """
 gameDict = dict()
+"""
 for x in range(1,56877):
 	b = Game.query.filter_by(id = i).first()
 	if b is None:
 		continue
+"""
+print("Does anything hapen")
 characterDict = dict()
 platformDict = dict()
 
