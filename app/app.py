@@ -10,7 +10,7 @@ from models import Game, Character, Platform
 
 Base = declarative_base()
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 
 db = SQLAlchemy(app)
 manager = Manager(app)

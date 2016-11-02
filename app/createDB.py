@@ -12,8 +12,8 @@ import time
 IF YOU HAVE ALREADY LOADED THE DATABASE AND ARE MAKING CHANGES
 TO THE ALREADY EXISTING DB DONT RUN THE NEXT TWO LINE. YOU WILL REGRET IT
 """
-#db.drop_all()
-#db.create_all()
+db.drop_all()
+db.create_all()
 api_key="d0d1072f35f6c08b0ce0d7249c1c1d94d500c913"
 
 gameFieldList = "&field_list=id,name,original_release_date,genres,developers,original_rating,description,review,image,platforms,characters,aliases,site_detail_url"
