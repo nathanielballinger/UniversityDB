@@ -10,13 +10,21 @@ import re
 
 Base = declarative_base()
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localhost:5432/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
-def get_dict_from_obj(obj):
-	return dict((field, getattr(obj, field)) for field in dir(obj) if not field.startswith('_'))
 
+def get_dict_from_obj(obj):
+	fields = {}
+	for field in [entry for entry in dir(obj) if not entry.startswith('_') and entry != 'metadata']:
+		data = obj.__getattribute__(field)
+		try:
+			json.dumps(data)
+			fields[field] = data
+		except TypeError:
+			pass
+	return fields
 
 class Game(db.Model):
 	__tablename__ = 'games'
@@ -54,9 +62,16 @@ class Game(db.Model):
 		parsedCharacters = []
 		if result["platforms"] is not None:
 			parsedPlatforms = re.split(r"\.", result["platforms"])
+			parsedPlatforms = parsedPlatforms[:-1]
+			for i in range (len(parsedPlatforms)):
+				parsedPlatforms[i] = int(parsedPlatforms[i])
 			result["platforms"] = parsedPlatforms
 		if result["character"] is not None:
 			parsedCharacters = re.split(r"\.", result["character"])
+			parsedCharacters = parsedCharacters[:-1]
+			for i in range (len(parsedCharacters)):
+				parsedCharacters[i] = int(parsedCharacters[i])
+			result["platforms"] = parsedPlatforms
 			result["character"] = parsedCharacters
 		return result
 
@@ -98,6 +113,12 @@ class Platform(db.Model):
 	def serialize(self):
 		result = get_dict_from_obj(self)
 		parsedGames = re.split(r"\.", result["games"])
+		if result["games"] is not None:
+			parsedGames = re.split(r"\.", result["games"])
+			parsedGames = parsedGames[:-1]
+			for i in range (len(parsedGames)):
+				parsedGames[i] = int(parsedGames[i])
+			result["games"] = parsedGames
 		result["games"] = parsedGames
 		return result
 
