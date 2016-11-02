@@ -33,9 +33,21 @@ class Game(db.Model):
 	#Define relationship with platforms. Links to table. Backref creates new property of platforms that list all games
 	platforms = db.Column(db.String, default = None)
 	character = db.Column(db.String, default = None)
-	aliases = db.Column(db.String)
-	site_detail_url = db.Column(db.String)
+	aliases = db.Column(db.String, default = None)
+	site_detail_url = db.Column(db.String, default = None)
 
+	def __init__(self,id,name,release_date,description,tiny_image,medium_image,platforms,character,aliases,site_detail_url):
+		self.id = id
+		self.name = name
+		self.release_date = release_date
+		self.description = description
+		self.tiny_image = tiny_image
+		self.medium_image = medium_image
+		self.platforms = platforms
+		self.character = character
+		self.aliases = aliases
+		self.site_detail_url = site_detail_url
+	
 	def __repr__(self):
 		return '<Game %r>' % self.name
 
@@ -63,6 +75,21 @@ class Platform(db.Model):
 	medium_image = db.Column(db.String, default = None)
 	games = db.Column(db.String, default = None)
 
+	def __init__(self,id,name,release_date,company,starting_price,install_base, description,online_support,abbreviations,site_detail_url,tiny_image,medium_image,games):
+		self.id = id
+		self.name = name
+		self.release_date = release_date
+		self.company = company
+		self.starting_price = starting_price
+		self.install_base = install_base
+		self.description = description
+		self.online_support = online_support
+		self.abbreviations = abbreviations
+		self.site_detail_url = site_detail_url
+		self.tiny_image = tiny_image
+		self.medium_image = medium_image
+		self.games = games
+
 	def __repr__(self):
 		return '<Platform %r>' % self.name
 
@@ -87,6 +114,18 @@ class Character(db.Model):
 	site_detail_url = db.Column(db.String, default = None)
 	aliases = db.Column(db.String, default = None)
 	first_appeared_in_game = db.Column(db.Integer, default = None)
+
+	def __init__(self,id,name,birthday,gender,deck, description, tiny_image, medium_image, site_detail_url, aliases, first_appeared_in_game):
+		self.id = id
+		self.name = name
+		self.gender = gender
+		self.deck = deck
+		self.description = description
+		self.tiny_image = tiny_image
+		self.medium_image = medium_image
+		self.site_detail_url = site_detail_url
+		self.aliases = aliases
+		self.first_appeared_in_game
 	
 	def __repr__(self):
 		return '<Character %r>' % self.name
