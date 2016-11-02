@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 import json
+import re
 
 
 Base = declarative_base()
@@ -187,6 +188,7 @@ def api_games_all():
 
 @app.route('/api/games/<id>')
 def api_game_id(id):
+	print("DID IT GET IN HERE?")
 	return jsonify(Game.query.get(id).serialize())
 
 @app.route('/api/characters')

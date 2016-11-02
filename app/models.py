@@ -6,6 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 import requests
 import json
 import urllib.request
+import re
 
 Base = declarative_base()
 app = Flask(__name__)
@@ -33,7 +34,7 @@ class Game(db.Model):
 	aliases = db.Column(db.String, default = None)
 	site_detail_url = db.Column(db.String, default = None)
 
-	def __init__(self,id,name,release_date,description,tiny_image,medium_image,platforms,character,aliases,site_detail_url):
+	def __init__(self,id,name,release_date,description,tiny_image,medium_image,platforms,aliases,site_detail_url):
 		self.id = id
 		self.name = name
 		self.release_date = release_date
@@ -41,7 +42,6 @@ class Game(db.Model):
 		self.tiny_image = tiny_image
 		self.medium_image = medium_image
 		self.platforms = platforms
-		self.character = character
 		self.aliases = aliases
 		self.site_detail_url = site_detail_url
 	
@@ -50,7 +50,9 @@ class Game(db.Model):
 
 	def serialize(self):
 		result = get_dict_from_obj(self)
-		parsedPlatforms = re.split(r"\.", result["platforms"])
+		if result["platforms"] is not None:
+			parsedPlatforms = re.split(r"\.", result["platforms"])
+			result["platforms"] = parsedPlatforms
 		parsedCharacters = re.split(r"\.", result["character"])
 		result["character"] = parsedCharacters
 		result["platforms"] = parsedPlatforms
@@ -74,7 +76,7 @@ class Platform(db.Model):
 	medium_image = db.Column(db.String, default = None)
 	games = db.Column(db.String, default = None)
 
-	def __init__(self,id,name,release_date,company,starting_price,install_base, description,online_support,abbreviations,site_detail_url,tiny_image,medium_image,games):
+	def __init__(self,id,name,release_date,company,starting_price,install_base, description,online_support,abbreviations,site_detail_url,tiny_image,medium_image):
 		self.id = id
 		self.name = name
 		self.release_date = release_date
@@ -87,7 +89,6 @@ class Platform(db.Model):
 		self.site_detail_url = site_detail_url
 		self.tiny_image = tiny_image
 		self.medium_image = medium_image
-		self.games = games
 
 	def __repr__(self):
 		return '<Platform %r>' % self.name
