@@ -4,9 +4,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 import json
+import re
+import models
+from models import Game, Character, Platform
 
-
-
+Base = declarative_base()
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
 
@@ -15,6 +17,68 @@ manager = Manager(app)
 
 
 
+"""
+#Checking to make sure we loaded the data correctly
+for i in range(0,50):
+	g = Game.query.filter_by(id = i).first()
+	if g is None:
+		print("###############################")
+		print ("Game ID not found"+str(i))
+		continue
+	print("###################################")
+	print(i)
+	print (g)
+	print(g.name)
+	if (g.character is not None):
+		print("Character =" + g.character)
+	else:
+		print("We got nothin")
+
+for i in range(0,50):
+	g = Platform.query.filter_by(id = i).first()
+	if g is None:
+		print("###############################")
+		print ("Platform ID not found"+str(i))
+		continue
+	print("###################################")
+	print(i)
+	print (g)
+	print(g.name)
+	print(g.release_date)
+	print(g.company)
+	print(g.starting_price)
+	print(g.install_base)
+	print(g.description)
+	print(g.online_support)
+	print(g.abbreviations)
+	print(g.tiny_image)
+	print(g.medium_image)
+	print(g.site_detail_url)
+	print(g.games)
+
+
+for i in range(0,50):
+	g = Character.query.filter_by(id = i).first()
+	if g is None:
+		print("###############################")
+		print ("Character ID not found"+str(i))
+		continue
+	print("###################################")
+	print(i)
+	print (g)
+	print(g.name)
+	print(g.birthday)
+	print(g.deck)
+	print(g.description)
+	print(g.tiny_image)
+	print(g.medium_image)
+	print(g.site_detail_url)
+	print(g.aliases)
+	print(g.first_appeared_in_game)
+
+"""
+
+"""
 #Code to load up temp data from JSON files
 gameDict = dict()
 for x in range(1,4):
@@ -33,12 +97,26 @@ for x in range(1,4):
 	with open('/var/www/cs373f-idb/app/static/json/platform'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		platformDict[data['id']] = data
+"""
+gameDict = dict()
+"""
+for x in range(1,56877):
+	b = Game.query.filter_by(id = i).first()
+	if b is None:
+		continue
+"""
+print("Does anything hapen")
+characterDict = dict()
+platformDict = dict()
 
 
 @app.route("/")
 def index():
 	return send_file("templates/index.html")
 
+
+
+### -------------OUTDATED! USE API CALLS NOW----------- ###
 
 #Get request for a list of all games
 @app.route("/getGameTable/",methods=["GET"])
@@ -84,6 +162,47 @@ def getPlatform():
 	platform_id = int(request.args.get('id'))
 	obj = jsonify(platformDict[platform_id])
 	return obj
+
+
+
+### ------------------------------------------------- ###
+
+# api interface
+@app.route('/api/')
+def api_root():
+	data = {
+		'urls': {
+			'games_url': '/games',
+			'characters_url': '/characters',
+			'platforms_url': '/platforms'
+		}
+	}
+	return jsonify(data)
+
+@app.route('/api/games/')
+def api_games_all():
+	return jsonify( dict(data.name, data.serialize()) for data in Game.query )
+
+@app.route('/api/games/<id>')
+def api_game_id(id):
+	print("DID IT GET IN HERE?")
+	return jsonify(Game.query.get(id).serialize())
+
+@app.route('/api/characters')
+def api_characters_all():
+	return jsonify( dict(data.name, data.serialize()) for data in Character.query )
+
+@app.route('/api/characters/<id>')
+def api_characters_id(id):
+	return jsonify(Character.query.get(id).serialize())
+
+@app.route('/api/platforms')
+def api_platforms_all():
+	return jsonify( dict(data.name, data.serialize()) for data in Platform.query )
+
+@app.route('/api/platforms/<id>')
+def api_platforms_id(id):
+	return jsonify(Platform.query.get(id).serialize())
 
 def shell_context():
 	context = {

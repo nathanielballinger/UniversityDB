@@ -9,31 +9,27 @@ class TestCases (TestCase):
 	# ------
 
 	def test_case_game_1(self):
-		game1 = Game("13328", "Wii Sports", "11/19/2006", "Sports", "Nintendo EAD", "3.65", \
-			"Wii Sports is the pack-in for the Wii for all regions except for Japan. It includes five sports mini-games, corresponding challenges, and a daily trainer that gives the player a score similar to the Brain Age system. It utilizes Miis as the player's avatar.", \
-			"REVIEW", "IMAGE", "Wii", "Mii")
+		game1 = Game("13328", "Wii Sports", "11/19/2006", "Wii Sports is the pack-in for the Wii for all regions except for Japan. It includes five sports mini-games, corresponding challenges, and a daily trainer that gives the player a score similar to the Brain Age system. It utilizes Miis as the player's avatar.", "Tiny_iamge_url","Medium_image_url", "Wii", "Nintendo Sports", \
+			"SITE_DETAIL_URL")
 
 		self.assertEqual(game1.id, "13328")
 		self.assertEqual(game1.release_date, "11/19/2006")
 		self.assertEqual(game1.platforms, "Wii")
 
 	def test_case_game_2(self):
-		game2 = Game("52537", "LEGO Star Wars: The Force Awakens", "06/28/2016", "{Sci-Fi, Comedy}", "WB Games", "3", \
-			"The fifth title in the LEGO Star Wars franchise and the first developed since The Walt Disney Company acquired Lucasfilm. The game adapts the characters and events depicted in the film Star Wars: The Force Awakens as well as new material set after Return of the Jedi leading up to The Force Awakens. The game was announced on February 2nd 2016 with a trailer parodying the film's first teaser trailer.", \
-			"REVIEW", "IMAGE", "Xbox 360", "Rey")
+		game2 = Game("52537", "LEGO Star Wars: The Force Awakens", "06/28/2016", "The fifth title in the LEGO Star Wars franchise and the first developed since The Walt Disney Company acquired Lucasfilm. The game adapts the characters and events depicted in the film Star Wars: The Force Awakens as well as new material set after Return of the Jedi leading up to The Force Awakens. The game was announced on February 2nd 2016 with a trailer parodying the film's first teaser trailer.", "TINY_IMAGE", "MEDIUM_IMAGE","Xbox 360", "WB Games", "SITE_DETAIL_URL")
 
 		self.assertEqual(game2.id, "52537")
-		self.assertEqual(game2.rating, "3")
-		self.assertEqual(game2.developers, "WB Games")
+		self.assertEqual(game2.tiny_image, "TINY_IMAGE")
+		self.assertEqual(game2.aliases, "WB Games")
 
 	def test_case_game_3(self):
-		game3 = Game("41088", "Pokémon X/Y", "10/12/2013", "Role-Playing", "Game Freak Inc.", "4", \
-			"Pokémon X and Pokémon Y was released to the Nintendo 3DS worldwide on October 12, 2013. This marks the sixth generation of Pokémon games, and the first mainline Pokemon games to feature full 3D polygonal graphics. The game features a large number of new Pokémon (including the new starter Pokémon, Chespin, Fennekin and Froakie), as well as returning Pokémon such as Pikachu, Lucario, and the Pokémon Red/Blue starters, Bulbasaur, Charmander and Squirtle.", \
-			"REVIEW", "IMAGE", "Nintendo 3DS", "Pikachu")
+		game3 = Game("41088", "Pokémon X/Y", "12/10/13", "Pokémon X and Pokémon Y was released to the Nintendo 3DS worldwide on October 12, 2013. This marks the sixth generation of Pokémon games, and the first mainline Pokemon games to feature full 3D polygonal graphics. The game features a large number of new Pokémon (including the new starter Pokémon, Chespin, Fennekin and Froakie), as well as returning Pokémon such as Pikachu, Lucario, and the Pokémon Red/Blue starters, Bulbasaur, Charmander and Squirtle.", \
+			"TINY_IMAGE", "MEDIUM_IMAGE", "Nintendo 3DS", "X and Y", "SITE_DETAIL_URL")
 
 		self.assertEqual(game3.id, "41088")
-		self.assertEqual(game3.characters, "Pikachu")
-		self.assertEqual(game3.genre, "Role-Playing")
+		self.assertEqual(game3.platforms, "Nintendo 3DS")
+		self.assertEqual(game3.name, "Pokémon X/Y")
 
 	def test_case_game_4(self):
 		game4 = Game("2133", "Call of Duty 4: Modern Warfare", "11/05/2007", "First-Person Shooter", "Infinity Ward", "4.69", \
