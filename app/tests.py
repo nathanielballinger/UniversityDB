@@ -10,7 +10,6 @@ class TestCases (TestCase):
 
 	def test_case_game_1(self):
 		game1 = Game("13328", "Wii Sports", "11/19/2006", "Wii Sports is the pack-in for the Wii for all regions except for Japan. It includes five sports mini-games, corresponding challenges, and a daily trainer that gives the player a score similar to the Brain Age system. It utilizes Miis as the player's avatar.", "Tiny_iamge_url","Medium_image_url", "Wii", "Nintendo Sports", \
-			"Wii Sports is the pack-in for the Wii for all regions except for Japan. It includes five sports mini-games, corresponding challenges, and a daily trainer that gives the player a score similar to the Brain Age system. It utilizes Miis as the player's avatar.", \
 			"SITE_DETAIL_URL")
 
 		self.assertEqual(game1.id, "13328")
@@ -22,11 +21,11 @@ class TestCases (TestCase):
 
 		self.assertEqual(game2.id, "52537")
 		self.assertEqual(game2.tiny_image, "TINY_IMAGE")
-		self.assertEqual(game2., "WB Games")
+		self.assertEqual(game2.aliases, "WB Games")
 
 	def test_case_game_3(self):
-		game3 = Game("41088", "Pokémon X/Y", "Pokémon X and Pokémon Y was released to the Nintendo 3DS worldwide on October 12, 2013. This marks the sixth generation of Pokémon games, and the first mainline Pokemon games to feature full 3D polygonal graphics. The game features a large number of new Pokémon (including the new starter Pokémon, Chespin, Fennekin and Froakie), as well as returning Pokémon such as Pikachu, Lucario, and the Pokémon Red/Blue starters, Bulbasaur, Charmander and Squirtle.", \
-			, "TINY_IMAGE", "MEDIUM_IMAGE", "Nintendo 3DS", "X and Y", "SITE_DETAIL_URL")
+		game3 = Game("41088", "Pokémon X/Y", "12/10/13", "Pokémon X and Pokémon Y was released to the Nintendo 3DS worldwide on October 12, 2013. This marks the sixth generation of Pokémon games, and the first mainline Pokemon games to feature full 3D polygonal graphics. The game features a large number of new Pokémon (including the new starter Pokémon, Chespin, Fennekin and Froakie), as well as returning Pokémon such as Pikachu, Lucario, and the Pokémon Red/Blue starters, Bulbasaur, Charmander and Squirtle.", \
+			"TINY_IMAGE", "MEDIUM_IMAGE", "Nintendo 3DS", "X and Y", "SITE_DETAIL_URL")
 
 		self.assertEqual(game3.id, "41088")
 		self.assertEqual(game3.platforms, "Nintendo 3DS")

@@ -10,7 +10,7 @@ import re
 
 Base = declarative_base()
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
@@ -119,7 +119,6 @@ class Platform(db.Model):
 			for i in range (len(parsedGames)):
 				parsedGames[i] = int(parsedGames[i])
 			result["games"] = parsedGames
-		result["games"] = parsedGames
 		return result
 
 class Character(db.Model):
