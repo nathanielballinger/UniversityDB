@@ -6,10 +6,13 @@ from sqlalchemy.ext.declarative import declarative_base
 import requests
 import json
 import urllib.request
-from app import db
 
 Base = declarative_base()
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 
+db = SQLAlchemy(app)
+manager = Manager(app)
 def get_dict_from_obj(obj):
 	return dict((field, getattr(obj, field)) for field in dir(obj) if not field.startswith('_'))
 
@@ -130,5 +133,5 @@ class Character(db.Model):
 		return get_dict_from_obj(self)
 
 
-if __name__ == "__main__":
-    manager.run()       # Update this line to use the manager
+#if __name__ == "__main__":
+#   manager.run()       # Update this line to use the manager

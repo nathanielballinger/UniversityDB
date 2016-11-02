@@ -6,6 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 import json
 
 
+Base = declarative_base()
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 
@@ -14,6 +15,8 @@ manager = Manager(app)
 
 import models
 from models import Game, Character, Platform
+
+
 
 
 
