@@ -63,39 +63,43 @@ class TestCases (TestCase):
 	# ------
 
 	def test_case_platform_1(self):
-		platform1 = Platform("117", "Nintendo 3DS", "02/26/2011", "Nintendo", "$249", "59790000", \
-			"Nintendo announced the Nintendo 3DS on March 23, 2010. No software was yet revealed; the only details in the announcement were that the system will be available in Japan by the end of March 2011, and that it will display stereoscopic 3D without requiring special glasses, and it is backwards compatible with existing DS and DSi software. The system itself was revealed at Nintendo's E3 2010 media briefing by Satoru Iwata.", \
-			"SUPPORT", "3DS", "URL", "IMAGE")
+		platform1 = Platform("117", "Nintendo 3DS", "2011-02-26 00:00:00", "Nintendo", "249.00", "51630000", \
+			"The Nintendo 3DS is a portable game console produced by Nintendo. The handheld features stereoscopic 3D technology that doesn't require glasses. It was released in Japan on February 26, 2011 and in North America on March 27, 2011.", \
+			True, "3DS", "http://www.giantbomb.com/nintendo-3ds/3045-117/",\
+			"http://www.giantbomb.com/api/image/square_mini/1686079-3dshw11911.jpg", "medium_url": "http://www.giantbomb.com/api/image/scale_medium/1686079-3dshw11911.jpg")
 
 		self.assertEqual(platform1.id, "117")
 		self.assertEqual(platform1.name, "Nintendo 3DS")
-		self.assertEqual(platform1.release_date, "02/26/2011")
+		self.assertEqual(platform1.release_date, "2011-02-26 00:00:00")
 
 	def test_case_platform_2(self):
-		platform2 = Platform("20", "Xbox 360", "11/22/2005", "Microsoft", "$399", "80000000", \
-			"Co-Developed with IBM, ATI, and Silicon Integrated Systems, the Xbox 360 uses the triple-core IBM designed Xenon as its CPU, ATI Xenos which has 10 MB of embedded eDRAM as the graphics processor and has a main memory pool of 512 MB. Development of the Xbox 360 began in early 2003, a year and a half after the original Xbox release.", \
-			"SUPPORT", "X360", "URL", "IMAGE")
+		platform2 = Platform("20", "Xbox 360", "2005-11-22 00:00:00", "Microsoft Studios", "399.00", "80000000", \
+			"The Xbox 360 is the second game console produced by Microsoft Corporation and is the successor to the original Xbox.", \
+			True, "360\nXenon", "http://www.giantbomb.com/xbox-360/3045-20/",\
+			"http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg", "medium_url": "http://www.giantbomb.com/api/image/scale_medium/195092-xbox_360_console_02.jpg")
 
 		self.assertEqual(platform2.id, "20")
-		self.assertEqual(platform2.abbrevations, "X360")
-		self.assertEqual(platform2.starting_price, "$399")
+		self.assertEqual(platform2.tiny_image, "http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg")
+		self.assertEqual(platform2.starting_price, "399.00")
 
 	def test_case_platform_3(self):
-		platform3 = Platform("35", "PlayStation 3", "11/11/2006", "Sony", "$599", "80000000", \
-			"The PS3 uses the Cell Broadband Engine co-developed by Sony, IBM, and Toshiba. Graphics processing is handled by the NVIDIA RSX 'Reality Synthesizer', which can output resolutions up to 1080p HD. The PS3 has 256 MB of XDR main memory and 256 MB of GDDR3 video memory for the RSX, for a total of 512 MB system memory.", \
-			"SUPPORT", "PS3", "URL", "IMAGE")
+		platform3 = Platform("35", "PlayStation 3", "2006-11-11 00:00:00", "Sony Interactive Entertainment", "599.00", "80000000", \
+			"The PlayStation 3 (often abbreviated PS3) is the third home video game console created and released by Sony Computer Entertainment Inc.", \
+			True, "PS3", "http://www.giantbomb.com/playstation-3/3045-35/",\
+			"http://www.giantbomb.com/api/image/square_mini/1426360-logo.jpg", "http://www.giantbomb.com/api/image/scale_medium/1426360-logo.jpg")
 
 		self.assertEqual(platform3.id, "35")
-		self.assertEqual(platform3.number_units_sold, "80000000")
-		self.assertEqual(platform3.company, "Sony")
+		self.assertEqual(platform3.install_base, "80000000")
+		self.assertEqual(platform3.company, "Sony Interactive Entertainment")
 
 	def test_case_platform_4(self):
-		platform4 = Platform("146", "PlayStation4", "11/15/2013", "Sony", "$399", "40000000", \
-			"The PlayStation 4 is the fourth video game console produced by the Sony Corporation, and was released November 15th in North America and November 29th in Europe and Australia. It uses the x86 processor and 8GB of GDDR5 memory, making it much more PC-like (and easier to code for) than Sony's previous console, the PlayStation 3.", \
-			"SUPPORT", "PS4", "URL", "IMAGE")
+		platform4 = Platform("146", "PlayStation4", "2013-11-15 00:00:00", "Sony Interactive Entertainment", "399.00", "40000000", \
+			"PlayStation 4 is Sony's fourth home video game console, released on November 15, 2013 in North America, and November 29, 2013 in Europe.", \
+			True, "PS4\r\nOrbis", "http://www.giantbomb.com/playstation-4/3045-146/",\
+			"http://www.giantbomb.com/api/image/square_mini/2495936-9012444134_80ba47fd6e_o.jpg", "http://www.giantbomb.com/api/image/scale_medium/2495936-9012444134_80ba47fd6e_o.jpg")
 
 		self.assertEqual(platform4.id, "146")
-		self.assertEqual(platform4.starting_price, "$399")
+		self.assertEqual(platform4.medium_image, "http://www.giantbomb.com/api/image/scale_medium/2495936-9012444134_80ba47fd6e_o.jpg")
 		self.assertEqual(platform4.name, "PlayStation 4")
 
 	def test_case_platform_5(self):
