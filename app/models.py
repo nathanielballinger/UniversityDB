@@ -184,6 +184,6 @@ class Character(db.Model):
 		return model_to_dict(self)
 
 	def serialize_table(self):
-		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}
+		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image, "birthday": self.birthday}
 		return fields
 
