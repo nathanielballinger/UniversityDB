@@ -96,7 +96,7 @@ class Game(db.Model):
 			"""
 		else:
 			parsedCharacters = None
-		fields = {"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "characters": parsedCharacters}
+		fields = {"id": self.id,"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "characters": parsedCharacters}
 		return fields
 
 class Platform(db.Model):
@@ -146,7 +146,7 @@ class Platform(db.Model):
 		return result
 
 	def serialize_table(self):
-		return {"name": self.name, "release_date": self.release_date, "company": self.company, "starting_price": self.starting_price, "tiny_image": self.tiny_image}
+		return {"id": self.id, "name": self.name, "release_date": self.release_date, "company": self.company, "starting_price": self.starting_price, "tiny_image": self.tiny_image}
 
 class Character(db.Model):
 	__tablename__ = 'characters'
@@ -184,6 +184,6 @@ class Character(db.Model):
 		return model_to_dict(self)
 
 	def serialize_table(self):
-		fields = {"name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}
+		fields = {"id": self.id, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}
 		return fields
 
