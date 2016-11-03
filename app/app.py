@@ -224,27 +224,10 @@ def api_game_id(id):
 
 @app.route('/api/characters/offset/<offset>')
 def api_characters_offset(offset):
-	
 	dict_p = {}
-	"""
-	counter = 0
-	new_count = 10*(int(offset)-1)
-	for data in Character.query:
-		counter += 1
-		if counter < int(10*(int(offset)-1)):
-			continue
-		new_count+=1
-		dict_p[data.name] = data.serialize_table()
-		if new_count > (10*(int(offset)-1) + 10):
-			break
-
-	
-	return jsonify(dict_p)
-	"""
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
-	print("Making sure it is going through this code")
 	for i in range (0,600000):
 		game = Character.query.get(i)
 		if game is None:
