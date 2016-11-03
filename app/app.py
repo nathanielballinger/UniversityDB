@@ -4,26 +4,29 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 import json
+import time
 import re
-from app.tests import runTestsOut
+from tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
-import app.models
-from app.models import Game, Character, Platform
+import models
+from models import Game, Character, Platform
 
 Base = declarative_base()
 app = Flask(__name__)
 #Chris's DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
 
-"""
+
+
+
 #Checking to make sure we loaded the data correctly
 for i in range(0,50):
 	g = Game.query.filter_by(id = i).first()
@@ -39,7 +42,7 @@ for i in range(0,50):
 		print("Character =" + g.character)
 	else:
 		print("We got nothin")
-
+"""
 for i in range(0,50):
 	g = Platform.query.filter_by(id = i).first()
 	if g is None:
@@ -181,17 +184,18 @@ def api_root():
 def api_games_offset(offset):
 	dict_p = {}
 	counter = 0
-	new_count = 25*int(offset)
-	for data in Game.query:
+	new_count = 25*(int(offset)-1)
+
+	for data in Game.query.all():
 		counter += 1
-		if counter < int(25*int(offset)):
+		if counter < int(25*(int(offset)-1)):
 			continue
 		new_count+=1
-		print("New_count"+str(new_count))
+		#print("New_count"+str(new_count))
+		#print(int(data.id))
 		dict_p[data.name] = data.serialize_table()
-		if new_count > (25*int(offset) + 24):
+		if new_count > (25*(int(offset)-1) + 24):
 			break
-	
 	return jsonify(dict_p)
 	
 
@@ -204,15 +208,14 @@ def api_game_id(id):
 def api_characters_offset(offset):
 	dict_p = {}
 	counter = 0
-	new_count = 25*int(offset)
+	new_count = 25*(int(offset)-1)
 	for data in Character.query:
 		counter += 1
-		if counter < int(25*int(offset)):
+		if counter < int(25*(int(offset)-1)):
 			continue
 		new_count+=1
-		print("New_count"+str(new_count))
 		dict_p[data.name] = data.serialize_table()
-		if new_count > (25*int(offset) + 24):
+		if new_count > (25*(int(offset)-1) + 24):
 			break
 
 	
@@ -226,18 +229,17 @@ def api_characters_id(id):
 def api_platforms_offset(offset):
 	dict_p = {}
 	counter = 0
-	new_count = 25*int(offset)
+	new_count = 25*(int(offset)-1)
 	for data in Platform.query:
 		counter += 1
-		if counter < int(25*int(offset)):
+		if counter < int(25*(int(offset)-1)):
 			continue
 		new_count+=1
-		print("New_count"+str(new_count))
+		#print("New_count"+str(new_count))
 		dict_p[data.name] = data.serialize_table()
-		if new_count > (25*int(offset) + 24):
+		if new_count > (25*(int(offset)-1) + 24):
 			break
 
-	
 	return jsonify(dict_p)
 
 @app.route('/api/platforms/<id>')
