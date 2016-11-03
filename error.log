@@ -376,3 +376,39 @@
 [Thu Nov 03 06:40:44.196020 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]     return jsonify(Platform.query.get(id).serialize())
 [Thu Nov 03 06:40:44.196029 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412] AttributeError: 'NoneType' object has no attribute 'serialize'
 [Thu Nov 03 06:40:44.196064 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412] 
+[Thu Nov 03 16:15:19.191495 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759] [2016-11-03 16:15:19,186] ERROR in app: Exception on /getPlatform/ [GET], referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191739 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191753 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191760 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191767 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191773 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191779 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191785 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191791 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191797 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]     raise value, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191802 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191808 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191814 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191820 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191840 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]   File "/var/www/cs373f-idb/app/app.py", line 161, in getPlatform, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191847 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759]     obj = jsonify(platformDict[platform_id]), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191858 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759] KeyError: 1, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.191941 2016] [wsgi:error] [pid 15111:tid 140158338856704] [client 128.62.61.39:11759] , referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989815 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041] [2016-11-03 16:15:19,988] ERROR in app: Exception on /getPlatform/ [GET], referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989862 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989868 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989874 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989880 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989886 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989892 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989897 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989903 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989909 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]     raise value, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989914 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989920 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989925 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989931 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989937 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]   File "/var/www/cs373f-idb/app/app.py", line 161, in getPlatform, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989943 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041]     obj = jsonify(platformDict[platform_id]), referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989951 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041] KeyError: 1, referer: http://vgidb.me/
+[Thu Nov 03 16:15:19.989980 2016] [wsgi:error] [pid 15142:tid 140158288500480] [client 128.62.61.39:13041] , referer: http://vgidb.me/
