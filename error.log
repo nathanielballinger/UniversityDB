@@ -452,3 +452,23 @@
 [Thu Nov 03 16:51:24.833101 2016] [wsgi:error] [pid 15885:tid 140681007834880] [client 128.62.61.39:9400]     return {"name": self.name, "release_date": self.release_date, "company": self.company, "starting_price": self.start_price, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
 [Thu Nov 03 16:51:24.833109 2016] [wsgi:error] [pid 15885:tid 140681007834880] [client 128.62.61.39:9400] AttributeError: 'Platform' object has no attribute 'start_price', referer: http://vgidb.me/
 [Thu Nov 03 16:51:24.833141 2016] [wsgi:error] [pid 15885:tid 140681007834880] [client 128.62.61.39:9400] , referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189156 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567] [2016-11-03 16:56:17,186] ERROR in app: Exception on /api/characters/offset/1 [GET], referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189563 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189579 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189592 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189603 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189609 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189614 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189619 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189624 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189629 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]     raise value, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189634 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189639 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189645 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189656 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189667 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]   File "/var/www/cs373f-idb/app/app.py", line 214, in api_characters_offset, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189673 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]     dict_p[data.name] = data.serialize_table(), referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189678 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]   File "/var/www/cs373f-idb/app/models.py", line 173, in serialize_table, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189683 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]     fields = {"name": self.name, "release_date": self.release_data, "platform": self.platform, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189695 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567] AttributeError: 'Character' object has no attribute 'release_data', referer: http://vgidb.me/
+[Thu Nov 03 16:56:17.189743 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567] , referer: http://vgidb.me/
