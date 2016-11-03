@@ -15,11 +15,11 @@ from models import Game, Character, Platform
 Base = declarative_base()
 app = Flask(__name__)
 #Chris's DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
@@ -187,18 +187,21 @@ def api_games_offset(offset):
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
-	print("Making sure it is going through this code")
-	for i in range (0,600000):
-		game = Game.query.get(i)
-		if game is None:
-			continue
-		if counter < target:
-			counter+=1
-			continue
+	games = Game.query.order_by(Game.id).limit(25).offset(target).all();
+	for game in games:
 		dict_p[game.name] = game.serialize_table()
-		if found >= 25:
-			break
-		found +=1
+	# print("Making sure it is going through this code")
+	# for i in range (0,600000):
+	# 	game = Game.query.get(i)
+	# 	if game is None:
+	# 		continue
+	# 	if counter < target:
+	# 		counter+=1
+	# 		continue
+	# 	dict_p[game.name] = game.serialize_table()
+	# 	if found >= 25:
+	# 		break
+	# 	found +=1
 	return jsonify(dict_p)
 	"""
 	for data in Game.query:
@@ -228,17 +231,20 @@ def api_characters_offset(offset):
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
-	for i in range (0,600000):
-		game = Character.query.get(i)
-		if game is None:
-			continue
-		if counter < target:
-			counter+=1
-			continue
-		dict_p[game.name] = game.serialize_table()
-		if found >= 25:
-			break
-		found +=1
+	characters = Character.query.order_by(Character.id).limit(25).offset(target).all();
+	for character in characters:
+		dict_p[character.name] = character.serialize_table()
+	# for i in range (0,600000):
+	# 	game = Character.query.get(i)
+	# 	if game is None:
+	# 		continue
+	# 	if counter < target:
+	# 		counter+=1
+	# 		continue
+	# 	dict_p[game.name] = game.serialize_table()
+	# 	if found >= 25:
+	# 		break
+	# 	found +=1
 	return jsonify(dict_p)
 	
 
@@ -268,18 +274,21 @@ def api_platforms_offset(offset):
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
-	print("Making sure it is going through this code")
-	for i in range (0,600000):
-		game = Character.query.get(i)
-		if game is None:
-			continue
-		if counter < target:
-			counter+=1
-			continue
-		dict_p[game.name] = game.serialize_table()
-		if found >= 25:
-			break
-		found +=1
+	platforms = Platform.query.order_by(Platform.id).limit(25).offset(target).all();
+	for platform in platforms:
+		dict_p[platform.name] = platform.serialize_table()
+	# print("Making sure it is going through this code")
+	# for i in range (0,600000):
+	# 	game = Character.query.get(i)
+	# 	if game is None:
+	# 		continue
+	# 	if counter < target:
+	# 		counter+=1
+	# 		continue
+	# 	dict_p[game.name] = game.serialize_table()
+	# 	if found >= 25:
+	# 		break
+	# 	found +=1
 	return jsonify(dict_p)
 	
 
