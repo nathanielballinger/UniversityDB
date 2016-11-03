@@ -66,7 +66,7 @@ class TestCases (TestCase):
 		platform1 = Platform("117", "Nintendo 3DS", "2011-02-26 00:00:00", "Nintendo", "249.00", "51630000", \
 			"The Nintendo 3DS is a portable game console produced by Nintendo. The handheld features stereoscopic 3D technology that doesn't require glasses. It was released in Japan on February 26, 2011 and in North America on March 27, 2011.", \
 			True, "3DS", "http://www.giantbomb.com/nintendo-3ds/3045-117/",\
-			"http://www.giantbomb.com/api/image/square_mini/1686079-3dshw11911.jpg", "medium_url": "http://www.giantbomb.com/api/image/scale_medium/1686079-3dshw11911.jpg")
+			"http://www.giantbomb.com/api/image/square_mini/1686079-3dshw11911.jpg", "http://www.giantbomb.com/api/image/scale_medium/1686079-3dshw11911.jpg")
 
 		self.assertEqual(platform1.id, "117")
 		self.assertEqual(platform1.name, "Nintendo 3DS")
