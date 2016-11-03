@@ -15,10 +15,21 @@ h3 {
   text-align: center;
 }
 
-body {
+.override-bootstrap {
   margin: 2em;
   padding-top: 55px;
+  background-image: url("/static/img/wallpaper1.jpg");
+  color: black;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position:center;
+  background-attachment: fixed;
 }
+
+#singlePageCSSOverride {
+  background-color: #5cff9b;
+}
+
 
 img {
     display: block;

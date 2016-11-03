@@ -69,7 +69,7 @@ myApp.controller('gamesCtrl', function($scope, $http){
     
     $scope.order = true;
     $scope.sortVar = "Name"
-    $http.get("/getGameTable")
+    $http.get("/api/games/")
     .then(function (response) {
         $scope.games = response.data;
         console.log($scope.games)
@@ -111,7 +111,7 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
 
     $scope.order = true;
     $scope.sortVar = "Name"
-    $http.get("/getPlatformTable")
+    $http.get("/api/platforms")
     .then(function (response) {
         $scope.platforms = response.data;
         $scope.sortBy($scope.sortVar);
@@ -151,7 +151,7 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
 myApp.controller('charactersCtrl', function($scope, $http){
     $scope.order = true;
     $scope.sortVar = "Name";
-    $http.get("/getCharacterTable")
+    $http.get("api/characters")
     .then(function (response) {
         $scope.characters = response.data;
         console.log($scope.characters)
@@ -218,7 +218,7 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
 
     var gameId = $routeParams.id
 
-    $http.get("/getGame/?id="+gameId)
+    $http.get("/api/games/"+gameId)
     .then(function (response) {
         var data = response.data;
         $scope.game = fixNullEmpty(data);
@@ -238,7 +238,7 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
 myApp.controller('characterCtrl', ['$scope','$routeParams', '$http', '$location', function($scope, $routeParams, $http, $location) {
     var characterId = $routeParams.id;
 
-    $http.get("/getCharacter/?id="+characterId)
+    $http.get("/api/characters/"+characterId)
     .then(function (response) {
         var data = response.data;
         $scope.character = fixNullEmpty(data);
@@ -255,7 +255,7 @@ myApp.controller('characterCtrl', ['$scope','$routeParams', '$http', '$location'
 myApp.controller('platformCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
     var platformId = $routeParams.id;
 
-    $http.get("/getPlatform/?id="+platformId)
+    $http.get("/api/platforms/"+platformId)
     .then(function (response) {
         var data = response.data;
         $scope.platform = fixNullEmpty(data);
@@ -274,6 +274,8 @@ myApp.controller('platformCtrl', ['$scope','$routeParams', '$http', function($sc
 //Controller for about page
 var scope;
 myApp.controller('aboutCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
+    $scope.testOutput = "";
+
     var usernameToName = {
         "Eitan-Yarmush" : "eitan",
         "Kwong98" : "keith",
@@ -313,6 +315,13 @@ myApp.controller('aboutCtrl', ['$scope','$routeParams', '$http', function($scope
             $scope.total.issues += 1;
         }
     })
+
+    $scope.runTests = function () {
+        $http.get("/api/runtests")
+        .then(function (response) {
+            $scope.testOutput = response.data;
+        })
+    }
 
     $scope.info = {};
 

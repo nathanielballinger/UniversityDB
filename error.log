@@ -48,3 +48,99 @@
 [Thu Nov 03 00:18:42.829655 2016] [wsgi:error] [pid 4486:tid 140443752822528] [client 71.42.119.84:63666]     import app/models
 [Thu Nov 03 00:18:42.829691 2016] [wsgi:error] [pid 4486:tid 140443752822528] [client 71.42.119.84:63666]               ^
 [Thu Nov 03 00:18:42.829713 2016] [wsgi:error] [pid 4486:tid 140443752822528] [client 71.42.119.84:63666] SyntaxError: invalid syntax
+[Thu Nov 03 03:42:45.718097 2016] [wsgi:error] [pid 5953:tid 140141964261120] [client 71.42.119.84:64022] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:42:45.719095 2016] [wsgi:error] [pid 5953:tid 140141964261120] [client 71.42.119.84:64022] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:42:45.720887 2016] [wsgi:error] [pid 5953:tid 140141964261120] [client 71.42.119.84:64022] Traceback (most recent call last):
+[Thu Nov 03 03:42:45.721008 2016] [wsgi:error] [pid 5953:tid 140141964261120] [client 71.42.119.84:64022]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:42:45.721029 2016] [wsgi:error] [pid 5953:tid 140141964261120] [client 71.42.119.84:64022]     from app.app import app as application
+[Thu Nov 03 03:42:45.721054 2016] [wsgi:error] [pid 5953:tid 140141964261120] [client 71.42.119.84:64022]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:42:45.721068 2016] [wsgi:error] [pid 5953:tid 140141964261120] [client 71.42.119.84:64022]     import models
+[Thu Nov 03 03:42:45.721133 2016] [wsgi:error] [pid 5953:tid 140141964261120] [client 71.42.119.84:64022] ImportError: No module named 'models'
+[Thu Nov 03 03:43:02.808022 2016] [wsgi:error] [pid 5953:tid 140141989439232] [client 71.42.119.84:62944] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:43:02.808139 2016] [wsgi:error] [pid 5953:tid 140141989439232] [client 71.42.119.84:62944] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:43:02.808393 2016] [wsgi:error] [pid 5953:tid 140141989439232] [client 71.42.119.84:62944] Traceback (most recent call last):
+[Thu Nov 03 03:43:02.808457 2016] [wsgi:error] [pid 5953:tid 140141989439232] [client 71.42.119.84:62944]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:43:02.808471 2016] [wsgi:error] [pid 5953:tid 140141989439232] [client 71.42.119.84:62944]     from app.app import app as application
+[Thu Nov 03 03:43:02.808487 2016] [wsgi:error] [pid 5953:tid 140141989439232] [client 71.42.119.84:62944]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:43:02.808495 2016] [wsgi:error] [pid 5953:tid 140141989439232] [client 71.42.119.84:62944]     import models
+[Thu Nov 03 03:43:02.808527 2016] [wsgi:error] [pid 5953:tid 140141989439232] [client 71.42.119.84:62944] ImportError: No module named 'models'
+[Thu Nov 03 03:44:04.105500 2016] [wsgi:error] [pid 5953:tid 140141997831936] [client 71.42.119.84:63190] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:44:04.105780 2016] [wsgi:error] [pid 5953:tid 140141997831936] [client 71.42.119.84:63190] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:44:04.106180 2016] [wsgi:error] [pid 5953:tid 140141997831936] [client 71.42.119.84:63190] Traceback (most recent call last):
+[Thu Nov 03 03:44:04.106232 2016] [wsgi:error] [pid 5953:tid 140141997831936] [client 71.42.119.84:63190]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:44:04.106244 2016] [wsgi:error] [pid 5953:tid 140141997831936] [client 71.42.119.84:63190]     from app.app import app as application
+[Thu Nov 03 03:44:04.106259 2016] [wsgi:error] [pid 5953:tid 140141997831936] [client 71.42.119.84:63190]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:44:04.106267 2016] [wsgi:error] [pid 5953:tid 140141997831936] [client 71.42.119.84:63190]     import models
+[Thu Nov 03 03:44:04.106312 2016] [wsgi:error] [pid 5953:tid 140141997831936] [client 71.42.119.84:63190] ImportError: No module named 'models'
+[Thu Nov 03 03:44:06.195252 2016] [wsgi:error] [pid 5953:tid 140141981046528] [client 71.42.119.84:63264] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:44:06.195374 2016] [wsgi:error] [pid 5953:tid 140141981046528] [client 71.42.119.84:63264] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:44:06.195557 2016] [wsgi:error] [pid 5953:tid 140141981046528] [client 71.42.119.84:63264] Traceback (most recent call last):
+[Thu Nov 03 03:44:06.195650 2016] [wsgi:error] [pid 5953:tid 140141981046528] [client 71.42.119.84:63264]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:44:06.195663 2016] [wsgi:error] [pid 5953:tid 140141981046528] [client 71.42.119.84:63264]     from app.app import app as application
+[Thu Nov 03 03:44:06.195679 2016] [wsgi:error] [pid 5953:tid 140141981046528] [client 71.42.119.84:63264]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:44:06.195686 2016] [wsgi:error] [pid 5953:tid 140141981046528] [client 71.42.119.84:63264]     import models
+[Thu Nov 03 03:44:06.195718 2016] [wsgi:error] [pid 5953:tid 140141981046528] [client 71.42.119.84:63264] ImportError: No module named 'models'
+[Thu Nov 03 03:45:19.079534 2016] [wsgi:error] [pid 5953:tid 140141947475712] [client 71.42.119.84:63566] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:45:19.079687 2016] [wsgi:error] [pid 5953:tid 140141947475712] [client 71.42.119.84:63566] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:45:19.079886 2016] [wsgi:error] [pid 5953:tid 140141947475712] [client 71.42.119.84:63566] Traceback (most recent call last):
+[Thu Nov 03 03:45:19.080005 2016] [wsgi:error] [pid 5953:tid 140141947475712] [client 71.42.119.84:63566]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:45:19.080017 2016] [wsgi:error] [pid 5953:tid 140141947475712] [client 71.42.119.84:63566]     from app.app import app as application
+[Thu Nov 03 03:45:19.080032 2016] [wsgi:error] [pid 5953:tid 140141947475712] [client 71.42.119.84:63566]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:45:19.080040 2016] [wsgi:error] [pid 5953:tid 140141947475712] [client 71.42.119.84:63566]     import models
+[Thu Nov 03 03:45:19.080122 2016] [wsgi:error] [pid 5953:tid 140141947475712] [client 71.42.119.84:63566] ImportError: No module named 'models'
+[Thu Nov 03 03:45:31.613023 2016] [wsgi:error] [pid 5953:tid 140141972653824] [client 71.42.119.84:64002] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:45:31.613224 2016] [wsgi:error] [pid 5953:tid 140141972653824] [client 71.42.119.84:64002] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:45:31.613522 2016] [wsgi:error] [pid 5953:tid 140141972653824] [client 71.42.119.84:64002] Traceback (most recent call last):
+[Thu Nov 03 03:45:31.613611 2016] [wsgi:error] [pid 5953:tid 140141972653824] [client 71.42.119.84:64002]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:45:31.613634 2016] [wsgi:error] [pid 5953:tid 140141972653824] [client 71.42.119.84:64002]     from app.app import app as application
+[Thu Nov 03 03:45:31.613673 2016] [wsgi:error] [pid 5953:tid 140141972653824] [client 71.42.119.84:64002]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:45:31.613691 2016] [wsgi:error] [pid 5953:tid 140141972653824] [client 71.42.119.84:64002]     import models
+[Thu Nov 03 03:45:31.613759 2016] [wsgi:error] [pid 5953:tid 140141972653824] [client 71.42.119.84:64002] ImportError: No module named 'models'
+[Thu Nov 03 03:45:38.679580 2016] [wsgi:error] [pid 5953:tid 140142129039104] [client 71.42.119.84:64001] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:45:38.679798 2016] [wsgi:error] [pid 5953:tid 140142129039104] [client 71.42.119.84:64001] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:45:38.680007 2016] [wsgi:error] [pid 5953:tid 140142129039104] [client 71.42.119.84:64001] Traceback (most recent call last):
+[Thu Nov 03 03:45:38.680080 2016] [wsgi:error] [pid 5953:tid 140142129039104] [client 71.42.119.84:64001]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:45:38.680092 2016] [wsgi:error] [pid 5953:tid 140142129039104] [client 71.42.119.84:64001]     from app.app import app as application
+[Thu Nov 03 03:45:38.680107 2016] [wsgi:error] [pid 5953:tid 140142129039104] [client 71.42.119.84:64001]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:45:38.680115 2016] [wsgi:error] [pid 5953:tid 140142129039104] [client 71.42.119.84:64001]     import models
+[Thu Nov 03 03:45:38.680146 2016] [wsgi:error] [pid 5953:tid 140142129039104] [client 71.42.119.84:64001] ImportError: No module named 'models'
+[Thu Nov 03 03:46:21.296566 2016] [wsgi:error] [pid 5953:tid 140142120646400] [client 71.42.119.84:63625] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:46:21.296676 2016] [wsgi:error] [pid 5953:tid 140142120646400] [client 71.42.119.84:63625] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:46:21.296841 2016] [wsgi:error] [pid 5953:tid 140142120646400] [client 71.42.119.84:63625] Traceback (most recent call last):
+[Thu Nov 03 03:46:21.296889 2016] [wsgi:error] [pid 5953:tid 140142120646400] [client 71.42.119.84:63625]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:46:21.296901 2016] [wsgi:error] [pid 5953:tid 140142120646400] [client 71.42.119.84:63625]     from app.app import app as application
+[Thu Nov 03 03:46:21.296916 2016] [wsgi:error] [pid 5953:tid 140142120646400] [client 71.42.119.84:63625]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:46:21.296924 2016] [wsgi:error] [pid 5953:tid 140142120646400] [client 71.42.119.84:63625]     import models
+[Thu Nov 03 03:46:21.296956 2016] [wsgi:error] [pid 5953:tid 140142120646400] [client 71.42.119.84:63625] ImportError: No module named 'models'
+[Thu Nov 03 03:46:24.640216 2016] [wsgi:error] [pid 5953:tid 140142112253696] [client 71.42.119.84:63628] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:46:24.640328 2016] [wsgi:error] [pid 5953:tid 140142112253696] [client 71.42.119.84:63628] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:46:24.640496 2016] [wsgi:error] [pid 5953:tid 140142112253696] [client 71.42.119.84:63628] Traceback (most recent call last):
+[Thu Nov 03 03:46:24.640542 2016] [wsgi:error] [pid 5953:tid 140142112253696] [client 71.42.119.84:63628]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:46:24.640553 2016] [wsgi:error] [pid 5953:tid 140142112253696] [client 71.42.119.84:63628]     from app.app import app as application
+[Thu Nov 03 03:46:24.640568 2016] [wsgi:error] [pid 5953:tid 140142112253696] [client 71.42.119.84:63628]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:46:24.640576 2016] [wsgi:error] [pid 5953:tid 140142112253696] [client 71.42.119.84:63628]     import models
+[Thu Nov 03 03:46:24.640607 2016] [wsgi:error] [pid 5953:tid 140142112253696] [client 71.42.119.84:63628] ImportError: No module named 'models'
+[Thu Nov 03 03:46:34.661948 2016] [wsgi:error] [pid 5953:tid 140141955868416] [client 71.42.119.84:63826] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:46:34.662115 2016] [wsgi:error] [pid 5953:tid 140141955868416] [client 71.42.119.84:63826] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:46:34.662356 2016] [wsgi:error] [pid 5953:tid 140141955868416] [client 71.42.119.84:63826] Traceback (most recent call last):
+[Thu Nov 03 03:46:34.662430 2016] [wsgi:error] [pid 5953:tid 140141955868416] [client 71.42.119.84:63826]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:46:34.662448 2016] [wsgi:error] [pid 5953:tid 140141955868416] [client 71.42.119.84:63826]     from app.app import app as application
+[Thu Nov 03 03:46:34.662538 2016] [wsgi:error] [pid 5953:tid 140141955868416] [client 71.42.119.84:63826]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:46:34.662556 2016] [wsgi:error] [pid 5953:tid 140141955868416] [client 71.42.119.84:63826]     import models
+[Thu Nov 03 03:46:34.662606 2016] [wsgi:error] [pid 5953:tid 140141955868416] [client 71.42.119.84:63826] ImportError: No module named 'models'
+[Thu Nov 03 03:47:22.238849 2016] [wsgi:error] [pid 5953:tid 140141871941376] [client 71.42.119.84:63996] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:47:22.238964 2016] [wsgi:error] [pid 5953:tid 140141871941376] [client 71.42.119.84:63996] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:47:22.239126 2016] [wsgi:error] [pid 5953:tid 140141871941376] [client 71.42.119.84:63996] Traceback (most recent call last):
+[Thu Nov 03 03:47:22.239173 2016] [wsgi:error] [pid 5953:tid 140141871941376] [client 71.42.119.84:63996]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:47:22.239184 2016] [wsgi:error] [pid 5953:tid 140141871941376] [client 71.42.119.84:63996]     from app.app import app as application
+[Thu Nov 03 03:47:22.239199 2016] [wsgi:error] [pid 5953:tid 140141871941376] [client 71.42.119.84:63996]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:47:22.239207 2016] [wsgi:error] [pid 5953:tid 140141871941376] [client 71.42.119.84:63996]     import models
+[Thu Nov 03 03:47:22.239239 2016] [wsgi:error] [pid 5953:tid 140141871941376] [client 71.42.119.84:63996] ImportError: No module named 'models'
+[Thu Nov 03 03:47:24.567126 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995] mod_wsgi (pid=5953): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 03:47:24.567281 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995] mod_wsgi (pid=5953): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 03:47:24.567525 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995] Traceback (most recent call last):
+[Thu Nov 03 03:47:24.567599 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 03:47:24.567617 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995]     from app.app import app as application
+[Thu Nov 03 03:47:24.567715 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
+[Thu Nov 03 03:47:24.567728 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995]     import models
+[Thu Nov 03 03:47:24.567762 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995] ImportError: No module named 'models'

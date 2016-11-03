@@ -1,5 +1,5 @@
 from io             import StringIO
-from unittest       import main, TestCase
+from unittest       import main, TestCase, TextTestRunner, makeSuite
 #Only add app. before models when you want to run the DO server
 from models 		import *
 
@@ -153,4 +153,11 @@ class TestCases (TestCase):
 
 if __name__ == '__main__' :
 	main()
+
+def runTestsOut():
+	stream = StringIO()
+	runner = TextTestRunner(stream=stream)
+	result = runner.run(makeSuite(TestCases))
+	stream.seek(0)
+	return stream.read()
 

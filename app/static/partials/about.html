@@ -6,7 +6,7 @@
                 <img class="img-rounded" src="/static/img/Eitan Yarmush.jpg" alt="...">
                 <div class="caption">
                     <h3>Eitan Yarmush</h3>
-                    <p>Eitan Yarmush is a 5th year Computer Science Major from UT. He enjoys playing video games, as well as exercising, and reading. I am an experienced web dev, and aspiring sandwich conniseur.</p>
+                    <p>Eitan Yarmush is a 5th year Computer Science Major from UT. He enjoys playing video games, as well as exercising, and reading. I am an experienced web dev, and aspirsing sandwich conniseur.</p>
                     <p>Major Responsibilities: Troubleshooting, Routing, API, Digital Ocean</p>
                     <p>No. of Contributions: {{eitan.contributions}}</p>
                     <p>No. of Issues: {{eitan.issues}}</p>
@@ -100,7 +100,7 @@
             <h3>Important Links</h3>
             <p><a href="https://github.com/nathanielballinger/cs373-idb">Github Repository</a></p>
             <p><a href="https://github.com/nathanielballinger/cs373-idb/blob/master/apiary.apib">Apiary API</a></p>
-            <p><a href="https://github.com/nathanielballinger/cs373-idb/issues">Github Issue Tracker</a></p>
+            <p><a href="http://docs.vgidb.apiary.io/#">Github Issue Tracker</a></p>
             <p><a href="https://github.com/nathanielballinger/cs373-idb/wiki">Github Wiki</a></p>
         </div>
     </div>
@@ -124,6 +124,19 @@
             </p>
 
             <p>This is only a small portion of the JSON snippet for a single game, but the rest can be inferred from above. With this data we can parse the JSON file to acquire the parts that we need and insert them into the HTML Web Page.</p>
+        </div>
+    </div>
+</div>
+<h1 align="center">Unit Tests</h1>
+<div class="container">
+    <div class="row">
+        <div align="center" class="col-md-12">
+            <button align="center" ng-click="runTests()" type="button" class="btn btn-primary">Run Tests</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>{{testOutput}}</p>
         </div>
     </div>
 </div>
