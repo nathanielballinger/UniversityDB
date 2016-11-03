@@ -193,6 +193,7 @@ def api_games_offset(offset):
 		new_count+=1
 		#print("New_count"+str(new_count))
 		#print(int(data.id))
+		
 		dict_p[data.name] = data.serialize_table()
 		if new_count > (25*(int(offset)-1) + 24):
 			break
