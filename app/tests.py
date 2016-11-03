@@ -1,5 +1,6 @@
 from io             import StringIO
 from unittest       import main, TestCase
+#Only add app. before models when you want to run the DO server
 from models 		import *
 
 class TestCases (TestCase):

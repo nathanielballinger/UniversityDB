@@ -5,6 +5,7 @@ from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 import json
 import re
+#Only add app. on the next two lines when you want to run the DO server
 import models
 from models import Game, Character, Platform
 
