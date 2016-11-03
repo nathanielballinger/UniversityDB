@@ -14,11 +14,7 @@ app = Flask(__name__)
 #Nate's Database
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localhost:5432/swe'
 #Chris's database
-<<<<<<< HEAD
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
-=======
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
->>>>>>> be3a2dc5319fdd863c1c8467104ed70ecdb86d5a
 #Digital Ocean
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
