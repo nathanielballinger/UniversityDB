@@ -165,6 +165,7 @@ for entry in chr_array:
 		p = Game.query.filter_by(id = counter).first()
 		if p is None:
 			continue
+		print(p.character+" "+entry)
 		p.character = entry
 		db.session.commit()
 		counter +=1
