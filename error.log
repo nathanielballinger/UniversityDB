@@ -472,3 +472,195 @@
 [Thu Nov 03 16:56:17.189683 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567]     fields = {"name": self.name, "release_date": self.release_data, "platform": self.platform, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
 [Thu Nov 03 16:56:17.189695 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567] AttributeError: 'Character' object has no attribute 'release_data', referer: http://vgidb.me/
 [Thu Nov 03 16:56:17.189743 2016] [wsgi:error] [pid 16168:tid 139791012792064] [client 128.62.61.39:10567] , referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103011 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566] [2016-11-03 16:59:02,099] ERROR in app: Exception on /api/characters/offset/1 [GET], referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103228 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103264 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103272 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103279 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103284 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103290 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103295 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103300 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103306 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]     raise value, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103311 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103316 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103321 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103327 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103332 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]   File "/var/www/cs373f-idb/app/app.py", line 214, in api_characters_offset, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103337 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]     dict_p[data.name] = data.serialize_table(), referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103341 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]   File "/var/www/cs373f-idb/app/models.py", line 173, in serialize_table, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103347 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566]     fields = {"name": self.name, "release_date": self.release_date, "platform": self.platform, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103358 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566] AttributeError: 'Character' object has no attribute 'release_date', referer: http://vgidb.me/
+[Thu Nov 03 16:59:02.103406 2016] [wsgi:error] [pid 16329:tid 139713180583680] [client 128.62.61.39:12566] , referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269568 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827] [2016-11-03 17:02:25,266] ERROR in app: Exception on /api/characters/offset/1 [GET], referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269735 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269769 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269776 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269782 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269787 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269792 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269797 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269802 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269807 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]     raise value, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269811 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269816 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269821 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269826 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269831 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]   File "/var/www/cs373f-idb/app/app.py", line 214, in api_characters_offset, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269836 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]     dict_p[data.name] = data.serialize_table(), referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269841 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]   File "/var/www/cs373f-idb/app/models.py", line 173, in serialize_table, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269846 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827]     fields = {"name": self.name, "aliases": self.aliases, "platform": self.platform, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269855 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827] AttributeError: 'Character' object has no attribute 'platform', referer: http://vgidb.me/
+[Thu Nov 03 17:02:25.269892 2016] [wsgi:error] [pid 16499:tid 140559767295744] [client 128.62.61.39:9827] , referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199138 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208] [2016-11-03 17:03:24,195] ERROR in app: Exception on /api/characters/offset/1 [GET], referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199628 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199642 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199660 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199667 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199672 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199677 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199682 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199687 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199692 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]     raise value, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199696 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199701 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199706 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199711 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199716 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]   File "/var/www/cs373f-idb/app/app.py", line 214, in api_characters_offset, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199721 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]     dict_p[data.name] = data.serialize_table(), referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199726 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]   File "/var/www/cs373f-idb/app/models.py", line 173, in serialize_table, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199731 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208]     fields = {"name": self.name, "aliases": self.aliases, "platform": self.platform, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199740 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208] AttributeError: 'Character' object has no attribute 'platform', referer: http://vgidb.me/
+[Thu Nov 03 17:03:24.199780 2016] [wsgi:error] [pid 16565:tid 140559649797888] [client 128.62.74.11:28208] , referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.549545 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570] [2016-11-03 17:03:41,541] ERROR in app: Exception on /api/platforms/0 [GET], referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553003 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553020 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553027 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553048 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553054 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553059 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553064 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553069 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553074 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]     raise value, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553079 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553084 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553089 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553094 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553099 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]   File "/var/www/cs373f-idb/app/app.py", line 245, in api_platforms_id, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553104 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570]     return jsonify(Platform.query.get(id).serialize()), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553115 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570] AttributeError: 'NoneType' object has no attribute 'serialize', referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.553169 2016] [wsgi:error] [pid 16640:tid 140559733724928] [client 128.62.74.11:28570] , referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708227 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773] [2016-11-03 17:03:41,707] ERROR in app: Exception on /api/platforms/0 [GET], referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708276 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708282 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708288 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708293 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708298 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708303 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708335 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708342 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708348 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]     raise value, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708352 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708358 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708363 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708368 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708373 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]   File "/var/www/cs373f-idb/app/app.py", line 245, in api_platforms_id, referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708377 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773]     return jsonify(Platform.query.get(id).serialize()), referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708385 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773] AttributeError: 'NoneType' object has no attribute 'serialize', referer: http://vgidb.me/
+[Thu Nov 03 17:03:41.708418 2016] [wsgi:error] [pid 16640:tid 140559767295744] [client 128.62.74.11:27773] , referer: http://vgidb.me/
+[Thu Nov 03 17:05:27.453077 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560] mod_wsgi (pid=16830): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 17:05:27.453660 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560] mod_wsgi (pid=16830): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 17:05:27.454659 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560] Traceback (most recent call last):
+[Thu Nov 03 17:05:27.454739 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 17:05:27.454752 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560]     from app.app import app as application
+[Thu Nov 03 17:05:27.454769 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>
+[Thu Nov 03 17:05:27.454777 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560]     from app.tests import runTestsOut
+[Thu Nov 03 17:05:27.454791 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>
+[Thu Nov 03 17:05:27.454799 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560]     from app.models \t\timport *
+[Thu Nov 03 17:05:27.454835 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560]   File "/var/www/cs373f-idb/app/models.py", line 173
+[Thu Nov 03 17:05:27.454860 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560]     fields = {"name": self.name, "aliases": self.aliases, "first_appeared_in_game":,self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}
+[Thu Nov 03 17:05:27.454955 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560]                                                                                    ^
+[Thu Nov 03 17:05:27.454981 2016] [wsgi:error] [pid 16830:tid 139936031778560] [client 128.62.61.39:12560] SyntaxError: invalid syntax
+[Thu Nov 03 17:09:35.194703 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048] mod_wsgi (pid=16829): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module., referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.194877 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048] mod_wsgi (pid=16829): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'., referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.195752 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.195817 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.195830 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048]     from app.app import app as application, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.195847 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.195856 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048]     from app.tests import runTestsOut, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.195870 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.195879 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048]     from app.models \t\timport *, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.195962 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048]   File "/var/www/cs373f-idb/app/models.py", line 173, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.195994 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048]     fields = {"name": self.name, "aliases": self.aliases, "first_appeared_in_game":,self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.196060 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048]                                                                                    ^, referer: http://vgidb.me/
+[Thu Nov 03 17:09:35.196085 2016] [wsgi:error] [pid 16829:tid 139935914903296] [client 128.62.74.11:29048] SyntaxError: invalid syntax, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.859592 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223] mod_wsgi (pid=16830): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module., referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.859803 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223] mod_wsgi (pid=16830): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'., referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860348 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860417 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860431 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223]     from app.app import app as application, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860448 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860486 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223]     from app.tests import runTestsOut, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860517 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860529 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223]     from app.models \t\timport *, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860572 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223]   File "/var/www/cs373f-idb/app/models.py", line 173, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860621 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223]     fields = {"name": self.name, "aliases": self.aliases, "first_appeared_in_game":,self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860719 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223]                                                                                    ^, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.860745 2016] [wsgi:error] [pid 16830:tid 139936023377664] [client 128.62.74.11:27223] SyntaxError: invalid syntax, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980266 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859] mod_wsgi (pid=16829): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module., referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980471 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859] mod_wsgi (pid=16829): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'., referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980746 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980811 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980823 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859]     from app.app import app as application, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980840 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980849 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859]     from app.tests import runTestsOut, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980863 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980871 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859]     from app.models \t\timport *, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980901 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859]   File "/var/www/cs373f-idb/app/models.py", line 173, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.980952 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859]     fields = {"name": self.name, "aliases": self.aliases, "first_appeared_in_game":,self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.981042 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859]                                                                                    ^, referer: http://vgidb.me/
+[Thu Nov 03 17:09:37.981068 2016] [wsgi:error] [pid 16829:tid 139935940081408] [client 128.62.74.11:25859] SyntaxError: invalid syntax, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.056991 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924] mod_wsgi (pid=16829): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module., referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057158 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924] mod_wsgi (pid=16829): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'., referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057384 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057440 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057452 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924]     from app.app import app as application, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057469 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057477 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924]     from app.tests import runTestsOut, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057491 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057500 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924]     from app.models \t\timport *, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057528 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924]   File "/var/www/cs373f-idb/app/models.py", line 173, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057562 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924]     fields = {"name": self.name, "aliases": self.aliases, "first_appeared_in_game":,self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057628 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924]                                                                                    ^, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.057651 2016] [wsgi:error] [pid 16829:tid 139935931688704] [client 128.62.74.11:25924] SyntaxError: invalid syntax, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172004 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925] mod_wsgi (pid=16830): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module., referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172166 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925] mod_wsgi (pid=16830): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'., referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172418 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172483 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172495 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925]     from app.app import app as application, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172529 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172540 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925]     from app.tests import runTestsOut, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172555 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172609 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925]     from app.models \t\timport *, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172651 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925]   File "/var/www/cs373f-idb/app/models.py", line 173, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172679 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925]     fields = {"name": self.name, "aliases": self.aliases, "first_appeared_in_game":,self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172753 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925]                                                                                    ^, referer: http://vgidb.me/
+[Thu Nov 03 17:09:40.172777 2016] [wsgi:error] [pid 16830:tid 139936040179456] [client 128.62.74.11:25925] SyntaxError: invalid syntax, referer: http://vgidb.me/
+[Thu Nov 03 17:13:46.634374 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452] [2016-11-03 17:13:46,632] ERROR in app: Exception on /api/games/offset/1 Failed to load resource: net::ERR_EMPTY_RESPONSE [GET]
+[Thu Nov 03 17:13:46.635179 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452] Traceback (most recent call last):
+[Thu Nov 03 17:13:46.635194 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 17:13:46.635201 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]     response = self.full_dispatch_request()
+[Thu Nov 03 17:13:46.635207 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 17:13:46.635213 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]     rv = self.handle_user_exception(e)
+[Thu Nov 03 17:13:46.635218 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 17:13:46.635224 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 17:13:46.635230 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 17:13:46.635236 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]     raise value
+[Thu Nov 03 17:13:46.635241 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 17:13:46.635247 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]     rv = self.dispatch_request()
+[Thu Nov 03 17:13:46.635253 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 17:13:46.635259 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 17:13:46.635265 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]   File "/var/www/cs373f-idb/app/app.py", line 184, in api_games_offset
+[Thu Nov 03 17:13:46.635270 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452]     new_count = 25*int(offset)
+[Thu Nov 03 17:13:46.635279 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452] ValueError: invalid literal for int() with base 10: '1 Failed to load resource: net::ERR_EMPTY_RESPONSE'
+[Thu Nov 03 17:13:46.635332 2016] [wsgi:error] [pid 17408:tid 140220548773632] [client 67.78.97.71:62452] 
