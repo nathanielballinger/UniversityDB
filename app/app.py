@@ -5,18 +5,18 @@ from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 import json
 import re
-from tests import runTestsOut
+from app.tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
-import models
-from models import Game, Character, Platform
+import app.models
+from app.models import Game, Character, Platform
 
 Base = declarative_base()
 app = Flask(__name__)
 #Chris's DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 

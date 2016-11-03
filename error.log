@@ -144,3 +144,55 @@
 [Thu Nov 03 03:47:24.567715 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995]   File "/var/www/cs373f-idb/app/app.py", line 9, in <module>
 [Thu Nov 03 03:47:24.567728 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995]     import models
 [Thu Nov 03 03:47:24.567762 2016] [wsgi:error] [pid 5953:tid 140141863548672] [client 71.42.119.84:63995] ImportError: No module named 'models'
+[Thu Nov 03 06:27:38.026325 2016] [wsgi:error] [pid 9128:tid 139679145510656] [client 71.42.119.84:63412] mod_wsgi (pid=9128): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module., referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.026481 2016] [wsgi:error] [pid 9128:tid 139679145510656] [client 71.42.119.84:63412] mod_wsgi (pid=9128): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'., referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.027379 2016] [wsgi:error] [pid 9128:tid 139679145510656] [client 71.42.119.84:63412] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.027449 2016] [wsgi:error] [pid 9128:tid 139679145510656] [client 71.42.119.84:63412]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.027465 2016] [wsgi:error] [pid 9128:tid 139679145510656] [client 71.42.119.84:63412]     from app.app import app as application, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.027498 2016] [wsgi:error] [pid 9128:tid 139679145510656] [client 71.42.119.84:63412]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.027507 2016] [wsgi:error] [pid 9128:tid 139679145510656] [client 71.42.119.84:63412]     from tests import runTestsOut, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.027557 2016] [wsgi:error] [pid 9128:tid 139679145510656] [client 71.42.119.84:63412] ImportError: No module named 'tests', referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.684589 2016] [wsgi:error] [pid 9129:tid 139679162296064] [client 71.42.119.84:63421] mod_wsgi (pid=9129): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module., referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.684736 2016] [wsgi:error] [pid 9129:tid 139679162296064] [client 71.42.119.84:63421] mod_wsgi (pid=9129): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'., referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.685619 2016] [wsgi:error] [pid 9129:tid 139679162296064] [client 71.42.119.84:63421] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.685676 2016] [wsgi:error] [pid 9129:tid 139679162296064] [client 71.42.119.84:63421]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.685688 2016] [wsgi:error] [pid 9129:tid 139679162296064] [client 71.42.119.84:63421]     from app.app import app as application, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.685704 2016] [wsgi:error] [pid 9129:tid 139679162296064] [client 71.42.119.84:63421]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.685713 2016] [wsgi:error] [pid 9129:tid 139679162296064] [client 71.42.119.84:63421]     from tests import runTestsOut, referer: http://vgidb.me/
+[Thu Nov 03 06:27:38.685753 2016] [wsgi:error] [pid 9129:tid 139679162296064] [client 71.42.119.84:63421] ImportError: No module named 'tests', referer: http://vgidb.me/
+[Thu Nov 03 06:27:47.648806 2016] [wsgi:error] [pid 9129:tid 139679137109760] [client 71.42.119.84:63704] mod_wsgi (pid=9129): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 06:27:47.648983 2016] [wsgi:error] [pid 9129:tid 139679137109760] [client 71.42.119.84:63704] mod_wsgi (pid=9129): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 06:27:47.649247 2016] [wsgi:error] [pid 9129:tid 139679137109760] [client 71.42.119.84:63704] Traceback (most recent call last):
+[Thu Nov 03 06:27:47.649326 2016] [wsgi:error] [pid 9129:tid 139679137109760] [client 71.42.119.84:63704]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 06:27:47.649344 2016] [wsgi:error] [pid 9129:tid 139679137109760] [client 71.42.119.84:63704]     from app.app import app as application
+[Thu Nov 03 06:27:47.649368 2016] [wsgi:error] [pid 9129:tid 139679137109760] [client 71.42.119.84:63704]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>
+[Thu Nov 03 06:27:47.649381 2016] [wsgi:error] [pid 9129:tid 139679137109760] [client 71.42.119.84:63704]     from tests import runTestsOut
+[Thu Nov 03 06:27:47.649432 2016] [wsgi:error] [pid 9129:tid 139679137109760] [client 71.42.119.84:63704] ImportError: No module named 'tests'
+[Thu Nov 03 06:29:48.844312 2016] [wsgi:error] [pid 9261:tid 139800774371072] [client 71.42.119.84:62767] mod_wsgi (pid=9261): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 06:29:48.844477 2016] [wsgi:error] [pid 9261:tid 139800774371072] [client 71.42.119.84:62767] mod_wsgi (pid=9261): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 06:29:48.845165 2016] [wsgi:error] [pid 9261:tid 139800774371072] [client 71.42.119.84:62767] Traceback (most recent call last):
+[Thu Nov 03 06:29:48.845218 2016] [wsgi:error] [pid 9261:tid 139800774371072] [client 71.42.119.84:62767]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 06:29:48.845255 2016] [wsgi:error] [pid 9261:tid 139800774371072] [client 71.42.119.84:62767]     from app.app import app as application
+[Thu Nov 03 06:29:48.845277 2016] [wsgi:error] [pid 9261:tid 139800774371072] [client 71.42.119.84:62767]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>
+[Thu Nov 03 06:29:48.845286 2016] [wsgi:error] [pid 9261:tid 139800774371072] [client 71.42.119.84:62767]     from tests import runTestsOut
+[Thu Nov 03 06:29:48.845324 2016] [wsgi:error] [pid 9261:tid 139800774371072] [client 71.42.119.84:62767] ImportError: No module named 'tests'
+[Thu Nov 03 06:31:30.266961 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687] mod_wsgi (pid=9383): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 06:31:30.267132 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687] mod_wsgi (pid=9383): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 06:31:30.268157 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687] Traceback (most recent call last):
+[Thu Nov 03 06:31:30.268222 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 06:31:30.268235 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687]     from app.app import app as application
+[Thu Nov 03 06:31:30.268250 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>
+[Thu Nov 03 06:31:30.268258 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687]     from app.tests import runTestsOut
+[Thu Nov 03 06:31:30.268272 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>
+[Thu Nov 03 06:31:30.268279 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687]     from models \t\timport *
+[Thu Nov 03 06:31:30.268314 2016] [wsgi:error] [pid 9383:tid 140013241100032] [client 71.42.119.84:63687] ImportError: No module named 'models'
+[Thu Nov 03 06:31:40.148701 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008] mod_wsgi (pid=9384): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 03 06:31:40.148923 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008] mod_wsgi (pid=9384): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 03 06:31:40.149949 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008] Traceback (most recent call last):
+[Thu Nov 03 06:31:40.150046 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 03 06:31:40.150069 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008]     from app.app import app as application
+[Thu Nov 03 06:31:40.150103 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008]   File "/var/www/cs373f-idb/app/app.py", line 8, in <module>
+[Thu Nov 03 06:31:40.150115 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008]     from app.tests import runTestsOut
+[Thu Nov 03 06:31:40.150130 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>
+[Thu Nov 03 06:31:40.150138 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008]     from models \t\timport *
+[Thu Nov 03 06:31:40.150178 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008] ImportError: No module named 'models'
