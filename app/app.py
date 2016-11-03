@@ -99,17 +99,13 @@ for x in range(1,4):
 	with open('/var/www/cs373f-idb/app/static/json/platform'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		platformDict[data['id']] = data
+
 """
 gameDict = dict()
-"""
-for x in range(1,56877):
-	b = Game.query.filter_by(id = i).first()
-	if b is None:
-		continue
-"""
-print("Does anything hapen")
 characterDict = dict()
 platformDict = dict()
+
+
 
 
 @app.route("/")

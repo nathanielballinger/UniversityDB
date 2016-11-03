@@ -14,13 +14,14 @@ TO THE ALREADY EXISTING DB DONT RUN THE NEXT TWO LINE. YOU WILL REGRET IT
 
 db.drop_all()
 db.create_all()
+"""
 api_key="d0d1072f35f6c08b0ce0d7249c1c1d94d500c913"
 
 gameFieldList = "&field_list=id,name,original_release_date,genres,developers,original_rating,description,review,image,platforms,characters,aliases,site_detail_url"
 platformFieldList ="&field_list=id,name,abbreviation,company,deck,description,image,install_base,online_support,original_price,release_date,site_detail_url"
 characterFieldList = "&field_list=id,aliases,birthday,deck,description,enemies,friends,first_appeared_in_game,games,gender,image,name,site_detail_url"
 
-
+"""
 games = []
 for x in range(0,520):
 	gameString = "http://www.giantbomb.com/api/games/?api_key="+api_key+"&format=json&offset="+str(x)+"00"
@@ -30,7 +31,7 @@ platforms = []
 for x in range(0,2):
 	platformString = "http://www.giantbomb.com/api/platforms/?api_key="+api_key+"&format=json&offset="+str(x)+"00"
 	platforms.append(platformString)
-
+"""
 characters = []
 for x in range(0,332):
 	if x ==26:
@@ -40,6 +41,7 @@ for x in range(0,332):
 
 #Gets json from API
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'}
+"""
 print("Adding to DB...this step will take approx 20 mins")
 counter = 1
 for game in games:
@@ -95,6 +97,7 @@ for platform in platforms:
 
 print("LOADING PLATFORMS COMPLETE")
 
+
 dnc = 1
 for character in characters:
 	v = requests.get(character, headers = headers)
@@ -120,6 +123,27 @@ for character in characters:
 	dnc+=1
 print("LOADING CHARACTERS COMPLETE...MAKING SOME FINAL MODIFCATIONS")
 """
+for character in characters:
+	v = requests.get(character, headers = headers)
+	character_data = v.json()
+	for entry in character_data['results']:
+		c = Character.query.filter_by(id = entry['id']).first()
+		print (c.id)
+		c.birthday = None
+		c.first_appeared_in_game = None
+		print(c.birthday)
+		print(c.first_appeared_in_game)
+		if entry['first_appeared_in_game'] is not None:
+			first_appeared_in_game = entry['first_appeared_in_game']['id']
+		else:
+			first_appeared_in_game = None
+		c.first_appeared_in_game = first_appeared_in_game
+		c.birthday = entry['birthday']
+		print (c.first_appeared_in_game)
+		print(c.birthday)
+		db.session.commit()
+		print("############################################")
+
 #List of games for each platform
 plat_array = ['']*164
 for i in range(1,56877):
@@ -171,7 +195,7 @@ for entry in chr_array:
 		counter +=1
 	else:
 		counter+=1
-"""
+
 #Checking to make sure we loaded the data correctly
 for i in range(0,50):
 	g = Game.query.filter_by(id = i).first()
@@ -229,7 +253,7 @@ for i in range(0,50):
 	print(g.site_detail_url)
 	print(g.aliases)
 	print(g.first_appeared_in_game)
-"""
+
 
 
 
