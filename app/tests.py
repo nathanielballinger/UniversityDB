@@ -154,7 +154,7 @@ class TestCases (TestCase):
 		self.assertEqual(character4.game_first_appeared, " ")
 
 	# ------
-	# Other Tests
+	# Game Serialize
 	# ------
 
 	def test_game_serialize_1(self):
@@ -168,6 +168,42 @@ class TestCases (TestCase):
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
 		'platforms': "PLATFORMS", 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/"}
 		self.assertEqual(obj, test)
+
+	def test_game_serialize_2(self):
+		obj = Game("52537", "LEGO Star Wars: The Force Awakens", "2016-06-28 00:00:00", \
+			"LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.",\
+			"http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg",\
+			"PLATFORMS", None, "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/")
+		obj.serialize()
+		test = {'id': "52537", 'name': "LEGO Star Wars: The Force Awakens", 'release_date': "2016-06-28 00:00:00", \
+		'description': "LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.", \
+		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg", \
+		'platforms': "PLATFORMS", 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/"}
+		self.assertEqual(obj, test)
+
+	def test_game_serialize_3(self):
+		obj = Game("41088", "Pokémon X/Y", "2013-10-12 00:00:00", \
+			"The first Pokémon games on the 3DS and the first to be released simultaneously worldwide.", \
+			"http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", "http://www.giantbomb.com/api/image/scale_medium/2482818-pokemonxy.jpg",\
+			"PLATFORMS", "Pokemon X/Y\nPokemon Y", "http://www.giantbomb.com/pokemon-xy/3030-41088/")
+		obj.serialize()
+		test = {'id': "41088", 'name': "Pokémon X/Y", 'release_date': "2013-10-12 00:00:00", \
+		'description': "The first Pokémon games on the 3DS and the first to be released simultaneously worldwide.", \
+		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2482818-pokemonxy.jpg", \
+		'platforms': "PLATFORMS", 'aliases': "Pokemon X/Y\nPokemon Y", 'site_detail_url': "http://www.giantbomb.com/pokemon-xy/3030-41088/"}
+		self.assertEqual(obj, test)
+
+	# ------
+	# Platform Serialize
+	# ------
+
+	def test_platform_serialize_1(self):
+		obj = Platform("117", "Nintendo 3DS", "2011-02-26 00:00:00", "Nintendo", "249.00", "51630000", \
+			"The Nintendo 3DS is a portable game console produced by Nintendo. The handheld features stereoscopic 3D technology that doesn't require glasses. It was released in Japan on February 26, 2011 and in North America on March 27, 2011.", \
+			True, "3DS", "http://www.giantbomb.com/nintendo-3ds/3045-117/",\
+			"http://www.giantbomb.com/api/image/square_mini/1686079-3dshw11911.jpg", "http://www.giantbomb.com/api/image/scale_medium/1686079-3dshw11911.jpg")
+		obj.serialize()
+		
 
 
 
