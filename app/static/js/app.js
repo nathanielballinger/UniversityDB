@@ -69,7 +69,7 @@ myApp.controller('gamesCtrl', function($scope, $http){
     
     $scope.order = true;
     $scope.sortVar = "Name"
-    $http.get("/api/games/")
+    $http.get("/api/games/offset/1")
     .then(function (response) {
         $scope.games = response.data;
         console.log($scope.games)
@@ -111,7 +111,7 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
 
     $scope.order = true;
     $scope.sortVar = "Name"
-    $http.get("/api/platforms")
+    $http.get("/api/platforms/offset/1")
     .then(function (response) {
         $scope.platforms = response.data;
         $scope.sortBy($scope.sortVar);
@@ -151,7 +151,7 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
 myApp.controller('charactersCtrl', function($scope, $http){
     $scope.order = true;
     $scope.sortVar = "Name";
-    $http.get("api/characters")
+    $http.get("api/characters/offset/1")
     .then(function (response) {
         $scope.characters = response.data;
         console.log($scope.characters)
