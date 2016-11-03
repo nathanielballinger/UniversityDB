@@ -153,6 +153,24 @@ class TestCases (TestCase):
 		self.assertEqual(character4.name, " ")
 		self.assertEqual(character4.game_first_appeared, " ")
 
+	# ------
+	# Other Tests
+	# ------
+
+	def test_game_serialize_1(self):
+		obj = Game("13328", "Wii Sports", "2006-11-19 00:00:00", \
+			"Packaged with the Wii (except Japan), Wii Sports allows players to compete with friends in tennis, bowling, boxing, baseball, and golf.", \
+			"http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
+			"PLATFORMS", None, "http://www.giantbomb.com/wii-sports/3030-13328/")
+		obj.serialize()
+		test = {'id': "13328", 'name': "Wii Sports", 'release_date': "2006-11-19 00:00:00", \
+		'description': "Packaged with the Wii (except Japan), Wii Sports allows players to compete with friends in tennis, bowling, boxing, baseball, and golf.", \
+		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
+		'platforms': "PLATFORMS", 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/"}
+		self.assertEqual(obj, test)
+
+
+
 # ----
 # Main
 # ----
