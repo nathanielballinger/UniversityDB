@@ -6,18 +6,18 @@ from sqlalchemy.ext.declarative import declarative_base
 import json
 import time
 import re
-from app.tests import runTestsOut
+from tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
-import app.models
-from app.models import Game, Character, Platform
+import models
+from models import Game, Character, Platform
 
 Base = declarative_base()
 app = Flask(__name__)
 #Chris's DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
@@ -184,18 +184,21 @@ def api_root():
 def api_games_offset(offset):
 	dict_p = {}
 	#return jsonify(Game.query.get(45).serialize())
+	target = 25*(int(offset)-1)
 	counter = 0
-	new_count = 10*(int(offset)-1)
-	found = 0
-
-	for i in range (0,50):
+	found = 1
+	print("Making sure it is going through this code")
+	for i in range (0,600000):
 		game = Game.query.get(i)
 		if game is None:
 			continue
-		found +=1
+		if counter < target:
+			counter+=1
+			continue
 		dict_p[game.name] = game.serialize_table()
-		if found > 10:
+		if found > 25:
 			break
+		found +=1
 	return jsonify(dict_p)
 	"""
 	for data in Game.query:

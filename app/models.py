@@ -11,9 +11,9 @@ import re
 Base = declarative_base()
 app = Flask(__name__)
 #Chris's database
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
@@ -82,7 +82,18 @@ class Game(db.Model):
 		return result
 
 	def serialize_table(self):
-		fields = {"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "character": self.character}
+		if self.character is not None:
+			parsedCharacters = re.split(r"\.", self.character)
+			parsedCharacters = parsedCharacters[0]
+			"""
+			parsedCharacters = parsedCharacters[:-1]
+			for i in range (len(parsedCharacters)):
+				parsedCharacters[i] = int(parsedCharacters[i])
+				parsedCharacters = parsedCharacters[0]
+			"""
+		else:
+			parsedCharacters = None
+		fields = {"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "characters": parsedCharacters}
 		return fields
 
 class Platform(db.Model):
