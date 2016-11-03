@@ -11,9 +11,9 @@ import re
 Base = declarative_base()
 app = Flask(__name__)
 #Chris's database
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
@@ -81,6 +81,10 @@ class Game(db.Model):
 		print(result)
 		return result
 
+	def serialize_table(self):
+		fields = {"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "character": self.character}
+		return fields
+
 class Platform(db.Model):
 	__tablename__ = 'platforms'
 	#Column values are name, release date, company, starting price, number of sold units
@@ -127,6 +131,9 @@ class Platform(db.Model):
 			result["games"] = parsedGames
 		return result
 
+	def serialize_table(self):
+		return {"name": self.name, "release_date": self.release_date, "company": self.company, "starting_price": self.start_price, "tiny_image": self.tiny_image}
+
 class Character(db.Model):
 	__tablename__ = 'characters'
 	#Column values are name, birthday, gender, deck, game first appeared in
@@ -161,4 +168,8 @@ class Character(db.Model):
 
 	def serialize(self):
 		return model_to_dict(self)
+
+	def serialize_table(self):
+		fields = {"name": self.name, "release_date": self.release_data, "platform": self.platform, "deck": self.deck, "tiny_image": self.tiny_image}
+		return fields
 
