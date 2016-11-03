@@ -23,7 +23,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 db = SQLAlchemy(app)
 manager = Manager(app)
 
-
+"""
 #Checking to make sure we loaded the data correctly
 for i in range(0,50):
 	g = Game.query.filter_by(id = i).first()
@@ -81,10 +81,13 @@ for i in range(0,50):
 	print(g.site_detail_url)
 	print(g.aliases)
 	print("first_appeared"+str(g.first_appeared_in_game))
-
-
-
 """
+for data in Game.query:
+	continue
+print("it took this long")
+"""
+
+
 #Code to load up temp data from JSON files
 gameDict = dict()
 for x in range(1,4):
