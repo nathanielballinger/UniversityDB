@@ -11,11 +11,11 @@ import re
 Base = declarative_base()
 app = Flask(__name__)
 #Chris's database
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 db = SQLAlchemy(app)	
 manager = Manager(app)
@@ -146,6 +146,7 @@ class Character(db.Model):
 	def __init__(self,id,name,birthday,gender,deck, description, tiny_image, medium_image, site_detail_url, aliases, first_appeared_in_game):
 		self.id = id
 		self.name = name
+		self.birthday = birthday
 		self.gender = gender
 		self.deck = deck
 		self.description = description
@@ -153,7 +154,7 @@ class Character(db.Model):
 		self.medium_image = medium_image
 		self.site_detail_url = site_detail_url
 		self.aliases = aliases
-		self.first_appeared_in_game
+		self.first_appeared_in_game = first_appeared_in_game
 	
 	def __repr__(self):
 		return '<Character %r>' % self.name
