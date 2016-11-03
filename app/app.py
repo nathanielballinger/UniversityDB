@@ -5,21 +5,23 @@ from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 import json
 import re
+from tests import runTestsOut
+
 #Only add app. on the next two lines when you want to run the DO server
-import app. models
-from app.models import Game, Character, Platform
+import models
+from models import Game, Character, Platform
 
 Base = declarative_base()
 app = Flask(__name__)
 #Chris's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#Abhi's DB
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 db = SQLAlchemy(app)
 manager = Manager(app)
-
-
 
 
 #Checking to make sure we loaded the data correctly
@@ -52,7 +54,7 @@ for i in range(0,50):
 	print(g.company)
 	print(g.starting_price)
 	print(g.install_base)
-	print(g.description)
+	#print(g.description)
 	print(g.online_support)
 	print(g.abbreviations)
 	print(g.tiny_image)
@@ -73,7 +75,7 @@ for i in range(0,50):
 	print(g.name)
 	print(g.birthday)
 	print(g.deck)
-	print(g.description)
+	#print(g.description)
 	print(g.tiny_image)
 	print(g.medium_image)
 	print(g.site_detail_url)
@@ -89,13 +91,11 @@ for x in range(1,4):
 	with open('/var/www/cs373f-idb/app/static/json/game'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		gameDict[data['id']] = data
-
 characterDict = {}
 for x in range(1,4):
 	with open('/var/www/cs373f-idb/app/static/json/character'+str(x)+'.json') as data_file:
 		data = json.load(data_file)['results']
 		characterDict[data['id']] = data
-
 platformDict = dict()
 for x in range(1,4):
 	with open('/var/www/cs373f-idb/app/static/json/platform'+str(x)+'.json') as data_file:
@@ -249,6 +249,13 @@ def api_platforms_offset(offset):
 def api_platforms_id(id):
 	return jsonify(Platform.query.get(id).serialize())
 
+@app.route('/api/runtests')
+def api_runtests():
+	output = runTestsOut()
+	if not output:
+		output = "HELLLOOO"
+	return output
+
 def shell_context():
 	context = {
 		'app': app,
@@ -263,4 +270,3 @@ manager.add_command('shell', Shell(make_context=shell_context))
 
 if __name__ == "__main__":
 	manager.run()
-
