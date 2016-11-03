@@ -121,6 +121,7 @@ for character in characters:
 	time.sleep(1)
 	print(str(dnc)+"/331 complete")
 	dnc+=1
+"""
 print("LOADING CHARACTERS COMPLETE...MAKING SOME FINAL MODIFCATIONS")
 for character in characters:
 	v = requests.get(character, headers = headers)
@@ -142,7 +143,7 @@ for character in characters:
 		print(c.birthday)
 		db.session.commit()
 		print("############################################")
-"""
+
 #List of games for each platform
 plat_array = ['']*164
 for i in range(1,56877):
