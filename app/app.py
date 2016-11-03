@@ -196,7 +196,7 @@ def api_games_offset(offset):
 			counter+=1
 			continue
 		dict_p[game.name] = game.serialize_table()
-		if found > 25:
+		if found >= 25:
 			break
 		found +=1
 	return jsonify(dict_p)
@@ -224,7 +224,9 @@ def api_game_id(id):
 
 @app.route('/api/characters/offset/<offset>')
 def api_characters_offset(offset):
+	
 	dict_p = {}
+	"""
 	counter = 0
 	new_count = 10*(int(offset)-1)
 	for data in Character.query:
@@ -238,6 +240,24 @@ def api_characters_offset(offset):
 
 	
 	return jsonify(dict_p)
+	"""
+	target = 25*(int(offset)-1)
+	counter = 0
+	found = 1
+	print("Making sure it is going through this code")
+	for i in range (0,600000):
+		game = Character.query.get(i)
+		if game is None:
+			continue
+		if counter < target:
+			counter+=1
+			continue
+		dict_p[game.name] = game.serialize_table()
+		if found >= 25:
+			break
+		found +=1
+	return jsonify(dict_p)
+	
 
 @app.route('/api/characters/<id>')
 def api_characters_id(id):
@@ -245,7 +265,9 @@ def api_characters_id(id):
 
 @app.route('/api/platforms/offset/<offset>')
 def api_platforms_offset(offset):
+	
 	dict_p = {}
+	"""
 	counter = 0
 	new_count = 25*(int(offset)-1)
 	for data in Platform.query:
@@ -259,6 +281,24 @@ def api_platforms_offset(offset):
 			break
 
 	return jsonify(dict_p)
+	"""
+	target = 25*(int(offset)-1)
+	counter = 0
+	found = 1
+	print("Making sure it is going through this code")
+	for i in range (0,600000):
+		game = Character.query.get(i)
+		if game is None:
+			continue
+		if counter < target:
+			counter+=1
+			continue
+		dict_p[game.name] = game.serialize_table()
+		if found >= 25:
+			break
+		found +=1
+	return jsonify(dict_p)
+	
 
 @app.route('/api/platforms/<id>')
 def api_platforms_id(id):
