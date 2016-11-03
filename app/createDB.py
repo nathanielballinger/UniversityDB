@@ -122,7 +122,6 @@ for character in characters:
 	print(str(dnc)+"/331 complete")
 	dnc+=1
 print("LOADING CHARACTERS COMPLETE...MAKING SOME FINAL MODIFCATIONS")
-"""
 for character in characters:
 	v = requests.get(character, headers = headers)
 	character_data = v.json()
@@ -143,7 +142,7 @@ for character in characters:
 		print(c.birthday)
 		db.session.commit()
 		print("############################################")
-
+"""
 #List of games for each platform
 plat_array = ['']*164
 for i in range(1,56877):
@@ -168,7 +167,6 @@ for entry in plat_array:
 		counter +=1
 	else:
 		counter+=1
-
 #List of characters for each game
 chr_array = ['']*56877
 for i in range(1,34113):
@@ -189,7 +187,6 @@ for entry in chr_array:
 		p = Game.query.filter_by(id = counter).first()
 		if p is None:
 			continue
-		print(p.character+" "+entry)
 		p.character = entry
 		db.session.commit()
 		counter +=1
