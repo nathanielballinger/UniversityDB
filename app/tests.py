@@ -76,7 +76,7 @@ class TestCases (TestCase):
 		platform2 = Platform("20", "Xbox 360", "2005-11-22 00:00:00", "Microsoft Studios", "399.00", "80000000", \
 			"The Xbox 360 is the second game console produced by Microsoft Corporation and is the successor to the original Xbox.", \
 			True, "360\nXenon", "http://www.giantbomb.com/xbox-360/3045-20/",\
-			"http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg", "medium_url": "http://www.giantbomb.com/api/image/scale_medium/195092-xbox_360_console_02.jpg")
+			"http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg", "http://www.giantbomb.com/api/image/scale_medium/195092-xbox_360_console_02.jpg")
 
 		self.assertEqual(platform2.id, "20")
 		self.assertEqual(platform2.tiny_image, "http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg")
