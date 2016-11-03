@@ -12,6 +12,17 @@
     <p></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="requests.html">requests</a><br>
+</td><td width="25%" valign=top><a href="urllib.html">urllib</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
@@ -44,9 +55,13 @@
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Character-__init__"><strong>__init__</strong></a>(self, id, name, birthday, gender, deck, game_first_appeared, description, image, site_detail_url, aliases)</dt></dl>
+<dl><dt><a name="Character-__init__"><strong>__init__</strong></a>(self, id, name, birthday, gender, deck, description, tiny_image, medium_image, site_detail_url, aliases, first_appeared_in_game)</dt></dl>
 
 <dl><dt><a name="Character-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Character-serialize"><strong>serialize</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Character-serialize_table"><strong>serialize_table</strong></a>(self)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -58,34 +73,33 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>description</strong></dt>
 </dl>
-<dl><dt><strong>game_first_appeared</strong></dt>
+<dl><dt><strong>first_appeared_in_game</strong></dt>
 </dl>
 <dl><dt><strong>gender</strong></dt>
 </dl>
 <dl><dt><strong>id</strong></dt>
 </dl>
-<dl><dt><strong>image</strong></dt>
+<dl><dt><strong>medium_image</strong></dt>
 </dl>
 <dl><dt><strong>name</strong></dt>
 </dl>
 <dl><dt><strong>site_detail_url</strong></dt>
 </dl>
+<dl><dt><strong>tiny_image</strong></dt>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x104099b38; Character&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x104062208; Character&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('characters', MetaData(bind=None), Column(...ses', String(), table=&lt;characters&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('characters', MetaData(bind=None), Column(...me', Integer(), table=&lt;characters&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'characters'</dl>
 
 <hr>
-Methods inherited from flask_sqlalchemy.Model:<br>
-<dl><dt><strong>query</strong></dt>
-</dl>
-
-<hr>
 Data and other attributes inherited from flask_sqlalchemy.Model:<br>
 <dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<dl><dt><strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;</dl>
 
 <hr>
 Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
@@ -121,54 +135,49 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Game-__init__"><strong>__init__</strong></a>(self, id, name, release_date, genre, developers, rating, description, review, image, platforms, characters)</dt></dl>
+<dl><dt><a name="Game-__init__"><strong>__init__</strong></a>(self, id, name, release_date, description, tiny_image, medium_image, platforms, aliases, site_detail_url)</dt></dl>
 
 <dl><dt><a name="Game-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Game-serialize"><strong>serialize</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Game-serialize_table"><strong>serialize_table</strong></a>(self)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
 <dl><dt><strong>aliases</strong></dt>
 </dl>
-<dl><dt><strong>characters</strong></dt>
+<dl><dt><strong>character</strong></dt>
 </dl>
 <dl><dt><strong>description</strong></dt>
 </dl>
-<dl><dt><strong>developers</strong></dt>
-</dl>
-<dl><dt><strong>genre</strong></dt>
-</dl>
 <dl><dt><strong>id</strong></dt>
 </dl>
-<dl><dt><strong>image</strong></dt>
+<dl><dt><strong>medium_image</strong></dt>
 </dl>
 <dl><dt><strong>name</strong></dt>
 </dl>
 <dl><dt><strong>platforms</strong></dt>
 </dl>
-<dl><dt><strong>rating</strong></dt>
-</dl>
 <dl><dt><strong>release_date</strong></dt>
-</dl>
-<dl><dt><strong>review</strong></dt>
 </dl>
 <dl><dt><strong>site_detail_url</strong></dt>
 </dl>
+<dl><dt><strong>tiny_image</strong></dt>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x104078d30; Game&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10402e278; Game&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('games', MetaData(bind=None), Column('id',...tail_url', String(), table=&lt;games&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'games'</dl>
 
 <hr>
-Methods inherited from flask_sqlalchemy.Model:<br>
-<dl><dt><strong>query</strong></dt>
-</dl>
-
-<hr>
 Data and other attributes inherited from flask_sqlalchemy.Model:<br>
 <dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<dl><dt><strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;</dl>
 
 <hr>
 Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
@@ -204,9 +213,13 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Platform-__init__"><strong>__init__</strong></a>(self, id, name, release_date, company, starting_price, number_units_sold, description, online_support, abbreviations, site_detail_url, image)</dt></dl>
+<dl><dt><a name="Platform-__init__"><strong>__init__</strong></a>(self, id, name, release_date, company, starting_price, install_base, description, online_support, abbreviations, site_detail_url, tiny_image, medium_image)</dt></dl>
 
 <dl><dt><a name="Platform-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="Platform-serialize"><strong>serialize</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Platform-serialize_table"><strong>serialize_table</strong></a>(self)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -216,13 +229,15 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>description</strong></dt>
 </dl>
+<dl><dt><strong>games</strong></dt>
+</dl>
 <dl><dt><strong>id</strong></dt>
 </dl>
-<dl><dt><strong>image</strong></dt>
+<dl><dt><strong>install_base</strong></dt>
+</dl>
+<dl><dt><strong>medium_image</strong></dt>
 </dl>
 <dl><dt><strong>name</strong></dt>
-</dl>
-<dl><dt><strong>number_units_sold</strong></dt>
 </dl>
 <dl><dt><strong>online_support</strong></dt>
 </dl>
@@ -232,22 +247,21 @@ Data descriptors defined here:<br>
 </dl>
 <dl><dt><strong>starting_price</strong></dt>
 </dl>
+<dl><dt><strong>tiny_image</strong></dt>
+</dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1040994a8; Platform&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10402e978; Platform&gt;</dl>
 
-<dl><dt><strong>__table__</strong> = Table('platforms', MetaData(bind=None), Column('...mage', String(), table=&lt;platforms&gt;), schema=None)</dl>
+<dl><dt><strong>__table__</strong> = Table('platforms', MetaData(bind=None), Column('...ames', String(), table=&lt;platforms&gt;), schema=None)</dl>
 
 <dl><dt><strong>__tablename__</strong> = 'platforms'</dl>
 
 <hr>
-Methods inherited from flask_sqlalchemy.Model:<br>
-<dl><dt><strong>query</strong></dt>
-</dl>
-
-<hr>
 Data and other attributes inherited from flask_sqlalchemy.Model:<br>
 <dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<dl><dt><strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;</dl>
 
 <hr>
 Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
@@ -268,15 +282,21 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 
 </td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-model_to_dict"><strong>model_to_dict</strong></a>(obj)</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>app</strong> = &lt;Flask 'models'&gt;<br>
-<strong>char_game</strong> = Table('char_id', MetaData(bind=None), Column('ga...gnKey('games.id'), table=&lt;char_id&gt;), schema=None)<br>
-<strong>db</strong> = &lt;SQLAlchemy engine='postgresql://localhost/swe'&gt;<br>
+<strong>db</strong> = &lt;SQLAlchemy engine='postgresql://localhost/swe2'&gt;<br>
 <strong>manager</strong> = &lt;flask_script.Manager object&gt;<br>
-<strong>plat_game</strong> = Table('character_id', MetaData(bind=None), Colum...atforms.id'), table=&lt;character_id&gt;), schema=None)<br>
 <strong>request</strong> = &lt;LocalProxy unbound&gt;</td></tr></table>
 </body></html>
