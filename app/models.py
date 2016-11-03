@@ -11,9 +11,9 @@ import re
 Base = declarative_base()
 app = Flask(__name__)
 #Chris's database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
@@ -132,7 +132,7 @@ class Platform(db.Model):
 		return result
 
 	def serialize_table(self):
-		return {"name": self.name, "release_date": self.release_date, "company": self.company, "starting_price": self.start_price, "tiny_image": self.tiny_image}
+		return {"name": self.name, "release_date": self.release_date, "company": self.company, "starting_price": self.starting_price, "tiny_image": self.tiny_image}
 
 class Character(db.Model):
 	__tablename__ = 'characters'
