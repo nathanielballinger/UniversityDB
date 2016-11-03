@@ -203,7 +203,36 @@ class TestCases (TestCase):
 			True, "3DS", "http://www.giantbomb.com/nintendo-3ds/3045-117/",\
 			"http://www.giantbomb.com/api/image/square_mini/1686079-3dshw11911.jpg", "http://www.giantbomb.com/api/image/scale_medium/1686079-3dshw11911.jpg")
 		obj.serialize()
-		
+		test = {'id': "117", 'name': "Nintendo 3DS", 'release_date': "2011-02-26 00:00:00", 'company': "Nintendo", 'starting_price': "249.00", 'install_base': "51630000", \
+		'description': "The Nintendo 3DS is a portable game console produced by Nintendo. The handheld features stereoscopic 3D technology that doesn't require glasses. It was released in Japan on February 26, 2011 and in North America on March 27, 2011.", \
+		'online_support': True, 'abbreviations': "3DS", 'site_detail_url': "http://www.giantbomb.com/nintendo-3ds/3045-117/", \
+		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/1686079-3dshw11911.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/1686079-3dshw11911.jpg"}
+		self.assertEqual(obj, test)
+
+	def test_platform_serialize_2(self):
+		obj = Platform("20", "Xbox 360", "2005-11-22 00:00:00", "Microsoft Studios", "399.00", "80000000", \
+			"The Xbox 360 is the second game console produced by Microsoft Corporation and is the successor to the original Xbox.", \
+			True, "360\nXenon", "http://www.giantbomb.com/xbox-360/3045-20/",\
+			"http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg", "http://www.giantbomb.com/api/image/scale_medium/195092-xbox_360_console_02.jpg")
+		obj.serialize()
+		test = {'id': "20", 'name': "Xbox 360", 'release_date': "2005-11-22 00:00:00", 'company': "Microsoft Studios", 'starting_price': "399.00", 'install_base': "80000000", \
+		'description': "The Xbox 360 is the second game console produced by Microsoft Corporation and is the successor to the original Xbox.", \
+		'online_support': True, 'abbreviations': "360\nXenon", 'site_detail_url': "http://www.giantbomb.com/xbox-360/3045-20/", \
+		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/195092-xbox_360_console_02.jpg"}
+		self.assertEqual(obj, test)
+
+	def test_platform_serialize_3(self):
+		obj = Platform("35", "PlayStation 3", "2006-11-11 00:00:00", "Sony Interactive Entertainment", "599.00", "80000000", \
+			"The PlayStation 3 (often abbreviated PS3) is the third home video game console created and released by Sony Computer Entertainment Inc.", \
+			True, "PS3", "http://www.giantbomb.com/playstation-3/3045-35/",\
+			"http://www.giantbomb.com/api/image/square_mini/1426360-logo.jpg", "http://www.giantbomb.com/api/image/scale_medium/1426360-logo.jpg")
+		obj.serialize()
+		test = {'id': "35", 'name': "PlayStation 3", 'release_date': "2006-11-11 00:00:00", 'company': "Sony Interactive Entertainment", 'starting_price': "599.00", 'install_base': "80000000", \
+		'description': "The PlayStation 3 (often abbreviated PS3) is the third home video game console created and released by Sony Computer Entertainment Inc.", \
+		'online_support': True, 'abbreviations': "PS3", 'site_detail_url': "http://www.giantbomb.com/playstation-3/3045-35/", \
+		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/1426360-logo.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/1426360-logo.jpg"}
+		self.assertEqual(obj, test)
+
 
 
 
