@@ -180,38 +180,25 @@ def api_root():
 	}
 	return jsonify(data)
 
-@app.route('/api/games/offset/<offset>')
+@app.route('/api/games/offset/<offset>',methods=["GET"])
 def api_games_offset(offset):
+	return jsonify({})
 	dict_p = {}
-	#return jsonify(Game.query.get(45).serialize())
 	counter = 0
-	new_count = 10*(int(offset)-1)
-	found = 0
+	new_count = 25*(int(offset)-1)
 
-	for i in range (0,50):
-		game = Game.query.get(i)
-		if game is None:
-			continue
-		found +=1
-		dict_p[game.name] = game.serialize_table()
-		if found > 10:
-			break
-	return jsonify(dict_p)
-	"""
-	for data in Game.query:
-		return jsonify({data.name: data.serialize_table()})
+	for data in Game.query.all():
 		counter += 1
-		if counter < int(10*(int(offset)-1)):
+		if counter < int(25*(int(offset)-1)):
 			continue
 		new_count+=1
-		#print("New_count"+str(new_count))
+	#print("New_count"+str(new_count))
 		#print(int(data.id))
 		dict_p[data.name] = data.serialize_table()
-		if new_count > (10*(int(offset)-1) + 9):
-	
+		if new_count > (25*(int(offset)-1) + 24):
 			break
 	return jsonify(dict_p)
-	"""
+	
 
 @app.route('/api/games/<id>')
 def api_game_id(id):
@@ -222,14 +209,14 @@ def api_game_id(id):
 def api_characters_offset(offset):
 	dict_p = {}
 	counter = 0
-	new_count = 10*(int(offset)-1)
+	new_count = 25*(int(offset)-1)
 	for data in Character.query:
 		counter += 1
-		if counter < int(10*(int(offset)-1)):
+		if counter < int(25*(int(offset)-1)):
 			continue
 		new_count+=1
 		dict_p[data.name] = data.serialize_table()
-		if new_count > (10*(int(offset)-1) + 10):
+		if new_count > (25*(int(offset)-1) + 24):
 			break
 
 	
