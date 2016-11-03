@@ -10,6 +10,7 @@ from tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
 import models
+
 from models import Game, Character, Platform, db, Base, app, manager
 
 #Checking to make sure we loaded the data correctly
@@ -172,18 +173,21 @@ def api_games_offset(offset):
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
-	print("Making sure it is going through this code")
-	for i in range (0,600000):
-		game = Game.query.get(i)
-		if game is None:
-			continue
-		if counter < target:
-			counter+=1
-			continue
+	games = Game.query.order_by(Game.id).limit(25).offset(target).all();
+	for game in games:
 		dict_p[game.name] = game.serialize_table()
-		if found >= 25:
-			break
-		found +=1
+	# print("Making sure it is going through this code")
+	# for i in range (0,600000):
+	# 	game = Game.query.get(i)
+	# 	if game is None:
+	# 		continue
+	# 	if counter < target:
+	# 		counter+=1
+	# 		continue
+	# 	dict_p[game.name] = game.serialize_table()
+	# 	if found >= 25:
+	# 		break
+	# 	found +=1
 	return jsonify(dict_p)
 	"""
 	for data in Game.query:
@@ -213,17 +217,20 @@ def api_characters_offset(offset):
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
-	for i in range (0,600000):
-		game = Character.query.get(i)
-		if game is None:
-			continue
-		if counter < target:
-			counter+=1
-			continue
-		dict_p[game.name] = game.serialize_table()
-		if found >= 25:
-			break
-		found +=1
+	characters = Character.query.order_by(Character.id).limit(25).offset(target).all();
+	for character in characters:
+		dict_p[character.name] = character.serialize_table()
+	# for i in range (0,600000):
+	# 	game = Character.query.get(i)
+	# 	if game is None:
+	# 		continue
+	# 	if counter < target:
+	# 		counter+=1
+	# 		continue
+	# 	dict_p[game.name] = game.serialize_table()
+	# 	if found >= 25:
+	# 		break
+	# 	found +=1
 	return jsonify(dict_p)
 	
 
@@ -253,18 +260,21 @@ def api_platforms_offset(offset):
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
-	print("Making sure it is going through this code")
-	for i in range (0,600000):
-		game = Character.query.get(i)
-		if game is None:
-			continue
-		if counter < target:
-			counter+=1
-			continue
-		dict_p[game.name] = game.serialize_table()
-		if found >= 25:
-			break
-		found +=1
+	platforms = Platform.query.order_by(Platform.id).limit(25).offset(target).all();
+	for platform in platforms:
+		dict_p[platform.name] = platform.serialize_table()
+	# print("Making sure it is going through this code")
+	# for i in range (0,600000):
+	# 	game = Character.query.get(i)
+	# 	if game is None:
+	# 		continue
+	# 	if counter < target:
+	# 		counter+=1
+	# 		continue
+	# 	dict_p[game.name] = game.serialize_table()
+	# 	if found >= 25:
+	# 		break
+	# 	found +=1
 	return jsonify(dict_p)
 	
 
