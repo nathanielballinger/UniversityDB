@@ -10,36 +10,44 @@ class TestCases (TestCase):
 	# ------
 
 	def test_case_game_1(self):
-		game1 = Game("13328", "Wii Sports", "11/19/2006", "Wii Sports is the pack-in for the Wii for all regions except for Japan. It includes five sports mini-games, corresponding challenges, and a daily trainer that gives the player a score similar to the Brain Age system. It utilizes Miis as the player's avatar.", "Tiny_iamge_url","Medium_image_url", "Wii", "Nintendo Sports", \
-			"SITE_DETAIL_URL")
+		game1 = Game("13328", "Wii Sports", "2006-11-19 00:00:00", \
+			"Packaged with the Wii (except Japan), Wii Sports allows players to compete with friends in tennis, bowling, boxing, baseball, and golf.", \
+			"http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
+			"PLATFORMS", None, "http://www.giantbomb.com/wii-sports/3030-13328/")
 
 		self.assertEqual(game1.id, "13328")
-		self.assertEqual(game1.release_date, "11/19/2006")
-		self.assertEqual(game1.platforms, "Wii")
+		self.assertEqual(game1.release_date, "2006-11-19 00:00:00")
+		self.assertEqual(game1.site_detail_url, "http://www.giantbomb.com/wii-sports/3030-13328/")
 
 	def test_case_game_2(self):
-		game2 = Game("52537", "LEGO Star Wars: The Force Awakens", "06/28/2016", "The fifth title in the LEGO Star Wars franchise and the first developed since The Walt Disney Company acquired Lucasfilm. The game adapts the characters and events depicted in the film Star Wars: The Force Awakens as well as new material set after Return of the Jedi leading up to The Force Awakens. The game was announced on February 2nd 2016 with a trailer parodying the film's first teaser trailer.", "TINY_IMAGE", "MEDIUM_IMAGE","Xbox 360", "WB Games", "SITE_DETAIL_URL")
+		game2 = Game("52537", "LEGO Star Wars: The Force Awakens", "2016-06-28 00:00:00", \
+			"LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.",\
+			"http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg",\
+			"PLATFORMS", None, "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/")
 
 		self.assertEqual(game2.id, "52537")
 		self.assertEqual(game2.tiny_image, "TINY_IMAGE")
-		self.assertEqual(game2.aliases, "WB Games")
+		self.assertEqual(game2.aliases, None)
 
 	def test_case_game_3(self):
-		game3 = Game("41088", "Pokémon X/Y", "12/10/13", "Pokémon X and Pokémon Y was released to the Nintendo 3DS worldwide on October 12, 2013. This marks the sixth generation of Pokémon games, and the first mainline Pokemon games to feature full 3D polygonal graphics. The game features a large number of new Pokémon (including the new starter Pokémon, Chespin, Fennekin and Froakie), as well as returning Pokémon such as Pikachu, Lucario, and the Pokémon Red/Blue starters, Bulbasaur, Charmander and Squirtle.", \
-			"TINY_IMAGE", "MEDIUM_IMAGE", "Nintendo 3DS", "X and Y", "SITE_DETAIL_URL")
+		game3 = Game("41088", "Pokémon X/Y", "2013-10-12 00:00:00", \
+			"The first Pokémon games on the 3DS and the first to be released simultaneously worldwide.", \
+			"http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", "http://www.giantbomb.com/api/image/scale_medium/2482818-pokemonxy.jpg",\
+			"PLATFORMS", "Pokemon X/Y\nPokemon Y", "http://www.giantbomb.com/pokemon-xy/3030-41088/")
 
 		self.assertEqual(game3.id, "41088")
-		self.assertEqual(game3.platforms, "Nintendo 3DS")
+		self.assertEqual(game3.tiny_image, "http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg")
 		self.assertEqual(game3.name, "Pokémon X/Y")
 
 	def test_case_game_4(self):
-		game4 = Game("2133", "Call of Duty 4: Modern Warfare", "11/05/2007", "First-Person Shooter", "Infinity Ward", "4.69", \
-			"Call of Duty 4 is a first person shooter that takes the action into modern times, a major change for the series. It includes an intense single player campaign and a deep multiplayer experience that allows players to level up and unlock weapons, as well as other things. It was developed by Infinity Ward and released for the Xbox 360 , PlayStation 3 and PC. It was later ported to the Mac by Aspyr Media, and also to the Nintendo Wii.", \
-			"REVIEW", "IMAGE", "Xbox 360", "Captain Price")
+		game4 = Game("2133", "Call of Duty 4: Modern Warfare", "2007-11-05 00:00:00", \
+			"Call of Duty 4: Modern Warfare ditches the World War II motif of the past Call of Duty games to tell a story set in contemporary times, and backs it up with a solid, feature-rich multiplayer mode.", \
+			"http://www.giantbomb.com/api/image/square_mini/1875205-box_cod4.png", "http://www.giantbomb.com/api/image/scale_medium/1875205-box_cod4.png",\
+			"PLATFORMS", "COD4, COD4: MW, Modern Warfare\n", "http://www.giantbomb.com/call-of-duty-4-modern-warfare/3030-2133/")
 
 		self.assertEqual(game4.id, "2133")
-		self.assertEqual(game4.platforms, "Xbox 360")
-		self.assertEqual(game4.rating, "4.69")
+		self.assertEqual(game4.release_date, "2007-11-05 00:00:00")
+		self.assertEqual(game4.medium_image, "http://www.giantbomb.com/api/image/scale_medium/1875205-box_cod4.png")
 
 	def test_case_game_5(self):
 		game5 = Game(" "," "," "," "," "," "," "," "," "," "," ")
