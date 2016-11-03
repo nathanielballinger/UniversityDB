@@ -78,7 +78,7 @@ for i in range(0,50):
 	print(g.medium_image)
 	print(g.site_detail_url)
 	print(g.aliases)
-	print(g.first_appeared_in_game)
+	print("first_appeared"+str(g.first_appeared_in_game))
 
 
 
@@ -183,26 +183,67 @@ def api_root():
 	}
 	return jsonify(data)
 
-@app.route('/api/games/')
-def api_games_all():
-	return jsonify( dict(data.name, data.serialize()) for data in Game.query )
+@app.route('/api/games/offset/<offset>')
+def api_games_offset(offset):
+	dict_p = {}
+	counter = 0
+	new_count = 25*int(offset)
+	for data in Game.query:
+		counter += 1
+		if counter < int(25*int(offset)):
+			continue
+		new_count+=1
+		print("New_count"+str(new_count))
+		dict_p[data.name] = data.serialize()
+		if new_count > (25*int(offset) + 24):
+			break
+	
+	return jsonify(dict_p)
 
 @app.route('/api/games/<id>')
 def api_game_id(id):
 	print("DID IT GET IN HERE?")
 	return jsonify(Game.query.get(id).serialize())
 
-@app.route('/api/characters')
-def api_characters_all():
-	return jsonify( dict(data.name, data.serialize()) for data in Character.query )
+@app.route('/api/characters/offset/<offset>')
+def api_characters_offset(offset):
+	dict_p = {}
+	counter = 0
+	new_count = 25*int(offset)
+	for data in Character.query:
+		counter += 1
+		if counter < int(25*int(offset)):
+			continue
+		new_count+=1
+		print("New_count"+str(new_count))
+		dict_p[data.name] = data.serialize()
+		if new_count > (25*int(offset) + 24):
+			break
+
+	
+	return jsonify(dict_p)
 
 @app.route('/api/characters/<id>')
 def api_characters_id(id):
 	return jsonify(Character.query.get(id).serialize())
 
-@app.route('/api/platforms')
-def api_platforms_all():
-	return jsonify( dict(data.name, data.serialize()) for data in Platform.query )
+@app.route('/api/platforms/offset/<offset>')
+def api_platforms_offset(offset):
+	dict_p = {}
+	counter = 0
+	new_count = 25*int(offset)
+	for data in Platform.query:
+		counter += 1
+		if counter < int(25*int(offset)):
+			continue
+		new_count+=1
+		print("New_count"+str(new_count))
+		dict_p[data.name] = data.serialize()
+		if new_count > (25*int(offset) + 24):
+			break
+
+	
+	return jsonify(dict_p)
 
 @app.route('/api/platforms/<id>')
 def api_platforms_id(id):

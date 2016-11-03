@@ -76,6 +76,7 @@ class Game(db.Model):
 				parsedCharacters[i] = int(parsedCharacters[i])
 			result["platforms"] = parsedPlatforms
 			result["character"] = parsedCharacters
+		print(result)
 		return result
 
 class Platform(db.Model):
