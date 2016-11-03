@@ -196,3 +196,183 @@
 [Thu Nov 03 06:31:40.150130 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>
 [Thu Nov 03 06:31:40.150138 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008]     from models \t\timport *
 [Thu Nov 03 06:31:40.150178 2016] [wsgi:error] [pid 9384:tid 140013173958400] [client 71.42.119.84:64008] ImportError: No module named 'models'
+[Thu Nov 03 06:39:36.382640 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828] [2016-11-03 06:39:36,379] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:39:36.382975 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828] Traceback (most recent call last):
+[Thu Nov 03 06:39:36.382987 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:39:36.382993 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]     response = self.full_dispatch_request()
+[Thu Nov 03 06:39:36.382999 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:39:36.383004 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:39:36.383009 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:39:36.383014 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:39:36.383019 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:39:36.383024 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]     raise value
+[Thu Nov 03 06:39:36.383029 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:39:36.383034 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]     rv = self.dispatch_request()
+[Thu Nov 03 06:39:36.383039 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:39:36.383044 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:39:36.383049 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:39:36.383054 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:39:36.383064 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:39:36.383103 2016] [wsgi:error] [pid 10085:tid 140490502555392] [client 71.42.119.84:62828] 
+[Thu Nov 03 06:39:40.906543 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831] [2016-11-03 06:39:40,903] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:39:40.906621 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831] Traceback (most recent call last):
+[Thu Nov 03 06:39:40.906628 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:39:40.906634 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]     response = self.full_dispatch_request()
+[Thu Nov 03 06:39:40.906640 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:39:40.906645 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:39:40.906651 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:39:40.906656 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:39:40.906698 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:39:40.906705 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]     raise value
+[Thu Nov 03 06:39:40.906711 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:39:40.906716 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]     rv = self.dispatch_request()
+[Thu Nov 03 06:39:40.906721 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:39:40.906726 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:39:40.906731 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:39:40.906736 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:39:40.906744 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:39:40.906788 2016] [wsgi:error] [pid 10054:tid 140490485769984] [client 71.42.119.84:62831] 
+[Thu Nov 03 06:39:42.271507 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829] [2016-11-03 06:39:42,270] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:39:42.271569 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829] Traceback (most recent call last):
+[Thu Nov 03 06:39:42.271576 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:39:42.271582 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]     response = self.full_dispatch_request()
+[Thu Nov 03 06:39:42.271587 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:39:42.271592 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:39:42.271597 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:39:42.271602 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:39:42.271608 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:39:42.271613 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]     raise value
+[Thu Nov 03 06:39:42.271618 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:39:42.271623 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]     rv = self.dispatch_request()
+[Thu Nov 03 06:39:42.271628 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:39:42.271633 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:39:42.271684 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:39:42.271693 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:39:42.271701 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:39:42.271736 2016] [wsgi:error] [pid 10054:tid 140490477377280] [client 71.42.119.84:62829] 
+[Thu Nov 03 06:39:43.467139 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830] [2016-11-03 06:39:43,466] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:39:43.467190 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830] Traceback (most recent call last):
+[Thu Nov 03 06:39:43.467197 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:39:43.467203 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]     response = self.full_dispatch_request()
+[Thu Nov 03 06:39:43.467208 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:39:43.467213 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:39:43.467218 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:39:43.467223 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:39:43.467228 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:39:43.467233 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]     raise value
+[Thu Nov 03 06:39:43.467238 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:39:43.467243 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]     rv = self.dispatch_request()
+[Thu Nov 03 06:39:43.467248 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:39:43.467253 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:39:43.467258 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:39:43.467263 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:39:43.467271 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:39:43.467299 2016] [wsgi:error] [pid 10085:tid 140490494162688] [client 71.42.119.84:62830] 
+[Thu Nov 03 06:39:44.382126 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974] [2016-11-03 06:39:44,381] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:39:44.382193 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974] Traceback (most recent call last):
+[Thu Nov 03 06:39:44.382200 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:39:44.382234 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]     response = self.full_dispatch_request()
+[Thu Nov 03 06:39:44.382241 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:39:44.382247 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:39:44.382252 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:39:44.382257 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:39:44.382262 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:39:44.382268 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]     raise value
+[Thu Nov 03 06:39:44.382273 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:39:44.382278 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]     rv = self.dispatch_request()
+[Thu Nov 03 06:39:44.382283 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:39:44.382288 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:39:44.382293 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:39:44.382298 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:39:44.382306 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:39:44.382338 2016] [wsgi:error] [pid 10054:tid 140490468984576] [client 71.42.119.84:62974] 
+[Thu Nov 03 06:40:20.731540 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763] [2016-11-03 06:40:20,729] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:40:20.731641 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763] Traceback (most recent call last):
+[Thu Nov 03 06:40:20.731649 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:40:20.731656 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]     response = self.full_dispatch_request()
+[Thu Nov 03 06:40:20.731662 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:40:20.731668 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:40:20.731673 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:40:20.731679 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:40:20.731684 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:40:20.731715 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]     raise value
+[Thu Nov 03 06:40:20.731722 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:40:20.731728 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]     rv = self.dispatch_request()
+[Thu Nov 03 06:40:20.731732 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:40:20.731738 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:40:20.731743 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:40:20.731748 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:40:20.731756 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:40:20.731810 2016] [wsgi:error] [pid 10085:tid 140490485769984] [client 71.42.119.84:63763] 
+[Thu Nov 03 06:40:22.099199 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783] [2016-11-03 06:40:22,097] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:40:22.099260 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783] Traceback (most recent call last):
+[Thu Nov 03 06:40:22.099266 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:40:22.099272 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]     response = self.full_dispatch_request()
+[Thu Nov 03 06:40:22.099277 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:40:22.099283 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:40:22.099288 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:40:22.099293 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:40:22.099298 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:40:22.099303 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]     raise value
+[Thu Nov 03 06:40:22.099308 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:40:22.099313 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]     rv = self.dispatch_request()
+[Thu Nov 03 06:40:22.099318 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:40:22.099323 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:40:22.099328 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:40:22.099358 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:40:22.099380 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:40:22.099445 2016] [wsgi:error] [pid 10054:tid 140490616870656] [client 71.42.119.84:63783] 
+[Thu Nov 03 06:40:24.984349 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819] [2016-11-03 06:40:24,983] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:40:24.984404 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819] Traceback (most recent call last):
+[Thu Nov 03 06:40:24.984411 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:40:24.984417 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]     response = self.full_dispatch_request()
+[Thu Nov 03 06:40:24.984422 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:40:24.984428 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:40:24.984433 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:40:24.984438 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:40:24.984443 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:40:24.984448 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]     raise value
+[Thu Nov 03 06:40:24.984453 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:40:24.984458 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]     rv = self.dispatch_request()
+[Thu Nov 03 06:40:24.984463 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:40:24.984468 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:40:24.984473 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:40:24.984478 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:40:24.984486 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:40:24.984514 2016] [wsgi:error] [pid 10054:tid 140490460591872] [client 71.42.119.84:63819] 
+[Thu Nov 03 06:40:27.904000 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924] [2016-11-03 06:40:27,903] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:40:27.904052 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924] Traceback (most recent call last):
+[Thu Nov 03 06:40:27.904059 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:40:27.904064 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]     response = self.full_dispatch_request()
+[Thu Nov 03 06:40:27.904096 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:40:27.904104 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:40:27.904109 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:40:27.904115 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:40:27.904120 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:40:27.904125 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]     raise value
+[Thu Nov 03 06:40:27.904130 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:40:27.904135 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]     rv = self.dispatch_request()
+[Thu Nov 03 06:40:27.904140 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:40:27.904146 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:40:27.904151 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:40:27.904156 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:40:27.904164 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:40:27.904197 2016] [wsgi:error] [pid 10085:tid 140490608477952] [client 71.42.119.84:63924] 
+[Thu Nov 03 06:40:44.195826 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412] [2016-11-03 06:40:44,195] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 03 06:40:44.195877 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412] Traceback (most recent call last):
+[Thu Nov 03 06:40:44.195883 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 03 06:40:44.195928 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]     response = self.full_dispatch_request()
+[Thu Nov 03 06:40:44.195937 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 03 06:40:44.195943 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]     rv = self.handle_user_exception(e)
+[Thu Nov 03 06:40:44.195948 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 03 06:40:44.195953 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]     reraise(exc_type, exc_value, tb)
+[Thu Nov 03 06:40:44.195958 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 03 06:40:44.195963 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]     raise value
+[Thu Nov 03 06:40:44.195992 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 03 06:40:44.195999 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]     rv = self.dispatch_request()
+[Thu Nov 03 06:40:44.196004 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 03 06:40:44.196009 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 03 06:40:44.196014 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]   File "/var/www/cs373f-idb/app/app.py", line 250, in api_platforms_id
+[Thu Nov 03 06:40:44.196020 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 03 06:40:44.196029 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 03 06:40:44.196064 2016] [wsgi:error] [pid 10054:tid 140490452199168] [client 71.42.119.84:64412] 
