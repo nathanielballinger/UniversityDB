@@ -20,14 +20,12 @@ h3 {
   padding-top: 55px;
   background-image: url("/static/img/wallpaper1.jpg");
   color: black;
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position:center;
-  background-attachment: fixed;
 }
 
-#singlePageCSSOverride {
-  background-color: #5cff9b;
+.row .gray-thumbnail {
+  background-color: #eee;
 }
 
 

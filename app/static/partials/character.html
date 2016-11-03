@@ -2,13 +2,12 @@
 	<div class="row">
 		<h1 align="center"><b> {{character.name.toUpperCase()}} PROFILE </b></h1>
 		<div class="col-md-6">
-			<div class="thumbnail">
-				<img src="{{character.image.super_url}}" align="center">
+			<div class="thumbnail gray-thumbnail">
+				<img src="{{character.medium_image}}" align="center">
 			</div>
 		</div>
-		
 		<div class="col-md-6">
-			<div id="singlePageCSSOverride" class="thumbnail">
+			<div class="thumbnail gray-thumbnail">
 				<p> Name: {{character.name}}</p>
 		        <p> Aliases: {{character.aliases.split("\r\n").join(", ")}}</p>
 		        <p> Birthday: {{character.birthday}} </p>
