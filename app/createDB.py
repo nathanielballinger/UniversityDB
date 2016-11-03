@@ -11,7 +11,7 @@ import time
 """
 IF YOU HAVE ALREADY LOADED THE DATABASE AND ARE MAKING CHANGES
 TO THE ALREADY EXISTING DB DONT RUN THE NEXT TWO LINE. YOU WILL REGRET IT
-"""
+
 db.drop_all()
 db.create_all()
 api_key="d0d1072f35f6c08b0ce0d7249c1c1d94d500c913"
@@ -119,7 +119,7 @@ for character in characters:
 	print(str(dnc)+"/331 complete")
 	dnc+=1
 print("LOADING CHARACTERS COMPLETE...MAKING SOME FINAL MODIFCATIONS")
-
+"""
 #List of games for each platform
 plat_array = ['']*164
 for i in range(1,56877):
