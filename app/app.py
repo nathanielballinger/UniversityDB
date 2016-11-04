@@ -207,6 +207,10 @@ def api_games_offset(offset):
 	return jsonify(dict_p)
 	"""
 
+@app.route('/api/games/<id>')
+def api_games_id(id):
+	return jsonify(Game.query.get(id).serialize())
+
 @app.route('/api/games/mapping')
 def api_game_id(id):
 	print("DID IT GET IN HERE?")
