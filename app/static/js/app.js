@@ -284,9 +284,12 @@ myApp.controller('charactersCtrl', function($scope, $http){
             names = response.data;
             console.log(names);
         })
-        // for(var i = 0; i < data.length; i++) {
-        //     data[i].first_appeared_in_game = {name : names[i], id : ids[i]};
-        // }
+        for(var i = 0; i < data.length; i++) {
+            var gameId = data[i].first_appeared_in_game;
+            var gameName = names[gameId];
+            console.log(gameName);
+            data[i].first_appeared_in_game = {name : gameName, id : gameId};
+        }
 
         $scope.characters = data;
         console.log($scope.characters);
