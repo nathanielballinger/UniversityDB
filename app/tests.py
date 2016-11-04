@@ -50,16 +50,26 @@ class TestCases (TestCase):
 		self.assertEqual(game4.medium_image, "http://www.giantbomb.com/api/image/scale_medium/1875205-box_cod4.png")
 
 	def test_case_game_5(self):
-		game5 = Game(" "," "," "," "," "," "," "," "," ")
+		game5 = Game("48805", "American Truck Simulator", "2016-02-02 00:00:00", \
+			"The latest truck driving simulator in development by SCS Software.", \
+			"http://www.giantbomb.com/api/image/square_mini/2843071-3730221427-Ameri.jpg", "http://www.giantbomb.com/api/image/scale_medium/2843071-3730221427-Ameri.jpg", \
+			"PLATFORMS", None, "http://www.giantbomb.com/american-truck-simulator/3030-48805/")
 
-		self.assertEqual(game5.id, " ")
-		self.assertEqual(game5.platforms, " ")
-		self.assertEqual(game5.medium_image, " ")
-
+		self.assertEqual(game5.id, "48805")
+		self.assertEqual(game5.name, "American Truck Simulator")
+		self.assertEqual(game5.site_detail_url, "http://www.giantbomb.com/american-truck-simulator/3030-48805/")
 
 	def test_case_game_6(self):
+		game6 = Game(" "," "," "," "," "," "," "," "," ")
+
+		self.assertEqual(game6.id, " ")
+		self.assertEqual(game6.platforms, " ")
+		self.assertEqual(game6.medium_image, " ")
+
+
+	def test_case_game_7(self):
 		db.session.rollback()
-		game6 = Game("600000", "Test Game", "2016-11-03 00:00:00", "Test Description", "http://www.redbackconferencing.com.au/2016/lobby/success-blue-transparent.png", \
+		game7 = Game("600000", "Test Game", "2016-11-03 00:00:00", "Test Description", "http://www.redbackconferencing.com.au/2016/lobby/success-blue-transparent.png", \
             "http://www.velior.ru/wp-content/uploads/2009/05/Test-Computer-Key-by-Stuart-Miles.jpg", \
             "Test Platform", "TGame", "http://www.giantbomb.com/call-of-duty-4-modern-warfare/3030-2133")
 
@@ -69,7 +79,7 @@ class TestCases (TestCase):
 			db.session.commit()
 
 
-		db.session.add(game6)
+		db.session.add(game7)
 		db.session.commit()
 		dbgame = Game.query.get(600000)
 		self.assertEqual(dbgame.id, 600000)
@@ -77,9 +87,9 @@ class TestCases (TestCase):
 		db.session.delete(dbgame)
 		db.session.commit()
 
-	def test_case_game_7(self):
+	def test_case_game_8(self):
 		db.session.rollback()
-		game6 = Game("600000", "Test Game", "2016-11-03 00:00:00", "Test Description", "http://www.redbackconferencing.com.au/2016/lobby/success-blue-transparent.png", \
+		game8 = Game("600000", "Test Game", "2016-11-03 00:00:00", "Test Description", "http://www.redbackconferencing.com.au/2016/lobby/success-blue-transparent.png", \
             "http://www.velior.ru/wp-content/uploads/2009/05/Test-Computer-Key-by-Stuart-Miles.jpg", \
             "Test Platform", "TGame", "http://www.giantbomb.com/call-of-duty-4-modern-warfare/3030-2133")
 
@@ -88,9 +98,9 @@ class TestCases (TestCase):
 			db.session.delete(dbgame)
 			db.session.commit()
 
-		db.session.add(game6)
+		db.session.add(game8)
 		db.session.commit()
-		db.session.delete(game6)
+		db.session.delete(game8)
 		db.session.commit()
 
 		self.assertTrue(Game.query.get(600000) is None)
@@ -220,13 +230,23 @@ class TestCases (TestCase):
 		self.assertEqual(character3.first_appeared_in_game, "3966")
 
 	def test_case_character_4(self):
-		character4 = Character(" "," "," "," "," "," "," "," "," "," ", " ")
-		
-		self.assertEqual(character4.id, " ")
-		self.assertEqual(character4.name, " ")
-		self.assertEqual(character4.first_appeared_in_game, " ")
+		character4 = Character("14816", "Amumu, the Sad Mummy", None, None, \
+			"DESCRIPTION", \
+			"http://www.giantbomb.com/api/image/square_mini/1334831-312e302e302e38322d3332.jpg", "http://www.giantbomb.com/api/image/scale_medium/1334831-312e302e302e38322d3332.jpg", \
+			"http://www.giantbomb.com/amumu-the-sad-mummy/3005-14816/", None, "24024")
+
+		self.assertEqual(character4.id, "14816")
+		self.assertEqual(character4.first_appeared_in_game, "24024")
+		self.assertEqual(character4.name, "Amumu, the Sad Mummy")
 
 	def test_case_character_5(self):
+		character5 = Character(" "," "," "," "," "," "," "," "," "," ", " ")
+		
+		self.assertEqual(character5.id, " ")
+		self.assertEqual(character5.name, " ")
+		self.assertEqual(character5.first_appeared_in_game, " ")
+
+	def test_case_character_6(self):
 		db.session.rollback()
 		char = Character("600000", "Test Char", "Born on", 0, "deck", "description", "tiny", "medium", "url", "aliases", 1)
 
@@ -243,7 +263,7 @@ class TestCases (TestCase):
 		db.session.delete(dbchar)
 		db.session.commit()
 	
-	def test_case_character_6(self):
+	def test_case_character_7(self):
 		db.session.rollback()
 		char = Character("600000", "Test Char", "Born on", 0, "deck", "description", "tiny", "medium", "url", "aliases", 1)
 
