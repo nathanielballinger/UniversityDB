@@ -2,17 +2,21 @@
     <div class="row">
 		<h1 align="center"><b> {{platform.name.toUpperCase()}}</b></h1>
 		<div class="col-md-6">
-			<img src="{{platform.image.super_url}}" align="center">
+			<div class="thumbnail gray-thumbnail">
+				<img src="{{platform.image.super_url}}" align="center">
+			</div>
 		</div>
 		
 		<div class="col-md-6">
-			<p> Name: {{platform.name}}</p>
-	        <p> Abbreviation: {{platform.abbreviation}}</p>
-	        <p> Company: {{platform.company.name}} </p> 
-			<p> Description: {{platform.deck}} </p>
-			<p> Online Support: {{platform.online_support}} </p>
-			<p> Original Price: ${{platform.original_price}} </p>
-			<p> Release Date: {{platform.release_date}} </p>
+			<div class="thumbnail gray-thumbnail">
+				<p> Name: {{platform.name}}</p>
+		        <p> Abbreviation: {{platform.abbreviation}}</p>
+		        <p> Company: {{platform.company.name}} </p> 
+				<p> Description: {{platform.deck}} </p>
+				<p> Online Support: {{platform.online_support}} </p>
+				<p> Original Price: ${{platform.original_price}} </p>
+				<p> Release Date: {{platform.release_date}} </p>
+			</div>
 		</div>
 
 		<!-- Fix this later

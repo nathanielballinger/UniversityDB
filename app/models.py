@@ -14,7 +14,7 @@ app = Flask(__name__)
 #Nate's Database
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localhost:5432/swe'
 #Chris's database
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
@@ -96,7 +96,7 @@ class Game(db.Model):
 			"""
 		else:
 			parsedCharacters = None
-		fields = {"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "characters": parsedCharacters}
+		fields = {"id": self.id,"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "characters": parsedCharacters}
 		return fields
 
 class Platform(db.Model):
@@ -146,7 +146,7 @@ class Platform(db.Model):
 		return result
 
 	def serialize_table(self):
-		return {"name": self.name, "release_date": self.release_date, "company": self.company, "starting_price": self.starting_price, "tiny_image": self.tiny_image}
+		return {"id": self.id, "name": self.name, "release_date": self.release_date, "company": self.company, "starting_price": self.starting_price, "tiny_image": self.tiny_image}
 
 class Character(db.Model):
 	__tablename__ = 'characters'
@@ -184,6 +184,6 @@ class Character(db.Model):
 		return model_to_dict(self)
 
 	def serialize_table(self):
-		fields = {"name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}
+		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image, "birthday": self.birthday}
 		return fields
 
