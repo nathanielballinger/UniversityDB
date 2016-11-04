@@ -233,7 +233,7 @@ class TestCases (TestCase):
 		character4 = Character("14816", "Amumu, the Sad Mummy", None, None, \
 			"DESCRIPTION", \
 			"http://www.giantbomb.com/api/image/square_mini/1334831-312e302e302e38322d3332.jpg", "http://www.giantbomb.com/api/image/scale_medium/1334831-312e302e302e38322d3332.jpg", \
-			"http://www.giantbomb.com/amumu-the-sad-mummy/3005-14816/", None, "24024")
+			"http://www.giantbomb.com/amumu-the-sad-mummy/3005-14816/", None, " ","24024")
 
 		self.assertEqual(character4.id, "14816")
 		self.assertEqual(character4.first_appeared_in_game, "24024")
