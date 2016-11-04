@@ -57,6 +57,45 @@ class TestCases (TestCase):
 		self.assertEqual(game5.medium_image, " ")
 
 
+	def test_case_game_6(self):
+		db.session.rollback()
+		game6 = Game("600000", "Test Game", "2016-11-03 00:00:00", "Test Description", "http://www.redbackconferencing.com.au/2016/lobby/success-blue-transparent.png", \
+            "http://www.velior.ru/wp-content/uploads/2009/05/Test-Computer-Key-by-Stuart-Miles.jpg", \
+            "Test Platform", "TGame", "http://www.giantbomb.com/call-of-duty-4-modern-warfare/3030-2133")
+
+		dbgame = Game.query.get(600000)
+		if dbgame is not None:
+			db.session.delete(dbgame)
+			db.session.commit()
+
+
+		db.session.add(game6)
+		db.session.commit()
+		dbgame = Game.query.get(600000)
+		self.assertEqual(dbgame.id, "600000")
+
+		db.session.delete(dbgame)
+		db.session.commit()
+
+	def test_case_game_7(self):
+		db.session.rollback()
+		game6 = Game("600000", "Test Game", "2016-11-03 00:00:00", "Test Description", "http://www.redbackconferencing.com.au/2016/lobby/success-blue-transparent.png", \
+            "http://www.velior.ru/wp-content/uploads/2009/05/Test-Computer-Key-by-Stuart-Miles.jpg", \
+            "Test Platform", "TGame", "http://www.giantbomb.com/call-of-duty-4-modern-warfare/3030-2133")
+
+		dbgame = Game.query.get(600000)
+		if dbgame is not None:
+			db.session.delete(dbgame)
+			db.session.commit()
+
+		db.session.add(game6)
+		db.session.commit()
+		db.session.delete(game6)
+		db.session.commit()
+
+		self.assertTrue(Game.query.get(600000) is None)
+
+
 
 	# ------
 	# Platforms
@@ -109,6 +148,40 @@ class TestCases (TestCase):
 		self.assertEqual(platform5.starting_price, " ")
 		self.assertEqual(platform5.name," ")
 
+	def test_case_platform_6(self):
+		db.session.rollback()
+		platform = Platform("600000", "Test Platform",  "2016-11-03 00:00:00", "Company", "50", "50000", "Description", True, "abbr.", "URL", "Tiny", "Medium")
+
+		dbplat = Platform.query.get(600000)
+		if dbplat is not None:
+			db.session.delete(dbplat)
+			db.session.commit()
+
+		db.session.add(platform)
+		db.session.commit()
+		dbplatform = Platform.query.get(600000)
+		self.assertEqual(dbplatform.id, "600000")
+
+		db.session.delete(dbplatform)
+		db.session.commit()
+
+	def test_case_platform_7(self):
+		db.session.rollback()
+		platform = Platform("600000", "Test Platform",  "2016-11-03 00:00:00", "Company", "50", "50000", "Description", True, "abbr.", "URL", "Tiny", "Medium")
+
+		dbplat = Platform.query.get(600000)
+		if dbplat is not None:
+			db.session.delete(dbplat)
+			db.session.commit()
+
+
+		db.session.add(platform)
+		db.session.commit()
+		db.session.delete(platform)
+		db.session.commit()
+
+		self.assertTrue(Platform.query.get(600000) is None)
+
 	# ------
 	# Characters
 	# ------
@@ -152,6 +225,39 @@ class TestCases (TestCase):
 		self.assertEqual(character4.id, " ")
 		self.assertEqual(character4.name, " ")
 		self.assertEqual(character4.first_appeared_in_game, " ")
+
+	def test_case_character_5(self):
+		db.session.rollback()
+		char = Character("600000", "Test Char", "Born on", 0, "deck", "description", "tiny", "medium", "url", "aliases", 1)
+
+		dbchar = Character.query.get(600000)
+		if dbchar is not None:
+			db.session.delete(dbchar)
+			db.session.commit()
+
+		db.session.add(char)
+		db.session.commit()
+		dbchar = Character.query.get(600000)
+		self.assertEqual(dbchar.id, "600000")
+
+		db.session.delete(dbchar)
+		db.session.commit()
+
+	def test_case_character_6(self):
+		db.session.rollback()
+		char = Character("600000", "Test Char", "Born on", 0, "deck", "description", "tiny", "medium", "url", "aliases", 1)
+
+		dbchar = Character.query.get(600000)
+		if dbchar is not None:
+			db.session.delete(dbchar)
+			db.session.commit()
+
+		db.session.add(char)
+		db.session.commit()
+		db.session.delete(char)
+		db.session.commit()
+
+		self.assertTrue(Character.query.get(600000) is None)
 
 	# ------
 	# Game Serialize
