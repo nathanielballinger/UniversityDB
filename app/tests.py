@@ -26,7 +26,7 @@ class TestCases (TestCase):
 			"PLATFORMS", None, "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/")
 
 		self.assertEqual(game2.id, "52537")
-		self.assertEqual(game2.tiny_image, "TINY_IMAGE")
+		self.assertEqual(game2.tiny_image, "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg")
 		self.assertEqual(game2.aliases, None)
 
 	def test_case_game_3(self):
@@ -58,28 +58,42 @@ class TestCases (TestCase):
 
 
 	def test_case_game_6(self):
-		game6 = Game("60000", "Test Game", "2016-11-03 00:00:00", "Test Description", "http://www.redbackconferencing.com.au/2016/lobby/success-blue-transparent.png", \
+		db.session.rollback()
+		game6 = Game("600000", "Test Game", "2016-11-03 00:00:00", "Test Description", "http://www.redbackconferencing.com.au/2016/lobby/success-blue-transparent.png", \
             "http://www.velior.ru/wp-content/uploads/2009/05/Test-Computer-Key-by-Stuart-Miles.jpg", \
             "Test Platform", "TGame", "http://www.giantbomb.com/call-of-duty-4-modern-warfare/3030-2133")
 
+		dbgame = Game.query.get(600000)
+		if dbgame is not None:
+			db.session.delete(dbgame)
+			db.session.commit()
+
+
 		db.session.add(game6)
 		db.session.commit()
-		dbgame = Game.query.get(60000)
-		self.assertEqual(dbgame.id, "60000")
+		dbgame = Game.query.get(600000)
+		self.assertEqual(dbgame.id, "600000")
 
 		db.session.delete(dbgame)
 		db.session.commit()
 
 	def test_case_game_7(self):
-		dbgame = Game.query.get(1)
-		db.session.delete(dbgame)
+		db.session.rollback()
+		game6 = Game("600000", "Test Game", "2016-11-03 00:00:00", "Test Description", "http://www.redbackconferencing.com.au/2016/lobby/success-blue-transparent.png", \
+            "http://www.velior.ru/wp-content/uploads/2009/05/Test-Computer-Key-by-Stuart-Miles.jpg", \
+            "Test Platform", "TGame", "http://www.giantbomb.com/call-of-duty-4-modern-warfare/3030-2133")
+
+		dbgame = Game.query.get(600000)
+		if dbgame is not None:
+			db.session.delete(dbgame)
+			db.session.commit()
+
+		db.session.add(game6)
+		db.session.commit()
+		db.session.delete(game6)
 		db.session.commit()
 
-		self.assertTrue(db.session.query.get(1) is None)
-
-		db.session.add(dbgame)
-		db.session.commit()
-		
+		self.assertTrue(Game.query.get(600000) is None)
 
 
 
@@ -135,26 +149,38 @@ class TestCases (TestCase):
 		self.assertEqual(platform5.name," ")
 
 	def test_case_platform_6(self):
-		platform = Platform("60000", "Test Platform",  "2016-11-03 00:00:00", "Company", "50", "50000", "Description", True, "abbr.", "URL", "Tiny", "Medium")
+		db.session.rollback()
+		platform = Platform("600000", "Test Platform",  "2016-11-03 00:00:00", "Company", "50", "50000", "Description", True, "abbr.", "URL", "Tiny", "Medium")
 
+		dbplat = Platform.query.get(600000)
+		if dbplat is not None:
+			db.session.delete(dbplat)
+			db.session.commit()
 
 		db.session.add(platform)
 		db.session.commit()
-		dbplatform = Platform.query.get(60000)
-		self.assertEqual(dbplatform.id, "60000")
+		dbplatform = Platform.query.get(600000)
+		self.assertEqual(dbplatform.id, "600000")
 
 		db.session.delete(dbplatform)
 		db.session.commit()
 
 	def test_case_platform_7(self):
-		dbplatform = Platform.query.get(1)
-		db.session.delete(dbplatform)
+		db.session.rollback()
+		platform = Platform("600000", "Test Platform",  "2016-11-03 00:00:00", "Company", "50", "50000", "Description", True, "abbr.", "URL", "Tiny", "Medium")
+
+		dbplat = Platform.query.get(600000)
+		if dbplat is not None:
+			db.session.delete(dbplat)
+			db.session.commit()
+
+
+		db.session.add(platform)
+		db.session.commit()
+		db.session.delete(platform)
 		db.session.commit()
 
-		self.assertTrue(db.session.query.get(1) is None)
-
-		db.session.add(dbplatform)
-		db.session.commit()
+		self.assertTrue(Platform.query.get(600000) is None)
 
 	# ------
 	# Characters
@@ -201,27 +227,41 @@ class TestCases (TestCase):
 		self.assertEqual(character4.first_appeared_in_game, " ")
 
 	def test_case_character_5(self):
-		char = Character("60000", "Test Char", "Born on", 0, "deck", "description", "tiny", "medium", "url", "aliases", 1)
+		db.session.rollback()
+		char = Character("600000", "Test Char", "Born on", 0, "deck", "description", "tiny", "medium", "url", "aliases", 1)
 
+		dbchar = Character.query.get(600000)
+		if dbchar is not None:
+			db.session.delete(dbchar)
+			db.session.commit()
 
 		db.session.add(char)
 		db.session.commit()
-		dbchar = Character.query.get(60000)
-		self.assertEqual(dbchar.id, "60000")
+		dbchar = Character.query.get(600000)
+		self.assertEqual(dbchar.id, "600000")
 
 		db.session.delete(dbchar)
 		db.session.commit()
 	"""
 	def test_case_character_6(self):
-		dbchar = Platform.query.get(1)
-		db.session.delete(dbchar)
-		db.session.commit()
+		db.session.rollback()
+		char = Character("600000", "Test Char", "Born on", 0, "deck", "description", "tiny", "medium", "url", "aliases", 1)
 
-		self.assertTrue(db.session.query.get(1) is None)
+		dbchar = Character.query.get(600000)
+		if dbchar is not None:
+			db.session.delete(dbchar)
+			db.session.commit()
 
-		db.session.add(dbchar)
+		db.session.add(char)
 		db.session.commit()
+<<<<<<< HEAD
 	"""
+=======
+		db.session.delete(char)
+		db.session.commit()
+
+		self.assertTrue(Character.query.get(600000) is None)
+>>>>>>> 7931d75e2f6c53c19ae11a1f351789f91c465a42
 
 	# ------
 	# Game Serialize
@@ -236,7 +276,7 @@ class TestCases (TestCase):
 		test = {'id': "13328", 'name': "Wii Sports", 'release_date': "2006-11-19 00:00:00", \
 		'description': "Packaged with the Wii (except Japan), Wii Sports allows players to compete with friends in tennis, bowling, boxing, baseball, and golf.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
-		'platforms': "PLATFORMS", 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/"}
+		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/", 'character': None}
 		self.assertEqual(obj, test)
 
 	def test_game_serialize_2(self):
@@ -248,7 +288,7 @@ class TestCases (TestCase):
 		test = {'id': "52537", 'name': "LEGO Star Wars: The Force Awakens", 'release_date': "2016-06-28 00:00:00", \
 		'description': "LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg", \
-		'platforms': "PLATFORMS", 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/"}
+		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/", 'character': None}
 		self.assertEqual(obj, test)
 
 	def test_game_serialize_3(self):
@@ -260,7 +300,7 @@ class TestCases (TestCase):
 		test = {'id': "41088", 'name': "Pokémon X/Y", 'release_date': "2013-10-12 00:00:00", \
 		'description': "The first Pokémon games on the 3DS and the first to be released simultaneously worldwide.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2482818-pokemonxy.jpg", \
-		'platforms': "PLATFORMS", 'aliases': "Pokemon X/Y\nPokemon Y", 'site_detail_url': "http://www.giantbomb.com/pokemon-xy/3030-41088/"}
+		'platforms': [], 'aliases': "Pokemon X/Y\nPokemon Y", 'site_detail_url': "http://www.giantbomb.com/pokemon-xy/3030-41088/", 'character': None}
 		self.assertEqual(obj, test)
 
 	# ------
