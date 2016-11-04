@@ -129,6 +129,14 @@ myApp.controller('gamesCtrl', function($scope, $http){
         _.each($scope.games, function(game) {
             game.release_date = new Date(game.release_date)
         })
+        var ids = ""
+        for(var i = 0; i < data.length; i++) {
+            ids += data[i].first_appeared_in_game + ",";
+        }
+        $http.get("/api/platform_mapping/" + ids)
+        .then(function (response) {
+            console.log(response.data)
+        })
         console.log($scope.games)
     })
 
@@ -355,6 +363,27 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
         var data = response.data;
         $scope.game = fixNullEmpty(data);
         console.log($scope.game)
+        var ids = ""
+        for(var i = 0; i < data['platforms'].length; i++) {
+            ids += data.platforms[i] + ",";
+        }
+        console.log(ids)
+        $http.get("/api/platform_mapping/" + ids)
+        .then(function (response) {
+            console.log(response.data)
+            $scope.game.platforms = response.data
+            console.log($scope.game.platforms);
+        })
+        for(var i = 0; i < data['character'].length; i++) {
+            ids += data.character[i] + ",";
+        }
+        $http.get("/api/character_mapping/" + ids)
+        .then(function (response) {
+            console.log(response.data)
+            $scope.game.characters = response.data
+            console.log($scope.game.characters);
+        })
+
     })
 
     $scope.info = {};

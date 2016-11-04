@@ -263,12 +263,12 @@ def api_platforms_mapping(ids):
 	id_list = id_list[:-1]
 	other_list = [int(x) for x in id_list]
 	platforms = Platform.query.filter(Platform.id.in_(tuple(other_list))).all()
-	id_dict = {}
+	id_dict = []
 	for platform in platforms:
 		temp = platform.serialize_table()
-		id_dict[temp['id']] = temp['name']
+		# id_dict[temp['id']] = temp['name']
 		# id_dict.append({temp['id']: temp['name']})
-	print(id_dict)
+		id_dict.append({"name": temp['name'], "id": temp['id']})
 	return jsonify(id_dict)
 
 #Function to get a bunch of characters from IDS
@@ -278,12 +278,11 @@ def api_games_mapping(ids):
 	id_list = id_list[:-1]
 	other_list = [int(x) for x in id_list]
 	characters = Character.query.filter(Character.id.in_(tuple(other_list))).all()
-	id_dict = {}
+	id_dict = []
 	for character in characters:
 		temp = character.serialize_table()
-		id_dict[temp['id']] = temp['name']
-		# id_dict.append({temp['id']: temp['name']})
-	print(id_dict)
+		# id_dict[temp['id']] = temp['name']
+		id_dict.append({"name": temp['name'], "id": temp['id']})
 	return jsonify(id_dict)
 
 
