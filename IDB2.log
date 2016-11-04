@@ -1,0 +1,1623 @@
+commit d00f6d1c8532c3af99ccbab3434b355d3137e382
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 21:00:06 2016 -0500
+
+    Coverage
+
+commit da3e455ca8318f5dc6c3930bca56fa3bfef52797
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 20:52:39 2016 -0500
+
+    Fixed test cases
+
+commit f7a7448f02fa367e519ec53d0a90b76f819ab212
+Merge: c139165 1dd82f3
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 20:49:47 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 1dd82f376e9d35df26791740cbe559e93a712901
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 20:49:12 2016 -0500
+
+    Deleted repr for all objects.
+
+commit c139165a464d61d3ec4d70deb5c393ff99d14d8d
+Merge: 8fd95a5 7741c6d
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 20:46:15 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 7741c6dcc8d7d76127fc25ce1eea4abb12d82cb3
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 20:45:38 2016 -0500
+
+    Fixing unit tests again
+
+commit 7ef213b0663f6ec729e2f7e1cd1acc86c1a1e507
+Merge: 0ce6e6f 35783c3
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 20:42:30 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 0ce6e6f2e97c3b23771128f8b73929b3e7c16d05
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 20:42:21 2016 -0500
+
+    Fixing unit tests
+
+commit 8fd95a583e0ecb6c379cf6ac2dd48116537fc590
+Merge: 10f4c03 35783c3
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 20:31:29 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 10f4c03d4f18da0832dd3c4208a42a63b6433571
+Merge: 44eee80 7931d75
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 20:31:24 2016 -0500
+
+    fuck
+
+commit 4bdb7cc4e78f13175e45c8db9bbd5522ff67fd34
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 20:28:49 2016 -0500
+
+    Fixing unit tests
+
+commit 35783c37ac195ca76315f74f870f59035d6cbc76
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 20:27:14 2016 -0500
+
+    Added stuff in the characters controller to call mapping
+
+commit 7931d75e2f6c53c19ae11a1f351789f91c465a42
+Merge: 321811b 170556d
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 20:25:32 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    merging
+
+commit 321811b06bce23073f2fb08a1790849c2722c58a
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 20:25:24 2016 -0500
+
+    almost made miracle query
+
+commit 44eee80f3f3529df50c2bda770f920b6eddd91c2
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 20:24:49 2016 -0500
+
+    Changing pics
+
+commit 170556de9bf0f5564bbfc40ad9c2ef254f5a8794
+Merge: 17cafa7 1262587
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 20:20:44 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 17cafa7f2cbbbfdbdd69a0550ea03d0bd3068b8c
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 20:20:41 2016 -0500
+
+    Continuing to fix unit tests
+
+commit 12625876028272efbb01d51991ab8476be2f7840
+Merge: 915a70d 10e1f48
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Thu Nov 3 20:10:11 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+
+commit 915a70d670c33fef60345422c1d99be911b91593
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Thu Nov 3 20:09:57 2016 -0500
+
+    DB test cases work
+
+commit 10e1f4819340cf4c06be8863afad4a43038b7b4f
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 20:00:26 2016 -0500
+
+    Made some changes to display better information
+
+commit def561f3f2100e05301f40c8b45ea96aa0b7ea55
+Merge: a3851f2 c5a46e5
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 19:50:09 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    marging
+
+commit a3851f2a65980642f2932264b55895242404f532
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 19:49:58 2016 -0500
+
+    Made caches
+
+commit c5a46e5f98aebf0cb71c42dee8046f282ec1922f
+Merge: c1a6410 a908560
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Thu Nov 3 19:39:07 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    
+    # Conflicts:
+    #	app/models.py
+
+commit c1a6410a3ce80da2fd9b4440dcbc7f0337f7efdb
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Thu Nov 3 19:37:37 2016 -0500
+
+    Added in DB tests.
+
+commit a9085605820f354e40bcf2541f3b865c2180fc8a
+Merge: 4684fc8 e97e78b
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 19:27:41 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    marging
+
+commit 4684fc8cbe0e57c9b877823135541dd199d5230d
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 19:27:12 2016 -0500
+
+    Made API return lists
+
+commit e97e78bd685c91ca45d0907121a9212dad452807
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 19:27:10 2016 -0500
+
+    Fixing unit tests
+
+commit d831424baf7d8ac7b4d70d755bccfb48f2a60502
+Merge: 842f130 ffea544
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 19:18:49 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    merge with master
+
+commit 842f13016675d1510c1e5987e07f15610bed179a
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 19:18:46 2016 -0500
+
+    Make dates prettier
+
+commit ffea54460bbf7249852b3270376f9536bb2fceed
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 19:14:57 2016 -0500
+
+    Added serialize_table unit tests
+
+commit cfd59f785611a6450bb7c57d3f84a9ffeae76837
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 19:13:58 2016 -0500
+
+    Checking
+
+commit 86daac5be442e462d14cda3e8f4f0abbd52e989f
+Merge: 811fc35 a103cac
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 19:01:30 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    Merging
+
+commit 811fc3585f472141adf77f92f8269f8634c54858
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 19:01:26 2016 -0500
+
+    Added pagination and row counting
+
+commit a103cac73b352c7f72c46d1e5b506e0567053cb3
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 18:50:18 2016 -0500
+
+    Added birthday for character
+
+commit 357b45db5b47f5dc071097e0cfa1b158301d675f
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 18:39:00 2016 -0500
+
+    Fixed gender
+
+commit 9549fd2d94257900d0ae67c1ae35dbf31d123294
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 18:37:39 2016 -0500
+
+    Added gender
+
+commit 618ef6f9cc76a886fe503ef6cff98d65878e97e4
+Merge: 203b639 c943b6b
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 18:36:46 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+
+commit 203b63996a5d057cec26f305aa287afc973068eb
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 18:36:31 2016 -0500
+
+    Fixed minor asthetics
+
+commit c943b6bce2e859d2090c145f868da6c20416b475
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 18:23:59 2016 -0500
+
+    Updated app/models.html
+
+commit a27c689bbf95a50f645a8f5ab67e802dad074084
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 18:23:27 2016 -0500
+
+    Updated app/models.html
+
+commit 282f31c1caa456752b5f687a22eb82c6fb5d6b26
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 18:14:41 2016 -0500
+
+    Added unit tests for serialize function within Character object
+
+commit a126ffbefdc7c6715bb02e212b117cd10dd3aec1
+Merge: 9e03232 e322401
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 18:14:13 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 9e0323202f05141feeae5f468b4aa9ab1ef831c9
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 18:02:51 2016 -0500
+
+    Added unit tests for serialize function within Platform object
+
+commit e3224019ccf316f924745c3784dacbb29136ae79
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 17:58:09 2016 -0500
+
+    Added id to serialize
+
+commit 2c55f9345524ca1350d87ecbef2afc64c305e2bf
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 17:53:07 2016 -0500
+
+    Added unit tests for serialize function within Game object
+
+commit 5e274634b7f8371bf6e167237440ced4afa15bb4
+Merge: 64dcbba 5423352
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 17:50:18 2016 -0500
+
+    ldsjajdk
+
+commit 64dcbba78b905574dab591ab72b9c1e630136803
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 17:48:48 2016 -0500
+
+    sfg
+
+commit 5423352be3258eb6fe836a2cfcec4c746059536f
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 17:48:21 2016 -0500
+
+    removed unnecessary conflict leftovers
+
+commit addcdb66e6d01c6876ddb80e62ea1cc96b792105
+Merge: 2ee701b be3a2dc
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 17:46:37 2016 -0500
+
+    Merged
+
+commit 2ee701bf3f41daa00245041226d5887d5394e69c
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Nov 3 17:45:12 2016 -0500
+
+    Quereies are lightnign, made quereies go by offset and do all at same time.
+
+commit be3a2dc5319fdd863c1c8467104ed70ecdb86d5a
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 17:39:26 2016 -0500
+
+    Added one serialize unit test
+
+commit 07a34612b0445a5268ded455497a090341226e53
+Merge: 2027d33 8e22a65
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 17:38:52 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 8e22a65cce12b9508e5d6557dba4edc179f3d7c9
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 17:32:36 2016 -0500
+
+    Cleaned up app.py to remove multiple apps
+
+commit 56cd56b8f7d36db75fcfa6dccba6fbadc548e140
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 17:31:30 2016 -0500
+
+    Fixed Apiary link and github issue tracker link
+
+commit 2027d33f6be842be253c02f2bb1bc3a1fe389c5d
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 16:56:08 2016 -0500
+
+    Updated character init unit tests.
+
+commit a81ff79b252973520beb22fba82c569fef4c4de9
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 16:13:38 2016 -0500
+
+    I'm so tired of commit messages
+
+commit 22f92dcc2a2331a88d29b99c2566a9b87671bce9
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 15:39:48 2016 -0500
+
+    API calls work on DO
+
+commit 522eb317fbc9f0ffbae533e89aa0d68fc95d6d68
+Merge: 0f5da6f 78c6552
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 15:26:04 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 0f5da6f8e3cdda7b69b5fb09f93c9c7aaf4aa8aa
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 15:25:54 2016 -0500
+
+    Should work on DO now
+
+commit 78c6552564b7813009ce7012b2f24f7486d8135b
+Merge: 5929d34 836324d
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Thu Nov 3 15:08:42 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+
+commit 5929d3407b52c1f4dbf663e8e565fda77efe62a9
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Thu Nov 3 15:08:24 2016 -0500
+
+    Added section for my DB
+
+commit 54543bc35cb4142a59ea709b364fe7e7e9bf4c45
+Merge: b015218 836324d
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 15:05:09 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit b015218b74334f55d4f33a46bd052b02f4029786
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 15:05:07 2016 -0500
+
+    M
+
+commit 836324d2557c5e99a0bd1121d316c92fdd1d1951
+Merge: cc987e2 487060c
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 20:03:31 2016 +0000
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+
+commit cc987e20016f06820870e4b548780a9991b261dc
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 20:03:14 2016 +0000
+
+    Janky ass DO code
+
+commit 487060c480d6c41b31e7c823776800523b97b8da
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 14:19:28 2016 -0500
+
+    Run this code Nathan
+
+commit 179ac2510c062fefdea1e49886adb8c5ff75ff7e
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 13:38:03 2016 -0500
+
+    Confustion everywhere
+
+commit f54688b210b25a0af4f0d5defec3dc97103562cc
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 17:18:55 2016 +0000
+
+    Fixing more bugs
+
+commit 167e6dea1f651b7457291b617635ee7412084d2f
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 16:58:09 2016 +0000
+
+    Fixing more errors
+
+commit d81e7d3b336fb2bba930e85cae45217418b852f2
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 16:54:54 2016 +0000
+
+    Fixed DO errors
+
+commit f236e177756247d2bd6c553073fdae99c9356053
+Merge: 846a931 260d179
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 11:48:33 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 846a931832584de462f8a15e3a5dbebf8fb85387
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 11:48:24 2016 -0500
+
+    Fixed server errors
+
+commit 260d17993bb4bfcb658374a26331fc30b713cdd3
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 16:46:55 2016 +0000
+
+    Fixed DO database
+
+commit 7079db5df7f797607e92a51cba43135a52131d30
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 10:56:26 2016 -0500
+
+    Ready for DO to update DB
+
+commit 559b47130e4a7d3b400dc65f22cdae0b7a2efb96
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 15:09:28 2016 +0000
+
+    Need to speed up API response
+
+commit b8f8d14752e836299067b0e0937af450f28409fc
+Merge: ef9771c f71739a
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 09:52:27 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit ef9771c0827007f3e5dd5b5be451eed2e73df478
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 09:52:12 2016 -0500
+
+    .
+
+commit f71739ab0603fb7b2ccf63f849a1cefc6ce6925b
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 06:37:00 2016 +0000
+
+    time for chris to go to sleep
+
+commit ca6b9cdcb0211c5ffe0bf589382685062f48e1be
+Merge: 9939f64 5ca3f9b
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 01:24:14 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 9939f64c08972c407b56d88ac615cfe63ca44093
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 01:24:11 2016 -0500
+
+    Fixed constructor
+
+commit 5ca3f9b0c28438febb69c45e2b5aae6eb9f89840
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 01:22:54 2016 -0500
+
+    Updated some of the pages to reflect new DB fields
+
+commit 1736456c5eb1eb3bd4d2b4eb1acbda205b40c6e0
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 00:48:39 2016 -0500
+
+    Fixed some Platform test cases 2
+
+commit 4290cbc5a50fa5837f7b937ce379f30b2697acaa
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 00:45:09 2016 -0500
+
+    Updated api calls
+
+commit 2168ec843284e2490f6627ed07dccd08b7eb630d
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 00:43:43 2016 -0500
+
+    Fixed some Platform test cases
+
+commit 065f4718db6557e0c6f4ac20b93afaac17dc88f0
+Merge: 408bb72 6883a5d
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Nov 3 00:34:38 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 6883a5dd1db22a92fd987593f3a79dc85048c6db
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Nov 3 00:31:48 2016 -0500
+
+    Fixes #43; Fixes #33; Fixes #32; Added in ability to run unittest and fixed the apiary link. Also rerouted the api to be dynamic
+
+commit 53ac87eb96657d7caf939cb19accce4be272eac3
+Merge: 2eb566e 980375e
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 00:24:16 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 2eb566e940c2f2b9b068843342841169996863c9
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Nov 3 00:24:04 2016 -0500
+
+    Fixed api routes
+
+commit 408bb72b7600602e59251915d602d383839ee117
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Wed Nov 2 23:24:32 2016 -0500
+
+    Updated test cases for init platforms
+
+commit 980375e240d266b2f3456e97d08a2613f1f803e2
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 03:57:02 2016 +0000
+
+    DO works again
+
+commit 643d0412b376133c8f23a9730a16c6d7ccf37023
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Wed Nov 2 22:54:47 2016 -0500
+
+    Updated test cases for init games
+
+commit 6bca50b6c0e5251e9ba4e6697e277dbd4c6407ac
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 03:38:22 2016 +0000
+
+    Got a bug in DO
+
+commit 3ba243abaa3673c4cdd0ae300ea5982bebf87e18
+Merge: cecad5e 4be9281
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Nov 2 21:31:00 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit cecad5e518c29bd95b5ad1a44231ea7ed8e4e1e6
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Nov 2 21:30:57 2016 -0500
+
+    Local change stash
+
+commit 4be928100164c1eb578383ec1997a4558726e132
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Nov 3 00:27:17 2016 +0000
+
+    Works on the DO server
+
+commit 1aac2f0dbf67a2bb5f6f27bd651fc8c58a80ac4e
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Nov 2 17:53:01 2016 -0500
+
+    Fixed DO errors
+
+commit 68b7410da76cdd156d6c64fc3d3961d0cd32869d
+Merge: 302351f 001816f
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Nov 2 17:40:38 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb
+
+commit 302351fb0b4e9e9cf03745388fd7ad07502af7d7
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Nov 2 17:40:25 2016 -0500
+
+    Puzzle Pieces bruh
+
+commit 001816f9189500b891f27d50176b2accfcc7b859
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Wed Nov 2 22:39:29 2016 +0000
+
+    D'oh
+
+commit e913176f77e9338f6ef38502ded445ee4972eb43
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Wed Nov 2 22:36:09 2016 +0000
+
+    Searching for bugs on DO
+
+commit 77ae3c0097c7fc179e08d56451fb8c12a9e717ea
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Wed Nov 2 20:23:56 2016 +0000
+
+    trouble get DO set up
+
+commit 7e4d8acdadaa9cfe970948e22ff3c48802c43c39
+Merge: fc4d40b eb4a0b0
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Wed Nov 2 19:24:07 2016 +0000
+
+    Merge branch 'master' of https://github.com/nathanielballinger/cs373f-idb
+    
+    Extra non-committed work appeard on DO server
+
+commit fc4d40b938d24ef25fd163f71d1ae098b4cc50a5
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Wed Nov 2 19:24:01 2016 +0000
+
+    Commit from DO
+
+commit eb4a0b0fd5914a4a905c9f2280b11d32f8e62098
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Nov 2 14:06:06 2016 -0500
+
+    Ready to upload DB on DO
+
+commit 8842399c8d3188c4abc1bac174284d10e4f527f6
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Nov 2 13:52:01 2016 -0500
+
+    Modified first 3 test cases
+
+commit bca0cbb4cb70137501f61ea1af778e6f0bc35f3d
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Nov 2 11:18:51 2016 -0500
+
+    API calls now work
+
+commit 51f1cd3b37fdb58b4aa7f1117f0791858d699533
+Merge: 148063a fc37e18
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Nov 1 23:10:25 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 148063a7c75691f9dcdfa9f924856f002652206e
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Nov 1 23:10:21 2016 -0500
+
+    Working on stuff
+
+commit fc37e185c5475348e892b49098638e59b4944b74
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Tue Nov 1 23:09:27 2016 -0500
+
+    Match the import statements.
+
+commit 64d748912106e041551871275b83da620ef93ed1
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Nov 1 22:56:47 2016 -0500
+
+    Fixed
+
+commit 64a5b9d7e90bdc6f79bcff762dd2173cd9290501
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Nov 1 22:41:28 2016 -0500
+
+    Updating models.py
+
+commit 3e5309086c61f0c05223a7e1c816458597c6d9dc
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Nov 1 21:50:58 2016 -0500
+
+    Cicular dependency
+
+commit 2d4db353ef2f5539b37238a184844b585e29477b
+Merge: 26fab58 f101205
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Nov 1 21:22:26 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 26fab585f4e3774710bf47758a1205eedf1352ce
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Nov 1 21:22:08 2016 -0500
+
+    *Finished DB Models*
+
+commit f10120545f61ff4990b82525105b905ebf9e3ed9
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Tue Nov 1 18:50:19 2016 -0500
+
+    Parsed first appeared characters in Game
+
+commit d42f88f266243cccdd68fc86475a77fe69868aec
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Nov 1 17:32:09 2016 -0500
+
+    Added more to DB again
+
+commit b5940ed1046e98a8a01ef0f098c233f847b03112
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Nov 1 17:28:37 2016 -0500
+
+    Added more to DB
+
+commit 292a4adee653549874d7389e1a2488f144146749
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Tue Nov 1 13:52:00 2016 -0500
+
+    WIP api calls. Might have errors
+
+commit a2807415f99dc18b820776a6614ad98e7ebcd16a
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Tue Nov 1 08:45:43 2016 -0500
+
+    Updated gitignore for Visual Studio projects
+
+commit d2ca104e0ecba039fc028a4c875a6d7dfb0dd66d
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Mon Oct 31 23:15:27 2016 -0500
+
+    DB ready to load
+
+commit 3387c3672b5eb1b2e0c64025d5847f9d0ecf4606
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Mon Oct 31 17:35:11 2016 -0500
+
+    I think we finished the DB models
+
+commit 9a58156a9269424906ed94aa5e596af4167585fc
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Mon Oct 31 00:58:33 2016 -0500
+
+    Continued working on uploading the DB
+
+commit 69852cd6bbe96a427430cc3729858595030035bc
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Sun Oct 30 18:45:07 2016 -0500
+
+    Working on DB
+
+commit cdc5f4d52b8a0c31785e90c668270f13406bcf91
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Sun Oct 30 16:12:31 2016 -0500
+
+    Working on loading database
+
+commit f47b25d334c69c9620c07e57f8fd46d890d2b287
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Sun Oct 30 14:36:34 2016 -0500
+
+    Chris is a dingus
+
+commit f76a02defb01c676725b71ca4c453fa00dc95ff4
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Sun Oct 30 14:31:05 2016 -0500
+
+    Made more changes
+
+commit c19a869d667f42774480d8a21e226eed2cdd758e
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Sun Oct 30 14:29:44 2016 -0500
+
+    Made more changes
+
+commit 049814dc627aa95bc093acc0f54733c08c7f1d09
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Sun Oct 30 14:14:45 2016 -0500
+
+    Moved genJson code to models.py
+
+commit 1faf54bd86b14fce0f443ff11d234e042385ae09
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Sun Oct 30 14:09:18 2016 -0500
+
+    Modified genJson.py
+
+commit fab8b7d57fef835ed4d53520254c479a1f9ded6e
+Merge: 81e8033 5e93567
+Author: Keith Wong <kwong98@cs.utexas.edu>
+Date:   Wed Oct 26 15:21:21 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit 81e8033a398651aff7722e10e67f47b81184f829
+Author: Keith Wong <kwong98@cs.utexas.edu>
+Date:   Wed Oct 26 15:20:11 2016 -0500
+
+    Updated making all strings for requests from API
+
+commit 5e93567ab47b2e356a6e27c309c24004ec4754c4
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Wed Oct 26 15:09:04 2016 -0500
+
+    WIP code for api requests
+
+commit a60999bd4d740901c0d3cec6b084c81283e9a681
+Author: Keith Wong <kwong98@cs.utexas.edu>
+Date:   Wed Oct 26 14:57:58 2016 -0500
+
+    Currently making all strings for requests from API
+
+commit a3bb2cf8bd5cab52cc8726eefb9f9900f684fae7
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 19:42:47 2016 -0500
+
+    Final commit
+
+commit fac65a42b9030b36dead202dc6b71d9badd67d7d
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 19:32:41 2016 -0500
+
+    Update README.md
+
+commit edda4b083dadaf0b3744560cd1afd0ba2cab8a87
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 19:31:31 2016 -0500
+
+    Update README.md
+
+commit d61308921ae5b8fb67d7c4e89546c0dfff1f0640
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 19:30:23 2016 -0500
+
+    Added app.html
+
+commit f59506d1e4d22590af9d9f2f03e4f47e3db4e634
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 19:12:26 2016 -0500
+
+    Phase 1 turning process activated
+
+commit f5789458b174bdddf0b25d1ee65df7cf5a427a71
+Merge: 32b8eb6 5eedfaa
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 18:32:58 2016 -0500
+
+    Merge branch 'master' into dev
+
+commit 32b8eb63f9a0d83e15605c3db3b8cc248dcfd42b
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 18:32:32 2016 -0500
+
+    Make final last changes
+
+commit 5eedfaa40f5401a89ae3cac98003b88370c8e28b
+Author: Nathaniel E Ballinger <nathanielballinger@utexas.edu>
+Date:   Thu Oct 20 18:30:03 2016 -0500
+
+    Update README.md
+
+commit c39bdc304cb23754940f526baf51b04244e726e3
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 18:18:21 2016 -0500
+
+    Fixed apiary link
+
+commit b4a282cce630987f3223741bbab337d978f0f212
+Author: Nathaniel E Ballinger <nathanielballinger@utexas.edu>
+Date:   Thu Oct 20 18:06:28 2016 -0500
+
+    Update README.md
+
+commit 8d77aecc4cbeec5730738517582fbb7bb4d126fd
+Author: Nathaniel E Ballinger <nathanielballinger@utexas.edu>
+Date:   Thu Oct 20 18:02:04 2016 -0500
+
+    Update README.md
+
+commit 1a56cd6e5b5507cd2a5ce8b654761f7c5db6bf04
+Merge: cca3fef 011dec5
+Author: Eitan Yarmush <barca7life@gmail.com>
+Date:   Thu Oct 20 17:16:29 2016 -0500
+
+    Merge pull request #30 from nathanielballinger/dev
+    
+    Dev
+
+commit 011dec5d04e9d504bfdede37031d06f0ba930526
+Merge: c14bfeb cca3fef
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Oct 20 16:36:39 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    merge with dev
+
+commit c14bfeb1346f0816cdca3064853085492a3689c2
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Oct 20 16:36:33 2016 -0500
+
+    Made sorting possible and also added underscore.js, my favority thing
+
+commit cca3fefcf1f06d35783566242160f057f2fe5790
+Merge: 21a8c61 f89254b
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 15:42:25 2016 -0500
+
+    Merge branch 'master' into dev
+
+commit 21a8c612e7528f7d2cf8f199ecac01fb5136eb02
+Author: Nathaniel E Ballinger <nathanielballinger@utexas.edu>
+Date:   Thu Oct 20 15:38:28 2016 -0500
+
+    Update apiary.apib
+
+commit f89254bd673d84ad66ec58a5de45698627a30953
+Author: Nathaniel E Ballinger <nathanielballinger@gmail.com>
+Date:   Thu Oct 20 15:37:53 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit f4b7311d3c5571a84519677472c8f90db8e49f9a
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 15:37:16 2016 -0500
+
+    Fixed types, added test cases
+
+commit fcfddf6f2283c8c3b5ef7de5160245c9e80e9710
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 14:40:01 2016 -0500
+
+    Adding IDB1.log
+
+commit 144a14eb1844580bf484a9ab20dcb0d8a02bef49
+Author: Nathaniel E Ballinger <nathanielballinger@gmail.com>
+Date:   Thu Oct 20 14:25:24 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 87fa96299386fc616a5aed174307a1ba2d39cb2b
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:22:12 2016 -0500
+
+    Modifying project structure
+
+commit 02a865e01b254e78de1a0b1744b6304c7c9fa025
+Merge: d267edf c2d61ae
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:20:28 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373-idb into dev
+
+commit d267edf290c6ee4b2a292b733b95a57a7201768c
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:20:14 2016 -0500
+
+    Modifying project structure
+
+commit c2d61ae8d8663bf1a4744f3478f2dd7571e6c0d8
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:18:33 2016 -0500
+
+    Rename Makefile to makefile
+
+commit 28104eb10ba3c7e29a1aecb8fdd46dfac07aa851
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 13:14:22 2016 -0500
+
+    Added UML to repo
+
+commit a72edeaf4c816bd02b6a52a680498f3bb8783232
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 13:00:44 2016 -0500
+
+    Fixes #29; Added in the information about data scraping from the wiki
+
+commit f032178a669095c51ee45909604bd55f7d926345
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 12:44:39 2016 -0500
+
+    Fixes #28; Added in more stuff in the about page and got the stats to work right
+
+commit 824e228af4be823917cb67cf2238f2e91b73dae0
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 12:08:29 2016 -0500
+
+    Fixes #27; Changed platform/game/character pages so that they don't display unparsed details
+
+commit c90295f0e30aac94acd56c562d10a956828e6577
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 12:04:44 2016 -0500
+
+    Fixes #26; Added in the number of issues from the github API
+
+commit 63241d6e3cabd9cbf80d1a9b9c34976df8ef9136
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 10:10:49 2016 -0500
+
+    Hotfixed number of commits for eitan
+
+commit 88062087485fa7caf71ec65a05b547c61361fde8
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 10:09:01 2016 -0500
+
+    Fixes #25; Added in number of github contributions to the about page
+
+commit 49dbac2e04fe16c885b1233c245322287370f10b
+Merge: 6e3fcfb 956b6cf
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Thu Oct 20 09:30:04 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    "Merge"
+
+commit 956b6cfd490348258adbb9d0b9402f214213f3a1
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Oct 20 03:00:45 2016 -0500
+
+    tests.py and models.py updated
+
+commit 52a26a86ac4bd24e174a6eb73c14d077a79b1ed0
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:17:56 2016 -0500
+
+    Added titles to all the pages so it looks nicer
+
+commit 9b2640672f12fc610dccc1d06e3ec276b77a7b81
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:13:55 2016 -0500
+
+    Fixed up the about page
+
+commit dbf637a224abd709dce1c27383a3f70e5e284378
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:12:38 2016 -0500
+
+    Fixed up the front page a bit
+
+commit f736fbcad721bc0f18fbd6fee7d63eec70480818
+Merge: 5a44e7f f23a4df
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:06:31 2016 -0500
+
+    Merge branch 'dev'
+
+commit f23a4df8b8addda4da0f211426f32bc3ee136670
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 02:05:17 2016 -0500
+
+    Fixes #24; Fixed the title in navigation and tab
+
+commit 41f9edac300605ed5b78eee63b077d80c561f342
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Thu Oct 20 01:55:01 2016 -0500
+
+    Fixes #19; Created the platform page
+
+commit c771ffa95dab844f2b2b4495e7588f681ef56cf7
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 00:31:49 2016 -0500
+
+    Added models.html
+
+commit 67141470546c19780ae788b6a97cad0a3e90213a
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Thu Oct 20 00:09:02 2016 -0500
+
+    Chris makes changes to tests.py
+
+commit c6cc306ca7b11c7691d69d14822664f3c4eba0a3
+Author: KEITH-WONG-PC\wongk_000 <wongkeith98@gmail.com>
+Date:   Thu Oct 20 00:05:20 2016 -0500
+
+    Began test cases
+
+commit 5a44e7f8057d0fd8c23008232cfd068b2da3534c
+Merge: b9a4f77 405fc26
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Oct 20 04:34:24 2016 +0000
+
+    Merge branch 'master' of https://github.com/nathanielballinger/cs373f-idb
+    "Merging with master"
+
+commit b9a4f77a282622e256377b5ca2ecd688d6980f50
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Oct 20 04:34:05 2016 +0000
+
+    added app.wsgi
+
+commit b4e323848fc9188877b42ec764a812ff61ed4381
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Oct 20 04:33:23 2016 +0000
+
+    Now works on digital ocean server minus the relative path issue
+
+commit 405fc2637f273fe0f6040cdb69d7f1cfadb3f12b
+Author: Nathaniel E Ballinger <nathanielballinger@gmail.com>
+Date:   Wed Oct 19 22:59:46 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 6e3fcfb8e04d18e3f519f3c66b1d0d1e6729c1f9
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 22:17:01 2016 -0500
+
+    Rolled back stupid commit
+
+commit 85df6ba2a817de305130759f5795dfa6007fa653
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 22:15:36 2016 -0500
+
+    Made a couple changes to make server work
+
+commit 4754f46caa55f0e10c18a397dd6ae98ab76e78f2
+Merge: d5392c2 4cabda1
+Author: Eitan Yarmush <eitanyarmush@utexas.edu>
+Date:   Thu Oct 20 02:35:07 2016 +0000
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb
+    "Ugly Merge"
+
+commit 4cabda1c0f91051161e714dc279cafdf584d7c12
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 21:32:46 2016 -0500
+
+    Totally changed the file structure to put all of the important files into app
+
+commit 0a9e2d0061c93e65af3d1c3bb727189fd9295f2d
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 21:28:32 2016 -0500
+
+    Changed the JSON files to be mortal kombat
+
+commit c8972852dc07f155efa521d1abf23462f5d61700
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Wed Oct 19 21:16:46 2016 -0500
+
+    Fixes #18; Fixes #23; Added in code to deal with no links provided for the images and fixed up the game page so that it displays the information neatly.
+
+commit f39e9304f7b510866edda388d0fcd3ce441701c1
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 21:15:03 2016 -0500
+
+    models.py update
+
+commit d5392c2674871da91698de07ccb71c9b6a967a9f
+Merge: d90d251 ec23805
+Author: Eitan Yarmush <barca7life@gmail.com>
+Date:   Wed Oct 19 21:07:27 2016 -0500
+
+    Merge pull request #22 from nathanielballinger/dev
+    
+    Dev
+
+commit ec23805eca67d1c209cb9299b22c2bbb7cf346ed
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 20:40:15 2016 -0500
+
+    Chris moved SQLAlchemy models to new file
+
+commit 2aac146b0b5df167521ffc74b467baead8803800
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 19:41:49 2016 -0500
+
+    added a coupe pictures and edited the about page a little:
+
+commit 85f199e23a3903dedb31d9a08840b013ae5d6c3b
+Merge: b7b9682 b727d3f
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 19:37:29 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    Merging
+
+commit b7b968220b0b75576d0cec922374e5792ee08c8c
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 19:37:25 2016 -0500
+
+    Changed about as well as added some photos
+    :
+
+commit b727d3fb285eaf68bc035219da529d538f10ee28
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Wed Oct 19 19:36:24 2016 -0500
+
+    Added in photo for about page
+
+commit 889a55ec72aa92bb27d2b0684f4864d3a8b362b9
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 19:08:50 2016 -0500
+
+    Chris fixing typos and adding more figures for the technical report
+
+commit c44d53a8b3be7ce62896600f57f597ea1f6523da
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 17:54:35 2016 -0500
+
+    Chris added another figure for report
+
+commit 2013f3b0267d64395b13d6fd5850dbad73aa280a
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 17:39:38 2016 -0500
+
+    Chris added photo for report
+
+commit 65bd09a63d5f0130f4728ed42485d906b595c169
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 17:14:30 2016 -0500
+
+    Added Chris Collier picture
+
+commit 693e99da6a9c5bad9a23070e2d28697b57436ae3
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Wed Oct 19 15:34:56 2016 -0500
+
+    Fixes #17; Created a simple page for each character that we have so far. Need to edit it more to make it look nicer and remove some of the duplicate/unnecessary information.
+
+commit 239106b7c3614b6e23af2dac52a47e5bbe374c05
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Wed Oct 19 12:54:43 2016 -0500
+
+    Chris changed table categories to reflect data
+
+commit 9902bf3347fe558c22eaf0fd5dae44009974240f
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Wed Oct 19 10:01:35 2016 -0500
+
+    Real quick push to show something cool
+
+commit fafb1f4c42683c1b93553a60eec4d717cb3ed7ce
+Author: Christopher Collier <christopher.collier@utexas.edu>
+Date:   Tue Oct 18 19:27:58 2016 -0500
+
+    Chris wrapping up SQLAlchemy models
+
+commit 213f56616b9efea7047f73fc5b7b98dd4dc26487
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Tue Oct 18 09:42:47 2016 -0500
+
+    I removed the next and prev buttons from the carosuel because they were not working and were unescesarry anyway
+
+commit b8cb133b634dface968238943285219e2b82d4db
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Tue Oct 18 09:28:56 2016 -0500
+
+    removed more comments
+
+commit 7f87973f5e98e2957fc1124b5036c674abb9669e
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Tue Oct 18 00:41:55 2016 -0500
+
+    Cleaned up unused variables in header controller
+
+commit 1763b60252be627f91c98c78e9432fa0e3162036
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Tue Oct 18 00:36:38 2016 -0500
+
+    Fixes #16; Added a quick padding css fix so that teverything always comes below the nav bar
+
+commit da4c419609f57890eb385cb888e746f41d280255
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Tue Oct 18 00:29:59 2016 -0500
+
+    Fixes #15; Changed the code so that the only item in the navigation that will be selected is the page you are on
+
+commit d763e9545d17fcccf1797e61d0cd4222684a3052
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Mon Oct 17 23:50:27 2016 -0500
+
+    Fixes #13; Made the navigation bar stick to the top. Now, it will scroll with the page so it's easily accessible
+
+commit 629dde74d779d3af900a6d396571ac9371b34214
+Author: abhirathod95 <abhirathod95@gmail.com>
+Date:   Mon Oct 17 23:46:08 2016 -0500
+
+    Fixes #12; Fixes #14; Added in the navigation bar and linked it to the pages. Just need to fix a bug and make it stick to the top
+
+commit 4866ca63102eed0b256f1fb1fec529f075e38b06
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 20:40:29 2016 -0500
+
+    Just went through and deleted a whole bunch of comments
+
+commit 4d07a4fb49636075f2fed881f4d8aa606d856a49
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 20:34:44 2016 -0500
+
+    Create character.html and platform.html as well as doing some dynamic linking between lists and individual pages
+
+commit a93b55d6e2df524527a3813221150cea05129102
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 19:22:47 2016 -0500
+
+    Removed a print statement:
+
+commit a20c1587a2f1592ca365bdce33f51da0df5b7f79
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 19:20:52 2016 -0500
+
+    All individual gets are working on front and back end, still need to do actual design
+
+commit 17706ff6c0ea3129b3dc7ddc6c58725fd64d400a
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 19:04:48 2016 -0500
+
+    Created controllers for all individual game, character, and platform pages. Not sure if any of it works but we'll def see soon
+
+commit 38ec3be125fc698eafdaf790710b3c1441486d86
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 18:54:52 2016 -0500
+
+    Added individual routes to flask API
+
+commit d3ce91f86d0f5a5aadfb393ba4b2cf527e119052
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 18:43:07 2016 -0500
+
+    Lists for characters, platforms, and games now display
+
+commit 878aeab2be0bb719ea48473d65c8bacedab0f740
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 17:46:33 2016 -0500
+
+    Changed Json files to be pretty
+
+commit e71c142cd8150d8d15ea05db7549e37dd9a22820
+Merge: 164ba6c 619a19d
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 17:35:05 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    "done"
+
+commit 619a19de58aed121e52b75c7ecb0e6779a140e70
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 17:34:45 2016 -0500
+
+    added all json files
+
+commit 164ba6cb3d3ffb9ef5f8516d3ce40c4e608ab849
+Merge: 87055c5 1ee18ce
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 17:32:18 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    "done"
+
+commit 87055c57f83908b45ca6bdee1f943d11a1432ced
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 17:31:54 2016 -0500
+
+    More changes to SQLAlchemy
+
+commit ffd56f45d2d4cf14830706eae6ad080c9e05035b
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 17:27:39 2016 -0500
+
+    Fixed small indent issue and started adding json for games and stuff
+
+commit 1ee18ced7665e052d703028f43f34b087dbd4fcb
+Merge: 175dc37 045ed36
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Mon Oct 17 17:26:09 2016 -0500
+
+    Merged app
+
+commit 175dc37616f01fd7587d1dc7fee4365a0122c1ae
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Mon Oct 17 17:24:20 2016 -0500
+
+    New stuff
+
+commit 045ed3672a0b3fe169dea3d7f689b68331607d17
+Merge: 9ebe396 af115d4
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 16:34:54 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+
+commit 9ebe3969c88c2dca9e4f13708d0a2aac5890f582
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 16:34:42 2016 -0500
+
+    Chris fix app.py
+
+commit af115d44b9434d1249ab818e9b8aebfa34aacf85
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 16:21:13 2016 -0500
+
+    Changed a lot of the lists stuff
+
+commit 2bd7bae65973d7168f2510117ba7e20623f79b1c
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 16:20:14 2016 -0500
+
+    Chris making more changes to SQLAlchemy Models
+
+commit ee111130a494177e58196d8bfea20651fb9bcca9
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 15:45:44 2016 -0500
+
+    Chris adding SQLAlchemy models
+
+commit f780e87856f3591dff4febcef4058d46a0597aac
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Mon Oct 17 15:21:03 2016 -0500
+
+    Delete CNAME
+
+commit 2b72684895ff3906163ff0a2d902fff2ae668222
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:16:20 2016 -0500
+
+    Fixing app.js
+    
+    Fixing app.js so that it routes to the right place
+
+commit f6c254a5d5ed91363bfa0b4834787175c544d906
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:09:31 2016 -0500
+
+    Adding in controllers
+    
+    Creating file for all the controllers we will be creating for angular
+
+commit 6eb9cbd6789e45498eb9a9d15c7e31bb6433519c
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:04:00 2016 -0500
+
+    Deleting copy of index.html
+    
+    No need for 2 index.html files, so removing the partial and keeping the template.
+
+commit 1143a7a1d81524583be5f49ce62c09b7926aa0d5
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:03:05 2016 -0500
+
+    Fixing index.html
+    
+    Updated the wrong index.html, so fixing it now.
+
+commit 358dc89c9f335532502d49ed6dece4a7f507a2e5
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 15:01:33 2016 -0500
+
+    Adding in jquery locally
+    
+    Adding in jquery into the packages instead of fetching it from google's servers (less requests).
+
+commit b3439f3cbec4c090b0e84df64d8022bc1ddf0af3
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:59:22 2016 -0500
+
+    shell for header partial
+    
+    Adding in the shell file for header partial. Need to update this to add in the menu for navigation
+
+commit d31f972cdf6205bae85f1a154ab7629639997fc0
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:58:14 2016 -0500
+
+    Adding in home/splash screen
+    
+    Adding in the splash screen partial
+
+commit ded02e2a78fae860c9d162c2c1dc658f84b4d78f
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:57:10 2016 -0500
+
+    Base html file
+    
+    Updating index.html to make it more of a base html file and separate the info into partials.
+
+commit 142b93ff4693926693acd09e65dab068b6d5dc0a
+Merge: cad0cf4 6501eb0
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:56:47 2016 -0500
+
+    Fixed merge conflict
+
+commit cad0cf428cea431e8f61b980cccc8b42d63cb2f3
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:55:46 2016 -0500
+
+    Changed up app to include lists
+
+commit 6501eb0abe8ec3336116468423ae6cfe1534b62d
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:55:21 2016 -0500
+
+    Updating routing
+    
+    Changed the code a little bit to update routing
+
+commit 977d1a3780742a784f39283a3f9ae2d38a6e6311
+Author: Abhi Rathod <abhirathod95@users.noreply.github.com>
+Date:   Mon Oct 17 14:53:39 2016 -0500
+
+    Updating app.py
+    
+    Changed app.py so that the routing of the website can be done through AngularJS
+
+commit 2e7ad232a0502d6863d9af52a7f4f4901a915d44
+Merge: 452daa3 06b8ed9
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 14:41:42 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+
+commit 06b8ed9cac9ffce2e9a14a2d4a1ccb7582abf5ca
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:38:43 2016 -0500
+
+    Started list html page, Im pushing for merge purposes
+
+commit 452daa3eb68dd29901fd9999628b977f031e8b92
+Author: Christopher Collier <christophercollier@wireless-10-147-30-58.public.utexas.edu>
+Date:   Mon Oct 17 14:37:15 2016 -0500
+
+    Chris adds SQLAlchemy functions to app.py corresponding to pillars
+
+commit 537fdac46fd85fc441083ee2a7223414778a2742
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:21:45 2016 -0500
+
+    Routing now works properly using Angular JS
+
+commit 0db8d7c8572c905a1a3b9848067cf83d0d93546a
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Mon Oct 17 14:12:24 2016 -0500
+
+    Created about page and added a little intro thing to main index.html page
+
+commit dcd54ead7ed469f4439dec5eada7d38a6a60eb68
+Merge: 51b06df a3ed6b8
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Sun Oct 16 20:14:28 2016 -0500
+
+    Merge branch 'dev' of https://github.com/nathanielballinger/cs373f-idb into dev
+    Forgot to pull earlier
+
+commit 51b06df267a6bd0b9b534b7b268cf1f4bfa0abd1
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Sun Oct 16 20:14:12 2016 -0500
+
+    Added bootstrap and added a temporary carosuel cuz it looks cool
+
+commit a3ed6b85590aa77665b317cd1cd0dd125e01ea55
+Author: ctc837 <christopher.collier@utexas.edu>
+Date:   Sun Oct 16 18:02:32 2016 -0500
+
+    Create CNAME
+
+commit 891f190988c0385c8e426018037229682791207a
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Sat Oct 15 17:58:34 2016 -0500
+
+    Changed from angular 2 to angular 1
+
+commit 643838f171a21772235285a521216f8c5f063c16
+Author: Eitan-Yarmush <eyarmush212@gmail.com>
+Date:   Sat Oct 15 17:26:49 2016 -0500
+
+    Configured flask, angular, bootstrap
+
+commit d90d251275afc07dc8d45ce136ac2ca46113433b
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Sat Oct 15 15:51:26 2016 -0500
+
+    Fixed slack notification
+
+commit 60992ea5f263964ce2df5bbcaadb72ee7ae66e71
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Sat Oct 15 15:45:00 2016 -0500
+
+    More travis
+
+commit 40d49c8e91763149f8cf7a2a4c718d1aa1641a43
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Sat Oct 15 15:42:51 2016 -0500
+
+    Trying it again
+
+commit 0e1b2f01ac858628996ea91d3c8b5dd8be3064a7
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Sat Oct 15 15:37:16 2016 -0500
+
+    Added makefile and gitignore. Updated Travis
+
+commit d3c9ebe62c86744a9e2cb78a5425c62a4fe18205
+Author: nathanielballinger <nathanielballinger@utexas.edu>
+Date:   Tue Oct 11 10:41:51 2016 -0500
+
+    Travis file. Needs script
