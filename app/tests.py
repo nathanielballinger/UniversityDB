@@ -379,3 +379,9 @@ def runTestsOut():
 	stream.seek(0)
 	return stream.read()
 
+"""
+Name       Stmts   Miss Branch BrPart  Cover
+--------------------------------------------
+Tests.py     197     18     14      7    88%
+"""
+
