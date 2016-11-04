@@ -271,22 +271,22 @@ myApp.controller('charactersCtrl', function($scope, $http){
     $scope.pages = [1,2,3,4,5]
     $scope.order = true;
     $scope.sortVar = "Name";
-    var ids = [];
+    var ids = "";
     var names = {};
     $http.get("api/characters/offset/1")
     .then(function (response) {
         var data = response.data;
         for(var i = 0; i < data.length; i++) {
-            ids.append(data[i].first_appeared_in_game);
+            ids += data[i].first_appeared_in_game + ",";
         }
-        $http.post("/api/characters/mapping", ids)
+        $http.get("/api/character_mapping/" + ids)
         .then(function (response) {
             names = response.data;
             console.log(names);
         })
-        for(var i = 0; i < data.length; i++) {
-            data[i].first_appeared_in_game = {name : names[i], id : id[i]};
-        }
+        // for(var i = 0; i < data.length; i++) {
+        //     data[i].first_appeared_in_game = {name : names[i], id : ids[i]};
+        // }
 
         $scope.characters = data;
         console.log($scope.characters);
