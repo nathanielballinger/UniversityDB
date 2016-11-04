@@ -35,9 +35,9 @@
             <tr ng-repeat="x in platforms track by $index">
                 <td>{{$index + 1}}</td>
                 <td><a href="/#/platform/{{+x.id}}">{{ x.name }}</a></td>
-                <td>{{ x.release_date }}</td>
-                <td>{{ x.company.name }}</td>
-                <td>{{ x.original_price }}</td>
+                <td>{{ x.release_date.toDateString() }}</td>
+                <td>{{ x.company }}</td>
+                <td>{{ x.starting_price }}</td>
                 <td>{{ x.abbreviation }}</td>
             </tr>
         </tbody>
