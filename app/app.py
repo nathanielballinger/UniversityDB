@@ -207,10 +207,13 @@ def api_games_offset(offset):
 	return jsonify(dict_p)
 	"""
 
-@app.route('/api/games/<id>')
+@app.route('/api/games/mapping', methods=["POST"])
 def api_game_id(id):
 	print("DID IT GET IN HERE?")
-	return jsonify(Game.query.get(id).serialize())
+	games = Game.query.filter(Game.id.in_((2,3))).all()
+	print(games)
+	print(games.serialize_table())
+	return jsonify(Game.query.filter(Game.id.in_((2,3))))
 
 @app.route('/api/characters/offset/<offset>')
 def api_characters_offset(offset):
@@ -235,9 +238,10 @@ def api_characters_offset(offset):
 	return jsonify(character_list)
 	
 
-@app.route('/api/characters/<id>')
+@app.route('/api/characters/mapping', methods=["POST"])
 def api_characters_id(id):
-	return jsonify(Character.query.get(id).serialize())
+	ids = request.form['ids']
+	print(ids)
 
 @app.route('/api/platforms/offset/<offset>')
 def api_platforms_offset(offset):
