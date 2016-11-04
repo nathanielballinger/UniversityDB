@@ -211,7 +211,7 @@ class TestCases (TestCase):
 
 		db.session.delete(dbchar)
 		db.session.commit()
-
+	"""
 	def test_case_character_6(self):
 		dbchar = Platform.query.get(1)
 		db.session.delete(dbchar)
@@ -221,6 +221,7 @@ class TestCases (TestCase):
 
 		db.session.add(dbchar)
 		db.session.commit()
+	"""
 
 	# ------
 	# Game Serialize

@@ -12,13 +12,13 @@ Base = declarative_base()
 app = Flask(__name__)
 
 #Nate's Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localhost:5432/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localhost:5432/swe'
 #Chris's database
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 db = SQLAlchemy(app)	
 manager = Manager(app)
@@ -88,12 +88,6 @@ class Game(db.Model):
 		if self.character is not None:
 			parsedCharacters = re.split(r"\.", self.character)
 			parsedCharacters = parsedCharacters[0]
-			"""
-			parsedCharacters = parsedCharacters[:-1]
-			for i in range (len(parsedCharacters)):
-				parsedCharacters[i] = int(parsedCharacters[i])
-				parsedCharacters = parsedCharacters[0]
-			"""
 		else:
 			parsedCharacters = None
 		fields = {"id": self.id,"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "characters": parsedCharacters}

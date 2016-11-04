@@ -121,7 +121,7 @@ for character in characters:
 	time.sleep(1)
 	print(str(dnc)+"/331 complete")
 	dnc+=1
-"""
+
 print("LOADING CHARACTERS COMPLETE...MAKING SOME FINAL MODIFCATIONS")
 for character in characters:
 	v = requests.get(character, headers = headers)
