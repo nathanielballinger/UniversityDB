@@ -45,6 +45,59 @@ myApp.config(['$routeProvider',
              });
     }]);
 
+
+
+var listVals = ["friends", "enemies", "platforms", "genres", "developers", "characters"];
+
+function fixNullEmpty(obj) {
+    var defaultVal;
+    // Fix all the null and empty string values 
+    for (var key in obj) {
+        if(obj.hasOwnProperty(key)) {
+            if (listVals.indexOf(key) > -1) 
+                defaultVal = [];
+            else
+                defaultVal = "Unknown";
+
+            var val = obj[key];
+            if(val == null)
+                obj[key] = defaultVal;  
+            if((typeof val === 'string' || val instanceof String) && val.length ==0)
+                obj[key] = defaultVal;
+        }
+    }
+
+    // In case there is no image
+    if (obj.image == null || obj.image.super_url == null) 
+        obj.image ={"super_url" : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"};
+    return obj;
+}
+
+function getObjectFromId(http, type, id) {
+    switch(type) {
+        case 0:
+            type = "games";
+            break;
+        case 1:
+            type = "platforms";
+            break;
+        case 2:
+            type = "characters"
+            break;
+        default:
+            break;
+    }
+
+    http.get("/api/" + type + "/" + id)
+    .then(function (response) {
+        var data = response.data;
+        return {
+            name : data.name,
+            id : data.id
+        }
+    });
+}
+
 //var scope;
 myApp.controller('headerCtrl', function($scope, $http, $location) {
     $scope.navCollapsed = true;
@@ -218,12 +271,26 @@ myApp.controller('charactersCtrl', function($scope, $http){
     $scope.pages = [1,2,3,4,5]
     $scope.order = true;
     $scope.sortVar = "Name";
+    var ids = [];
+    var names = {};
     $http.get("api/characters/offset/1")
     .then(function (response) {
-        $scope.characters = response.data;
-        console.log($scope.characters)
-    })
+        var data = response.data;
+        /*
+        for(var i = 0; i < data.length; i++) {
+            ids.append(data[i].first_appeared_in_game);
+        }
+        $http.post("", ids)
+        .then(function (response) {
+            names = response.data;
+        })
+        for(var i = 0; i < data.length; i++) {
+            data[i].first_appeared_in_game = {name : names[i], id : id[i]};
+        }*/
 
+        $scope.characters = data;
+        console.log($scope.characters);
+    })
     $scope.info = {};
 
 
@@ -277,33 +344,6 @@ myApp.controller('charactersCtrl', function($scope, $http){
         });
     }
 })
-
-
-var listVals = ["friends", "enemies", "platforms", "genres", "developers", "characters"];
-
-function fixNullEmpty(obj) {
-    var defaultVal;
-    // Fix all the null and empty string values 
-    for (var key in obj) {
-        if(obj.hasOwnProperty(key)) {
-            if (listVals.indexOf(key) > -1) 
-                defaultVal = [];
-            else
-                defaultVal = "Unknown";
-
-            var val = obj[key];
-            if(val == null)
-                obj[key] = defaultVal;  
-            if((typeof val === 'string' || val instanceof String) && val.length ==0)
-                obj[key] = defaultVal;
-        }
-    }
-
-    // In case there is no image
-    if (obj.image == null || obj.image.super_url == null) 
-        obj.image ={"super_url" : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"};
-    return obj;
-}
 
 //Controller for one Game
 myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope, $routeParams, $http) {
