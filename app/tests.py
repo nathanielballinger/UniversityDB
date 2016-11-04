@@ -72,7 +72,7 @@ class TestCases (TestCase):
 		db.session.add(game6)
 		db.session.commit()
 		dbgame = Game.query.get(600000)
-		self.assertEqual(dbgame.id, "600000")
+		self.assertEqual(dbgame.id, 600000)
 
 		db.session.delete(dbgame)
 		db.session.commit()
@@ -160,7 +160,7 @@ class TestCases (TestCase):
 		db.session.add(platform)
 		db.session.commit()
 		dbplatform = Platform.query.get(600000)
-		self.assertEqual(dbplatform.id, "600000")
+		self.assertEqual(dbplatform.id, 600000)
 
 		db.session.delete(dbplatform)
 		db.session.commit()
@@ -238,11 +238,11 @@ class TestCases (TestCase):
 		db.session.add(char)
 		db.session.commit()
 		dbchar = Character.query.get(600000)
-		self.assertEqual(dbchar.id, "600000")
+		self.assertEqual(dbchar.id, 600000)
 
 		db.session.delete(dbchar)
 		db.session.commit()
-	"""
+	
 	def test_case_character_6(self):
 		db.session.rollback()
 		char = Character("600000", "Test Char", "Born on", 0, "deck", "description", "tiny", "medium", "url", "aliases", 1)
@@ -254,14 +254,10 @@ class TestCases (TestCase):
 
 		db.session.add(char)
 		db.session.commit()
-<<<<<<< HEAD
-	"""
-=======
 		db.session.delete(char)
 		db.session.commit()
 
 		self.assertTrue(Character.query.get(600000) is None)
->>>>>>> 7931d75e2f6c53c19ae11a1f351789f91c465a42
 
 	# ------
 	# Game Serialize
