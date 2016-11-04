@@ -25,17 +25,21 @@
         <thead>
             <tr>
                 <th>#</th>
+                <th>Icon</th>
                 <td>Name</td>
                 <td>Release Date</td>
                 <td>Platform</td>
+                <td>Aliases</td>
             </tr>            
         </thead>
         <tbody>
             <tr ng-repeat="x in games track by $index">
                 <td>{{$index + 1}}</td>
+                <td><img src="{{x.tiny_image}}"</td>
                 <td><a href="/#/game/{{+x.id}}">{{ x.name }}</a></td>
                 <td>{{ x.release_date.toDateString() }}</td>
                 <td>{{ x.platforms[0].name }}</td>
+                <td>{{x.aliases ? x.aliases : "Unkown"}} </td>
             </tr>
         </tbody>
 
