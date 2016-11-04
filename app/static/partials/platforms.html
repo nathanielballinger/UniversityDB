@@ -24,21 +24,21 @@
         <thead>
             <tr>
                 <th>#</th>
+                <td>Icon</td>
                 <td>Name</td>
                 <td>Release Date</td>
                 <td>Company</td>
                 <td>Starting Price</td>
-                <td>Abbreviation</td>
             </tr>            
         </thead>
         <tbody>
             <tr ng-repeat="x in platforms track by $index">
                 <td>{{$index + 1}}</td>
+                <td><img src="{{x.tiny_image}}"</td>
                 <td><a href="/#/platform/{{+x.id}}">{{ x.name }}</a></td>
                 <td>{{ x.release_date.toDateString() }}</td>
                 <td>{{ x.company }}</td>
-                <td>{{ x.starting_price }}</td>
-                <td>{{ x.abbreviation }}</td>
+                <td>${{ x.starting_price }}</td>
             </tr>
         </tbody>
 
