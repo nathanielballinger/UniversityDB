@@ -60,9 +60,6 @@ class Game(db.Model):
 		self.platforms = platforms
 		self.aliases = aliases
 		self.site_detail_url = site_detail_url
-	
-	def __repr__(self):
-		return '<Game %r>' % self.name
 
 	def serialize(self):
 		result = model_to_dict(self)
@@ -131,9 +128,6 @@ class Platform(db.Model):
 		self.tiny_image = tiny_image
 		self.medium_image = medium_image
 
-	def __repr__(self):
-		return '<Platform %r>' % self.name
-
 	def serialize(self):
 		result = model_to_dict(self)
 		parsedGames = re.split(r"\.", result["games"])
@@ -176,9 +170,6 @@ class Character(db.Model):
 		self.site_detail_url = site_detail_url
 		self.aliases = aliases
 		self.first_appeared_in_game = first_appeared_in_game
-	
-	def __repr__(self):
-		return '<Character %r>' % self.name
 
 	def serialize(self):
 		return model_to_dict(self)
