@@ -276,17 +276,17 @@ myApp.controller('charactersCtrl', function($scope, $http){
     $http.get("api/characters/offset/1")
     .then(function (response) {
         var data = response.data;
-        /*
         for(var i = 0; i < data.length; i++) {
             ids.append(data[i].first_appeared_in_game);
         }
-        $http.post("", ids)
+        $http.post("/api/characters/mapping", ids)
         .then(function (response) {
             names = response.data;
+            console.log(names);
         })
         for(var i = 0; i < data.length; i++) {
             data[i].first_appeared_in_game = {name : names[i], id : id[i]};
-        }*/
+        }
 
         $scope.characters = data;
         console.log($scope.characters);
@@ -390,8 +390,9 @@ myApp.controller('platformCtrl', ['$scope','$routeParams', '$http', function($sc
     $http.get("/api/platforms/"+platformId)
     .then(function (response) {
         var data = response.data;
+        data.release_date = new Date(data.release_date);
         $scope.platform = fixNullEmpty(data);
-        console.log($scope.platform)
+        console.log($scope.platform);
     })
 
     $scope.info = {};
