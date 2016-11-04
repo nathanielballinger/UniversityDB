@@ -13,21 +13,22 @@ import models
 
 from models import Game, Character, Platform, db, Base, app, manager
 
+
 #Checking to make sure we loaded the data correctly
-for i in range(0,50):
-	g = Game.query.filter_by(id = i).first()
-	if g is None:
-		print("###############################")
-		print ("Game ID not found"+str(i))
-		continue
-	print("###################################")
-	print(i)
-	print (g)
-	print(g.name)
-	if (g.character is not None):
-		print("Character =" + g.character)
-	else:
-		print("We got nothin")
+# for i in range(0,50):
+# 	g = Game.query.filter_by(id = i).first()
+# 	if g is None:
+# 		print("###############################")
+# 		print ("Game ID not found"+str(i))
+# 		continue
+# 	print("###################################")
+# 	print(i)
+# 	print (g)
+# 	print(g.name)
+# 	if (g.character is not None):
+# 		print("Character =" + g.character)
+# 	else:
+# 		print("We got nothin")
 """
 for i in range(0,50):
 	g = Platform.query.filter_by(id = i).first()
