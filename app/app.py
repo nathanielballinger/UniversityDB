@@ -13,21 +13,40 @@ import models
 
 from models import Game, Character, Platform, db, Base, app, manager
 
+
+
+game_mapping = {}
+platform_mapping = {}
+character_mapping = {}
+
+def cache_setup():
+	games = Game.query.all()
+	for game in games:
+		game_mapping[game.id] = game.name
+	platforms = Platform.query.all()
+	for platform in platforms:
+		platform_mapping[platform.id] = platform.name
+	characters = Character.query.all()
+	for character in characters:
+		character_mapping[character.id] = character.name
+
+cache_setup()
+
 #Checking to make sure we loaded the data correctly
-for i in range(0,50):
-	g = Game.query.filter_by(id = i).first()
-	if g is None:
-		print("###############################")
-		print ("Game ID not found"+str(i))
-		continue
-	print("###################################")
-	print(i)
-	print (g)
-	print(g.name)
-	if (g.character is not None):
-		print("Character =" + g.character)
-	else:
-		print("We got nothin")
+# for i in range(0,50):
+# 	g = Game.query.filter_by(id = i).first()
+# 	if g is None:
+# 		print("###############################")
+# 		print ("Game ID not found"+str(i))
+# 		continue
+# 	print("###################################")
+# 	print(i)
+# 	print (g)
+# 	print(g.name)
+# 	if (g.character is not None):
+# 		print("Character =" + g.character)
+# 	else:
+# 		print("We got nothin")
 """
 for i in range(0,50):
 	g = Platform.query.filter_by(id = i).first()
