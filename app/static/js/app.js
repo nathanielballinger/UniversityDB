@@ -276,21 +276,20 @@ myApp.controller('charactersCtrl', function($scope, $http){
     $http.get("api/characters/offset/1")
     .then(function (response) {
         var data = response.data;
+        
         for(var i = 0; i < data.length; i++) {
             ids += data[i].first_appeared_in_game + ",";
         }
-        $http.get("/api/character_mapping/" + ids)
+        $http.get("/api/game_mapping/" + ids)
         .then(function (response) {
             names = response.data;
             console.log(names);
+            for(var i = 0; i < data.length; i++) {
+                var gameId = data[i].first_appeared_in_game;
+                var gameName = names[gameId];
+                data[i].first_appeared_in_game = {name : gameName, id : gameId};
+            }
         })
-        for(var i = 0; i < data.length; i++) {
-            var gameId = data[i].first_appeared_in_game;
-            var gameName = names[gameId];
-            console.log(gameName);
-            data[i].first_appeared_in_game = {name : gameName, id : gameId};
-        }
-
         $scope.characters = data;
         console.log($scope.characters);
     })
