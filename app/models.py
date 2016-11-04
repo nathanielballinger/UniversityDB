@@ -10,12 +10,18 @@ import re
 
 Base = declarative_base()
 app = Flask(__name__)
-#Chris's database
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
-#Digital Ocean
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 
-db = SQLAlchemy(app)
+#Nate's Database
+
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localhost:5432/swe'
+#Chris's database
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+#Digital Ocean
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#Abhi's DB
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+
+db = SQLAlchemy(app)	
 manager = Manager(app)
 
 def model_to_dict(obj):
@@ -55,9 +61,6 @@ class Game(db.Model):
 		self.platforms = platforms
 		self.aliases = aliases
 		self.site_detail_url = site_detail_url
-	
-	def __repr__(self):
-		return '<Game %r>' % self.name
 
 	def serialize(self):
 		result = model_to_dict(self)
@@ -76,7 +79,17 @@ class Game(db.Model):
 				parsedCharacters[i] = int(parsedCharacters[i])
 			result["platforms"] = parsedPlatforms
 			result["character"] = parsedCharacters
+		print(result)
 		return result
+
+	def serialize_table(self):
+		if self.character is not None:
+			parsedCharacters = re.split(r"\.", self.character)
+			parsedCharacters = parsedCharacters[0]
+		else:
+			parsedCharacters = None
+		fields = {"id": self.id,"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "characters": parsedCharacters}
+		return fields
 
 class Platform(db.Model):
 	__tablename__ = 'platforms'
@@ -110,9 +123,6 @@ class Platform(db.Model):
 		self.tiny_image = tiny_image
 		self.medium_image = medium_image
 
-	def __repr__(self):
-		return '<Platform %r>' % self.name
-
 	def serialize(self):
 		result = model_to_dict(self)
 		parsedGames = re.split(r"\.", result["games"])
@@ -123,6 +133,9 @@ class Platform(db.Model):
 				parsedGames[i] = int(parsedGames[i])
 			result["games"] = parsedGames
 		return result
+
+	def serialize_table(self):
+		return {"id": self.id, "name": self.name, "release_date": self.release_date, "company": self.company, "starting_price": self.starting_price, "tiny_image": self.tiny_image}
 
 class Character(db.Model):
 	__tablename__ = 'characters'
@@ -143,6 +156,7 @@ class Character(db.Model):
 	def __init__(self,id,name,birthday,gender,deck, description, tiny_image, medium_image, site_detail_url, aliases, first_appeared_in_game):
 		self.id = id
 		self.name = name
+		self.birthday = birthday
 		self.gender = gender
 		self.deck = deck
 		self.description = description
@@ -150,14 +164,12 @@ class Character(db.Model):
 		self.medium_image = medium_image
 		self.site_detail_url = site_detail_url
 		self.aliases = aliases
-		self.first_appeared_in_game
-	
-	def __repr__(self):
-		return '<Character %r>' % self.name
+		self.first_appeared_in_game = first_appeared_in_game
 
 	def serialize(self):
 		return model_to_dict(self)
 
+	def serialize_table(self):
+		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image, "birthday": self.birthday}
+		return fields
 
-#if __name__ == "__main__":
-#   manager.run()       # Update this line to use the manager

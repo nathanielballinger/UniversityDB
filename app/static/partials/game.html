@@ -2,25 +2,23 @@
 	<div class="row">
 		<h1 align="center"><b> {{game.name.toUpperCase()}}</b></h1>
 		<div class="col-md-6">
-			<img src="{{game.image.super_url}}" align="center">
+			<div class="thumbnail gray-thumbnail">
+				<img src="{{game.medium_image}}" align="center">
+			</div>
 		</div>
 		
 		<div class="col-md-6">
-			<p> Name: {{game.name}}</p>
-	        <p> Aliases: {{game.aliases.split("\r\n").join(", ")}}</p>
-	        <p> Original Release date: {{game.original_release_date}} </p> 
-			<p><span ng-repeat="platform in game.platforms">
-	    		{{$first ? 'Platforms: ' : ''}}<a href="#/platform/{{platform.id}}">{{platform.name}}</a>{{$last ? '' : ', '}}
-			</span></p>
-	        <p><span ng-repeat="genre in game.genres">
-	    		{{$first ? 'Genres: ' : ''}}{{genre.name}}{{$last ? '' : ', '}}
-			</span></p>
-			<p><span ng-repeat="dev in game.developers">
-	    		{{$first ? 'Developers: ' : ''}}{{dev.name}}{{$last ? '' : ', '}}
-			</span></p>
-			<p><span ng-repeat="character in game.characters">
-	    		{{$first ? 'Characters: ' : ''}}<a href="#/character/{{character.id}}">{{character.name}}</a>{{$last ? '' : ', '}}
-			</span></p>
+			<div class="thumbnail gray-thumbnail">
+				<p> Name: {{game.name}}</p>
+		        <p> Aliases: {{game.aliases.split("\r\n").join(", ")}}</p>
+		        <p> Original Release date: {{game.release_date}} </p> 
+				<p><span ng-repeat="platform in game.platforms">
+		    		{{$first ? 'Platforms: ' : ''}}<a href="#/platform/{{platform['id']}}">{{platform['name']}}</a>{{$last ? '' : ', '}}
+				</span></p>
+				<p><span ng-repeat="character in game.characters">
+		    		{{$first ? 'Characters: ' : ''}}<a href="#/character/{{character.id}}">{{character.name}}</a>{{$last ? '' : ', '}}
+				</span></p>
+			</div>
 		</div>
 
 		<!-- Fix this later

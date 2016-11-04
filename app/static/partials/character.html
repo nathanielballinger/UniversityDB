@@ -2,22 +2,19 @@
 	<div class="row">
 		<h1 align="center"><b> {{character.name.toUpperCase()}} PROFILE </b></h1>
 		<div class="col-md-6">
-			<img src="{{character.image.super_url}}" align="center">
+			<div class="thumbnail gray-thumbnail">
+				<img src="{{character.medium_image}}" align="center">
+			</div>
 		</div>
-		
 		<div class="col-md-6">
-			<p> Name: {{character.name}}</p>
-	        <p> Aliases: {{character.aliases.split("\r\n").join(", ")}}</p>
-	        <p> Birthday: {{character.birthday}} </p>
-	        <p> Gender: {{character.gender == 1 ? 'Male' : 'Female'}} </p>
-	        <p> Description: {{character.deck}} </p>
-			<p>First appearance in: <a href="#/game/{{character.first_appeared_in_game.id}}"> {{character.first_appeared_in_game.name}} </a> </p> 
-			<p><span ng-repeat="friend in character.friends">
-	    		{{$first ? 'Friends: ' : ''}}<a href="#/character/{{friend.id}}">{{friend.name}}</a>{{$last ? '' : ', '}}
-			</span></p>
-	        <p><span ng-repeat="enemy in character.enemies">
-	    		{{$first ? 'Enemies: ' : ''}}<a href="#/character/{{enemy.id}}">{{enemy.name}}</a>{{$last ? '' : ', '}}
-			</span></p>
+			<div class="thumbnail gray-thumbnail">
+				<p> Name: {{character.name}}</p>
+		        <p> Aliases: {{character.aliases.split("\n").join(", ")}}</p>
+		        <p> Birthday: {{character.birthday}} </p>
+		        <p> Gender: {{character.gender == 0 ? 'NA' : (character.gender == 1 ? 'Male' : 'Female')}} </p>
+		        <p> Description: {{character.deck}} </p>
+				<p>First appearance in: <a href="#/game/{{character.first_appeared_in_game}}"> {{character.first_appeared_in_game}} </a> </p> 
+			</div>
 		</div>
 
 		<!-- Fix this later

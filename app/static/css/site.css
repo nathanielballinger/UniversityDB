@@ -15,10 +15,19 @@ h3 {
   text-align: center;
 }
 
-body {
+.override-bootstrap {
   margin: 2em;
   padding-top: 55px;
+  background-image: url("/static/img/wallpaper1.jpg");
+  color: black;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
+
+.row .gray-thumbnail {
+  background-color: #eee;
+}
+
 
 img {
     display: block;

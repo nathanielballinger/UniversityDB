@@ -6,29 +6,42 @@ from sqlalchemy.ext.declarative import declarative_base
 import json
 import time
 import re
-from tests import runTestsOut
+from app.tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
-import models
+import app.models
+from app.models import Game, Character, Platform
 
-from models import Game, Character, Platform, db, Base, app, manager
+Base = declarative_base()
+app = Flask(__name__)
+#Chris's DB
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+#Digital Ocean DB
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#Abhi's DB
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+
+db = SQLAlchemy(app)
+manager = Manager(app)
+
+
 
 
 #Checking to make sure we loaded the data correctly
-# for i in range(0,50):
-# 	g = Game.query.filter_by(id = i).first()
-# 	if g is None:
-# 		print("###############################")
-# 		print ("Game ID not found"+str(i))
-# 		continue
-# 	print("###################################")
-# 	print(i)
-# 	print (g)
-# 	print(g.name)
-# 	if (g.character is not None):
-# 		print("Character =" + g.character)
-# 	else:
-# 		print("We got nothin")
+for i in range(0,50):
+	g = Game.query.filter_by(id = i).first()
+	if g is None:
+		print("###############################")
+		print ("Game ID not found"+str(i))
+		continue
+	print("###################################")
+	print(i)
+	print (g)
+	print(g.name)
+	if (g.character is not None):
+		print("Character =" + g.character)
+	else:
+		print("We got nothin")
 """
 for i in range(0,50):
 	g = Platform.query.filter_by(id = i).first()
@@ -167,125 +180,47 @@ def api_root():
 	}
 	return jsonify(data)
 
-@app.route('/api/games/offset/<offset>')
+@app.route('/api/games/offset/<offset>',methods=["GET"])
 def api_games_offset(offset):
-	games_list = []
-	#return jsonify(Game.query.get(45).serialize())
-	target = 25*(int(offset)-1)
+	return jsonify({})
+	dict_p = {}
 	counter = 0
-	found = 1
-	games = Game.query.order_by(Game.id).limit(25).offset(target).all();
-	for game in games:
-		games_list.append(game.serialize_table())
-	# print("Making sure it is going through this code")
-	# for i in range (0,600000):
-	# 	game = Game.query.get(i)
-	# 	if game is None:
-	# 		continue
-	# 	if counter < target:
-	# 		counter+=1
-	# 		continue
-	# 	dict_p[game.name] = game.serialize_table()
-	# 	if found >= 25:
-	# 		break
-	# 	found +=1
-	return jsonify(games_list)
-	"""
-	for data in Game.query:
-		return jsonify({data.name: data.serialize_table()})
+	new_count = 25*(int(offset)-1)
+
+	for data in Game.query.all():
 		counter += 1
-		if counter < int(10*(int(offset)-1)):
+		if counter < int(25*(int(offset)-1)):
 			continue
 		new_count+=1
-		#print("New_count"+str(new_count))
+	#print("New_count"+str(new_count))
 		#print(int(data.id))
-		
 		dict_p[data.name] = data.serialize_table()
-		if new_count > (10*(int(offset)-1) + 9):
-	
+		if new_count > (25*(int(offset)-1) + 24):
 			break
 	return jsonify(dict_p)
-	"""
+	
 
 @app.route('/api/games/<id>')
-def api_games_id(id):
-	return jsonify(Game.query.get(id).serialize())
-
-@app.route('/api/games/mapping')
 def api_game_id(id):
 	print("DID IT GET IN HERE?")
-	games = Game.query.filter(Game.id.in_((2,3))).all()
-	print(games)
-	print(games.serialize_table())
-	return jsonify(Game.query.filter(Game.id.in_((2,3))))
+	return jsonify(Game.query.get(id).serialize())
 
 @app.route('/api/characters/offset/<offset>')
 def api_characters_offset(offset):
-	character_list = []
-	target = 25*(int(offset)-1)
+	dict_p = {}
 	counter = 0
-	found = 1
-	characters = Character.query.order_by(Character.id).limit(25).offset(target).all();
-	for character in characters:
-		character_list.append(character.serialize_table())
-	# for i in range (0,600000):
-	# 	game = Character.query.get(i)
-	# 	if game is None:
-	# 		continue
-	# 	if counter < target:
-	# 		counter+=1
-	# 		continue
-	# 	dict_p[game.name] = game.serialize_table()
-	# 	if found >= 25:
-	# 		break
-	# 	found +=1
-	return jsonify(character_list)
+	new_count = 25*(int(offset)-1)
+	for data in Character.query:
+		counter += 1
+		if counter < int(25*(int(offset)-1)):
+			continue
+		new_count+=1
+		dict_p[data.name] = data.serialize_table()
+		if new_count > (25*(int(offset)-1) + 24):
+			break
 
-
-##Function to get a bunch of games from ID	
-@app.route('/api/game_mapping/<ids>')
-def api_characters_mapping(ids):
-	id_list = ids.split(",")
-	id_list = id_list[:-1]
-	other_list = [int(x) for x in id_list]
-	games = Game.query.filter(Game.id.in_(tuple(other_list))).all()
-	id_dict = {}
-	for game in games:
-		temp = game.serialize_table()
-		id_dict[temp['id']] = temp['name']
-		# id_dict.append({temp['id']: temp['name']})
-	return jsonify(id_dict)
-
-#Function to get a bunch of platforms from IDS
-@app.route('/api/platform_mapping/<ids>')
-def api_platforms_mapping(ids):
-	id_list = ids.split(",")
-	id_list = id_list[:-1]
-	other_list = [int(x) for x in id_list]
-	platforms = Platform.query.filter(Platform.id.in_(tuple(other_list))).all()
-	id_dict = []
-	for platform in platforms:
-		temp = platform.serialize_table()
-		# id_dict[temp['id']] = temp['name']
-		# id_dict.append({temp['id']: temp['name']})
-		id_dict.append({"name": temp['name'], "id": temp['id']})
-	return jsonify(id_dict)
-
-#Function to get a bunch of characters from IDS
-@app.route('/api/character_mapping/<ids>')
-def api_games_mapping(ids):
-	id_list = ids.split(",")
-	id_list = id_list[:-1]
-	other_list = [int(x) for x in id_list]
-	characters = Character.query.filter(Character.id.in_(tuple(other_list))).all()
-	id_dict = []
-	for character in characters:
-		temp = character.serialize_table()
-		# id_dict[temp['id']] = temp['name']
-		id_dict.append({"name": temp['name'], "id": temp['id']})
-	return jsonify(id_dict)
-
-
+	
+	return jsonify(dict_p)
 
 @app.route('/api/characters/<id>')
 def api_characters_id(id):
@@ -293,9 +228,7 @@ def api_characters_id(id):
 
 @app.route('/api/platforms/offset/<offset>')
 def api_platforms_offset(offset):
-	
 	dict_p = {}
-	"""
 	counter = 0
 	new_count = 25*(int(offset)-1)
 	for data in Platform.query:
@@ -309,27 +242,6 @@ def api_platforms_offset(offset):
 			break
 
 	return jsonify(dict_p)
-	"""
-	target = 25*(int(offset)-1)
-	counter = 0
-	found = 1
-	platforms = Platform.query.order_by(Platform.id).limit(25).offset(target).all();
-	for platform in platforms:
-		dict_p[platform.name] = platform.serialize_table()
-	# print("Making sure it is going through this code")
-	# for i in range (0,600000):
-	# 	game = Character.query.get(i)
-	# 	if game is None:
-	# 		continue
-	# 	if counter < target:
-	# 		counter+=1
-	# 		continue
-	# 	dict_p[game.name] = game.serialize_table()
-	# 	if found >= 25:
-	# 		break
-	# 	found +=1
-	return jsonify(dict_p)
-	
 
 @app.route('/api/platforms/<id>')
 def api_platforms_id(id):
