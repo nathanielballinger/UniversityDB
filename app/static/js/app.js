@@ -66,7 +66,8 @@ myApp.controller('headerCtrl', function($scope, $http, $location) {
 
 //Controller for all games
 myApp.controller('gamesCtrl', function($scope, $http){
-    
+    $scope.page = 1
+    $scope.pages = [1,2,3,4,5]
     $scope.order = true;
     $scope.sortVar = "Name"
     $http.get("/api/games/offset/1")
@@ -83,8 +84,33 @@ myApp.controller('gamesCtrl', function($scope, $http){
     }
 
 
-    $scope.init = function() {
-        console.log("Hello World from games");
+    $scope.getPages = function(index) {
+        if (index === 0){
+            return
+        }
+        switch(index){
+            case 1:
+                $scope.pages = _.range(1,6)
+                break
+            case 2:
+                $scope.pages = _.range(1,6)
+                break
+            case 2078:
+                $scope.pages = _.range(2075,2080)
+                break
+            case 2079:
+                $scope.pages = _.range(2075,2080)
+                break
+            default:
+                $scope.pages = _.range(index-2, index+3)
+        }
+        $scope.page = index
+        $http.get("/api/games/offset/"+index)
+        .then(function (response) {
+            $scope.games = response.data;
+            // console.log($scope.games)
+        })
+        
     }
 
     $scope.sortBy = function(sorter) {
@@ -108,7 +134,8 @@ myApp.controller('gamesCtrl', function($scope, $http){
 
 //Controller for all Platforms
 myApp.controller('platformsCtrl', function($scope, $http, _){
-
+    $scope.page = 1
+    $scope.pages = [1,2,3,4,5]
     $scope.order = true;
     $scope.sortVar = "Name"
     $http.get("/api/platforms/offset/1")
@@ -126,8 +153,34 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
     }
 
 
-    $scope.init = function() {
-        console.log("Hello World from platforms");
+    $scope.getPages = function(index) {
+        if (index === 0){
+            return
+        }
+        switch(index){
+            case 1:
+                $scope.pages = _.range(1,6)
+                break
+            case 2:
+                $scope.pages = _.range(1,6)
+                break
+            case 5:
+                $scope.pages = _.range(2,7)
+                break
+            case 6:
+                $scope.pages = _.range(2,7)
+                break
+            default:
+                $scope.pages = _.range(index-2, index+3)
+        }
+        $scope.page = index
+        $http.get("/api/platforms/offset/"+index)
+        .then(function (response) {
+            $scope.platforms = response.data;
+            $scope.sortBy($scope.sortVar);
+            console.log($scope.platforms)
+        })
+        
     }
 
     $scope.sortBy = function(sorter) {
@@ -149,6 +202,8 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
 
 //Controller for all characters
 myApp.controller('charactersCtrl', function($scope, $http){
+    $scope.page = 1
+    $scope.pages = [1,2,3,4,5]
     $scope.order = true;
     $scope.sortVar = "Name";
     $http.get("api/characters/offset/1")
@@ -165,8 +220,33 @@ myApp.controller('charactersCtrl', function($scope, $http){
         $scope.characters.reverse();
     }
 
-    $scope.init = function() {
-        console.log("Hello World from characters");
+    $scope.getPages = function(index) {
+        if (index === 0){
+            return
+        }
+        switch(index){
+            case 1:
+                $scope.pages = _.range(1,6)
+                break
+            case 2:
+                $scope.pages = _.range(1,6)
+                break
+            case 1322:
+                $scope.pages = _.range(1319,1324)
+                break
+            case 1323:
+                $scope.pages = _.range(1319,1324)
+                break
+            default:
+                $scope.pages = _.range(index-2, index+3)
+        }
+        $scope.page = index
+        $http.get("/api/characters/offset/"+index)
+        .then(function (response) {
+            $scope.characters = response.data;
+            // console.log($scope.games)
+        })
+        
     }
 
     $scope.sortBy = function(sorter) {
