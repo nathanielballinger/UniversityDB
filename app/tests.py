@@ -50,11 +50,11 @@ class TestCases (TestCase):
 		self.assertEqual(game4.medium_image, "http://www.giantbomb.com/api/image/scale_medium/1875205-box_cod4.png")
 
 	def test_case_game_5(self):
-		game5 = Game(" "," "," "," "," "," "," "," "," "," "," ")
+		game5 = Game(" "," "," "," "," "," "," "," "," ")
 
 		self.assertEqual(game5.id, " ")
 		self.assertEqual(game5.platforms, " ")
-		self.assertEqual(game5.rating, " ")
+		self.assertEqual(game5.medium_image, " ")
 
 
 
@@ -93,7 +93,7 @@ class TestCases (TestCase):
 		self.assertEqual(platform3.company, "Sony Interactive Entertainment")
 
 	def test_case_platform_4(self):
-		platform4 = Platform("146", "PlayStation4", "2013-11-15 00:00:00", "Sony Interactive Entertainment", "399.00", "40000000", \
+		platform4 = Platform("146", "PlayStation 4", "2013-11-15 00:00:00", "Sony Interactive Entertainment", "399.00", "40000000", \
 			"PlayStation 4 is Sony's fourth home video game console, released on November 15, 2013 in North America, and November 29, 2013 in Europe.", \
 			True, "PS4\r\nOrbis", "http://www.giantbomb.com/playstation-4/3045-146/",\
 			"http://www.giantbomb.com/api/image/square_mini/2495936-9012444134_80ba47fd6e_o.jpg", "http://www.giantbomb.com/api/image/scale_medium/2495936-9012444134_80ba47fd6e_o.jpg")
@@ -103,7 +103,7 @@ class TestCases (TestCase):
 		self.assertEqual(platform4.name, "PlayStation 4")
 
 	def test_case_platform_5(self):
-		platform5 = Platform(" "," "," "," "," "," "," "," "," "," "," ")
+		platform5 = Platform(" "," "," "," "," "," "," "," "," "," "," "," ")
 		
 		self.assertEqual(platform5.id," ")
 		self.assertEqual(platform5.starting_price, " ")
@@ -116,7 +116,7 @@ class TestCases (TestCase):
 	def test_case_character_1(self):
 		character1 = Character("2", "Sub-Zero", None, "1", \
 			"Kuai Liang, known as Tundra, became an assassin for the Lin Kuei after he and his brother were abducted by the clan. After the death of his brother Bi Han, Kuai Liang assumed the mantle of Sub-Zero to honor his memory.", \
-			"Sub-Zero is a video game character from the Mortal Kombat series and one of the original characters in the first Mortal Kombat game in 1992. A mainstay of the series, Sub-Zero is the only character who has appeared in every main Mortal Kombat fighting game. The character also appears in many other Mortal Kombat media works such as the Mortal Kombat live action film series and animated series.", \
+			"DESCRIPTION", \
 			"http://www.giantbomb.com/api/image/square_mini/2663932-cds.jpeg", "http://www.giantbomb.com/api/image/scale_medium/2663932-cds.jpeg", \
 			"http://www.giantbomb.com/sub-zero/3005-2/", "LK-520\r\nTundra\r\nCyber Sub-Zero\r\nKuai Liang", "25042")
 
@@ -127,31 +127,31 @@ class TestCases (TestCase):
 	def test_case_character_2(self):
 		character2 = Character("177", "Mario", "Jun 2, 1981", "1", \
 			"Originally a carpenter named Jumpman, this Italian plumber has gone on to become the most recognizable video game character of them all, starring in a veritable pantheon of titles like kart racing and sports. He has been voiced by Charles Martinet for nearly 20 years.", \
-			"Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by video game designer Shigeru Miyamoto. Serving as the company's mascot and the eponymous protagonist of the series, Mario has appeared in over 200 video games since his creation. Depicted as a short, pudgy, Italian plumber who resides in the Mushroom Kingdom, his adventures generally center upon rescuing Princess Peach from the Koopa villain Bowser. His younger brother is Luigi.", \
+			"DESCRIPTION", \
 			"http://www.giantbomb.com/api/image/square_mini/2555000-2339414779-Mario.png", "http://www.giantbomb.com/api/image/scale_medium/2555000-2339414779-Mario.png", \
 			"http://www.giantbomb.com/mario/3005-177/", "Jumpman\r\nBaby Mario", "311")
 
 		self.assertEqual(character2.id, "177")
-		self.assertEqual(character2.game_first_appeared, "311")
+		self.assertEqual(character2.first_appeared_in_game, "311")
 		self.assertEqual(character2.tiny_image, "http://www.giantbomb.com/api/image/square_mini/2555000-2339414779-Mario.png")
 
 	def test_case_character_3(self):
 		character3 = Character("5766", "Brock", None, "1", \
 			"\"The Rock-Solid Pokémon Trainer!\"", \
-			"Brock is a fictional character in the Pokémon franchise owned by Nintendo. In the Pokémon video games, he is the Gym Leader of Pewter City and mainly uses Rock-type Pokémon. In the anime series, Ash comes across a man that is later revealed to be Brock's father. He explains that Brock wanted to become a Pokémon Master but due to his father leaving, Brock had to take care of his many, many siblings and could not leave. This is why he became a gym leader, to stay close to his family. His father comes back and states he will take care of the family. Brock left his position as a Gym Leader to travel alongside Ash Ketchum and became a revered Pokémon Breeder. He later cultivates his skill in medicine. As of the latest Japanese episode, Brock is at Pewter City to train to be a Pokémon Doctor.", \
+			"DESCRIPTION", \
 			"http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
 			"http://www.giantbomb.com/brock/3005-5766/", None, "3966")
 
 		self.assertEqual(character3.id, "5766")
 		self.assertEqual(character3.name, "Brock")
-		self.assertEqual(character3.game_first_appeared, "3966")
+		self.assertEqual(character3.first_appeared_in_game, "3966")
 
 	def test_case_character_4(self):
-		character4 = Character(" "," "," "," "," "," "," "," "," "," ")
+		character4 = Character(" "," "," "," "," "," "," "," "," "," ", " ")
 		
 		self.assertEqual(character4.id, " ")
 		self.assertEqual(character4.name, " ")
-		self.assertEqual(character4.game_first_appeared, " ")
+		self.assertEqual(character4.first_appeared_in_game, " ")
 
 	# ------
 	# Game Serialize
@@ -240,13 +240,13 @@ class TestCases (TestCase):
 	def test_character_serialize_1(self):
 		obj = Character("2", "Sub-Zero", None, "1", \
 			"Kuai Liang, known as Tundra, became an assassin for the Lin Kuei after he and his brother were abducted by the clan. After the death of his brother Bi Han, Kuai Liang assumed the mantle of Sub-Zero to honor his memory.", \
-			"Sub-Zero is a video game character from the Mortal Kombat series and one of the original characters in the first Mortal Kombat game in 1992. A mainstay of the series, Sub-Zero is the only character who has appeared in every main Mortal Kombat fighting game. The character also appears in many other Mortal Kombat media works such as the Mortal Kombat live action film series and animated series.", \
+			"DESCRIPTION", \
 			"http://www.giantbomb.com/api/image/square_mini/2663932-cds.jpeg", "http://www.giantbomb.com/api/image/scale_medium/2663932-cds.jpeg", \
 			"http://www.giantbomb.com/sub-zero/3005-2/", "LK-520\r\nTundra\r\nCyber Sub-Zero\r\nKuai Liang", "25042")
 		obj = obj.serialize()
 		test = {'id': "2", 'name': "Sub-Zero", 'birthday': None, 'gender': "1", \
 		'deck': "Kuai Liang, known as Tundra, became an assassin for the Lin Kuei after he and his brother were abducted by the clan. After the death of his brother Bi Han, Kuai Liang assumed the mantle of Sub-Zero to honor his memory.", \
-		'description': "Sub-Zero is a video game character from the Mortal Kombat series and one of the original characters in the first Mortal Kombat game in 1992. A mainstay of the series, Sub-Zero is the only character who has appeared in every main Mortal Kombat fighting game. The character also appears in many other Mortal Kombat media works such as the Mortal Kombat live action film series and animated series.", \
+		'description': "DESCRIPTION", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2663932-cds.jpeg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2663932-cds.jpeg", \
 		'site_detail_url': "http://www.giantbomb.com/playstation-3/3045-35/", 'aliases': "LK-520\r\nTundra\r\nCyber Sub-Zero\r\nKuai Liang", 'first_appeared_in_game': "25042"}
 		self.assertEqual(obj, test)
@@ -254,13 +254,13 @@ class TestCases (TestCase):
 	def test_character_serialize_2(self):
 		obj = Character("177", "Mario", "Jun 2, 1981", "1", \
 			"Originally a carpenter named Jumpman, this Italian plumber has gone on to become the most recognizable video game character of them all, starring in a veritable pantheon of titles like kart racing and sports. He has been voiced by Charles Martinet for nearly 20 years.", \
-			"Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by video game designer Shigeru Miyamoto. Serving as the company's mascot and the eponymous protagonist of the series, Mario has appeared in over 200 video games since his creation. Depicted as a short, pudgy, Italian plumber who resides in the Mushroom Kingdom, his adventures generally center upon rescuing Princess Peach from the Koopa villain Bowser. His younger brother is Luigi.", \
+			"DESCRIPTION", \
 			"http://www.giantbomb.com/api/image/square_mini/2555000-2339414779-Mario.png", "http://www.giantbomb.com/api/image/scale_medium/2555000-2339414779-Mario.png", \
 			"http://www.giantbomb.com/mario/3005-177/", "Jumpman\r\nBaby Mario", "311")
 		obj = obj.serialize()
 		test = {'id': "177", 'name': "Mario", 'birthday': "Jun 2, 1981", 'gender': "1", \
 		'deck': "Originally a carpenter named Jumpman, this Italian plumber has gone on to become the most recognizable video game character of them all, starring in a veritable pantheon of titles like kart racing and sports. He has been voiced by Charles Martinet for nearly 20 years.", \
-		'description': "Mario is a fictional character in the Mario video game franchise, owned by Nintendo and created by video game designer Shigeru Miyamoto. Serving as the company's mascot and the eponymous protagonist of the series, Mario has appeared in over 200 video games since his creation. Depicted as a short, pudgy, Italian plumber who resides in the Mushroom Kingdom, his adventures generally center upon rescuing Princess Peach from the Koopa villain Bowser. His younger brother is Luigi.", \
+		'description': "DESCRIPTION", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2555000-2339414779-Mario.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2555000-2339414779-Mario.png", \
 		'site_detail_url': "http://www.giantbomb.com/mario/3005-177/", 'aliases': "Jumpman\r\nBaby Mario", 'first_appeared_in_game': "311"}
 		self.assertEqual(obj, test)
@@ -268,13 +268,13 @@ class TestCases (TestCase):
 	def test_character_serialize_3(self):
 		obj = Character("5766", "Brock", "1", \
 			"\"The Rock-Solid Pokémon Trainer!\"", \
-			"Brock is a fictional character in the Pokémon franchise owned by Nintendo. In the Pokémon video games, he is the Gym Leader of Pewter City and mainly uses Rock-type Pokémon. In the anime series, Ash comes across a man that is later revealed to be Brock's father. He explains that Brock wanted to become a Pokémon Master but due to his father leaving, Brock had to take care of his many, many siblings and could not leave. This is why he became a gym leader, to stay close to his family. His father comes back and states he will take care of the family. Brock left his position as a Gym Leader to travel alongside Ash Ketchum and became a revered Pokémon Breeder. He later cultivates his skill in medicine. As of the latest Japanese episode, Brock is at Pewter City to train to be a Pokémon Doctor.", \
+			"DESCRIPTION", \
 			"http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
 			"http://www.giantbomb.com/brock/3005-5766/", None, "3966")
 		obj = obj.serialize()
 		test = {'id': "5766", 'name': "Brock", 'birthday': None, 'gender': "1", \
 		'deck': "\"The Rock-Solid Pokémon Trainer!\"", \
-		'description': "Brock is a fictional character in the Pokémon franchise owned by Nintendo. In the Pokémon video games, he is the Gym Leader of Pewter City and mainly uses Rock-type Pokémon. In the anime series, Ash comes across a man that is later revealed to be Brock's father. He explains that Brock wanted to become a Pokémon Master but due to his father leaving, Brock had to take care of his many, many siblings and could not leave. This is why he became a gym leader, to stay close to his family. His father comes back and states he will take care of the family. Brock left his position as a Gym Leader to travel alongside Ash Ketchum and became a revered Pokémon Breeder. He later cultivates his skill in medicine. As of the latest Japanese episode, Brock is at Pewter City to train to be a Pokémon Doctor.", \
+		'description': "DESCRIPTION", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
 		'site_detail_url': "http://www.giantbomb.com/brock/3005-5766/", 'aliases': None, 'first_appeared_in_game': "3966"}
 		self.assertEqual(obj, test)
