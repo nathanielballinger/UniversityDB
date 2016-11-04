@@ -372,7 +372,7 @@ class TestCases (TestCase):
 		self.assertEqual(obj, test)
 
 	def test_character_serialize_3(self):
-		obj = Character("5766", "Brock", "1", \
+		obj = Character("5766", "Brock", None, "1", \
 			"\"The Rock-Solid Pokémon Trainer!\"", \
 			"DESCRIPTION", \
 			"http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
