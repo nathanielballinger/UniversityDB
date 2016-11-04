@@ -214,7 +214,11 @@ def api_games_offset(offset):
 	return jsonify(dict_p)
 	"""
 
-@app.route('/api/games/mapping', methods=["POST"])
+@app.route('/api/games/<id>')
+def api_games_id(id):
+	return jsonify(Game.query.get(id).serialize())
+
+@app.route('/api/games/mapping')
 def api_game_id(id):
 	print("DID IT GET IN HERE?")
 	games = Game.query.filter(Game.id.in_((2,3))).all()
@@ -243,12 +247,57 @@ def api_characters_offset(offset):
 	# 		break
 	# 	found +=1
 	return jsonify(character_list)
-	
 
-@app.route('/api/characters/mapping', methods=["POST"])
+
+##Function to get a bunch of games from ID	
+@app.route('/api/game_mapping/<ids>')
+def api_characters_mapping(ids):
+	id_list = ids.split(",")
+	id_list = id_list[:-1]
+	other_list = [int(x) for x in id_list]
+	games = Game.query.filter(Game.id.in_(tuple(other_list))).all()
+	id_dict = {}
+	for game in games:
+		temp = game.serialize_table()
+		id_dict[temp['id']] = temp['name']
+		# id_dict.append({temp['id']: temp['name']})
+	return jsonify(id_dict)
+
+#Function to get a bunch of platforms from IDS
+@app.route('/api/platform_mapping/<ids>')
+def api_platforms_mapping(ids):
+	id_list = ids.split(",")
+	id_list = id_list[:-1]
+	other_list = [int(x) for x in id_list]
+	platforms = Platform.query.filter(Platform.id.in_(tuple(other_list))).all()
+	id_dict = {}
+	for platform in platforms:
+		temp = platform.serialize_table()
+		id_dict[temp['id']] = temp['name']
+		# id_dict.append({temp['id']: temp['name']})
+	print(id_dict)
+	return jsonify(id_dict)
+
+#Function to get a bunch of characters from IDS
+@app.route('/api/character_mapping/<ids>')
+def api_games_mapping(ids):
+	id_list = ids.split(",")
+	id_list = id_list[:-1]
+	other_list = [int(x) for x in id_list]
+	characters = Character.query.filter(Character.id.in_(tuple(other_list))).all()
+	id_dict = {}
+	for character in characters:
+		temp = character.serialize_table()
+		id_dict[temp['id']] = temp['name']
+		# id_dict.append({temp['id']: temp['name']})
+	print(id_dict)
+	return jsonify(id_dict)
+
+
+
+@app.route('/api/characters/<id>')
 def api_characters_id(id):
-	ids = request.form['ids']
-	print(ids)
+	return jsonify(Character.query.get(id).serialize())
 
 @app.route('/api/platforms/offset/<offset>')
 def api_platforms_offset(offset):

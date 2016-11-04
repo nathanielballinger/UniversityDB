@@ -12,9 +12,10 @@ Base = declarative_base()
 app = Flask(__name__)
 
 #Nate's Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localhost:5432/swe'
+
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localhost:5432/swe'
 #Chris's database
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
@@ -60,9 +61,6 @@ class Game(db.Model):
 		self.platforms = platforms
 		self.aliases = aliases
 		self.site_detail_url = site_detail_url
-	
-	def __repr__(self):
-		return '<Game %r>' % self.name
 
 	def serialize(self):
 		result = model_to_dict(self)
@@ -88,12 +86,6 @@ class Game(db.Model):
 		if self.character is not None:
 			parsedCharacters = re.split(r"\.", self.character)
 			parsedCharacters = parsedCharacters[0]
-			"""
-			parsedCharacters = parsedCharacters[:-1]
-			for i in range (len(parsedCharacters)):
-				parsedCharacters[i] = int(parsedCharacters[i])
-				parsedCharacters = parsedCharacters[0]
-			"""
 		else:
 			parsedCharacters = None
 		fields = {"id": self.id,"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "characters": parsedCharacters}
@@ -130,9 +122,6 @@ class Platform(db.Model):
 		self.site_detail_url = site_detail_url
 		self.tiny_image = tiny_image
 		self.medium_image = medium_image
-
-	def __repr__(self):
-		return '<Platform %r>' % self.name
 
 	def serialize(self):
 		result = model_to_dict(self)
@@ -176,9 +165,6 @@ class Character(db.Model):
 		self.site_detail_url = site_detail_url
 		self.aliases = aliases
 		self.first_appeared_in_game = first_appeared_in_game
-	
-	def __repr__(self):
-		return '<Character %r>' % self.name
 
 	def serialize(self):
 		return model_to_dict(self)
