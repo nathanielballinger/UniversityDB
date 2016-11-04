@@ -18,7 +18,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localho
 #Digital Ocean
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 db = SQLAlchemy(app)	
 manager = Manager(app)
@@ -184,6 +184,6 @@ class Character(db.Model):
 		return model_to_dict(self)
 
 	def serialize_table(self):
-		fields = {"id": self.id, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image}
+		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image, "birthday": self.birthday}
 		return fields
 
