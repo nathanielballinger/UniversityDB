@@ -308,6 +308,7 @@ class TestCases (TestCase):
 			"The Nintendo 3DS is a portable game console produced by Nintendo. The handheld features stereoscopic 3D technology that doesn't require glasses. It was released in Japan on February 26, 2011 and in North America on March 27, 2011.", \
 			True, "3DS", "http://www.giantbomb.com/nintendo-3ds/3045-117/",\
 			"http://www.giantbomb.com/api/image/square_mini/1686079-3dshw11911.jpg", "http://www.giantbomb.com/api/image/scale_medium/1686079-3dshw11911.jpg")
+		obj.games = "game"
 		obj = obj.serialize()
 		test = {'id': "117", 'name': "Nintendo 3DS", 'release_date': "2011-02-26 00:00:00", 'company': "Nintendo", 'starting_price': "249.00", 'install_base': "51630000", \
 		'description': "The Nintendo 3DS is a portable game console produced by Nintendo. The handheld features stereoscopic 3D technology that doesn't require glasses. It was released in Japan on February 26, 2011 and in North America on March 27, 2011.", \
@@ -320,6 +321,7 @@ class TestCases (TestCase):
 			"The Xbox 360 is the second game console produced by Microsoft Corporation and is the successor to the original Xbox.", \
 			True, "360\nXenon", "http://www.giantbomb.com/xbox-360/3045-20/",\
 			"http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg", "http://www.giantbomb.com/api/image/scale_medium/195092-xbox_360_console_02.jpg")
+		obj.games = "games"
 		obj = obj.serialize()
 		test = {'id': "20", 'name': "Xbox 360", 'release_date': "2005-11-22 00:00:00", 'company': "Microsoft Studios", 'starting_price': "399.00", 'install_base': "80000000", \
 		'description': "The Xbox 360 is the second game console produced by Microsoft Corporation and is the successor to the original Xbox.", \
@@ -332,6 +334,7 @@ class TestCases (TestCase):
 			"The PlayStation 3 (often abbreviated PS3) is the third home video game console created and released by Sony Computer Entertainment Inc.", \
 			True, "PS3", "http://www.giantbomb.com/playstation-3/3045-35/",\
 			"http://www.giantbomb.com/api/image/square_mini/1426360-logo.jpg", "http://www.giantbomb.com/api/image/scale_medium/1426360-logo.jpg")
+		obj.games = "games"
 		obj = obj.serialize()
 		test = {'id': "35", 'name': "PlayStation 3", 'release_date': "2006-11-11 00:00:00", 'company': "Sony Interactive Entertainment", 'starting_price': "599.00", 'install_base': "80000000", \
 		'description': "The PlayStation 3 (often abbreviated PS3) is the third home video game console created and released by Sony Computer Entertainment Inc.", \
@@ -348,13 +351,13 @@ class TestCases (TestCase):
 			"Kuai Liang, known as Tundra, became an assassin for the Lin Kuei after he and his brother were abducted by the clan. After the death of his brother Bi Han, Kuai Liang assumed the mantle of Sub-Zero to honor his memory.", \
 			"DESCRIPTION", \
 			"http://www.giantbomb.com/api/image/square_mini/2663932-cds.jpeg", "http://www.giantbomb.com/api/image/scale_medium/2663932-cds.jpeg", \
-			"http://www.giantbomb.com/sub-zero/3005-2/", "LK-520\r\nTundra\r\nCyber Sub-Zero\r\nKuai Liang", "25042")
+			"http://www.giantbomb.com/sub-zero/3005-2/", "Cyber Sub-Zero", "25042")
 		obj = obj.serialize()
 		test = {'id': "2", 'name': "Sub-Zero", 'birthday': None, 'gender': "1", \
 		'deck': "Kuai Liang, known as Tundra, became an assassin for the Lin Kuei after he and his brother were abducted by the clan. After the death of his brother Bi Han, Kuai Liang assumed the mantle of Sub-Zero to honor his memory.", \
 		'description': "DESCRIPTION", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2663932-cds.jpeg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2663932-cds.jpeg", \
-		'site_detail_url': "http://www.giantbomb.com/playstation-3/3045-35/", 'aliases': "LK-520\r\nTundra\r\nCyber Sub-Zero\r\nKuai Liang", 'first_appeared_in_game': "25042"}
+		'site_detail_url': "http://www.giantbomb.com/playstation-3/3045-35/", 'aliases': "Cyber Sub-Zero", 'first_appeared_in_game': "25042"}
 		self.assertEqual(obj, test)
 
 	def test_character_serialize_2(self):
