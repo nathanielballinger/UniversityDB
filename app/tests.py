@@ -26,7 +26,7 @@ class TestCases (TestCase):
 			"PLATFORMS", None, "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/")
 
 		self.assertEqual(game2.id, "52537")
-		self.assertEqual(game2.tiny_image, "TINY_IMAGE")
+		self.assertEqual(game2.tiny_image, "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg")
 		self.assertEqual(game2.aliases, None)
 
 	def test_case_game_3(self):
@@ -166,7 +166,7 @@ class TestCases (TestCase):
 		test = {'id': "13328", 'name': "Wii Sports", 'release_date': "2006-11-19 00:00:00", \
 		'description': "Packaged with the Wii (except Japan), Wii Sports allows players to compete with friends in tennis, bowling, boxing, baseball, and golf.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
-		'platforms': "PLATFORMS", 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/"}
+		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/", 'character': None}
 		self.assertEqual(obj, test)
 
 	def test_game_serialize_2(self):
@@ -178,7 +178,7 @@ class TestCases (TestCase):
 		test = {'id': "52537", 'name': "LEGO Star Wars: The Force Awakens", 'release_date': "2016-06-28 00:00:00", \
 		'description': "LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg", \
-		'platforms': "PLATFORMS", 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/"}
+		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/", 'character': None}
 		self.assertEqual(obj, test)
 
 	def test_game_serialize_3(self):
@@ -190,7 +190,7 @@ class TestCases (TestCase):
 		test = {'id': "41088", 'name': "Pokémon X/Y", 'release_date': "2013-10-12 00:00:00", \
 		'description': "The first Pokémon games on the 3DS and the first to be released simultaneously worldwide.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2482818-pokemonxy.jpg", \
-		'platforms': "PLATFORMS", 'aliases': "Pokemon X/Y\nPokemon Y", 'site_detail_url': "http://www.giantbomb.com/pokemon-xy/3030-41088/"}
+		'platforms': [], 'aliases': "Pokemon X/Y\nPokemon Y", 'site_detail_url': "http://www.giantbomb.com/pokemon-xy/3030-41088/", 'character': None}
 		self.assertEqual(obj, test)
 
 	# ------
