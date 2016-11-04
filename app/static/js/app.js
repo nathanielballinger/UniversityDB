@@ -73,6 +73,9 @@ myApp.controller('gamesCtrl', function($scope, $http){
     $http.get("/api/games/offset/1")
     .then(function (response) {
         $scope.games = response.data;
+        _.each($scope.games, function(game) {
+            game.release_date = new Date(game.release_date)
+        })
         console.log($scope.games)
     })
 
@@ -108,6 +111,9 @@ myApp.controller('gamesCtrl', function($scope, $http){
         $http.get("/api/games/offset/"+index)
         .then(function (response) {
             $scope.games = response.data;
+            _.each($scope.games, function(game) {
+                game.release_date = new Date(game.release_date)
+            })
             // console.log($scope.games)
         })
         
@@ -142,6 +148,9 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
     .then(function (response) {
         $scope.platforms = response.data;
         $scope.sortBy($scope.sortVar);
+        _.each($scope.platforms, function(platform) {
+            platform.release_date = new Date(platform.release_date)
+        })
         console.log($scope.platforms)
     })
 
@@ -178,6 +187,9 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
         .then(function (response) {
             $scope.platforms = response.data;
             $scope.sortBy($scope.sortVar);
+            _.each($scope.platforms, function(platform) {
+                platform.release_date = new Date(platform.release_date)
+            })
             console.log($scope.platforms)
         })
         

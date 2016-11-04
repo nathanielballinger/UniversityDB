@@ -20,21 +20,40 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 
+
+
+game_mapping = {}
+platform_mapping = {}
+character_mapping = {}
+
+def cache_setup():
+	games = Game.query.all()
+	for game in games:
+		game_mapping[game.id] = game.name
+	platforms = Platform.query.all()
+	for platform in platforms:
+		platform_mapping[platform.id] = platform.name
+	characters = Character.query.all()
+	for character in characters:
+		character_mapping[character.id] = character.name
+
+cache_setup()
+
 #Checking to make sure we loaded the data correctly
-for i in range(0,50):
-	g = Game.query.filter_by(id = i).first()
-	if g is None:
-		print("###############################")
-		print ("Game ID not found"+str(i))
-		continue
-	print("###################################")
-	print(i)
-	print (g)
-	print(g.name)
-	if (g.character is not None):
-		print("Character =" + g.character)
-	else:
-		print("We got nothin")
+# for i in range(0,50):
+# 	g = Game.query.filter_by(id = i).first()
+# 	if g is None:
+# 		print("###############################")
+# 		print ("Game ID not found"+str(i))
+# 		continue
+# 	print("###################################")
+# 	print(i)
+# 	print (g)
+# 	print(g.name)
+# 	if (g.character is not None):
+# 		print("Character =" + g.character)
+# 	else:
+# 		print("We got nothin")
 """
 for i in range(0,50):
 	g = Platform.query.filter_by(id = i).first()
@@ -175,14 +194,14 @@ def api_root():
 
 @app.route('/api/games/offset/<offset>')
 def api_games_offset(offset):
-	dict_p = {}
+	games_list = []
 	#return jsonify(Game.query.get(45).serialize())
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
 	games = Game.query.order_by(Game.id).limit(25).offset(target).all();
 	for game in games:
-		dict_p[game.name] = game.serialize_table()
+		games_list.append(game.serialize_table())
 	# print("Making sure it is going through this code")
 	# for i in range (0,600000):
 	# 	game = Game.query.get(i)
@@ -195,7 +214,7 @@ def api_games_offset(offset):
 	# 	if found >= 25:
 	# 		break
 	# 	found +=1
-	return jsonify(dict_p)
+	return jsonify(games_list)
 	"""
 	for data in Game.query:
 		return jsonify({data.name: data.serialize_table()})
@@ -220,13 +239,13 @@ def api_game_id(id):
 
 @app.route('/api/characters/offset/<offset>')
 def api_characters_offset(offset):
-	dict_p = {}
+	character_list = []
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
 	characters = Character.query.order_by(Character.id).limit(25).offset(target).all();
 	for character in characters:
-		dict_p[character.name] = character.serialize_table()
+		character_list.append(character.serialize_table())
 	# for i in range (0,600000):
 	# 	game = Character.query.get(i)
 	# 	if game is None:
@@ -238,7 +257,7 @@ def api_characters_offset(offset):
 	# 	if found >= 25:
 	# 		break
 	# 	found +=1
-	return jsonify(dict_p)
+	return jsonify(character_list)
 	
 
 @app.route('/api/characters/<id>')

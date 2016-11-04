@@ -34,7 +34,7 @@
             <tr ng-repeat="x in games track by $index">
                 <td>{{$index + 1}}</td>
                 <td><a href="/#/game/{{+x.id}}">{{ x.name }}</a></td>
-                <td>{{ x.release_date }}</td>
+                <td>{{ x.release_date.toDateString() }}</td>
                 <td>{{ x.platforms[0].name }}</td>
             </tr>
         </tbody>
