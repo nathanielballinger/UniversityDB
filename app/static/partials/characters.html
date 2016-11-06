@@ -34,7 +34,7 @@
             <tr ng-repeat="x in characters track by $index">
                 <td>{{$index + 1}}</td>
                 <td><a href="/#/character/{{+x.id}}">{{ x.name }}</a></td>
-                <td><a href="/#/game/{{+x.first_appeared_in_game}}">{{ x.first_appeared_in_game}}</td>
+                <td><a href="/#/game/{{+x.first_appeared_in_game.id}}">{{ x.first_appeared_in_game.name}}</td>
                 <td>{{ x.deck }}</td>
                 <td>{{ x.birthday || "Unknown" }}</td>
                 <td>{{x.gender == 0 ? 'NA' : (x.gender == 1 ? 'Male' : 'Female')}}</td>

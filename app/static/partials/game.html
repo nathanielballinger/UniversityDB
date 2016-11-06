@@ -13,9 +13,9 @@
 		        <p> Aliases: {{game.aliases.split("\r\n").join(", ")}}</p>
 		        <p> Original Release date: {{game.release_date}} </p> 
 				<p><span ng-repeat="platform in game.platforms">
-		    		{{$first ? 'Platforms: ' : ''}}<a href="#/platform/{{platform.id}}">{{platform.name}}</a>{{$last ? '' : ', '}}
+		    		{{$first ? 'Platforms: ' : ''}}<a href="#/platform/{{platform['id']}}">{{platform['name']}}</a>{{$last ? '' : ', '}}
 				</span></p>
-				<p><span ng-repeat="character in game.character">
+				<p><span ng-repeat="character in game.characters">
 		    		{{$first ? 'Characters: ' : ''}}<a href="#/character/{{character.id}}">{{character.name}}</a>{{$last ? '' : ', '}}
 				</span></p>
 			</div>
