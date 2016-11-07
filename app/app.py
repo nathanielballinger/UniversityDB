@@ -178,6 +178,7 @@ def api_platforms_offset(offset):
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
+	#platforms = Platform.query.filter(Platform.name.like('%do%')).limit(25)
 	platforms = Platform.query.order_by(Platform.id).limit(25).offset(target).all();
 	for platform in platforms:
 		dict_p[platform.name] = platform.serialize_table()
@@ -199,6 +200,28 @@ def api_platforms_offset(offset):
 @app.route('/api/platforms/<id>')
 def api_platforms_id(id):
 	return jsonify(Platform.query.get(id).serialize())
+
+@app.route('/search/result/<text>')
+def search_result(text):
+	#Testing Search Algorithm Begins Here#
+	search_text = '%'+text+'%'
+	returnlist = []
+	games = Game.query.filter(Game.name.like('search_text')).limit(25).all()
+	for game in games:
+		dict_game = {"pillar": "game", "name": game.name, "id": game.id}
+		returnlist.append(dict_game)
+	characters = Character.query.filter(Character.name.like(search_text)).limit(25)
+	for character in characters:
+		dict_game = {"pillar": "character", "name": character.name, "id": character.id}
+		returnlist.append(dict_game)
+	platforms = Platform.query.filter(Platform.name.like(search_text)).limit(25)
+	for platform in platforms:
+		dict_game = {"pillar": "platform", "name": platform.name, "id": platform.id}
+		returnlist.append(dict_game)
+	return jsonify(returnlist)
+	#Ends here#
+
+
 
 @app.route('/api/runtests')
 def api_runtests():
