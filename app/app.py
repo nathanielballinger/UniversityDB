@@ -13,147 +13,12 @@ import models
 
 from models import Game, Character, Platform, db, Base, app, manager
 
-
-#Checking to make sure we loaded the data correctly
-# for i in range(0,50):
-# 	g = Game.query.filter_by(id = i).first()
-# 	if g is None:
-# 		print("###############################")
-# 		print ("Game ID not found"+str(i))
-# 		continue
-# 	print("###################################")
-# 	print(i)
-# 	print (g)
-# 	print(g.name)
-# 	if (g.character is not None):
-# 		print("Character =" + g.character)
-# 	else:
-# 		print("We got nothin")
-"""
-for i in range(0,50):
-	g = Platform.query.filter_by(id = i).first()
-	if g is None:
-		print("###############################")
-		print ("Platform ID not found"+str(i))
+for i in range (0,50):
+	p = Character.query.filter_by(id = i).first()
+	if p is None:
 		continue
-	print("###################################")
-	print(i)
-	print (g)
-	print(g.name)
-	print(g.release_date)
-	print(g.company)
-	print(g.starting_price)
-	print(g.install_base)
-	#print(g.description)
-	print(g.online_support)
-	print(g.abbreviations)
-	print(g.tiny_image)
-	print(g.medium_image)
-	print(g.site_detail_url)
-	print(g.games)
-
-
-for i in range(0,50):
-	g = Character.query.filter_by(id = i).first()
-	if g is None:
-		print("###############################")
-		print ("Character ID not found"+str(i))
-		continue
-	print("###################################")
-	print(i)
-	print (g)
-	print(g.name)
-	print(g.birthday)
-	print(g.deck)
-	#print(g.description)
-	print(g.tiny_image)
-	print(g.medium_image)
-	print(g.site_detail_url)
-	print(g.aliases)
-	print("first_appeared"+str(g.first_appeared_in_game))
-
-
-#Code to load up temp data from JSON files
-gameDict = dict()
-for x in range(1,4):
-	with open('/var/www/cs373f-idb/app/static/json/game'+str(x)+'.json') as data_file:
-		data = json.load(data_file)['results']
-		gameDict[data['id']] = data
-characterDict = {}
-for x in range(1,4):
-	with open('/var/www/cs373f-idb/app/static/json/character'+str(x)+'.json') as data_file:
-		data = json.load(data_file)['results']
-		characterDict[data['id']] = data
-platformDict = dict()
-for x in range(1,4):
-	with open('/var/www/cs373f-idb/app/static/json/platform'+str(x)+'.json') as data_file:
-		data = json.load(data_file)['results']
-		platformDict[data['id']] = data
-
-"""
-gameDict = dict()
-characterDict = dict()
-platformDict = dict()
-
-
-
-
-@app.route("/")
-def index():
-	return send_file("templates/index.html")
-
-
-
-### -------------OUTDATED! USE API CALLS NOW----------- ###
-
-#Get request for a list of all games
-@app.route("/getGameTable/",methods=["GET"])
-def getGameTable():
-	obj = []
-	for key, value in gameDict.items():
-		obj.append(value)
-	return jsonify(obj)
-
-#Get request for a list of all platforms
-@app.route("/getPlatformTable/",methods=["GET"])
-def getPlatformTable():
-	obj = []
-	for key, value in platformDict.items():
-		obj.append(value)
-	return jsonify(obj)
-
-#Get request for a list of all Characters
-@app.route("/getCharacterTable/",methods=["GET"])
-def getCharacterable():
-	obj = []
-	for key, value in characterDict.items():
-		obj.append(value)
-	return jsonify(obj)
-
-#GET Request for a single Game
-@app.route("/getGame/",methods=["GET"])
-def getGame():
-	game_id = int(request.args.get('id'))
-	obj = jsonify(gameDict[game_id])
-	return obj
-
-#GET Request for a single character
-@app.route("/getCharacter/",methods=["GET"])
-def getCharacter():
-	char_id = int(request.args.get('id'))
-	obj = jsonify(characterDict[char_id])
-	return obj
-	
-#GET Request for a single Platform
-@app.route("/getPlatform/",methods=["GET"])
-def getPlatform():
-	platform_id = int(request.args.get('id'))
-	obj = jsonify(platformDict[platform_id])
-	return obj
-
-
-
-### ------------------------------------------------- ###
+	print(p.name)
+	print(p.first_appeared_in_game)
 
 # api interface
 @app.route('/api/')
@@ -190,7 +55,7 @@ def api_games_offset(offset):
 	# 		break
 	# 	found +=1
 	return jsonify(games_list)
-	"""
+	
 	for data in Game.query:
 		return jsonify({data.name: data.serialize_table()})
 		counter += 1
@@ -205,7 +70,7 @@ def api_games_offset(offset):
 	
 			break
 	return jsonify(dict_p)
-	"""
+	
 
 @app.route('/api/games/<id>')
 def api_games_id(id):
@@ -295,7 +160,7 @@ def api_characters_id(id):
 def api_platforms_offset(offset):
 	
 	dict_p = {}
-	"""
+	
 	counter = 0
 	new_count = 25*(int(offset)-1)
 	for data in Platform.query:
@@ -309,7 +174,7 @@ def api_platforms_offset(offset):
 			break
 
 	return jsonify(dict_p)
-	"""
+	
 	target = 25*(int(offset)-1)
 	counter = 0
 	found = 1
@@ -356,3 +221,4 @@ manager.add_command('shell', Shell(make_context=shell_context))
 
 if __name__ == "__main__":
 	manager.run()
+

@@ -67,24 +67,26 @@ class Game(db.Model):
 		parsedPlatforms = []
 		parsedCharacters = []
 		if result["platforms"] is not None:
-			parsedPlatforms = re.split(r"\.", result["platforms"])
+			parsedPlatforms = result["platforms"].split("[[[[")
 			parsedPlatforms = parsedPlatforms[:-1]
 			for i in range (len(parsedPlatforms)):
-				parsedPlatforms[i] = int(parsedPlatforms[i])
+				parsedPlatforms[i] = parsedPlatforms[i].split("||||")
+				parsedPlatforms[i][0] = int(parsedPlatforms[i][0])
+
 			result["platforms"] = parsedPlatforms
 		if result["character"] is not None:
-			parsedCharacters = re.split(r"\.", result["character"])
+			parsedCharacters = result["character"].split("[[[[")
 			parsedCharacters = parsedCharacters[:-1]
 			for i in range (len(parsedCharacters)):
-				parsedCharacters[i] = int(parsedCharacters[i])
-			result["platforms"] = parsedPlatforms
+				parsedCharacters[i] = parsedCharacters[i].split("||||")
+				parsedCharacters[i][0] = int(parsedCharacters[i][0])
 			result["character"] = parsedCharacters
 		print(result)
 		return result
 
 	def serialize_table(self):
 		if self.character is not None:
-			parsedCharacters = re.split(r"\.", self.character)
+			parsedCharacters = self.character.split("[[[[")
 			parsedCharacters = parsedCharacters[0]
 		else:
 			parsedCharacters = None
@@ -125,12 +127,15 @@ class Platform(db.Model):
 
 	def serialize(self):
 		result = model_to_dict(self)
-		parsedGames = re.split(r"\.", result["games"])
 		if result["games"] is not None:
-			parsedGames = re.split(r"\.", result["games"])
+			print(result["games"])
+			parsedGames = result["games"].split("[[[[")
 			parsedGames = parsedGames[:-1]
+			print(parsedGames)
 			for i in range (len(parsedGames)):
-				parsedGames[i] = int(parsedGames[i])
+				parsedGames[i] = parsedGames[i].split("||||")
+				print(parsedGames[i])
+				parsedGames[i][0] = int(parsedGames[i][0])
 			result["games"] = parsedGames
 		return result
 
@@ -151,7 +156,7 @@ class Character(db.Model):
 	medium_image = db.Column(db.String, default = None)
 	site_detail_url = db.Column(db.String, default = None)
 	aliases = db.Column(db.String, default = None)
-	first_appeared_in_game = db.Column(db.Integer, default = None)
+	first_appeared_in_game = db.Column(db.String, default = None)
 
 	def __init__(self,id,name,birthday,gender,deck, description, tiny_image, medium_image, site_detail_url, aliases, first_appeared_in_game):
 		self.id = id
@@ -167,9 +172,23 @@ class Character(db.Model):
 		self.first_appeared_in_game = first_appeared_in_game
 
 	def serialize(self):
-		return model_to_dict(self)
+		result = model_to_dict(self)
+		parsedGame = result['first_appeared_in_game']
+		if parsedGame is not None:
+			ret_list = parsedGame.split("||||")
+			ret_list[0] = int(ret_list[0])
+		else:
+			ret_list = None
+		result['first_appeared_in_game'] = ret_list
+		return result
+
 
 	def serialize_table(self):
-		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image, "birthday": self.birthday}
+		if self.first_appeared_in_game is not None:
+			ret_list = self.first_appeared_in_game.split('||||')
+			ret_list[0] = int(ret_list[0])
+		else:
+			ret_list = None
+		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": ret_list, "deck": self.deck, "tiny_image": self.tiny_image, "birthday": self.birthday}
 		return fields
 

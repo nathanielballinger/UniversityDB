@@ -11,17 +11,17 @@ import time
 """
 IF YOU HAVE ALREADY LOADED THE DATABASE AND ARE MAKING CHANGES
 TO THE ALREADY EXISTING DB DONT RUN THE NEXT TWO LINE. YOU WILL REGRET IT
-
+"""
 db.drop_all()
 db.create_all()
-"""
+
 api_key="d0d1072f35f6c08b0ce0d7249c1c1d94d500c913"
 
 gameFieldList = "&field_list=id,name,original_release_date,genres,developers,original_rating,description,review,image,platforms,characters,aliases,site_detail_url"
 platformFieldList ="&field_list=id,name,abbreviation,company,deck,description,image,install_base,online_support,original_price,release_date,site_detail_url"
 characterFieldList = "&field_list=id,aliases,birthday,deck,description,enemies,friends,first_appeared_in_game,games,gender,image,name,site_detail_url"
 
-"""
+
 games = []
 for x in range(0,520):
 	gameString = "http://www.giantbomb.com/api/games/?api_key="+api_key+"&format=json&offset="+str(x)+"00"
@@ -31,7 +31,7 @@ platforms = []
 for x in range(0,2):
 	platformString = "http://www.giantbomb.com/api/platforms/?api_key="+api_key+"&format=json&offset="+str(x)+"00"
 	platforms.append(platformString)
-"""
+
 characters = []
 for x in range(0,332):
 	if x ==26:
@@ -41,7 +41,7 @@ for x in range(0,332):
 
 #Gets json from API
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'}
-"""
+
 print("Adding to DB...this step will take approx 20 mins")
 counter = 1
 for game in games:
@@ -59,7 +59,7 @@ for game in games:
 		plat_data = entry['platforms']
 		if plat_data is not None:
 			for plat in plat_data:
-				plat_string += str(plat['id']) + '.'
+				plat_string += str(plat['id']) + '{{{{'
 		else:
 			plat_string = None
 		g = Game(id = entry['id'], name = entry['name'], release_date = entry['original_release_date'], description = entry['description'], tiny_image = tiny_image, medium_image = medium_image, platforms = plat_string, aliases = entry['aliases'], site_detail_url = entry['site_detail_url'])
@@ -105,7 +105,7 @@ for character in characters:
 	for entry in character_data['results']:
 		image_dict = entry['image']
 		if entry['first_appeared_in_game'] is not None:
-			first_appeared_in_game = entry['first_appeared_in_game']['id']
+			first_appeared_in_game = str(entry['first_appeared_in_game']['id'])
 		else:
 			first_appeared_in_game = None
 
@@ -153,11 +153,13 @@ for i in range(1,56877):
 		continue
 	if b.platforms is None:
 		continue
-	plat_list = b.platforms.split('.')
+	plat_list = b.platforms.split('{{{{')
 	plat_list = plat_list[:-1]
 	for x in plat_list:
 		plat_array[int(x)-1]+=str(i)
-		plat_array[int(x)-1]+='.'
+		plat_array[int(x)-1]+='||||'
+		plat_array[int(x)-1]+=b.name
+		plat_array[int(x)-1]+='[[[['
 
 counter = 1
 for entry in plat_array:
@@ -168,6 +170,7 @@ for entry in plat_array:
 		counter +=1
 	else:
 		counter+=1
+
 #List of characters for each game
 chr_array = ['']*56877
 for i in range(1,34113):
@@ -178,8 +181,13 @@ for i in range(1,34113):
 	if b.first_appeared_in_game is None:
 		continue
 	the_game = b.first_appeared_in_game
+	ch = Game.query.filter_by(id = int(b.first_appeared_in_game)).first()
+	b.first_appeared_in_game+='||||'+ch.name
+	db.session.commit()
 	chr_array[int(the_game)-1] += str(i)
-	chr_array[int(the_game)-1] += '.'
+	chr_array[int(the_game)-1] += '||||'
+	chr_array[int(the_game)-1] += b.name
+	chr_array[int(the_game)-1] += '[[[['
 
 
 counter = 1
@@ -193,7 +201,7 @@ for entry in chr_array:
 		counter +=1
 	else:
 		counter+=1
-
+"""
 #Checking to make sure we loaded the data correctly
 for i in range(0,50):
 	g = Game.query.filter_by(id = i).first()
@@ -209,6 +217,7 @@ for i in range(0,50):
 		print("Character =" + g.character)
 	else:
 		print("We got nothin")
+
 
 for i in range(0,50):
 	g = Platform.query.filter_by(id = i).first()
@@ -251,6 +260,29 @@ for i in range(0,50):
 	print(g.site_detail_url)
 	print(g.aliases)
 	print(g.first_appeared_in_game)
+
+"""
+for i in range (1,60000):
+	b = Game.query.filter_by(id = i).first()
+	if b is None:
+		continue
+	if b.platforms is None:
+		continue
+	print(b.id)
+	plat_arr = b.platforms.split('{{{{')[:-1]
+	print (plat_arr)
+	new_str = ''
+	for x in plat_arr:
+		new_str+=x
+		new_str+='||||'
+		new_str+=Platform.query.filter_by(id = int(x)).first().name
+		new_str+='[[[['
+	print(new_str)
+	b.platforms = new_str
+	db.session.commit()
+
+
+
 
 
 
