@@ -3,6 +3,7 @@ from flask import Flask, send_file, url_for, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy_searchable import search
 import json
 import time
 import re
@@ -203,7 +204,8 @@ def api_platforms_id(id):
 
 @app.route('/search/result/<text>')
 def search_result(text):
-	#Testing Search Algorithm Begins Here#
+	#Basic search algorithm
+	"""
 	search_text = '%'+text+'%'
 	returnlist = []
 	games = Game.query.filter(Game.name.like('search_text')).limit(25).all()
@@ -219,7 +221,17 @@ def search_result(text):
 		dict_game = {"pillar": "platform", "name": platform.name, "id": platform.id}
 		returnlist.append(dict_game)
 	return jsonify(returnlist)
-	#Ends here#
+	"""
+	char_query = db.session.query(Character)
+	plat_query = db.session.query(Platform)
+	game_query = db.session.query(Game)
+
+	"""
+	query = search(query, 'first')
+	print query.first().name
+	"""
+	#Nathan, what you'll want to do is run seach over all of these query and add the result together and jsonify and shit
+
 
 
 
