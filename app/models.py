@@ -26,7 +26,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 db = SQLAlchemy(app)	
-db.configure_mappers()
+#db.configure_mappers()
 manager = Manager(app)
 
 def model_to_dict(obj):
@@ -55,7 +55,7 @@ class Game(db.Model):
 	character = db.Column(db.String, default = None)
 	aliases = db.Column(db.String, default = None)
 	site_detail_url = db.Column(db.String, default = None)
-	search_vector = db.Column(TSVectorType('name','description','platforms','character','aliases'))
+	#search_vector = db.Column(TSVectorType('name','description','platforms','character','aliases'))
 
 	def __init__(self,id,name,release_date,description,tiny_image,medium_image,platforms,aliases,site_detail_url):
 		self.id = id
@@ -116,7 +116,7 @@ class Platform(db.Model):
 	tiny_image = db.Column(db.String, default = None)
 	medium_image = db.Column(db.String, default = None)
 	games = db.Column(db.String, default = None)
-	search_vector = db.Column(TSVectorType('name','company','games'))
+	#search_vector = db.Column(TSVectorType('name','company','games'))
 
 	def __init__(self,id,name,release_date,company,starting_price,install_base, description,online_support,abbreviations,site_detail_url,tiny_image,medium_image):
 		self.id = id
@@ -164,7 +164,7 @@ class Character(db.Model):
 	site_detail_url = db.Column(db.String, default = None)
 	aliases = db.Column(db.String, default = None)
 	first_appeared_in_game = db.Column(db.String, default = None)
-	search_vector = db.Column(TSVectorType('name','description','aliases','first_appeared_in_game'))
+	#search_vector = db.Column(TSVectorType('name','description','aliases','first_appeared_in_game'))
 
 	def __init__(self,id,name,birthday,gender,deck, description, tiny_image, medium_image, site_detail_url, aliases, first_appeared_in_game):
 		self.id = id

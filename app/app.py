@@ -21,6 +21,10 @@ for i in range (0,50):
 	print(p.name)
 	print(p.first_appeared_in_game)
 
+@app.route("/")
+def index():
+	return send_file("templates/index.html")
+
 # api interface
 @app.route('/api/')
 def api_root():
