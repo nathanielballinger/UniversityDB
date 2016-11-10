@@ -376,6 +376,7 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
             $scope.game.platforms = response.data
             console.log($scope.game.platforms);
         })
+        ids = ""
         for(var i = 0; i < data['character'].length; i++) {
             ids += data.character[i] + ",";
         }
