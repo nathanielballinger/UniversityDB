@@ -3,6 +3,8 @@ from flask import Flask, send_file, url_for, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy_searchable import make_searchable, search
+from sqlalchemy_utils.types import TSVectorType
 import requests
 import json
 import urllib.request
@@ -11,17 +13,20 @@ import re
 Base = declarative_base()
 app = Flask(__name__)
 
+make_searchable()
+
 #Nate's Database
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:bathory94@localhost:5432/swe'
 #Chris's database
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 db = SQLAlchemy(app)	
+#db.configure_mappers()
 manager = Manager(app)
 
 def model_to_dict(obj):
@@ -50,6 +55,7 @@ class Game(db.Model):
 	character = db.Column(db.String, default = None)
 	aliases = db.Column(db.String, default = None)
 	site_detail_url = db.Column(db.String, default = None)
+	#search_vector = db.Column(TSVectorType('name','description','platforms','character','aliases'))
 
 	def __init__(self,id,name,release_date,description,tiny_image,medium_image,platforms,aliases,site_detail_url):
 		self.id = id
@@ -67,24 +73,26 @@ class Game(db.Model):
 		parsedPlatforms = []
 		parsedCharacters = []
 		if result["platforms"] is not None:
-			parsedPlatforms = re.split(r"\.", result["platforms"])
+			parsedPlatforms = result["platforms"].split("[[[[")
 			parsedPlatforms = parsedPlatforms[:-1]
 			for i in range (len(parsedPlatforms)):
-				parsedPlatforms[i] = int(parsedPlatforms[i])
+				parsedPlatforms[i] = parsedPlatforms[i].split("||||")
+				parsedPlatforms[i][0] = int(parsedPlatforms[i][0])
+
 			result["platforms"] = parsedPlatforms
 		if result["character"] is not None:
-			parsedCharacters = re.split(r"\.", result["character"])
+			parsedCharacters = result["character"].split("[[[[")
 			parsedCharacters = parsedCharacters[:-1]
 			for i in range (len(parsedCharacters)):
-				parsedCharacters[i] = int(parsedCharacters[i])
-			result["platforms"] = parsedPlatforms
+				parsedCharacters[i] = parsedCharacters[i].split("||||")
+				parsedCharacters[i][0] = int(parsedCharacters[i][0])
 			result["character"] = parsedCharacters
 		print(result)
 		return result
 
 	def serialize_table(self):
 		if self.character is not None:
-			parsedCharacters = re.split(r"\.", self.character)
+			parsedCharacters = self.character.split("[[[[")
 			parsedCharacters = parsedCharacters[0]
 		else:
 			parsedCharacters = None
@@ -108,6 +116,7 @@ class Platform(db.Model):
 	tiny_image = db.Column(db.String, default = None)
 	medium_image = db.Column(db.String, default = None)
 	games = db.Column(db.String, default = None)
+	#search_vector = db.Column(TSVectorType('name','company','games'))
 
 	def __init__(self,id,name,release_date,company,starting_price,install_base, description,online_support,abbreviations,site_detail_url,tiny_image,medium_image):
 		self.id = id
@@ -125,12 +134,15 @@ class Platform(db.Model):
 
 	def serialize(self):
 		result = model_to_dict(self)
-		parsedGames = re.split(r"\.", result["games"])
 		if result["games"] is not None:
-			parsedGames = re.split(r"\.", result["games"])
+			print(result["games"])
+			parsedGames = result["games"].split("[[[[")
 			parsedGames = parsedGames[:-1]
+			print(parsedGames)
 			for i in range (len(parsedGames)):
-				parsedGames[i] = int(parsedGames[i])
+				parsedGames[i] = parsedGames[i].split("||||")
+				print(parsedGames[i])
+				parsedGames[i][0] = int(parsedGames[i][0])
 			result["games"] = parsedGames
 		return result
 
@@ -151,7 +163,8 @@ class Character(db.Model):
 	medium_image = db.Column(db.String, default = None)
 	site_detail_url = db.Column(db.String, default = None)
 	aliases = db.Column(db.String, default = None)
-	first_appeared_in_game = db.Column(db.Integer, default = None)
+	first_appeared_in_game = db.Column(db.String, default = None)
+	#search_vector = db.Column(TSVectorType('name','description','aliases','first_appeared_in_game'))
 
 	def __init__(self,id,name,birthday,gender,deck, description, tiny_image, medium_image, site_detail_url, aliases, first_appeared_in_game):
 		self.id = id
@@ -167,9 +180,23 @@ class Character(db.Model):
 		self.first_appeared_in_game = first_appeared_in_game
 
 	def serialize(self):
-		return model_to_dict(self)
+		result = model_to_dict(self)
+		parsedGame = result['first_appeared_in_game']
+		if parsedGame is not None:
+			ret_list = parsedGame.split("||||")
+			ret_list[0] = int(ret_list[0])
+		else:
+			ret_list = None
+		result['first_appeared_in_game'] = ret_list
+		return result
+
 
 	def serialize_table(self):
-		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": self.first_appeared_in_game, "deck": self.deck, "tiny_image": self.tiny_image, "birthday": self.birthday}
+		if self.first_appeared_in_game is not None:
+			ret_list = self.first_appeared_in_game.split('||||')
+			ret_list[0] = int(ret_list[0])
+		else:
+			ret_list = None
+		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": ret_list, "deck": self.deck, "tiny_image": self.tiny_image, "birthday": self.birthday}
 		return fields
 
