@@ -6,12 +6,12 @@ from sqlalchemy.ext.declarative import declarative_base
 import json
 import time
 import re
-from tests import runTestsOut
+from app.tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
-import models
+import app.models
 
-from models import Game, Character, Platform, db, Base, app, manager
+from app.models import Game, Character, Platform, db, Base, app, manager
 
 
 #Checking to make sure we loaded the data correctly
