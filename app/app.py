@@ -209,7 +209,7 @@ def api_platforms_id(id):
 @app.route('/search/result/<text>')
 def search_result(text):
 	#Basic search algorithm
-	"""
+	
 	search_text = '%'+text+'%'
 	returnlist = []
 	games = Game.query.filter(Game.name.like('search_text')).limit(25).all()
@@ -225,7 +225,7 @@ def search_result(text):
 		dict_game = {"pillar": "platform", "name": platform.name, "id": platform.id}
 		returnlist.append(dict_game)
 	return jsonify(returnlist)
-	"""
+	
 	char_query = db.session.query(Character)
 	plat_query = db.session.query(Platform)
 	game_query = db.session.query(Game)

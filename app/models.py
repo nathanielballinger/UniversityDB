@@ -91,12 +91,13 @@ class Game(db.Model):
 		return result
 
 	def serialize_table(self):
-		if self.character is not None:
-			parsedCharacters = self.character.split("[[[[")
-			parsedCharacters = parsedCharacters[0]
+		platLength = 0
+		if self.platforms is not None:
+			platforms = self.platforms.split("[[[[")
+			platLength = len(platforms)
 		else:
-			parsedCharacters = None
-		fields = {"id": self.id,"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "characters": parsedCharacters}
+			platLength = 0
+		fields = {"id": self.id,"name": self.name, "release_date": self.release_date, "aliases": self.aliases, "tiny_image": self.tiny_image, "num platforms": platLength}
 		return fields
 
 class Platform(db.Model):
