@@ -7,12 +7,19 @@ from sqlalchemy_searchable import search
 import json
 import time
 import re
-from tests import runTestsOut
+from app.tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
-import models
+import app.models
+from app.models import Game, Character, Platform, db, Base, app, manager
 
-from models import Game, Character, Platform, db, Base, app, manager
+#Chris's DB
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+#Digital Ocean DB
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#Abhi's DB
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+
 
 for i in range (0,50):
 	p = Character.query.filter_by(id = i).first()
