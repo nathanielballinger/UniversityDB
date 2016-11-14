@@ -7,6 +7,8 @@ from sqlalchemy_searchable import search
 import json
 import time
 import re
+import requests
+import urllib.request
 from tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
@@ -43,6 +45,12 @@ def api_root():
 		}
 	}
 	return jsonify(data)
+
+@app.route('/researchpapers/<year>')
+def research_papers_year(year):
+	#v = requests.get('https://researchpapers.me/api/year/' + str(year))
+	v = requests.get('/vgidb.me/api/games/1')
+	return v.json()
 
 @app.route('/api/games/offset/<offset>')
 def api_games_offset(offset):
