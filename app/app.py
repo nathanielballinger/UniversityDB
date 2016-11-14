@@ -49,10 +49,11 @@ def api_root():
 @app.route('/researchpapers/<year>')
 def research_papers_year(year):
 	#v = requests.get('https://researchpapers.me/api/year/' + str(year))
-	v = requests.get('/vgidb.me/api/games/1')
+	v = requests.get('http://127.0.0.1:5000/api/games/offset/1')
+	print("DJDJFJDJDJJS")
 	return v.json()
 
-@app.route('/api/games/offset/<offset>')
+@app.route("/api/games/offset/<offset>",methods=["GET"])
 def api_games_offset(offset):
 	games_list = []
 	#return jsonify(Game.query.get(45).serialize())
