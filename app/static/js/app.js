@@ -130,18 +130,13 @@ myApp.controller('gamesCtrl', function($scope, $http){
     .then(function (response) {
         $scope.games = response.data;
         _.each($scope.games, function(game) {
-            game.release_date = new Date(game.release_date)
+            if(game.release_date != null) 
+                game.release_date = new Date(game.release_date);
         })
         console.log($scope.games)
     })
 
     $scope.info = {};
-
-    $scope.swapOrder = function() {
-        $scope.order = !$scope.order;
-        $scope.games.reverse();
-    }
-
 
     $scope.getPages = function(index) {
         if (index === 0){
@@ -168,55 +163,35 @@ myApp.controller('gamesCtrl', function($scope, $http){
         .then(function (response) {
             $scope.games = response.data;
             _.each($scope.games, function(game) {
-                game.release_date = new Date(game.release_date)
+                if(game.release_date != null) 
+                    game.release_date = new Date(game.release_date);
             })
             // console.log($scope.games)
         })
         
     }
-
-    $scope.sortBy = function(sorter) {
-        $scope.sortVar = sorter;
-        $scope.games = _.sortBy($scope.games, function(game){
-            switch(sorter){
-                case "Name":
-                    return game.name
-                case "Release Date":
-                    return game.original_release_date
-                case "Genre":
-                    return game.genres[0].name
-                case "Developer/Publisher":
-                    return game.developers[0].name
-                case "Platform":
-                    return game.platforms[0].name
-            }
-        });
-    }
 })
 
 //Controller for all Platforms
 myApp.controller('platformsCtrl', function($scope, $http, _){
-    $scope.page = 1
-    $scope.pages = [1,2,3,4,5]
-    $scope.order = true;
-    $scope.sortVar = "Name"
+    $scope.page = 1;
+    $scope.pages = [1,2,3,4,5];
+
+    $scope.sortType = "name";
+    $scope.sortReverse = false;
+    $scope.search = "";
+
     $http.get("/api/platforms/offset/1")
     .then(function (response) {
         $scope.platforms = response.data;
-        $scope.sortBy($scope.sortVar);
         _.each($scope.platforms, function(platform) {
-            platform.release_date = new Date(platform.release_date)
+            if(platform.release_date != null) 
+                platform.release_date = new Date(platform.release_date);
         })
         console.log($scope.platforms)
     })
 
     $scope.info = {};
-
-    $scope.swapOrder = function() {
-        $scope.order = !$scope.order;
-        $scope.platforms.reverse();
-    }
-
 
     $scope.getPages = function(index) {
         if (index === 0){
@@ -242,29 +217,13 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
         $http.get("/api/platforms/offset/"+index)
         .then(function (response) {
             $scope.platforms = response.data;
-            $scope.sortBy($scope.sortVar);
             _.each($scope.platforms, function(platform) {
-                platform.release_date = new Date(platform.release_date)
+                if(platform.release_date != null) 
+                    platform.release_date = new Date(platform.release_date);
             })
             console.log($scope.platforms)
         })
         
-    }
-
-    $scope.sortBy = function(sorter) {
-        $scope.sortVar = sorter;
-        $scope.platforms = _.sortBy($scope.platforms, function(platform){
-            switch(sorter){
-                case "Name":
-                    return platform.name
-                case "Release Date":
-                    return platform.release_date
-                case "Company":
-                    return platform.company.name
-                case "Starting Price":
-                    return parseInt(platform.original_price)
-            }
-        });
     }
 })
 
@@ -272,22 +231,23 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
 myApp.controller('charactersCtrl', function($scope, $http){
     $scope.page = 1
     $scope.pages = [1,2,3,4,5]
-    $scope.order = true;
-    $scope.sortVar = "Name";
-    var ids = "";
+
+    $scope.sortType = "name";
+    $scope.sortReverse = false;
+    $scope.search = "";
+
     var names = {};
     $http.get("api/characters/offset/1")
     .then(function (response) {
         $scope.characters = response.data;
+        _.each($scope.characters, function(character) {
+            if(character.birthday != null){
+                character.birthday = new Date(character.birthday);
+            }
+        })
         console.log($scope.characters);
     })
     $scope.info = {};
-
-
-    $scope.swapOrder = function() {
-        $scope.order = !$scope.order;
-        $scope.characters.reverse();
-    }
 
     $scope.getPages = function(index) {
         if (index === 0){
@@ -313,25 +273,13 @@ myApp.controller('charactersCtrl', function($scope, $http){
         $http.get("/api/characters/offset/"+index)
         .then(function (response) {
             $scope.characters = response.data;
-            // console.log($scope.games)
+            _.each($scope.characters, function(character) {
+                if(character.birthday != null) {
+                    character.birthday = new Date(character.birthday);
+                }
+            })
         })
-        
-    }
-
-    $scope.sortBy = function(sorter) {
-        $scope.sortVar = sorter;
-        $scope.characters = _.sortBy($scope.characters, function(platform){
-            switch(sorter){
-                case "Name":
-                    return platform.name
-                case "First Game":
-                    return platform.release_date
-                case "Birthday":
-                    return platform.first_appeared_in_game.name
-                case "Gender":
-                    return platform.gender
-            }
-        });
+            // console.log($scope.games)        
     }
 })
 

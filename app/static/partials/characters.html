@@ -4,39 +4,54 @@
         <div class"col-md-6">
             <p>Showing {{(page-1)*25 + 1}}-{{(page-1)*25+25}} characters out of 33054 characters </p>    
         </div>
-        <div class"col-md-6">
-            <div class="btn-group">
-                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{sortVar}}<span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="" ng-click="sortBy('Name')">Name</a></li>
-                    <li><a href="" ng-click="sortBy('First Game')">First Game</a></li>
-                    <li><a href="" ng-click="sortBy('Birthday')">Birthday</a></li>
-                    <li><a href="" ng-click="sortBy('Gender')">Gender</a></li>
-                </ul>
-            </div>
-            <button ng-click="swapOrder()" type="button" class="btn btn-default">Swap Order</button>
-        </div>
     </div>
+
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+        <input type="text" class="form-control" placeholder="Search for Characters here!" ng-model="search">
+
+      </div>      
+    </div>
+  </form>
+
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>#</th>
-                <td>Name</td>
-                <td>Game First Appeared</td>
-                <td>Desc</td>
-                <td>Birthday</td>
-                <td>Gender</td>
+                <td>#</td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                    Name</a> <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = first_appeared_in_game[1]; sortReverse = !sortReverse">
+                    Game First Appeared</a> <span ng-show="sortType == first_appeared_in_game[1] && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == first_appeared_in_game[1] && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+                <td>Description</td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'birthday'; sortReverse = !sortReverse">
+                    Birthday</a> <span ng-show="sortType == 'birthday' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'birthday' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'gender'; sortReverse = !sortReverse">
+                    Gender</a> <span ng-show="sortType == 'gender' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'gender' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
             </tr>            
         </thead>
         <tbody>
-            <tr ng-repeat="x in characters track by $index">
+            <tr ng-repeat="x in characters | orderBy:sortType:sortReverse | filter:search">
                 <td>{{$index + 1}}</td>
                 <td><a href="/#/character/{{+x.id}}">{{ x.name }}</a></td>
                 <td><a href="/#/game/{{+x.first_appeared_in_game[0]}}">{{ x.first_appeared_in_game[1]}}</td>
                 <td>{{ x.deck }}</td>
-                <td>{{ x.birthday || "Unknown" }}</td>
+                <td>{{ x.birthday.toDateString() || "Unknown" }}</td>
                 <td>{{x.gender == 0 ? 'NA' : (x.gender == 1 ? 'Male' : 'Female')}}</td>
             </tr>
         </tbody>
