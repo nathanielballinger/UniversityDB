@@ -121,8 +121,11 @@ myApp.controller('headerCtrl', function($scope, $http, $location) {
 myApp.controller('gamesCtrl', function($scope, $http){
     $scope.page = 1
     $scope.pages = [1,2,3,4,5]
-    $scope.order = true;
-    $scope.sortVar = "Name"
+
+    $scope.sortType = "name";
+    $scope.sortReverse = false;
+    $scope.search = "";
+
     $http.get("/api/games/offset/1")
     .then(function (response) {
         $scope.games = response.data;
