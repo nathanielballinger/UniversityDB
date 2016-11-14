@@ -180,8 +180,55 @@ def api_platforms_offset(offset):
 def api_platforms_id(id):
 	return jsonify(Platform.query.get(id).serialize())
 
-@app.route('/search/result/<text>')
-def search_result(text):
+@app.route('/search/result/games/<text>')
+def search_result_games(text):
+	#Basic search algorithm
+	
+	search_text = '%'+text+'%'
+	returnlist = []
+	games = Game.query.filter(Game.name.like('search_text')).limit(25).all()
+	for game in games:
+		dict_game = {"pillar": "game", "name": game.name, "id": game.id}
+		returnlist.append(dict_game)
+	characters = Character.query.filter(Character.name.like(search_text)).limit(25)
+	return jsonify(returnlist)
+	
+	char_query = db.session.query(Character)
+	plat_query = db.session.query(Platform)
+	game_query = db.session.query(Game)
+
+	"""
+	query = search(query, 'first')
+	print query.first().name
+	"""
+	#Nathan, what you'll want to do is run seach over all of these query and add the result together and jsonify and shit
+
+@app.route('/search/result/characters/<text>')
+def search_result_characters(text):
+	#Basic search algorithm
+	
+	search_text = '%'+text+'%'
+	returnlist = []
+	characters = Character.query.filter(Character.name.like(search_text)).limit(25)
+	for character in characters:
+		dict_game = {"pillar": "character", "name": character.name, "id": character.id}
+		returnlist.append(dict_game)
+	return jsonify(returnlist)
+
+@app.route('/search/result/platforms/<text>')
+def search_result_platforms(text):
+	#Basic search algorithm
+	
+	search_text = '%'+text+'%'
+	returnlist = []
+	platforms = Platform.query.filter(Platform.name.like(search_text)).limit(25)
+	for platform in platforms:
+		dict_game = {"pillar": "platform", "name": platform.name, "id": platform.id}
+		returnlist.append(dict_game)
+	return jsonify(returnlist)
+
+@app.route('/search/result/all/<text>')
+def search_result_all(text):
 	#Basic search algorithm
 	
 	search_text = '%'+text+'%'
@@ -199,16 +246,6 @@ def search_result(text):
 		dict_game = {"pillar": "platform", "name": platform.name, "id": platform.id}
 		returnlist.append(dict_game)
 	return jsonify(returnlist)
-	
-	char_query = db.session.query(Character)
-	plat_query = db.session.query(Platform)
-	game_query = db.session.query(Game)
-
-	"""
-	query = search(query, 'first')
-	print query.first().name
-	"""
-	#Nathan, what you'll want to do is run seach over all of these query and add the result together and jsonify and shit
 
 
 
