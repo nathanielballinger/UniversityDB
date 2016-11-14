@@ -47,7 +47,7 @@ myApp.config(['$routeProvider',
 
 
 
-var listVals = ["friends", "enemies", "platforms", "genres", "developers", "characters"];
+var listVals = ["platforms", "games", "character", "first_appeared_in_game"];
 
 function fixNullEmpty(obj) {
     var defaultVal;
@@ -128,14 +128,6 @@ myApp.controller('gamesCtrl', function($scope, $http){
         $scope.games = response.data;
         _.each($scope.games, function(game) {
             game.release_date = new Date(game.release_date)
-        })
-        var ids = ""
-        for(var i = 0; i < data.length; i++) {
-            ids += data[i].first_appeared_in_game + ",";
-        }
-        $http.get("/api/platform_mapping/" + ids)
-        .then(function (response) {
-            console.log(response.data)
         })
         console.log($scope.games)
     })
@@ -349,33 +341,10 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
     .then(function (response) {
         var data = response.data;
         $scope.game = fixNullEmpty(data);
-        console.log($scope.game)
-        var ids = ""
-        for(var i = 0; i < data['platforms'].length; i++) {
-            ids += data.platforms[i] + ",";
-        }
-        console.log(ids)
-        $http.get("/api/platform_mapping/" + ids)
-        .then(function (response) {
-            console.log(response.data)
-            $scope.game.platforms = response.data
-            console.log($scope.game.platforms);
-        })
-        ids = ""
-        for(var i = 0; i < data['character'].length; i++) {
-            ids += data.character[i] + ",";
-        }
-        $http.get("/api/character_mapping/" + ids)
-        .then(function (response) {
-            console.log(response.data)
-            $scope.game.characters = response.data
-            console.log($scope.game.characters);
-        })
-
+        console.log($scope.game);
     })
 
     $scope.info = {};
-
 
     $scope.init = function() {
         console.log("Hello World from game");
