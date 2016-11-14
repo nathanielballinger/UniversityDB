@@ -7,18 +7,18 @@ from sqlalchemy_searchable import search
 import json
 import time
 import re
-from app.tests import runTestsOut
+from tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
-import app.models
-from app.models import Game, Character, Platform, db, Base, app, manager
+import models
+from models import Game, Character, Platform, db, Base, app, manager
 
 #Chris's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 
 for i in range (0,50):
@@ -88,14 +88,6 @@ def api_games_offset(offset):
 def api_games_id(id):
 	return jsonify(Game.query.get(id).serialize())
 
-@app.route('/api/games/mapping')
-def api_game_id(id):
-	print("DID IT GET IN HERE?")
-	games = Game.query.filter(Game.id.in_((2,3))).all()
-	print(games)
-	print(games.serialize_table())
-	return jsonify(Game.query.filter(Game.id.in_((2,3))))
-
 @app.route('/api/characters/offset/<offset>')
 def api_characters_offset(offset):
 	character_list = []
@@ -117,53 +109,6 @@ def api_characters_offset(offset):
 	# 		break
 	# 	found +=1
 	return jsonify(character_list)
-
-
-##Function to get a bunch of games from ID	
-@app.route('/api/game_mapping/<ids>')
-def api_characters_mapping(ids):
-	id_list = ids.split(",")
-	id_list = id_list[:-1]
-	other_list = [int(x) for x in id_list]
-	games = Game.query.filter(Game.id.in_(tuple(other_list))).all()
-	id_dict = {}
-	for game in games:
-		temp = game.serialize_table()
-		id_dict[temp['id']] = temp['name']
-		# id_dict.append({temp['id']: temp['name']})
-	return jsonify(id_dict)
-
-#Function to get a bunch of platforms from IDS
-@app.route('/api/platform_mapping/<ids>')
-def api_platforms_mapping(ids):
-	id_list = ids.split(",")
-	id_list = id_list[:-1]
-	other_list = [int(x) for x in id_list]
-	platforms = Platform.query.filter(Platform.id.in_(tuple(other_list))).all()
-	id_dict = []
-	for platform in platforms:
-		temp = platform.serialize_table()
-		# id_dict[temp['id']] = temp['name']
-		# id_dict.append({temp['id']: temp['name']})
-		id_dict.append({"name": temp['name'], "id": temp['id']})
-	return jsonify(id_dict)
-
-#Function to get a bunch of characters from IDS
-@app.route('/api/character_mapping/<ids>')
-def api_games_mapping(ids):
-	id_list = ids.split(",")
-	id_list = id_list[:-1]
-	other_list = [int(x) for x in id_list]
-	characters = Character.query.filter(Character.id.in_(tuple(other_list))).all()
-	id_dict = []
-	for character in characters:
-		temp = character.serialize_table()
-		# id_dict[temp['id']] = temp['name']
-		id_dict.append({"name": temp['name'], "id": temp['id']})
-	return jsonify(id_dict)
-
-
-
 @app.route('/api/characters/<id>')
 def api_characters_id(id):
 	return jsonify(Character.query.get(id).serialize())

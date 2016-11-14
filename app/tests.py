@@ -1,7 +1,7 @@
 from io             import StringIO
 from unittest       import main, TestCase, TextTestRunner, makeSuite
 #Only add app. before models when you want to run the DO server
-from app.models 		import *
+from models		import *
 
 class TestCases (TestCase):
 
