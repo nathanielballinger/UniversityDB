@@ -14,11 +14,11 @@ import models
 from models import Game, Character, Platform, db, Base, app, manager
 
 #Chris's DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe'
 #Abhi's DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe'
 
 
 for i in range (0,50):
@@ -115,7 +115,28 @@ def api_characters_id(id):
 
 @app.route('/api/platforms/offset/<offset>')
 def api_platforms_offset(offset):
-	
+	games_list = []
+	#return jsonify(Game.query.get(45).serialize())
+	target = 25*(int(offset)-1)
+	counter = 0
+	found = 1
+	games = Platform.query.order_by(Platform.id).limit(25).offset(target).all();
+	for game in games:
+		games_list.append(game.serialize_table())
+	# print("Making sure it is going through this code")
+	# for i in range (0,600000):
+	# 	game = Game.query.get(i)
+	# 	if game is None:
+	# 		continue
+	# 	if counter < target:
+	# 		counter+=1
+	# 		continue
+	# 	dict_p[game.name] = game.serialize_table()
+	# 	if found >= 25:
+	# 		break
+	# 	found +=1
+	return jsonify(games_list)
+	"""
 	dict_p = {}
 	
 	counter = 0
@@ -152,6 +173,7 @@ def api_platforms_offset(offset):
 	# 		break
 	# 	found +=1
 	return jsonify(dict_p)
+	"""
 	
 
 @app.route('/api/platforms/<id>')
