@@ -14,7 +14,7 @@
                     <li><a href="" ng-click="sortBy('Release Date')">Release Date</a></li>
                     <li><a href="" ng-click="sortBy('Genre')">Genre</a></li>
                     <li><a href="" ng-click="sortBy('Developer/Publisher')">Developer/Publisher</a></li>
-                    <li><a href="" ng-click="sortBy('Platform')">Platform</a></li>
+                    <li><a href="" ng-click="sortBy('Platform')">No. of Platforms</a></li>
 
                 </ul>
             </div>
@@ -28,7 +28,7 @@
                 <th>Icon</th>
                 <td>Name</td>
                 <td>Release Date</td>
-                <td>Platform</td>
+                <td>No. of Platforms</td>
                 <td>Aliases</td>
             </tr>            
         </thead>
@@ -38,7 +38,7 @@
                 <td><img src="{{x.tiny_image}}"</td>
                 <td><a href="/#/game/{{+x.id}}">{{ x.name }}</a></td>
                 <td>{{ x.release_date.toDateString() }}</td>
-                <td>{{ x.platforms[0].name }}</td>
+                <td>{{ x["num platforms"] }}</td>
                 <td>{{x.aliases ? x.aliases : "Unkown"}} </td>
             </tr>
         </tbody>
