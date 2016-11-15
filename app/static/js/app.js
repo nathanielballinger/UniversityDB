@@ -187,6 +187,7 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
         _.each($scope.platforms, function(platform) {
             if(platform.release_date != null) 
                 platform.release_date = new Date(platform.release_date);
+            platform.starting_price = parseInt(platform.starting_price);
         })
         console.log($scope.platforms)
     })
@@ -220,6 +221,7 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
             _.each($scope.platforms, function(platform) {
                 if(platform.release_date != null) 
                     platform.release_date = new Date(platform.release_date);
+                platform.starting_price = parseInt(platform.starting_price);
             })
             console.log($scope.platforms)
         })
