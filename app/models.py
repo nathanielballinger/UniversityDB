@@ -201,3 +201,18 @@ class Character(db.Model):
 		fields = {"id": self.id, "gender": self.gender, "name": self.name, "aliases": self.aliases, "first_appeared_in_game": ret_list, "deck": self.deck, "tiny_image": self.tiny_image, "birthday": self.birthday}
 		return fields
 
+
+class SearchResult:
+
+	def __init__(self, id, name, pillar, searchText):
+		self.id = id
+		self.name = name
+		self.pillar = pillar
+
+		# Do something with searchText to create self.word_hits
+		self.word_hits = []
+
+	def toJSON(self):
+		return model_to_dict(self)
+
+

@@ -13,7 +13,7 @@ from tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
 import models
-from models import Game, Character, Platform, db, Base, app, manager
+from models import Game, Character, Platform, db, Base, app, manager, SearchResult
 
 #Chris's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
@@ -239,7 +239,26 @@ def search_result_platforms(text):
 @app.route('/search/result/all/<text>')
 def search_result_all(text):
 	#Basic search algorithm
-	
+	returnlist = []
+	games_query = Game.query.search(text).limit(15)
+	characters_query = Character.query.search(text).limit(15)
+	platforms_query = Platform.query.search(text).limit(15)
+
+	for game in games_query.all():
+		search_result = SearchResult(game.id, game.name, "game", text)
+		returnlist.append(search_result.toJSON())
+
+	for character in characters_query.all():
+		search_result = SearchResult(character.id, character.name, "character", text)
+		returnlist.append(search_result.toJSON())
+
+	for platform in platforms_query.all():
+		search_result = SearchResult(platform.id, platform.name, "platform", text)
+		returnlist.append(search_result.toJSON())
+
+	return jsonify(returnlist)
+
+	"""
 	search_text = '%'+text+'%'
 	returnlist = []
 	games = Game.query.filter(Game.name.like('search_text')).limit(25).all()
@@ -255,6 +274,7 @@ def search_result_all(text):
 		dict_game = {"pillar": "platform", "name": platform.name, "id": platform.id}
 		returnlist.append(dict_game)
 	return jsonify(returnlist)
+	"""
 
 
 
