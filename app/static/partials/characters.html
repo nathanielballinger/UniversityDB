@@ -1,11 +1,6 @@
 <div data-ng-controller="charactersCtrl" data-ng-init="" class="container">
-    <h1 align="center">Characters</h1>
-    <div class="row">
-        <div class"col-md-6">
-            <p>Showing {{(page-1)*25 + 1}}-{{(page-1)*25+25}} characters out of 33054 characters </p>    
-        </div>
-    </div>
-    
+    <h1 align="center" class="white-color">Characters</h1>
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -38,14 +33,18 @@
             <tr ng-repeat="x in characters | orderBy:sortType:sortReverse | filter:search">
                 <td>{{$index + 1}}</td>
                 <td><a href="/#/character/{{+x.id}}">{{ x.name }}</a></td>
-                <td><a href="/#/game/{{+x.first_appeared_in_game[0]}}">{{ x.first_appeared_in_game[1]}}</td>
+                <td><a href="/#/game/{{+x.first_appeared_in_game[0]}}">{{ x.first_appeared_in_game[1]}}</a></td>
                 <td>{{ x.deck }}</td>
-                <td>{{ x.birthday.toDateString() || "Unknown" }}</td>
+                <td><a href="/#/papers/{{x.birthday.getFullYear()}}">{{ x.birthday.toDateString() || "Unknown" }}</a></td>
                 <td>{{x.gender == 0 ? 'NA' : (x.gender == 1 ? 'Male' : 'Female')}}</td>
             </tr>
         </tbody>
 
     </table>
+
+        <div align="center" class= "white-color">Showing {{(page-1)*25 + 1}}-{{(page-1)*25+25}} characters out of 33054 characters   
+        </div>
+    </div>
 
     <div class="container"> 
         <div align="center"> 

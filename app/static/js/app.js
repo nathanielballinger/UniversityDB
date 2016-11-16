@@ -44,6 +44,10 @@ myApp.config(['$routeProvider',
                  templateUrl: '../static/partials/search.html',
                  controller: 'searchCtrl',
              }).
+            when('/papers/:year', {
+                 templateUrl: '../static/partials/papers.html',
+                 controller: 'papersCtrl',
+             }).
              otherwise({
                  redirectTo: '/'
              });
@@ -58,14 +62,11 @@ myApp.factory('searchService', function() {
  function get() {
   return savedData;
  }
-
  return {
   set: set,
   get: get
  }
-
 });
-
 
 var listVals = ["platforms", "games", "character", "first_appeared_in_game"];
 
@@ -149,6 +150,15 @@ myApp.controller('headerCtrl', function($rootScope, $scope, $http, $location, $w
     //scope = $scope;
 })
 
+myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) {
+    var year = parseInt($routeParams.year) - 1831;
+    console.log(year);
+    $http.get('/researchpapers/' + year.toString())
+    .then(function (response) {
+        $scope.results = response.data;
+        console.log($scope.results);
+    });
+})
 
 myApp.controller('searchCtrl', function($rootScope, $scope, $http, $location, searchService) {
     var data = searchService.get();
