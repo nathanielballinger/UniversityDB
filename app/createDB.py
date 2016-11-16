@@ -1,5 +1,5 @@
 from flask import Flask, send_file, url_for, jsonify, request
-from models import Game, Platform, Character, app, Base, db, manager
+from app.models import Game, Platform, Character, app, Base, db, manager
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
@@ -260,7 +260,7 @@ for i in range(0,50):
 	print(g.site_detail_url)
 	print(g.aliases)
 	print(g.first_appeared_in_game)
-"""
+
 for i in range (1,60000):
 	b = Game.query.filter_by(id = i).first()
 	if b is None:
@@ -268,7 +268,7 @@ for i in range (1,60000):
 	print(i)
 	print(b.platforms)
 """
-for i in range (1,60000):
+for i in range (21736,60000):
 	b = Game.query.filter_by(id = i).first()
 	if b is None:
 		continue
@@ -283,7 +283,6 @@ for i in range (1,60000):
 		new_str+='[[[['
 	b.platforms = new_str
 	db.session.commit()
-"""
 
 
 

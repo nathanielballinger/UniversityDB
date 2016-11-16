@@ -2404,3 +2404,13 @@
 [Thu Nov 03 21:13:14.165970 2016] [wsgi:error] [pid 22517:tid 140457719858944] [client 66.112.236.139:18366]     (self.size(), self.overflow(), self._timeout)), referer: http://vgidb.me/
 [Thu Nov 03 21:13:14.165989 2016] [wsgi:error] [pid 22517:tid 140457719858944] [client 66.112.236.139:18366] sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30, referer: http://vgidb.me/
 [Thu Nov 03 21:13:14.166055 2016] [wsgi:error] [pid 22517:tid 140457719858944] [client 66.112.236.139:18366] , referer: http://vgidb.me/
+[Wed Nov 16 08:05:17.564035 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100] mod_wsgi (pid=2128): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Wed Nov 16 08:05:17.564533 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100] mod_wsgi (pid=2128): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Wed Nov 16 08:05:17.566261 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100] Traceback (most recent call last):
+[Wed Nov 16 08:05:17.566332 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Wed Nov 16 08:05:17.566345 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100]     from app.app import app as application
+[Wed Nov 16 08:05:17.566361 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100]   File "/var/www/cs373f-idb/app/app.py", line 12, in <module>
+[Wed Nov 16 08:05:17.566370 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100]     from app.tests import runTestsOut
+[Wed Nov 16 08:05:17.566398 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>
+[Wed Nov 16 08:05:17.566417 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100]     from models\t\timport *
+[Wed Nov 16 08:05:17.566480 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100] ImportError: No module named 'models'
