@@ -16,7 +16,7 @@ db.drop_all()
 db.configure_mappers()
 db.create_all()
 
-"""
+
 api_key="d0d1072f35f6c08b0ce0d7249c1c1d94d500c913"
 
 gameFieldList = "&field_list=id,name,original_release_date,genres,developers,original_rating,description,review,image,platforms,characters,aliases,site_detail_url"
@@ -124,7 +124,7 @@ for character in characters:
 	time.sleep(1)
 	print(str(dnc)+"/331 complete")
 	dnc+=1
-"""
+
 print("LOADING CHARACTERS COMPLETE...MAKING SOME FINAL MODIFCATIONS")
 for character in characters:
 	v = requests.get(character, headers = headers)
@@ -141,7 +141,7 @@ for character in characters:
 		c.first_appeared_in_game = first_appeared_in_game
 		c.birthday = entry['birthday']
 		db.session.commit()
-"""
+
 
 #List of games for each platform
 plat_array = ['']*164
@@ -201,7 +201,7 @@ for entry in chr_array:
 		counter +=1
 	else:
 		counter+=1
-"""
+
 #Checking to make sure we loaded the data correctly
 for i in range(0,50):
 	g = Game.query.filter_by(id = i).first()
@@ -265,6 +265,13 @@ for i in range (1,60000):
 	b = Game.query.filter_by(id = i).first()
 	if b is None:
 		continue
+	print(i)
+	print(b.platforms)
+"""
+for i in range (1,60000):
+	b = Game.query.filter_by(id = i).first()
+	if b is None:
+		continue
 	if b.platforms is None:
 		continue
 	plat_arr = b.platforms.split('{{{{')[:-1]
@@ -276,6 +283,7 @@ for i in range (1,60000):
 		new_str+='[[[['
 	b.platforms = new_str
 	db.session.commit()
+"""
 
 
 
