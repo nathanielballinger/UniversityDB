@@ -16,11 +16,11 @@ import models
 from models import Game, Character, Platform, db, Base, app, manager, SearchResult
 
 #Chris's DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe2'
 #Abhi's DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe2'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe2'
 
 
 for i in range (0,50):
@@ -51,7 +51,9 @@ def research_papers_year(year):
 	v = requests.get('http://researchpapers.me/api/year/' + str(year))
 	#v = requests.get('http://127.0.0.1:5000/api/games/offset/1')
 	print("DJDJFJDJDJJS")
-	return v.json()
+	my_dict = v.json()
+	ret_val = my_dict['years']
+	return jsonify(ret_val)
 
 @app.route("/api/games/offset/<offset>",methods=["GET"])
 def api_games_offset(offset):
