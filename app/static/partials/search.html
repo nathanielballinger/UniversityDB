@@ -1,0 +1,26 @@
+<div data-ng-controller="searchCtrl" data-ng-init="" class="container">
+    <h1 align="center">Search Results</h1>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'pillar'; sortReverse = !sortReverse">
+                    Pillar </a> <span ng-show="sortType == 'pillar' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'pillar' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                    Name</a> <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+            </tr>            
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in results">
+                <td>{{x.pillar}}</td>
+                <td><a href="/#/{{x.pillar}}/{{+x.id}}">{{ x.name }}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

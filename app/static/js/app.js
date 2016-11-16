@@ -40,11 +40,31 @@ myApp.config(['$routeProvider',
                  templateUrl: '../static/partials/platform.html',
                  controller: 'platformCtrl',
              }).
+            when('/search', {
+                 templateUrl: '../static/partials/search.html',
+                 controller: 'searchCtrl',
+             }).
              otherwise({
                  redirectTo: '/'
              });
     }]);
 
+
+myApp.factory('searchService', function() {
+ var savedData = {};
+ function set(data) {
+   savedData = data;
+ }
+ function get() {
+  return savedData;
+ }
+
+ return {
+  set: set,
+  get: get
+ }
+
+});
 
 
 var listVals = ["platforms", "games", "character", "first_appeared_in_game"];
@@ -99,9 +119,11 @@ function getObjectFromId(http, type, id) {
 }
 
 //var scope;
-myApp.controller('headerCtrl', function($scope, $http, $location) {
+myApp.controller('headerCtrl', function($rootScope, $scope, $http, $location, $window, searchService) {
     $scope.navCollapsed = true;
     $scope.refs = [];
+    $scope.searchType = "All";
+    $scope.searchString = "";
     var pageNames = ["Games", "Platforms", "Characters", "About"];
     var pageRefs = ["/#/games", "/#/platforms", "/#/characters", "/#/about"];
     var temp = $scope.refs; 
@@ -113,9 +135,41 @@ myApp.controller('headerCtrl', function($scope, $http, $location) {
         return viewLocation == $location.path();
     };
 
+    $scope.search = function(searchType, searchString) {
+        var searchObj = {"pillar": searchType,
+                         "string": searchString};
+        searchService.set(searchObj);
+        $rootScope.$emit('searchChanged');
+        if($location.path() != "/search") {
+            $location.path("/search");
+        }
+    }
+
     //debug; remove after
     //scope = $scope;
 })
+
+
+myApp.controller('searchCtrl', function($rootScope, $scope, $http, $location, searchService) {
+    var data = searchService.get();
+    console.log(data);
+    $http.get("/search/result/" + data.pillar.toLowerCase() + "/" + data.string)
+    .then(function (response) {
+        $scope.results = response.data;
+        console.log($scope.results);          
+    });
+
+    // This is to update search after the first search
+    $rootScope.$on('searchChanged', function (event, data) {
+        console.log(data);
+        $http.get("/search/result/" + data.pillar.toLowerCase() + "/" + data.string)
+        .then(function (response) {
+            $scope.results = response.data;
+            console.log($scope.results);          
+        });
+    });
+})
+
 
 //Controller for all games
 myApp.controller('gamesCtrl', function($scope, $http){
