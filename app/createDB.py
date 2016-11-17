@@ -1,5 +1,5 @@
 from flask import Flask, send_file, url_for, jsonify, request
-from app.models import Game, Platform, Character, app, Base, db, manager
+from models import Game, Platform, Character, app, Base, db, manager
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
