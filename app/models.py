@@ -212,11 +212,11 @@ class SearchResult:
 		# Do something with searchText to create self.word_hits
 		self.word_hits = []
 
-		#ignore non-alpha characters, perserving whitespace, all lower case
-		lowerCaseSearchText = re.sub(r"[^A-Za-z\s]+", '', searchText.lower()).split()
+		#ignore non-alpha characters, perserving whitespace
+		filteredSearchText = re.sub(r"[^A-Za-z\s]+", '', searchText).split()
 		nameWords = self.name.lower()
-		for word in lowerCaseSearchText:
-			if word in nameWords:
+		for word in filteredSearchText:
+			if word.lower() in nameWords:
 				self.word_hits.append(word)
 		
 
