@@ -1,152 +1,154 @@
-<h1 align="center">The Developers</h1>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="thumbnail gray-thumbnail">
-                <img class="img-rounded" src="/static/img/Eitan Yarmush.jpg" alt="...">
-                <div class="caption">
-                    <h3>Eitan Yarmush</h3>
-                    <p>Eitan Yarmush is a 5th year Computer Science Major from UT. He enjoys playing video games, as well as exercising, and reading. I am an experienced web dev, and aspirsing sandwich conniseur.</p>
-                    <p>Major Responsibilities: Troubleshooting, Routing, API, Digital Ocean</p>
-                    <p>No. of Contributions: {{eitan.contributions}}</p>
-                    <p>No. of Issues: {{eitan.issues}}</p>
-                    <p>No. of Unit Tests: 0</p>
+<div ng-controller="aboutCtrl" data-ng-init="" class="container">
+    <h1 align="center">The Developers</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="thumbnail gray-thumbnail">
+                    <img class="img-rounded" src="/static/img/Eitan Yarmush.jpg" alt="...">
+                    <div class="caption">
+                        <h3>Eitan Yarmush</h3>
+                        <p>Eitan Yarmush is a 5th year Computer Science Major from UT. He enjoys playing video games, as well as exercising, and reading. I am an experienced web dev, and aspirsing sandwich conniseur.</p>
+                        <p>Major Responsibilities: Troubleshooting, Routing, API, Digital Ocean</p>
+                        <p>No. of Contributions: {{eitan.contributions}}</p>
+                        <p>No. of Issues: {{eitan.issues}}</p>
+                        <p>No. of Unit Tests: 0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="thumbnail gray-thumbnail">
+                    <img class="img-rounded" src="/static/img/Chris_Collier.jpg" alt="...">
+                    <div class="caption">
+                        <h3>Christopher Collier</h3>
+                        <p>Chris is a 5th year computer science major from UT. He enjoys playing music, running, and hanging out with friends. After graduation, Chris will be working as a Data Analytics consultant at Credera in Houston.</p>
+                        <p>Major Responsibilities: Team Manager, Technical Report, SQLAlchemy models, Schema/Pillar identification</p>
+                        <p>No. of Contributions: {{chris.contributions}}</p>
+                        <p>No. of Issues: {{chris.issues}}</p>
+                        <p>No. of Unit Tests: 0</p>
+                    </div>
+                </div>            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="thumbnail gray-thumbnail">
+                    <img class="img-rounded" src="/static/img/Abhi_Rathod.JPG" alt="...">
+                    <div class="caption">
+                        <h3>Abhi Rathod</h3>
+                        <p>Abhi is a 4th year Computer Science major at University of Texas at Austin. He enjoys playing games, hanging out with friends and karaoke nights.</p>
+                        <p>Major Responsibilities: Frontend, Github</p>
+                        <p>No. of Contributions: {{abhi.contributions}}</p>
+                        <p>No. of Issues: {{abhi.issues}}</p>
+                        <p>No. of Unit Tests: 0</p>
+                    </div>
+                </div>            
+            </div>
+            <div class="col-md-6">
+                <div class="thumbnail gray-thumbnail">
+                    <img class="img-rounded" src="/static/img/Keith Wong.jpg" alt="...">
+                    <div class="caption">
+                        <h3>Keith Wong</h3>
+                        <p>Keith is a 4th year computer science major from UT. He enjoys eating good food, playing videogames, and hanging out with friends.</p>
+                        <p>Major Responsibilities: Unit Testing, Proofreader</p>
+                        <p>No. of Contributions: {{keith.contributions}}</p>
+                        <p>No. of Issues: {{keith.issues}}</p>
+                        <p>No. of Unit Tests: 11</p>
+                    </div>
+                </div>            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="thumbnail gray-thumbnail">
+                    <img class="img-rounded" src="https://avatars3.githubusercontent.com/u/6821266?v=3&s=400" alt="...">
+                    <div class="caption">
+                        <h3>Nathaniel Ballinger</h3>
+                        <p>Nathaniel is a 4th year Computer Science major at University of Texas at Austin. He is pursuing a career as a game developer, and loves composing music as a hobby.</p>
+                        <p>Major Responsibilities: UML Diagram, Model Structure Design</p>
+                        <p>No. of Contributions: {{nathan.contributions}}</p>
+                        <p>No. of Issues: {{nathan.issues}}</p>
+                        <p>No. of Unit Tests: 0</p>
+                    </div>
+                </div>            
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div> 
+    <h1 align="center">The Project</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumbnail gray-thumbnail">
+                    <h3>Team Statistics</h3>
+                    <p>Total Number of Contributions: {{total.contributions}}</p>
+                    <p>Total Number of Issues: {{total.issues}}</p>
+                    <p>Total Number of Unit Tests: 11</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail gray-thumbnail">
+                    <h3>Tools</h3>
+                    <p>SQLAlchemy</p>
+                    <p>Apiary</p>
+                    <p>AngularJS</p>
+                    <p>Bootstrap</p>
+                    <p>Flask</p>
+                    <p>yUML</p>
+                    <p>Slack</p>
+                    <p>Travis</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail gray-thumbnail">
+                    <h3>Important Links</h3>
+                    <p><a href="https://github.com/nathanielballinger/cs373-idb">Github Repository</a></p>
+                    <p><a href="http://docs.vgidb1.apiary.io/#">Apiary API</a></p>
+                    <p><a href="https://github.com/nathanielballinger/cs373-idb/issues">Github Issue Tracker</a></p>
+                    <p><a href="https://github.com/nathanielballinger/cs373-idb/wiki">Github Wiki</a></p>
+                    <p><a href="https://speakerdeck.com/ctc837">Speaker Deck</a></p>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="thumbnail gray-thumbnail">
-                <img class="img-rounded" src="/static/img/Chris_Collier.jpg" alt="...">
-                <div class="caption">
-                    <h3>Christopher Collier</h3>
-                    <p>Chris is a 5th year computer science major from UT. He enjoys playing music, running, and hanging out with friends. After graduation, Chris will be working as a Data Analytics consultant at Credera in Houston.</p>
-                    <p>Major Responsibilities: Team Manager, Technical Report, SQLAlchemy models, Schema/Pillar identification</p>
-                    <p>No. of Contributions: {{chris.contributions}}</p>
-                    <p>No. of Issues: {{chris.issues}}</p>
-                    <p>No. of Unit Tests: 0</p>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="thumbnail gray-thumbnail">
+                    <h3>Data Scraping</h3>
+                    <p> Our data is being pulled from the Giant Bomb API. The Giant Bomb API is a RESTful API that responds to HTTP GET requests. They have a very wide variety of information over lots of video game related topics so we were able to get creative with our pillar selection. We ended up choosing the pillars that we did because we thought it would be interesting, useful, and different than any other group's topics. To get an API key we made an account and made an agreement to credit them in the work that we do. Once we had this key we were able to generate our JSON files by simply creating a variable in a .py file and executing curl commands on the command line to generate the JSON files. In order to acquire each JSON file we simply changed the URL of the game/platform/character we were trying to access. </p>
+
+                    <p align="center">
+                        <img src="static/img/Screen Shot 2016-10-19 at 5.30.16 PM.png"></img>
+                        <b>Code snippet to generate JSON files</b>
+                    </p>
+
+                    <p>The API key is stored as a variable (not shown). In order to figure out which pillars and categories we decided from <a href="http://www.giantbomb.com/api/documentation#toc-0-5">here</a>. We repeated a similar process for characters and platforms. </p>
+
+                    <p>After a few Visual Studio commands to pretty up the code, our JSON files looked as such:</p>
+
+                    <p align="center">
+                        <img src="static/img/Screen Shot 2016-10-19 at 5.52.27 PM.png"></img>
+                        <b>Our JSON files from our GET Requests</b>
+                    </p>
+
+                    <p>This is only a small portion of the JSON snippet for a single game, but the rest can be inferred from above. With this data we can parse the JSON file to acquire the parts that we need and insert them into the HTML Web Page.</p>
                 </div>
-            </div>            
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="thumbnail gray-thumbnail">
-                <img class="img-rounded" src="/static/img/Abhi_Rathod.JPG" alt="...">
-                <div class="caption">
-                    <h3>Abhi Rathod</h3>
-                    <p>Abhi is a 4th year Computer Science major at University of Texas at Austin. He enjoys playing games, hanging out with friends and karaoke nights.</p>
-                    <p>Major Responsibilities: Frontend, Github</p>
-                    <p>No. of Contributions: {{abhi.contributions}}</p>
-                    <p>No. of Issues: {{abhi.issues}}</p>
-                    <p>No. of Unit Tests: 0</p>
-                </div>
-            </div>            
-        </div>
-        <div class="col-md-6">
-            <div class="thumbnail gray-thumbnail">
-                <img class="img-rounded" src="/static/img/Keith Wong.jpg" alt="...">
-                <div class="caption">
-                    <h3>Keith Wong</h3>
-                    <p>Keith is a 4th year computer science major from UT. He enjoys eating good food, playing videogames, and hanging out with friends.</p>
-                    <p>Major Responsibilities: Unit Testing, Proofreader</p>
-                    <p>No. of Contributions: {{keith.contributions}}</p>
-                    <p>No. of Issues: {{keith.issues}}</p>
-                    <p>No. of Unit Tests: 11</p>
-                </div>
-            </div>            
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6">
-            <div class="thumbnail gray-thumbnail">
-                <img class="img-rounded" src="https://avatars3.githubusercontent.com/u/6821266?v=3&s=400" alt="...">
-                <div class="caption">
-                    <h3>Nathaniel Ballinger</h3>
-                    <p>Nathaniel is a 4th year Computer Science major at University of Texas at Austin. He is pursuing a career as a game developer, and loves composing music as a hobby.</p>
-                    <p>Major Responsibilities: UML Diagram, Model Structure Design</p>
-                    <p>No. of Contributions: {{nathan.contributions}}</p>
-                    <p>No. of Issues: {{nathan.issues}}</p>
-                    <p>No. of Unit Tests: 0</p>
-                </div>
-            </div>            
-        </div>
-        <div class="col-md-3">
-        </div>
-    </div>
-</div> 
-<h1 align="center">The Project</h1>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail gray-thumbnail">
-                <h3>Team Statistics</h3>
-                <p>Total Number of Contributions: {{total.contributions}}</p>
-                <p>Total Number of Issues: {{total.issues}}</p>
-                <p>Total Number of Unit Tests: 11</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail gray-thumbnail">
-                <h3>Tools</h3>
-                <p>SQLAlchemy</p>
-                <p>Apiary</p>
-                <p>AngularJS</p>
-                <p>Bootstrap</p>
-                <p>Flask</p>
-                <p>yUML</p>
-                <p>Slack</p>
-                <p>Travis</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail gray-thumbnail">
-                <h3>Important Links</h3>
-                <p><a href="https://github.com/nathanielballinger/cs373-idb">Github Repository</a></p>
-                <p><a href="http://docs.vgidb1.apiary.io/#">Apiary API</a></p>
-                <p><a href="https://github.com/nathanielballinger/cs373-idb/issues">Github Issue Tracker</a></p>
-                <p><a href="https://github.com/nathanielballinger/cs373-idb/wiki">Github Wiki</a></p>
-                <p><a href="https://speakerdeck.com/ctc837">Speaker Deck</a></p>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="thumbnail gray-thumbnail">
-                <h3>Data Scraping</h3>
-                <p> Our data is being pulled from the Giant Bomb API. The Giant Bomb API is a RESTful API that responds to HTTP GET requests. They have a very wide variety of information over lots of video game related topics so we were able to get creative with our pillar selection. We ended up choosing the pillars that we did because we thought it would be interesting, useful, and different than any other group's topics. To get an API key we made an account and made an agreement to credit them in the work that we do. Once we had this key we were able to generate our JSON files by simply creating a variable in a .py file and executing curl commands on the command line to generate the JSON files. In order to acquire each JSON file we simply changed the URL of the game/platform/character we were trying to access. </p>
-
-                <p align="center">
-                    <img src="static/img/Screen Shot 2016-10-19 at 5.30.16 PM.png"></img>
-                    <b>Code snippet to generate JSON files</b>
-                </p>
-
-                <p>The API key is stored as a variable (not shown). In order to figure out which pillars and categories we decided from <a href="http://www.giantbomb.com/api/documentation#toc-0-5">here</a>. We repeated a similar process for characters and platforms. </p>
-
-                <p>After a few Visual Studio commands to pretty up the code, our JSON files looked as such:</p>
-
-                <p align="center">
-                    <img src="static/img/Screen Shot 2016-10-19 at 5.52.27 PM.png"></img>
-                    <b>Our JSON files from our GET Requests</b>
-                </p>
-
-                <p>This is only a small portion of the JSON snippet for a single game, but the rest can be inferred from above. With this data we can parse the JSON file to acquire the parts that we need and insert them into the HTML Web Page.</p>
+    <h1 align="center">Unit Tests</h1>
+    <div class="container">
+        <div class="row">
+            <div align="center" class="col-md-12">
+                <button align="center" ng-click="runTests()" type="button" class="btn btn-large btn-primary">Run Tests</button>
             </div>
         </div>
-    </div>
-</div>
-<h1 align="center">Unit Tests</h1>
-<div class="container">
-    <div class="row">
-        <div align="center" class="col-md-12">
-            <button align="center" ng-click="runTests()" type="button" class="btn btn-large btn-primary">Run Tests</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div ng-if="testOutput" class="thumbnail gray-thumbnail">
-                <p>{{testOutput}}</p>
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-if="testOutput" class="thumbnail gray-thumbnail">
+                    <p>{{testOutput}}</p>
+                </div>
             </div>
         </div>
     </div>
