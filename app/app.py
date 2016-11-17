@@ -200,6 +200,7 @@ def search_result_games(text):
 		search_result = SearchResult(game.id, game.name, "game", text)
 		returnlist.append(search_result.toJSON())
 
+	return jsonify(returnlist)
 	"""
 	query = search(query, 'first')
 	print query.first().name
