@@ -280,6 +280,34 @@ class TestCases (TestCase):
 		self.assertTrue(Character.query.get(600000) is None)
 
 	# ------
+	# SearchResults
+	# ------
+
+	def test_case_searchResult_1(self):
+		searchResult1 = SearchResult(1, "Search 1", "Game", "Mario")
+
+		self.assertEqual(searchResult1.id, 1)
+		self.assertEqual(searchResult1.pillar, "Game")
+
+	def test_case_searchResult_2(self):
+		searchResult2 = SearchResult(2, "Search 2", "Platform", "Nintendo")
+
+		self.assertEqual(searchResult2.id, 2)
+		self.assertEqual(searchResult2.pillar, "Platform")
+
+	def test_case_searchResult_3(self):
+		searchResult3 = SearchResult(3, "Search 3", "Character", "Brock")
+
+		self.assertEqual(searchResult3.id, 3)
+		self.assertEqual(searchResult3.pillar, "Character")
+
+	def test_case_searchResult_4(self):
+		searchResult4 = SearchResult(" ", " ", " ", " ")
+
+		self.assertEqual(searchResult4.id, " ")
+		self.assertEqual(searchResult4.pillar, " ")
+
+	# ------
 	# Game Serialize
 	# ------
 
@@ -320,38 +348,6 @@ class TestCases (TestCase):
 		self.assertEqual(obj, test)
 
 	# ------
-	# Character Serialize
-	# ------
-	"""
-	def test_character_serialize_1(self):
-		obj = Character("177", "Mario", "Jun 2, 1981", "1", \
-			"Originally a carpenter named Jumpman, this Italian plumber has gone on to become the most recognizable video game character of them all, starring in a veritable pantheon of titles like kart racing and sports. He has been voiced by Charles Martinet for nearly 20 years.", \
-			"DESCRIPTION", \
-			"http://www.giantbomb.com/api/image/square_mini/2555000-2339414779-Mario.png", "http://www.giantbomb.com/api/image/scale_medium/2555000-2339414779-Mario.png", \
-			"http://www.giantbomb.com/mario/3005-177/", "Jumpman\r\nBaby Mario", "311")
-		obj = obj.serialize()
-		test = {'id': "177", 'name': "Mario", 'birthday': "Jun 2, 1981", 'gender': "1", \
-		'deck': "Originally a carpenter named Jumpman, this Italian plumber has gone on to become the most recognizable video game character of them all, starring in a veritable pantheon of titles like kart racing and sports. He has been voiced by Charles Martinet for nearly 20 years.", \
-		'description': "DESCRIPTION", \
-		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2555000-2339414779-Mario.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2555000-2339414779-Mario.png", \
-		'site_detail_url': "http://www.giantbomb.com/mario/3005-177/", 'aliases': "Jumpman\r\nBaby Mario", 'first_appeared_in_game': "311"}
-		self.assertEqual(obj, test)
-
-	def test_character_serialize_2(self):
-		obj = Character("5766", "Brock", None, "1", \
-			"\"The Rock-Solid Pokémon Trainer!\"", \
-			"DESCRIPTION", \
-			"http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
-			"http://www.giantbomb.com/brock/3005-5766/", None, "3966")
-		obj = obj.serialize()
-		test = {'id': "5766", 'name': "Brock", 'birthday': None, 'gender': "1", \
-		'deck': "\"The Rock-Solid Pokémon Trainer!\"", \
-		'description': "DESCRIPTION", \
-		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
-		'site_detail_url': "http://www.giantbomb.com/brock/3005-5766/", 'aliases': None, 'first_appeared_in_game': "3966"}
-		self.assertEqual(obj, test)
-	"""
-	# ------
 	# Serialize_Table for each object
 	# ------
 
@@ -371,7 +367,7 @@ class TestCases (TestCase):
 		obj = obj.serialize_table()
 		test = {"id": "41088","name": "Pokémon X/Y", "release_date": "2013-10-12 00:00:00", "aliases": "Pokemon X/Y\nPokemon Y", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", "num platforms": 2}
 
-	def test_platform_serialize_table(self):
+	def test_platform_serialize_table_1(self):
 		obj = Platform("117", "Nintendo 3DS", "2011-02-26 00:00:00", "Nintendo", "249.00", "51630000", \
 			"The Nintendo 3DS is a portable game console produced by Nintendo. The handheld features stereoscopic 3D technology that doesn't require glasses. It was released in Japan on February 26, 2011 and in North America on March 27, 2011.", \
 			True, "3DS", "http://www.giantbomb.com/nintendo-3ds/3045-117/",\
