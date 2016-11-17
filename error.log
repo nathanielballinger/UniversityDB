@@ -2414,3 +2414,965 @@
 [Wed Nov 16 08:05:17.566398 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>
 [Wed Nov 16 08:05:17.566417 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100]     from models\t\timport *
 [Wed Nov 16 08:05:17.566480 2016] [wsgi:error] [pid 2128:tid 140329147787008] [client 71.42.119.84:62100] ImportError: No module named 'models'
+[Wed Nov 16 15:39:59.058757 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739] [2016-11-16 15:39:59,053] ERROR in app: Exception on /api/games/31112 [GET]
+[Wed Nov 16 15:39:59.059342 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739] Traceback (most recent call last):
+[Wed Nov 16 15:39:59.059359 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 15:39:59.059366 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]     response = self.full_dispatch_request()
+[Wed Nov 16 15:39:59.059371 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 15:39:59.059377 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]     rv = self.handle_user_exception(e)
+[Wed Nov 16 15:39:59.059382 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 15:39:59.059388 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 15:39:59.059393 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 15:39:59.059398 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]     raise value
+[Wed Nov 16 15:39:59.059403 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 15:39:59.059409 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]     rv = self.dispatch_request()
+[Wed Nov 16 15:39:59.059414 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 15:39:59.059419 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 15:39:59.059439 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 15:39:59.059445 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 15:39:59.059457 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 15:39:59.059517 2016] [wsgi:error] [pid 2264:tid 139971901609728] [client 128.83.144.205:41739] 
+[Wed Nov 16 15:40:45.123047 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757] [2016-11-16 15:40:45,122] ERROR in app: Exception on /api/platforms/130 [GET]
+[Wed Nov 16 15:40:45.123121 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757] Traceback (most recent call last):
+[Wed Nov 16 15:40:45.123129 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 15:40:45.123135 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]     response = self.full_dispatch_request()
+[Wed Nov 16 15:40:45.123141 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 15:40:45.123146 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]     rv = self.handle_user_exception(e)
+[Wed Nov 16 15:40:45.123151 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 15:40:45.123157 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 15:40:45.123162 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 15:40:45.123167 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]     raise value
+[Wed Nov 16 15:40:45.123172 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 15:40:45.123177 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]     rv = self.dispatch_request()
+[Wed Nov 16 15:40:45.123183 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 15:40:45.123188 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 15:40:45.123194 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 15:40:45.123199 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 15:40:45.123207 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 15:40:45.123242 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:41757] 
+[Wed Nov 16 15:43:32.138525 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799] [2016-11-16 15:43:32,136] ERROR in app: Exception on /api/platforms/33 [GET]
+[Wed Nov 16 15:43:32.138656 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799] Traceback (most recent call last):
+[Wed Nov 16 15:43:32.138665 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 15:43:32.138712 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]     response = self.full_dispatch_request()
+[Wed Nov 16 15:43:32.138724 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 15:43:32.138729 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]     rv = self.handle_user_exception(e)
+[Wed Nov 16 15:43:32.138734 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 15:43:32.138744 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 15:43:32.138754 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 15:43:32.138766 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]     raise value
+[Wed Nov 16 15:43:32.138778 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 15:43:32.138787 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]     rv = self.dispatch_request()
+[Wed Nov 16 15:43:32.138792 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 15:43:32.138797 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 15:43:32.138803 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 15:43:32.138812 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 15:43:32.138829 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 15:43:32.138896 2016] [wsgi:error] [pid 2264:tid 139971700680448] [client 128.83.144.205:41799] 
+[Wed Nov 16 15:51:37.772150 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920] [2016-11-16 15:51:37,769] ERROR in app: Exception on /api/games/36069 [GET]
+[Wed Nov 16 15:51:37.772336 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920] Traceback (most recent call last):
+[Wed Nov 16 15:51:37.772353 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 15:51:37.772363 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]     response = self.full_dispatch_request()
+[Wed Nov 16 15:51:37.772369 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 15:51:37.772374 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]     rv = self.handle_user_exception(e)
+[Wed Nov 16 15:51:37.772379 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 15:51:37.772384 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 15:51:37.772389 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 15:51:37.772417 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]     raise value
+[Wed Nov 16 15:51:37.772424 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 15:51:37.772430 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]     rv = self.dispatch_request()
+[Wed Nov 16 15:51:37.772435 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 15:51:37.772440 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 15:51:37.772445 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 15:51:37.772450 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 15:51:37.772459 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 15:51:37.772505 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:41920] 
+[Wed Nov 16 16:07:31.490119 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184] [2016-11-16 16:07:31,489] ERROR in app: Exception on /api/platforms/41 [GET]
+[Wed Nov 16 16:07:31.490219 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184] Traceback (most recent call last):
+[Wed Nov 16 16:07:31.490228 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:07:31.490234 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]     response = self.full_dispatch_request()
+[Wed Nov 16 16:07:31.490240 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:07:31.490245 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:07:31.490251 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:07:31.490256 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:07:31.490261 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:07:31.490266 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]     raise value
+[Wed Nov 16 16:07:31.490271 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:07:31.490277 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]     rv = self.dispatch_request()
+[Wed Nov 16 16:07:31.490282 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:07:31.490287 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:07:31.490292 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:07:31.490332 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:07:31.490342 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:07:31.490384 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 128.83.144.205:42184] 
+[Wed Nov 16 16:08:22.514634 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197] [2016-11-16 16:08:22,513] ERROR in app: Exception on /api/games/37075 [GET]
+[Wed Nov 16 16:08:22.514735 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197] Traceback (most recent call last):
+[Wed Nov 16 16:08:22.514743 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:08:22.514749 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]     response = self.full_dispatch_request()
+[Wed Nov 16 16:08:22.514754 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:08:22.514760 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:08:22.514765 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:08:22.514770 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:08:22.514775 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:08:22.514781 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]     raise value
+[Wed Nov 16 16:08:22.514786 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:08:22.514791 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]     rv = self.dispatch_request()
+[Wed Nov 16 16:08:22.514796 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:08:22.514802 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:08:22.514807 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:08:22.514812 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:08:22.514821 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:08:22.514856 2016] [wsgi:error] [pid 2264:tid 139971709073152] [client 128.83.144.205:42197] 
+[Wed Nov 16 16:09:21.388189 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242] [2016-11-16 16:09:21,387] ERROR in app: Exception on /api/platforms/69 [GET]
+[Wed Nov 16 16:09:21.388285 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242] Traceback (most recent call last):
+[Wed Nov 16 16:09:21.388293 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:09:21.388316 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]     response = self.full_dispatch_request()
+[Wed Nov 16 16:09:21.388322 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:09:21.388327 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:09:21.388332 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:09:21.388338 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:09:21.388343 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:09:21.388349 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]     raise value
+[Wed Nov 16 16:09:21.388359 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:09:21.388370 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]     rv = self.dispatch_request()
+[Wed Nov 16 16:09:21.388378 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:09:21.388386 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:09:21.388397 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:09:21.388404 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:09:21.388413 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:09:21.388455 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 128.83.144.205:42242] 
+[Wed Nov 16 16:34:43.824815 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369] [2016-11-16 16:34:43,823] ERROR in app: Exception on /api/games/20527 [GET]
+[Wed Nov 16 16:34:43.824932 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369] Traceback (most recent call last):
+[Wed Nov 16 16:34:43.824950 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:34:43.824963 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]     response = self.full_dispatch_request()
+[Wed Nov 16 16:34:43.824973 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:34:43.824980 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:34:43.824985 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:34:43.824991 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:34:43.824996 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:34:43.825001 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]     raise value
+[Wed Nov 16 16:34:43.825028 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:34:43.825034 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]     rv = self.dispatch_request()
+[Wed Nov 16 16:34:43.825039 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:34:43.825044 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:34:43.825050 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:34:43.825055 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:34:43.825064 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:34:43.825113 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 128.83.144.205:43369] 
+[Wed Nov 16 16:35:08.473849 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372] [2016-11-16 16:35:08,468] ERROR in app: Exception on /api/platforms/50 [GET]
+[Wed Nov 16 16:35:08.474005 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372] Traceback (most recent call last):
+[Wed Nov 16 16:35:08.474022 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:35:08.474039 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]     response = self.full_dispatch_request()
+[Wed Nov 16 16:35:08.474051 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:35:08.474059 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:35:08.474067 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:35:08.474094 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:35:08.474100 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:35:08.474106 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]     raise value
+[Wed Nov 16 16:35:08.474116 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:35:08.474126 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]     rv = self.dispatch_request()
+[Wed Nov 16 16:35:08.474132 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:35:08.474138 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:35:08.474146 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:35:08.474156 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:35:08.474205 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:35:08.474271 2016] [wsgi:error] [pid 2265:tid 139971901609728] [client 128.83.144.205:43372] 
+[Wed Nov 16 16:35:10.260982 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375] [2016-11-16 16:35:10,259] ERROR in app: Exception on /api/platforms/97 [GET]
+[Wed Nov 16 16:35:10.261100 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375] Traceback (most recent call last):
+[Wed Nov 16 16:35:10.261119 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:35:10.261137 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]     response = self.full_dispatch_request()
+[Wed Nov 16 16:35:10.261151 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:35:10.261165 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:35:10.261180 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:35:10.261195 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:35:10.261208 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:35:10.261222 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]     raise value
+[Wed Nov 16 16:35:10.261255 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:35:10.261273 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]     rv = self.dispatch_request()
+[Wed Nov 16 16:35:10.261286 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:35:10.261300 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:35:10.261313 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:35:10.261327 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:35:10.261348 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:35:10.261427 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 128.83.144.205:43375] 
+[Wed Nov 16 16:35:11.312501 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377] [2016-11-16 16:35:11,311] ERROR in app: Exception on /api/games/11498 [GET]
+[Wed Nov 16 16:35:11.312588 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377] Traceback (most recent call last):
+[Wed Nov 16 16:35:11.312595 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:35:11.312601 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]     response = self.full_dispatch_request()
+[Wed Nov 16 16:35:11.312622 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:35:11.312628 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:35:11.312633 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:35:11.312638 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:35:11.312643 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:35:11.312648 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]     raise value
+[Wed Nov 16 16:35:11.312653 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:35:11.312658 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]     rv = self.dispatch_request()
+[Wed Nov 16 16:35:11.312663 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:35:11.312668 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:35:11.312673 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:35:11.312678 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:35:11.312687 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:35:11.312720 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 128.83.144.205:43377] 
+[Wed Nov 16 16:35:12.349483 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380] [2016-11-16 16:35:12,348] ERROR in app: Exception on /api/platforms/71 [GET]
+[Wed Nov 16 16:35:12.349619 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380] Traceback (most recent call last):
+[Wed Nov 16 16:35:12.349635 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:35:12.349645 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]     response = self.full_dispatch_request()
+[Wed Nov 16 16:35:12.349654 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:35:12.349663 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:35:12.349671 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:35:12.349679 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:35:12.349687 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:35:12.349696 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]     raise value
+[Wed Nov 16 16:35:12.349704 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:35:12.349738 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]     rv = self.dispatch_request()
+[Wed Nov 16 16:35:12.349748 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:35:12.349768 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:35:12.349773 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:35:12.349779 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:35:12.349787 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:35:12.349838 2016] [wsgi:error] [pid 2264:tid 139971692287744] [client 128.83.144.205:43380] 
+[Wed Nov 16 16:37:02.006334 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396] [2016-11-16 16:37:02,004] ERROR in app: Exception on /api/games/100000 [GET]
+[Wed Nov 16 16:37:02.006495 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396] Traceback (most recent call last):
+[Wed Nov 16 16:37:02.006513 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:37:02.006532 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]     response = self.full_dispatch_request()
+[Wed Nov 16 16:37:02.006549 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:37:02.006583 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:37:02.006595 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:37:02.006606 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:37:02.006617 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:37:02.006629 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]     raise value
+[Wed Nov 16 16:37:02.006659 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:37:02.006679 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]     rv = self.dispatch_request()
+[Wed Nov 16 16:37:02.006697 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:37:02.006716 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:37:02.006732 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:37:02.006749 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:37:02.006772 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:37:02.006881 2016] [wsgi:error] [pid 2264:tid 139971893217024] [client 128.83.144.205:43396] 
+[Wed Nov 16 16:37:13.854336 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397] [2016-11-16 16:37:13,853] ERROR in app: Exception on /api/games/100000 [GET]
+[Wed Nov 16 16:37:13.854442 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397] Traceback (most recent call last):
+[Wed Nov 16 16:37:13.854456 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:37:13.854463 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]     response = self.full_dispatch_request()
+[Wed Nov 16 16:37:13.854468 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:37:13.854473 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:37:13.854478 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:37:13.854483 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:37:13.854488 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:37:13.854493 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]     raise value
+[Wed Nov 16 16:37:13.854498 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:37:13.854503 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]     rv = self.dispatch_request()
+[Wed Nov 16 16:37:13.854508 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:37:13.854514 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:37:13.854519 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:37:13.854524 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:37:13.854533 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:37:13.854589 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 128.83.144.205:43397] 
+[Wed Nov 16 16:41:35.486219 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530] [2016-11-16 16:41:35,484] ERROR in app: Exception on /api/characters/11953 [GET]
+[Wed Nov 16 16:41:35.486314 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530] Traceback (most recent call last):
+[Wed Nov 16 16:41:35.486323 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:41:35.486329 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]     response = self.full_dispatch_request()
+[Wed Nov 16 16:41:35.486335 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:41:35.486362 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:41:35.486369 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:41:35.486374 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:41:35.486379 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:41:35.486385 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]     raise value
+[Wed Nov 16 16:41:35.486389 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:41:35.486395 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]     rv = self.dispatch_request()
+[Wed Nov 16 16:41:35.486400 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:41:35.486405 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:41:35.486410 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]   File "/var/www/cs373f-idb/app/app.py", line 123, in api_characters_id
+[Wed Nov 16 16:41:35.486416 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530]     return jsonify(Character.query.get(id).serialize())
+[Wed Nov 16 16:41:35.486425 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:41:35.486483 2016] [wsgi:error] [pid 2265:tid 139971759429376] [client 128.83.144.205:44530] 
+[Wed Nov 16 16:43:02.732231 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583] [2016-11-16 16:43:02,729] ERROR in app: Exception on /api/games/3949 [GET]
+[Wed Nov 16 16:43:02.732378 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583] Traceback (most recent call last):
+[Wed Nov 16 16:43:02.732397 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:43:02.732410 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]     response = self.full_dispatch_request()
+[Wed Nov 16 16:43:02.732421 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:43:02.732434 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:43:02.732446 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:43:02.732458 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:43:02.732469 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:43:02.732480 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]     raise value
+[Wed Nov 16 16:43:02.732491 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:43:02.732523 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]     rv = self.dispatch_request()
+[Wed Nov 16 16:43:02.732535 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:43:02.732546 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:43:02.732556 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:43:02.732566 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:43:02.732582 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:43:02.732653 2016] [wsgi:error] [pid 2264:tid 139971751036672] [client 128.83.144.205:44583] 
+[Wed Nov 16 16:43:17.730103 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602] [2016-11-16 16:43:17,728] ERROR in app: Exception on /api/platforms/50 [GET]
+[Wed Nov 16 16:43:17.730230 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602] Traceback (most recent call last):
+[Wed Nov 16 16:43:17.730239 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:43:17.730245 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]     response = self.full_dispatch_request()
+[Wed Nov 16 16:43:17.730250 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:43:17.730255 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:43:17.730260 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:43:17.730265 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:43:17.730270 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:43:17.730275 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]     raise value
+[Wed Nov 16 16:43:17.730280 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:43:17.730284 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]     rv = self.dispatch_request()
+[Wed Nov 16 16:43:17.730289 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:43:17.730294 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:43:17.730299 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:43:17.730304 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:43:17.730315 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:43:17.730359 2016] [wsgi:error] [pid 2265:tid 139971742643968] [client 128.83.144.205:44602] 
+[Wed Nov 16 16:44:08.777842 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621] [2016-11-16 16:44:08,777] ERROR in app: Exception on /api/games/14618 [GET]
+[Wed Nov 16 16:44:08.777950 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621] Traceback (most recent call last):
+[Wed Nov 16 16:44:08.777961 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:44:08.777967 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]     response = self.full_dispatch_request()
+[Wed Nov 16 16:44:08.777973 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:44:08.777979 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:44:08.777984 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:44:08.777990 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:44:08.777997 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:44:08.778019 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]     raise value
+[Wed Nov 16 16:44:08.778033 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:44:08.778040 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]     rv = self.dispatch_request()
+[Wed Nov 16 16:44:08.778045 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:44:08.778051 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:44:08.778056 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:44:08.778062 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:44:08.778072 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:44:08.778109 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 128.83.144.205:44621] 
+[Wed Nov 16 16:51:37.454131 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824] [2016-11-16 16:51:37,452] ERROR in app: Exception on /api/games/1141 [GET]
+[Wed Nov 16 16:51:37.454295 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824] Traceback (most recent call last):
+[Wed Nov 16 16:51:37.454312 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:51:37.454325 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]     response = self.full_dispatch_request()
+[Wed Nov 16 16:51:37.454337 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:51:37.454350 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:51:37.454391 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:51:37.454406 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:51:37.454418 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:51:37.454430 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]     raise value
+[Wed Nov 16 16:51:37.454440 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:51:37.454451 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]     rv = self.dispatch_request()
+[Wed Nov 16 16:51:37.454462 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:51:37.454473 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:51:37.454484 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:51:37.454496 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:51:37.454514 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:51:37.454591 2016] [wsgi:error] [pid 2264:tid 139971734251264] [client 162.243.14.196:32824] 
+[Wed Nov 16 16:52:02.420625 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832] [2016-11-16 16:52:02,419] ERROR in app: Exception on /api/games/11598 [GET]
+[Wed Nov 16 16:52:02.420735 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832] Traceback (most recent call last):
+[Wed Nov 16 16:52:02.420751 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:52:02.420761 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]     response = self.full_dispatch_request()
+[Wed Nov 16 16:52:02.420767 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:52:02.420772 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:52:02.420777 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:52:02.420783 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:52:02.420788 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:52:02.420801 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]     raise value
+[Wed Nov 16 16:52:02.420808 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:52:02.420814 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]     rv = self.dispatch_request()
+[Wed Nov 16 16:52:02.420824 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:52:02.420855 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:52:02.420861 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:52:02.420867 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:52:02.420876 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:52:02.420926 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:32832] 
+[Wed Nov 16 16:52:13.939987 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840] [2016-11-16 16:52:13,939] ERROR in app: Exception on /api/games/13005 [GET]
+[Wed Nov 16 16:52:13.940072 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840] Traceback (most recent call last):
+[Wed Nov 16 16:52:13.940080 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:52:13.940086 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]     response = self.full_dispatch_request()
+[Wed Nov 16 16:52:13.940091 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:52:13.940096 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:52:13.940101 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:52:13.940107 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:52:13.940118 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:52:13.940128 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]     raise value
+[Wed Nov 16 16:52:13.940139 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:52:13.940149 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]     rv = self.dispatch_request()
+[Wed Nov 16 16:52:13.940160 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:52:13.940171 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:52:13.940183 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:52:13.940195 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:52:13.940210 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:52:13.940265 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:32840] 
+[Wed Nov 16 16:55:47.139414 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910] [2016-11-16 16:55:47,138] ERROR in app: Exception on /api/platforms/130 [GET]
+[Wed Nov 16 16:55:47.139557 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910] Traceback (most recent call last):
+[Wed Nov 16 16:55:47.139571 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:55:47.139579 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]     response = self.full_dispatch_request()
+[Wed Nov 16 16:55:47.139586 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:55:47.139594 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:55:47.139614 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:55:47.139619 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:55:47.139624 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:55:47.139630 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]     raise value
+[Wed Nov 16 16:55:47.139634 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:55:47.139639 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]     rv = self.dispatch_request()
+[Wed Nov 16 16:55:47.139644 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:55:47.139649 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:55:47.139654 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:55:47.139659 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:55:47.139667 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:55:47.139711 2016] [wsgi:error] [pid 2264:tid 139971717465856] [client 162.243.14.196:32910] 
+[Wed Nov 16 16:56:06.821568 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924] [2016-11-16 16:56:06,820] ERROR in app: Exception on /api/platforms/49 [GET]
+[Wed Nov 16 16:56:06.821697 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924] Traceback (most recent call last):
+[Wed Nov 16 16:56:06.821707 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:56:06.821713 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]     response = self.full_dispatch_request()
+[Wed Nov 16 16:56:06.821719 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:56:06.821725 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:56:06.821730 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:56:06.821752 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:56:06.821758 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:56:06.821763 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]     raise value
+[Wed Nov 16 16:56:06.821768 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:56:06.821773 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]     rv = self.dispatch_request()
+[Wed Nov 16 16:56:06.821778 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:56:06.821783 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:56:06.821788 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:56:06.821793 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:56:06.821803 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:56:06.821849 2016] [wsgi:error] [pid 2265:tid 139971868030720] [client 162.243.14.196:32924] 
+[Wed Nov 16 16:56:42.185402 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980] [2016-11-16 16:56:42,184] ERROR in app: Exception on /api/platforms/49 [GET]
+[Wed Nov 16 16:56:42.185554 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980] Traceback (most recent call last):
+[Wed Nov 16 16:56:42.185568 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:56:42.185577 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]     response = self.full_dispatch_request()
+[Wed Nov 16 16:56:42.185584 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:56:42.185591 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:56:42.185598 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:56:42.185621 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:56:42.185631 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:56:42.185641 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]     raise value
+[Wed Nov 16 16:56:42.185704 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:56:42.185728 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]     rv = self.dispatch_request()
+[Wed Nov 16 16:56:42.185734 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:56:42.185763 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:56:42.185770 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:56:42.185775 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:56:42.185784 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:56:42.185821 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:32980] 
+[Wed Nov 16 16:56:50.640443 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992] [2016-11-16 16:56:50,639] ERROR in app: Exception on /api/games/39581 [GET]
+[Wed Nov 16 16:56:50.640564 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992] Traceback (most recent call last):
+[Wed Nov 16 16:56:50.640572 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:56:50.640595 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]     response = self.full_dispatch_request()
+[Wed Nov 16 16:56:50.640604 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:56:50.640612 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:56:50.640620 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:56:50.640628 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:56:50.640650 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:56:50.640661 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]     raise value
+[Wed Nov 16 16:56:50.640670 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:56:50.640679 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]     rv = self.dispatch_request()
+[Wed Nov 16 16:56:50.640688 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:56:50.640696 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:56:50.640706 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:56:50.640723 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:56:50.640743 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:56:50.640801 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:32992] 
+[Wed Nov 16 16:58:32.461639 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140] [2016-11-16 16:58:32,460] ERROR in app: Exception on /api/platforms/45 [GET]
+[Wed Nov 16 16:58:32.461771 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140] Traceback (most recent call last):
+[Wed Nov 16 16:58:32.461803 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:58:32.461811 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]     response = self.full_dispatch_request()
+[Wed Nov 16 16:58:32.461816 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:58:32.461821 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:58:32.461826 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:58:32.461831 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:58:32.461836 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:58:32.461841 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]     raise value
+[Wed Nov 16 16:58:32.461846 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:58:32.461851 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]     rv = self.dispatch_request()
+[Wed Nov 16 16:58:32.461856 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:58:32.461862 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:58:32.461866 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:58:32.461872 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:58:32.461882 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:58:32.461926 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33140] 
+[Wed Nov 16 16:58:32.477892 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142] [2016-11-16 16:58:32,476] ERROR in app: Exception on /api/platforms/10 [GET]
+[Wed Nov 16 16:58:32.477979 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142] Traceback (most recent call last):
+[Wed Nov 16 16:58:32.477987 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:58:32.477994 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]     response = self.full_dispatch_request()
+[Wed Nov 16 16:58:32.478002 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:58:32.478007 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:58:32.478012 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:58:32.478018 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:58:32.478047 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:58:32.478053 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]     raise value
+[Wed Nov 16 16:58:32.478058 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:58:32.478063 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]     rv = self.dispatch_request()
+[Wed Nov 16 16:58:32.478068 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:58:32.478073 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:58:32.478079 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:58:32.478084 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:58:32.478093 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:58:32.478136 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33142] 
+[Wed Nov 16 16:58:32.491191 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144] [2016-11-16 16:58:32,490] ERROR in app: Exception on /api/platforms/97 [GET]
+[Wed Nov 16 16:58:32.491267 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144] Traceback (most recent call last):
+[Wed Nov 16 16:58:32.491274 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:58:32.491280 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]     response = self.full_dispatch_request()
+[Wed Nov 16 16:58:32.491286 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:58:32.491291 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:58:32.491296 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:58:32.491301 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:58:32.491306 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:58:32.491311 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]     raise value
+[Wed Nov 16 16:58:32.491316 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:58:32.491321 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]     rv = self.dispatch_request()
+[Wed Nov 16 16:58:32.491326 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:58:32.491331 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:58:32.491357 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:58:32.491364 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:58:32.491373 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:58:32.491406 2016] [wsgi:error] [pid 2265:tid 139971767822080] [client 162.243.14.196:33144] 
+[Wed Nov 16 16:58:39.818388 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150] [2016-11-16 16:58:39,817] ERROR in app: Exception on /api/games/20271 [GET]
+[Wed Nov 16 16:58:39.818456 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150] Traceback (most recent call last):
+[Wed Nov 16 16:58:39.818464 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:58:39.818470 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]     response = self.full_dispatch_request()
+[Wed Nov 16 16:58:39.818475 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:58:39.818481 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:58:39.818486 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:58:39.818498 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:58:39.818507 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:58:39.818513 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]     raise value
+[Wed Nov 16 16:58:39.818518 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:58:39.818523 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]     rv = self.dispatch_request()
+[Wed Nov 16 16:58:39.818528 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:58:39.818533 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:58:39.818538 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:58:39.818543 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:58:39.818555 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:58:39.818612 2016] [wsgi:error] [pid 2265:tid 139971751036672] [client 162.243.14.196:33150] 
+[Wed Nov 16 16:58:50.847866 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170] [2016-11-16 16:58:50,847] ERROR in app: Exception on /api/games/49718 [GET]
+[Wed Nov 16 16:58:50.848032 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170] Traceback (most recent call last):
+[Wed Nov 16 16:58:50.848049 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:58:50.848102 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]     response = self.full_dispatch_request()
+[Wed Nov 16 16:58:50.848111 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:58:50.848117 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:58:50.848122 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:58:50.848128 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:58:50.848133 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:58:50.848138 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]     raise value
+[Wed Nov 16 16:58:50.848142 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:58:50.848148 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]     rv = self.dispatch_request()
+[Wed Nov 16 16:58:50.848152 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:58:50.848158 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:58:50.848162 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:58:50.848167 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:58:50.848178 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:58:50.848218 2016] [wsgi:error] [pid 2265:tid 139971683895040] [client 162.243.14.196:33170] 
+[Wed Nov 16 16:58:56.965335 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186] [2016-11-16 16:58:56,964] ERROR in app: Exception on /api/platforms/10 [GET]
+[Wed Nov 16 16:58:56.965428 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186] Traceback (most recent call last):
+[Wed Nov 16 16:58:56.965442 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:58:56.965452 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]     response = self.full_dispatch_request()
+[Wed Nov 16 16:58:56.965462 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:58:56.965473 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:58:56.965484 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:58:56.965495 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:58:56.965507 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:58:56.965543 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]     raise value
+[Wed Nov 16 16:58:56.965557 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:58:56.965568 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]     rv = self.dispatch_request()
+[Wed Nov 16 16:58:56.965579 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:58:56.965591 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:58:56.965602 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:58:56.965612 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:58:56.965629 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:58:56.965676 2016] [wsgi:error] [pid 2265:tid 139971650324224] [client 162.243.14.196:33186] 
+[Wed Nov 16 16:58:56.983012 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188] [2016-11-16 16:58:56,982] ERROR in app: Exception on /api/platforms/46 [GET]
+[Wed Nov 16 16:58:56.983092 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188] Traceback (most recent call last):
+[Wed Nov 16 16:58:56.983109 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:58:56.983121 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]     response = self.full_dispatch_request()
+[Wed Nov 16 16:58:56.983131 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:58:56.983143 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:58:56.983154 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:58:56.983166 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:58:56.983178 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:58:56.983190 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]     raise value
+[Wed Nov 16 16:58:56.983202 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:58:56.983214 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]     rv = self.dispatch_request()
+[Wed Nov 16 16:58:56.983226 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:58:56.983237 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:58:56.983249 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:58:56.983291 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:58:56.983312 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:58:56.983379 2016] [wsgi:error] [pid 2264:tid 139971675502336] [client 162.243.14.196:33188] 
+[Wed Nov 16 16:58:58.956894 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204] [2016-11-16 16:58:58,956] ERROR in app: Exception on /api/characters/12325 [GET]
+[Wed Nov 16 16:58:58.956961 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204] Traceback (most recent call last):
+[Wed Nov 16 16:58:58.956969 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:58:58.956975 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]     response = self.full_dispatch_request()
+[Wed Nov 16 16:58:58.956980 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:58:58.956985 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:58:58.956990 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:58:58.956995 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:58:58.957000 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:58:58.957006 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]     raise value
+[Wed Nov 16 16:58:58.957011 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:58:58.957016 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]     rv = self.dispatch_request()
+[Wed Nov 16 16:58:58.957021 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:58:58.957026 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:58:58.957031 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]   File "/var/www/cs373f-idb/app/app.py", line 123, in api_characters_id
+[Wed Nov 16 16:58:58.957035 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204]     return jsonify(Character.query.get(id).serialize())
+[Wed Nov 16 16:58:58.957044 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:58:58.957075 2016] [wsgi:error] [pid 2265:tid 139971876431616] [client 162.243.14.196:33204] 
+[Wed Nov 16 16:59:40.139155 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264] [2016-11-16 16:59:40,138] ERROR in app: Exception on /api/platforms/49 [GET]
+[Wed Nov 16 16:59:40.139272 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264] Traceback (most recent call last):
+[Wed Nov 16 16:59:40.139286 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:59:40.139296 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]     response = self.full_dispatch_request()
+[Wed Nov 16 16:59:40.139333 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:59:40.139344 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:59:40.139367 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:59:40.139376 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:59:40.139384 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:59:40.139392 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]     raise value
+[Wed Nov 16 16:59:40.139400 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:59:40.139408 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]     rv = self.dispatch_request()
+[Wed Nov 16 16:59:40.139431 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:59:40.139440 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:59:40.139449 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 16:59:40.139457 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 16:59:40.139472 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:59:40.139529 2016] [wsgi:error] [pid 2265:tid 139971709073152] [client 162.243.14.196:33264] 
+[Wed Nov 16 16:59:53.136105 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282] [2016-11-16 16:59:53,135] ERROR in app: Exception on /api/games/34422 [GET]
+[Wed Nov 16 16:59:53.136176 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282] Traceback (most recent call last):
+[Wed Nov 16 16:59:53.136183 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 16:59:53.136189 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]     response = self.full_dispatch_request()
+[Wed Nov 16 16:59:53.136194 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 16:59:53.136199 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]     rv = self.handle_user_exception(e)
+[Wed Nov 16 16:59:53.136204 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 16:59:53.136210 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 16:59:53.136214 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 16:59:53.136220 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]     raise value
+[Wed Nov 16 16:59:53.136242 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 16:59:53.136248 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]     rv = self.dispatch_request()
+[Wed Nov 16 16:59:53.136253 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 16:59:53.136258 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 16:59:53.136264 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 16:59:53.136268 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 16:59:53.136277 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 16:59:53.136310 2016] [wsgi:error] [pid 2265:tid 139971675502336] [client 162.243.14.196:33282] 
+[Wed Nov 16 17:01:13.100363 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380] [2016-11-16 17:01:13,099] ERROR in app: Exception on /api/games/35259 [GET]
+[Wed Nov 16 17:01:13.100468 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380] Traceback (most recent call last):
+[Wed Nov 16 17:01:13.100478 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:01:13.100484 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]     response = self.full_dispatch_request()
+[Wed Nov 16 17:01:13.100490 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:01:13.100495 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:01:13.100501 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:01:13.100506 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:01:13.100512 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:01:13.100518 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]     raise value
+[Wed Nov 16 17:01:13.100523 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:01:13.100529 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]     rv = self.dispatch_request()
+[Wed Nov 16 17:01:13.100534 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:01:13.100540 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:01:13.100546 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 17:01:13.100551 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 17:01:13.100602 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:01:13.100653 2016] [wsgi:error] [pid 2264:tid 139971725858560] [client 162.243.14.196:33380] 
+[Wed Nov 16 17:02:43.472548 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414] [2016-11-16 17:02:43,470] ERROR in app: Exception on /api/platforms/69 [GET]
+[Wed Nov 16 17:02:43.472681 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414] Traceback (most recent call last):
+[Wed Nov 16 17:02:43.472694 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:02:43.472704 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]     response = self.full_dispatch_request()
+[Wed Nov 16 17:02:43.472713 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:02:43.472722 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:02:43.472731 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:02:43.472741 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:02:43.472750 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:02:43.472759 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]     raise value
+[Wed Nov 16 17:02:43.472768 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:02:43.472777 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]     rv = self.dispatch_request()
+[Wed Nov 16 17:02:43.472786 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:02:43.472796 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:02:43.472805 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 17:02:43.472814 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 17:02:43.472826 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:02:43.472972 2016] [wsgi:error] [pid 2264:tid 139971658716928] [client 162.243.14.196:33414] 
+[Wed Nov 16 17:03:10.142594 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438] [2016-11-16 17:03:10,141] ERROR in app: Exception on /api/games/24463 [GET]
+[Wed Nov 16 17:03:10.142669 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438] Traceback (most recent call last):
+[Wed Nov 16 17:03:10.142678 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:03:10.142683 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]     response = self.full_dispatch_request()
+[Wed Nov 16 17:03:10.142689 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:03:10.142739 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:03:10.142747 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:03:10.142752 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:03:10.142757 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:03:10.142763 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]     raise value
+[Wed Nov 16 17:03:10.142767 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:03:10.142772 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]     rv = self.dispatch_request()
+[Wed Nov 16 17:03:10.142777 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:03:10.142782 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:03:10.142787 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 17:03:10.142792 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 17:03:10.142801 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:03:10.142843 2016] [wsgi:error] [pid 2265:tid 139971910002432] [client 162.243.14.196:33438] 
+[Wed Nov 16 17:06:45.494654 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530] [2016-11-16 17:06:45,492] ERROR in app: Exception on /api/games/15022 [GET]
+[Wed Nov 16 17:06:45.494844 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530] Traceback (most recent call last):
+[Wed Nov 16 17:06:45.494865 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:06:45.494879 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]     response = self.full_dispatch_request()
+[Wed Nov 16 17:06:45.494891 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:06:45.494903 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:06:45.494914 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:06:45.494925 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:06:45.494931 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:06:45.494937 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]     raise value
+[Wed Nov 16 17:06:45.494942 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:06:45.494976 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]     rv = self.dispatch_request()
+[Wed Nov 16 17:06:45.494983 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:06:45.494989 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:06:45.494994 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 17:06:45.494999 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 17:06:45.495008 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:06:45.495056 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33530] 
+[Wed Nov 16 17:08:01.339569 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564] [2016-11-16 17:08:01,338] ERROR in app: Exception on /api/platforms/73 [GET]
+[Wed Nov 16 17:08:01.339706 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564] Traceback (most recent call last):
+[Wed Nov 16 17:08:01.339716 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:08:01.343535 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]     response = self.full_dispatch_request()
+[Wed Nov 16 17:08:01.343561 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:08:01.343568 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:08:01.343574 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:08:01.343579 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:08:01.343585 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:08:01.343590 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]     raise value
+[Wed Nov 16 17:08:01.343595 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:08:01.343600 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]     rv = self.dispatch_request()
+[Wed Nov 16 17:08:01.343606 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:08:01.343611 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:08:01.343616 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 17:08:01.343621 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 17:08:01.343637 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:08:01.343733 2016] [wsgi:error] [pid 2265:tid 139971700680448] [client 162.243.14.196:33564] 
+[Wed Nov 16 17:08:44.384548 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592] [2016-11-16 17:08:44,383] ERROR in app: Exception on /api/characters/17654 [GET]
+[Wed Nov 16 17:08:44.384652 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592] Traceback (most recent call last):
+[Wed Nov 16 17:08:44.384662 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:08:44.384669 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]     response = self.full_dispatch_request()
+[Wed Nov 16 17:08:44.384674 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:08:44.384680 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:08:44.384685 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:08:44.384691 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:08:44.384696 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:08:44.384701 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]     raise value
+[Wed Nov 16 17:08:44.384707 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:08:44.384712 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]     rv = self.dispatch_request()
+[Wed Nov 16 17:08:44.384717 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:08:44.384723 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:08:44.384728 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]   File "/var/www/cs373f-idb/app/app.py", line 123, in api_characters_id
+[Wed Nov 16 17:08:44.384733 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592]     return jsonify(Character.query.get(id).serialize())
+[Wed Nov 16 17:08:44.384742 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:08:44.384785 2016] [wsgi:error] [pid 2264:tid 139971742643968] [client 162.243.14.196:33592] 
+[Wed Nov 16 17:09:52.705482 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628] [2016-11-16 17:09:52,704] ERROR in app: Exception on /api/platforms/49 [GET]
+[Wed Nov 16 17:09:52.705566 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628] Traceback (most recent call last):
+[Wed Nov 16 17:09:52.705574 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:09:52.705581 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]     response = self.full_dispatch_request()
+[Wed Nov 16 17:09:52.705586 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:09:52.705591 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:09:52.705619 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:09:52.705625 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:09:52.705630 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:09:52.705636 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]     raise value
+[Wed Nov 16 17:09:52.705641 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:09:52.705646 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]     rv = self.dispatch_request()
+[Wed Nov 16 17:09:52.705651 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:09:52.705656 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:09:52.705661 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 17:09:52.705666 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 17:09:52.705674 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:09:52.705708 2016] [wsgi:error] [pid 2264:tid 139971683895040] [client 162.243.14.196:33628] 
+[Wed Nov 16 17:09:52.722165 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630] [2016-11-16 17:09:52,721] ERROR in app: Exception on /api/platforms/69 [GET]
+[Wed Nov 16 17:09:52.722220 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630] Traceback (most recent call last):
+[Wed Nov 16 17:09:52.722227 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:09:52.722233 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]     response = self.full_dispatch_request()
+[Wed Nov 16 17:09:52.722238 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:09:52.722243 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:09:52.722248 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:09:52.722253 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:09:52.722258 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:09:52.722263 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]     raise value
+[Wed Nov 16 17:09:52.722269 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:09:52.722274 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]     rv = self.dispatch_request()
+[Wed Nov 16 17:09:52.722299 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:09:52.722305 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:09:52.722310 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 17:09:52.722316 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 17:09:52.722325 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:09:52.722366 2016] [wsgi:error] [pid 2265:tid 139971859629824] [client 162.243.14.196:33630] 
+[Wed Nov 16 17:11:59.924682 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674] [2016-11-16 17:11:59,922] ERROR in app: Exception on /api/platforms/41 [GET]
+[Wed Nov 16 17:11:59.924818 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674] Traceback (most recent call last):
+[Wed Nov 16 17:11:59.924831 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:11:59.924841 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]     response = self.full_dispatch_request()
+[Wed Nov 16 17:11:59.924850 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:11:59.924860 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:11:59.924869 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:11:59.924878 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:11:59.924887 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:11:59.924896 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]     raise value
+[Wed Nov 16 17:11:59.924905 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:11:59.924914 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]     rv = self.dispatch_request()
+[Wed Nov 16 17:11:59.924923 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:11:59.924933 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:11:59.924942 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 17:11:59.924951 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 17:11:59.924965 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:11:59.925023 2016] [wsgi:error] [pid 2264:tid 139971667109632] [client 162.243.14.196:33674] 
+[Wed Nov 16 17:13:16.434426 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724] [2016-11-16 17:13:16,433] ERROR in app: Exception on /api/platforms/50 [GET]
+[Wed Nov 16 17:13:16.434541 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724] Traceback (most recent call last):
+[Wed Nov 16 17:13:16.434561 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:13:16.434574 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]     response = self.full_dispatch_request()
+[Wed Nov 16 17:13:16.434587 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:13:16.434599 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:13:16.434611 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:13:16.434623 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:13:16.434634 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:13:16.434646 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]     raise value
+[Wed Nov 16 17:13:16.434652 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:13:16.434657 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]     rv = self.dispatch_request()
+[Wed Nov 16 17:13:16.434662 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:13:16.434668 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:13:16.434673 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 17:13:16.434679 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 17:13:16.434688 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:13:16.434737 2016] [wsgi:error] [pid 2264:tid 139971641931520] [client 162.243.14.196:33724] 
+[Wed Nov 16 17:13:39.236071 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736] [2016-11-16 17:13:39,234] ERROR in app: Exception on /api/games/33421 [GET]
+[Wed Nov 16 17:13:39.236164 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736] Traceback (most recent call last):
+[Wed Nov 16 17:13:39.236173 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:13:39.236178 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]     response = self.full_dispatch_request()
+[Wed Nov 16 17:13:39.236184 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:13:39.236189 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:13:39.236194 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:13:39.236218 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:13:39.236224 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:13:39.236229 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]     raise value
+[Wed Nov 16 17:13:39.236234 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:13:39.236239 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]     rv = self.dispatch_request()
+[Wed Nov 16 17:13:39.236244 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:13:39.236250 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:13:39.236255 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 17:13:39.236260 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 17:13:39.236270 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:13:39.236313 2016] [wsgi:error] [pid 2265:tid 139971633538816] [client 162.243.14.196:33736] 
+[Wed Nov 16 17:46:48.263689 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792] [2016-11-16 17:46:48,262] ERROR in app: Exception on /api/games/21292 [GET]
+[Wed Nov 16 17:46:48.266113 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792] Traceback (most recent call last):
+[Wed Nov 16 17:46:48.266168 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:46:48.266185 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]     response = self.full_dispatch_request()
+[Wed Nov 16 17:46:48.266199 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:46:48.266212 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:46:48.266223 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:46:48.266235 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:46:48.266243 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:46:48.266249 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]     raise value
+[Wed Nov 16 17:46:48.266255 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:46:48.266260 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]     rv = self.dispatch_request()
+[Wed Nov 16 17:46:48.266265 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:46:48.266292 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:46:48.266299 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Wed Nov 16 17:46:48.266304 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792]     return jsonify(Game.query.get(id).serialize())
+[Wed Nov 16 17:46:48.266325 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:46:48.266460 2016] [wsgi:error] [pid 2264:tid 139971910002432] [client 162.243.14.196:33792] 
+[Wed Nov 16 17:46:51.846431 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802] [2016-11-16 17:46:51,845] ERROR in app: Exception on /api/platforms/10 [GET]
+[Wed Nov 16 17:46:51.846499 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802] Traceback (most recent call last):
+[Wed Nov 16 17:46:51.846506 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Wed Nov 16 17:46:51.846512 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]     response = self.full_dispatch_request()
+[Wed Nov 16 17:46:51.846517 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Wed Nov 16 17:46:51.846522 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]     rv = self.handle_user_exception(e)
+[Wed Nov 16 17:46:51.846527 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Wed Nov 16 17:46:51.846532 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]     reraise(exc_type, exc_value, tb)
+[Wed Nov 16 17:46:51.846537 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Wed Nov 16 17:46:51.846542 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]     raise value
+[Wed Nov 16 17:46:51.846547 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Wed Nov 16 17:46:51.846552 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]     rv = self.dispatch_request()
+[Wed Nov 16 17:46:51.846556 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Wed Nov 16 17:46:51.846561 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]     return self.view_functions[rule.endpoint](**req.view_args)
+[Wed Nov 16 17:46:51.846566 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]   File "/var/www/cs373f-idb/app/app.py", line 190, in api_platforms_id
+[Wed Nov 16 17:46:51.846571 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802]     return jsonify(Platform.query.get(id).serialize())
+[Wed Nov 16 17:46:51.846579 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Wed Nov 16 17:46:51.846626 2016] [wsgi:error] [pid 2264:tid 139971759429376] [client 162.243.14.196:33802] 
+[Thu Nov 17 10:10:42.120244 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872] [2016-11-17 10:10:42,116] ERROR in app: Exception on /api/games/36032 [GET]
+[Thu Nov 17 10:10:42.122057 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872] Traceback (most recent call last):
+[Thu Nov 17 10:10:42.122071 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 17 10:10:42.122077 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]     response = self.full_dispatch_request()
+[Thu Nov 17 10:10:42.122082 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 17 10:10:42.122087 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]     rv = self.handle_user_exception(e)
+[Thu Nov 17 10:10:42.122092 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 17 10:10:42.122097 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]     reraise(exc_type, exc_value, tb)
+[Thu Nov 17 10:10:42.122102 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 17 10:10:42.122107 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]     raise value
+[Thu Nov 17 10:10:42.122112 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 17 10:10:42.122117 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]     rv = self.dispatch_request()
+[Thu Nov 17 10:10:42.122122 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 17 10:10:42.122126 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 17 10:10:42.122131 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]   File "/var/www/cs373f-idb/app/app.py", line 98, in api_games_id
+[Thu Nov 17 10:10:42.122136 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872]     return jsonify(Game.query.get(id).serialize())
+[Thu Nov 17 10:10:42.122148 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 17 10:10:42.122212 2016] [wsgi:error] [pid 13575:tid 139971751036672] [client 162.243.14.196:33872] 
+[Thu Nov 17 14:45:43.807104 2016] [wsgi:error] [pid 17456:tid 140285359150848] [client 71.42.119.84:62793] mod_wsgi (pid=17456): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Thu Nov 17 14:45:43.808056 2016] [wsgi:error] [pid 17456:tid 140285359150848] [client 71.42.119.84:62793] mod_wsgi (pid=17456): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 17 14:45:43.809115 2016] [wsgi:error] [pid 17456:tid 140285359150848] [client 71.42.119.84:62793] Traceback (most recent call last):
+[Thu Nov 17 14:45:43.809221 2016] [wsgi:error] [pid 17456:tid 140285359150848] [client 71.42.119.84:62793]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Thu Nov 17 14:45:43.809238 2016] [wsgi:error] [pid 17456:tid 140285359150848] [client 71.42.119.84:62793]     from app.app import app as application
+[Thu Nov 17 14:45:43.809255 2016] [wsgi:error] [pid 17456:tid 140285359150848] [client 71.42.119.84:62793]   File "/var/www/cs373f-idb/app/app.py", line 12, in <module>
+[Thu Nov 17 14:45:43.809263 2016] [wsgi:error] [pid 17456:tid 140285359150848] [client 71.42.119.84:62793]     from tests import runTestsOut
+[Thu Nov 17 14:45:43.809322 2016] [wsgi:error] [pid 17456:tid 140285359150848] [client 71.42.119.84:62793] ImportError: No module named 'tests'
+[Thu Nov 17 16:59:56.501663 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699] [2016-11-17 16:59:56,494] ERROR in app: Exception on /api/platforms/2 [GET]
+[Thu Nov 17 16:59:56.502242 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699] Traceback (most recent call last):
+[Thu Nov 17 16:59:56.502257 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 17 16:59:56.502263 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]     response = self.full_dispatch_request()
+[Thu Nov 17 16:59:56.502268 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 17 16:59:56.502274 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]     rv = self.handle_user_exception(e)
+[Thu Nov 17 16:59:56.502279 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 17 16:59:56.502284 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]     reraise(exc_type, exc_value, tb)
+[Thu Nov 17 16:59:56.502289 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 17 16:59:56.502294 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]     raise value
+[Thu Nov 17 16:59:56.502299 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 17 16:59:56.502304 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]     rv = self.dispatch_request()
+[Thu Nov 17 16:59:56.502309 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 17 16:59:56.502314 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 17 16:59:56.502319 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]   File "/var/www/cs373f-idb/app/app.py", line 193, in api_platforms_id
+[Thu Nov 17 16:59:56.502324 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 17 16:59:56.502335 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 17 16:59:56.502401 2016] [wsgi:error] [pid 18472:tid 140330624063232] [client 128.83.144.205:51699] 
+[Thu Nov 17 16:59:59.733168 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710] [2016-11-17 16:59:59,730] ERROR in app: Exception on /api/games/11029 [GET]
+[Thu Nov 17 16:59:59.733238 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710] Traceback (most recent call last):
+[Thu Nov 17 16:59:59.733245 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 17 16:59:59.733250 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]     response = self.full_dispatch_request()
+[Thu Nov 17 16:59:59.733255 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 17 16:59:59.733261 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]     rv = self.handle_user_exception(e)
+[Thu Nov 17 16:59:59.733283 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 17 16:59:59.733308 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]     reraise(exc_type, exc_value, tb)
+[Thu Nov 17 16:59:59.733325 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 17 16:59:59.733335 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]     raise value
+[Thu Nov 17 16:59:59.733344 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 17 16:59:59.733353 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]     rv = self.dispatch_request()
+[Thu Nov 17 16:59:59.733362 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 17 16:59:59.733373 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 17 16:59:59.733381 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]   File "/var/www/cs373f-idb/app/app.py", line 101, in api_games_id
+[Thu Nov 17 16:59:59.733391 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710]     return jsonify(Game.query.get(id).serialize())
+[Thu Nov 17 16:59:59.733405 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 17 16:59:59.733461 2016] [wsgi:error] [pid 18471:tid 140330548528896] [client 128.83.144.205:51710] 
+[Thu Nov 17 17:53:59.893171 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102] [2016-11-17 17:53:59,891] ERROR in app: Exception on /api/platforms/71 [GET]
+[Thu Nov 17 17:53:59.893316 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102] Traceback (most recent call last):
+[Thu Nov 17 17:53:59.893326 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 17 17:53:59.893332 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]     response = self.full_dispatch_request()
+[Thu Nov 17 17:53:59.893337 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 17 17:53:59.893343 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]     rv = self.handle_user_exception(e)
+[Thu Nov 17 17:53:59.893348 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 17 17:53:59.893353 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]     reraise(exc_type, exc_value, tb)
+[Thu Nov 17 17:53:59.893358 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 17 17:53:59.893363 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]     raise value
+[Thu Nov 17 17:53:59.893368 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 17 17:53:59.893373 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]     rv = self.dispatch_request()
+[Thu Nov 17 17:53:59.893414 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 17 17:53:59.893424 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 17 17:53:59.893429 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]   File "/var/www/cs373f-idb/app/app.py", line 193, in api_platforms_id
+[Thu Nov 17 17:53:59.893434 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 17 17:53:59.893442 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 17 17:53:59.893487 2016] [wsgi:error] [pid 18471:tid 140330773169920] [client 162.243.14.196:34102] 
+[Thu Nov 17 19:47:39.106241 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110] [2016-11-17 19:47:39,103] ERROR in app: Exception on /api/platforms/2 [GET]
+[Thu Nov 17 19:47:39.106455 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110] Traceback (most recent call last):
+[Thu Nov 17 19:47:39.106479 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 17 19:47:39.106495 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]     response = self.full_dispatch_request()
+[Thu Nov 17 19:47:39.106510 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 17 19:47:39.106526 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]     rv = self.handle_user_exception(e)
+[Thu Nov 17 19:47:39.106540 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 17 19:47:39.106554 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]     reraise(exc_type, exc_value, tb)
+[Thu Nov 17 19:47:39.106568 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 17 19:47:39.106603 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]     raise value
+[Thu Nov 17 19:47:39.106620 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 17 19:47:39.106633 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]     rv = self.dispatch_request()
+[Thu Nov 17 19:47:39.106646 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 17 19:47:39.106660 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 17 19:47:39.106675 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]   File "/var/www/cs373f-idb/app/app.py", line 193, in api_platforms_id
+[Thu Nov 17 19:47:39.106689 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 17 19:47:39.106711 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 17 19:47:39.106794 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110] 
