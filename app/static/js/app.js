@@ -498,8 +498,10 @@ myApp.controller('aboutCtrl', ['$scope','$routeParams', '$http', function($scope
     })
 
     $scope.runTests = function () {
+        $scope.finderloader = true;
         $http.get("/api/runtests")
         .then(function (response) {
+            $scope.finderloader = false;
             $scope.testOutput = response.data;
         })
     }
@@ -512,5 +514,30 @@ myApp.controller('aboutCtrl', ['$scope','$routeParams', '$http', function($scope
     }
     scope = $scope;
 }]);
+
+
+myApp.controller('splashCtrl', function($rootScope, $scope, $http, $location, $window, $cookieStore) {
+
+    $scope.searchType = "All";
+    $scope.searchString = "";
+
+    $scope.search = function(searchType, searchString) {
+        if(!searchString)
+            return;
+        var searchObj = {"pillar": searchType,
+                         "string": searchString};
+        $cookieStore.remove('searchObj');
+        $cookieStore.put('searchObj', searchObj);
+        $rootScope.$emit("searchChanged");
+        if($location.path() != "/search/") {
+            $location.path("/search/");
+        } else {
+            $rootScope.$broadcast("searchChanged");
+        }
+    }
+
+    //debug; remove after
+    //scope = $scope;
+})
 
 

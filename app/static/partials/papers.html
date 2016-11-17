@@ -1,5 +1,5 @@
 <div data-ng-controller="papersCtrl" data-ng-init="" class="container">
-    <h1 align="center">Research Paper Trivia for {{year}}</h1>
+    <h1 align="center">Research Paper Trivia for {{year + 1831}}</h1>
     
     <div class="row">
         <div class="col-md-12">
@@ -19,6 +19,12 @@
                 <p> 4). What was the top subject in the year of {{year + 1831}}?</p>
                 <div ng-repeat="x in answerChoices.top_subject track by $index">
                     <input type="radio" name="top_subject" ng-model="$parent.top_subject" ng-value="x" /> {{x}}<br>
+                </div>
+                <br>
+                <div>
+                    <button type="submit" class="btn btn-success">
+                        <i class="icon-circle-arrow-right icon-large"></i> Submit
+                    </button>
                 </div>
                 <br>
                 <p>*These statistics on the journals in the year {{year + 1831}} were taken from researchpapers.me</p>

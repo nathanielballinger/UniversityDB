@@ -1,23 +1,23 @@
-<div class="container">
+<div ng-controller="splashCtrl" class="container">
   <div class="row">
     <div align="center" clas="col-md-6">
       <div class="jumbotron">
         <span style="font-size:26">VGIDB.me</span>
         <div style="margin-top:15px" class="input-group input-group-lg">
           <!--<span class="input-group-addon" id="sizing-addon1">@</span>-->
-          <input type="text" class="form-control" placeholder="Search Here..." aria-describedby="sizing-addon1">
+          <input type="text" ng-model="searchString" class="form-control" placeholder="Search Here..." aria-describedby="sizing-addon1">
           <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <span class="caret"></span></button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{searchType}} <span class="caret"></span></button>
             <ul class="dropdown-menu dropdown-menu-right">
-              <li><a href="javascript:void(0)">All</a></li>
-              <li><a href="javascript:void(0)">Games</a></li>
-              <li><a href="javascript:void(0)">Platforms</a></li>
-              <li><a href="javascript:void(0)">Characters</a></li>
+              <li><a href="javascript:void(0)" ng-click="searchType = 'All'">All</a></li>
+              <li><a href="javascript:void(0)" ng-click="searchType = 'Games'">Games</a></li>
+              <li><a href="javascript:void(0)" ng-click="searchType = 'Platforms'">Platforms</a></li>
+              <li><a href="javascript:void(0)" ng-click="searchType = 'Characters'">Characters</a></li>
             </ul>
           </div>
         </div>
         <div style="display:block; margin-top:15px">
-          <button type="submit" class="btn btn-primary btn-lg">Search</button>
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="search(searchType, searchString)">Search</button>
         </div>
       </div>
     </div>

@@ -35,7 +35,10 @@
                 <td><a href="/#/character/{{+x.id}}">{{ x.name }}</a></td>
                 <td><a href="/#/game/{{+x.first_appeared_in_game[0]}}">{{ x.first_appeared_in_game[1]}}</a></td>
                 <td>{{ x.deck }}</td>
-                <td><a href="/#/papers/{{x.birthday.getFullYear()}}">{{ x.birthday.toDateString() || "Unknown" }}</a></td>
+                <td>
+                    <a ng-show="x.birthday.toDateString()" href="/#/papers/{{x.birthday.getFullYear()}}">{{ x.birthday.toDateString()}}</a>
+                    <span ng-show="!x.birthday.toDateString()">Unkown</span>
+                </td>
                 <td>{{x.gender == 0 ? 'NA' : (x.gender == 1 ? 'Male' : 'Female')}}</td>
             </tr>
         </tbody>
