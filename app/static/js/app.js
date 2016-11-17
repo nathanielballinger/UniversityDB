@@ -55,7 +55,7 @@ myApp.filter('highlightWords', function () {
             // reject some words from the filtering
             if (['span', 'class', 'ui-match'].indexOf(word) < 0) {
 
-                var pattern = new RegExp("\\b" + word + "\\b", "gi");
+                var pattern = new RegExp(word, "gi");
                 text = text.replace(pattern, '<span class="ui-match">$&</span>');
             }
           });
