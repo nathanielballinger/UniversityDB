@@ -87,7 +87,7 @@ class Game(db.Model):
 				parsedCharacters[i] = parsedCharacters[i].split("||||")
 				parsedCharacters[i][0] = int(parsedCharacters[i][0])
 			result["character"] = parsedCharacters
-		print(result)
+		#print(result)
 		return result
 
 	def serialize_table(self):
@@ -136,13 +136,13 @@ class Platform(db.Model):
 	def serialize(self):
 		result = model_to_dict(self)
 		if result["games"] is not None:
-			print(result["games"])
+			#print(result["games"])
 			parsedGames = result["games"].split("[[[[")
 			parsedGames = parsedGames[:-1]
-			print(parsedGames)
+			#print(parsedGames)
 			for i in range (len(parsedGames)):
 				parsedGames[i] = parsedGames[i].split("||||")
-				print(parsedGames[i])
+				#print(parsedGames[i])
 				parsedGames[i][0] = int(parsedGames[i][0])
 			result["games"] = parsedGames
 		return result

@@ -79,6 +79,7 @@ def api_games_offset(offset):
 	# 	found +=1
 	return jsonify(games_list)
 	
+	"""
 	for data in Game.query:
 		return jsonify({data.name: data.serialize_table()})
 		counter += 1
@@ -93,7 +94,7 @@ def api_games_offset(offset):
 	
 			break
 	return jsonify(dict_p)
-	
+	"""
 
 @app.route('/api/games/<id>')
 def api_games_id(id):
