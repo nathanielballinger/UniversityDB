@@ -1,6 +1,6 @@
 'use strict';   // See note about 'use strict'; below
 
-var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize', 'ngCookies']);
 
 myApp.constant('_',
     window._
@@ -10,44 +10,62 @@ myApp.config(['$routeProvider',
      function($routeProvider) {
          $routeProvider.
              when('/', {
-                 templateUrl: '../static/partials/splash.html',
+                 templateUrl: '../static/partials/splash.html'
              }).
-             when('/about', {
-                 templateUrl: '../static/partials/about.html',
-                 controller: 'aboutCtrl'
+             when('/about/', {
+                 templateUrl: '../static/partials/about.html'
              }).
-             when('/games', {
-                 templateUrl: '../static/partials/games.html',
-                 controller: 'gamesCtrl'
+             when('/games/', {
+                 templateUrl: '../static/partials/games.html'
              }).
-             when('/platforms', {
-                 templateUrl: '../static/partials/platforms.html',
-                 controller: 'platformsCtrl',
+             when('/platforms/', {
+                 templateUrl: '../static/partials/platforms.html'
              }).
-             when('/characters', {
-                 templateUrl: '../static/partials/characters.html',
-                 controller: 'charactersCtrl',
+             when('/characters/', {
+                 templateUrl: '../static/partials/characters.html'
              }).
-             when('/game/:id', {
-                 templateUrl: '../static/partials/game.html',
-                 controller: 'gameCtrl',
+             when('/game/:id/', {
+                 templateUrl: '../static/partials/game.html'
              }).
-             when('/character/:id', {
-                 templateUrl: '../static/partials/character.html',
-                 controller: 'characterCtrl',
+             when('/character/:id/', {
+                 templateUrl: '../static/partials/character.html'
              }).
-             when('/platform/:id', {
-                 templateUrl: '../static/partials/platform.html',
-                 controller: 'platformCtrl',
+             when('/platform/:id/', {
+                 templateUrl: '../static/partials/platform.html'
+             }).
+            when('/search/', {
+                 templateUrl: '../static/partials/search.html'
+             }).
+            when('/papers/:year/', {
+                 templateUrl: '../static/partials/papers.html'
              }).
              otherwise({
                  redirectTo: '/'
              });
     }]);
 
+myApp.filter('highlightWords', function () {
+      return function (text, search) {
+        if (text && (search || angular.isNumber(search))) {
+          text = text.toString();
+//          search = search.toString();
+
+//          angular.forEach(search.split(/\s+/), function(word) {
+          angular.forEach(search, function(word) {
+            // reject some words from the filtering
+            if (['span', 'class', 'ui-match'].indexOf(word) < 0) {
+
+                var pattern = new RegExp(word, "gi");
+                text = text.replace(pattern, '<span class="ui-match">$&</span>');
+            }
+          });
+        }
+        return text;
+      };
+});
 
 
-var listVals = ["friends", "enemies", "platforms", "genres", "developers", "characters"];
+var listVals = ["platforms", "games", "character", "first_appeared_in_game"];
 
 function fixNullEmpty(obj) {
     var defaultVal;
@@ -99,9 +117,11 @@ function getObjectFromId(http, type, id) {
 }
 
 //var scope;
-myApp.controller('headerCtrl', function($scope, $http, $location) {
+myApp.controller('headerCtrl', function($rootScope, $scope, $http, $location, $window, $cookieStore) {
     $scope.navCollapsed = true;
     $scope.refs = [];
+    $scope.searchType = "All";
+    $scope.searchString = "";
     var pageNames = ["Games", "Platforms", "Characters", "About"];
     var pageRefs = ["/#/games", "/#/platforms", "/#/characters", "/#/about"];
     var temp = $scope.refs; 
@@ -113,40 +133,119 @@ myApp.controller('headerCtrl', function($scope, $http, $location) {
         return viewLocation == $location.path();
     };
 
+    $scope.search = function(searchType, searchString) {
+        if(!searchString)
+            return;
+        var searchObj = {"pillar": searchType,
+                         "string": searchString};
+        $cookieStore.remove('searchObj');
+        $cookieStore.put('searchObj', searchObj);
+        $rootScope.$emit("searchChanged");
+        if($location.path() != "/search/") {
+            $location.path("/search/");
+        } else {
+            $rootScope.$broadcast("searchChanged");
+        }
+    }
+
     //debug; remove after
     //scope = $scope;
 })
 
+myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) {
+    var year = parseInt($routeParams.year) - 1831;
+    
+    if(year < 1)
+        year = 1;
+    else if(year > 185)
+        year = 185;
+
+    $scope.year = year;
+
+    if(year > 182 && year <= 185)
+        year = 182;
+
+    $scope.answerChoices = {"num_papers" : [],
+                            "top_country": [],
+                            "top_journal" : [],
+                            "top_subject" : [] };
+
+    $scope.correctAnswers = [];
+
+    for(var i = 0; i < 4; i++) {
+        var newYear = year + i;
+        $http.get('/researchpapers/' + newYear.toString())
+        .then(function (response) {
+            var data = response.data;
+            console.log(data);
+            $scope.answerChoices.num_papers.push(data.num_papers);
+            $scope.answerChoices.top_country.push(data.top_country);
+            $scope.answerChoices.top_journal.push(data.top_journal);
+            $scope.answerChoices.top_subject.push(data.top_subject);
+        });
+    }
+
+
+})
+
+function createKeywords(results) {
+    for(var i = 0; i < results.length; i++) {
+        var x = results[i].word_hits.join();
+        x = "Mario";
+        results[i].keywords = x;
+    }
+    return results;
+}
+
+myApp.controller('searchCtrl', function($scope, $http, $location, $cookieStore) {
+    $scope.sortType = "name";
+    $scope.sortReverse = false;
+    $scope.search = "";
+
+    var data = $cookieStore.get('searchObj');
+    if(!data){
+        return;
+    }
+    console.log(data);
+    $http.get("/search/result/" + data.pillar.toLowerCase() + "/" + data.string)
+    .then(function (response) {
+        $scope.results = createKeywords(response.data);
+        console.log($scope.results);          
+    });
+
+    // This is to update search if already on search page
+    $scope.$on('searchChanged', function (event) {
+        var data = $cookieStore.get('searchObj');
+        $http.get("/search/result/" + data.pillar.toLowerCase() + "/" + data.string)
+        .then(function (response) {
+            $scope.results = createKeywords(response.data);
+            console.log($scope.results);          
+        });
+    });
+})
+
+
 //Controller for all games
 myApp.controller('gamesCtrl', function($scope, $http){
+    console.log("HELLOO");
     $scope.page = 1
     $scope.pages = [1,2,3,4,5]
-    $scope.order = true;
-    $scope.sortVar = "Name"
+
+    $scope.sortType = "name";
+    $scope.sortReverse = false;
+    $scope.search = "";
+
     $http.get("/api/games/offset/1")
     .then(function (response) {
         $scope.games = response.data;
         _.each($scope.games, function(game) {
-            game.release_date = new Date(game.release_date)
-        })
-        var ids = ""
-        for(var i = 0; i < data.length; i++) {
-            ids += data[i].first_appeared_in_game + ",";
-        }
-        $http.get("/api/platform_mapping/" + ids)
-        .then(function (response) {
-            console.log(response.data)
+            if(game.release_date != null) 
+                game.release_date = new Date(game.release_date);
         })
         console.log($scope.games)
     })
 
     $scope.info = {};
-
-    $scope.swapOrder = function() {
-        $scope.order = !$scope.order;
-        $scope.games.reverse();
-    }
-
 
     $scope.getPages = function(index) {
         if (index === 0){
@@ -173,55 +272,36 @@ myApp.controller('gamesCtrl', function($scope, $http){
         .then(function (response) {
             $scope.games = response.data;
             _.each($scope.games, function(game) {
-                game.release_date = new Date(game.release_date)
+                if(game.release_date != null) 
+                    game.release_date = new Date(game.release_date);
             })
             // console.log($scope.games)
         })
         
     }
-
-    $scope.sortBy = function(sorter) {
-        $scope.sortVar = sorter;
-        $scope.games = _.sortBy($scope.games, function(game){
-            switch(sorter){
-                case "Name":
-                    return game.name
-                case "Release Date":
-                    return game.original_release_date
-                case "Genre":
-                    return game.genres[0].name
-                case "Developer/Publisher":
-                    return game.developers[0].name
-                case "Platform":
-                    return game.platforms[0].name
-            }
-        });
-    }
 })
 
 //Controller for all Platforms
 myApp.controller('platformsCtrl', function($scope, $http, _){
-    $scope.page = 1
-    $scope.pages = [1,2,3,4,5]
-    $scope.order = true;
-    $scope.sortVar = "Name"
+    $scope.page = 1;
+    $scope.pages = [1,2,3,4,5];
+
+    $scope.sortType = "name";
+    $scope.sortReverse = false;
+    $scope.search = "";
+
     $http.get("/api/platforms/offset/1")
     .then(function (response) {
         $scope.platforms = response.data;
-        $scope.sortBy($scope.sortVar);
         _.each($scope.platforms, function(platform) {
-            platform.release_date = new Date(platform.release_date)
+            if(platform.release_date != null) 
+                platform.release_date = new Date(platform.release_date);
+            platform.starting_price = parseInt(platform.starting_price);
         })
         console.log($scope.platforms)
     })
 
     $scope.info = {};
-
-    $scope.swapOrder = function() {
-        $scope.order = !$scope.order;
-        $scope.platforms.reverse();
-    }
-
 
     $scope.getPages = function(index) {
         if (index === 0){
@@ -247,29 +327,14 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
         $http.get("/api/platforms/offset/"+index)
         .then(function (response) {
             $scope.platforms = response.data;
-            $scope.sortBy($scope.sortVar);
             _.each($scope.platforms, function(platform) {
-                platform.release_date = new Date(platform.release_date)
+                if(platform.release_date != null) 
+                    platform.release_date = new Date(platform.release_date);
+                platform.starting_price = parseInt(platform.starting_price);
             })
             console.log($scope.platforms)
         })
         
-    }
-
-    $scope.sortBy = function(sorter) {
-        $scope.sortVar = sorter;
-        $scope.platforms = _.sortBy($scope.platforms, function(platform){
-            switch(sorter){
-                case "Name":
-                    return platform.name
-                case "Release Date":
-                    return platform.release_date
-                case "Company":
-                    return platform.company.name
-                case "Starting Price":
-                    return parseInt(platform.original_price)
-            }
-        });
     }
 })
 
@@ -277,37 +342,23 @@ myApp.controller('platformsCtrl', function($scope, $http, _){
 myApp.controller('charactersCtrl', function($scope, $http){
     $scope.page = 1
     $scope.pages = [1,2,3,4,5]
-    $scope.order = true;
-    $scope.sortVar = "Name";
-    var ids = "";
+
+    $scope.sortType = "name";
+    $scope.sortReverse = false;
+    $scope.search = "";
+
     var names = {};
     $http.get("api/characters/offset/1")
     .then(function (response) {
-        var data = response.data;
-        
-        for(var i = 0; i < data.length; i++) {
-            ids += data[i].first_appeared_in_game + ",";
-        }
-        $http.get("/api/game_mapping/" + ids)
-        .then(function (response) {
-            names = response.data;
-            console.log(names);
-            for(var i = 0; i < data.length; i++) {
-                var gameId = data[i].first_appeared_in_game;
-                var gameName = names[gameId];
-                data[i].first_appeared_in_game = {name : gameName, id : gameId};
+        $scope.characters = response.data;
+        _.each($scope.characters, function(character) {
+            if(character.birthday != null){
+                character.birthday = new Date(character.birthday);
             }
         })
-        $scope.characters = data;
         console.log($scope.characters);
     })
     $scope.info = {};
-
-
-    $scope.swapOrder = function() {
-        $scope.order = !$scope.order;
-        $scope.characters.reverse();
-    }
 
     $scope.getPages = function(index) {
         if (index === 0){
@@ -333,25 +384,13 @@ myApp.controller('charactersCtrl', function($scope, $http){
         $http.get("/api/characters/offset/"+index)
         .then(function (response) {
             $scope.characters = response.data;
-            // console.log($scope.games)
+            _.each($scope.characters, function(character) {
+                if(character.birthday != null) {
+                    character.birthday = new Date(character.birthday);
+                }
+            })
         })
-        
-    }
-
-    $scope.sortBy = function(sorter) {
-        $scope.sortVar = sorter;
-        $scope.characters = _.sortBy($scope.characters, function(platform){
-            switch(sorter){
-                case "Name":
-                    return platform.name
-                case "First Game":
-                    return platform.release_date
-                case "Birthday":
-                    return platform.first_appeared_in_game.name
-                case "Gender":
-                    return platform.gender
-            }
-        });
+            // console.log($scope.games)        
     }
 })
 
@@ -364,33 +403,10 @@ myApp.controller('gameCtrl', ['$scope','$routeParams', '$http', function($scope,
     .then(function (response) {
         var data = response.data;
         $scope.game = fixNullEmpty(data);
-        console.log($scope.game)
-        var ids = ""
-        for(var i = 0; i < data['platforms'].length; i++) {
-            ids += data.platforms[i] + ",";
-        }
-        console.log(ids)
-        $http.get("/api/platform_mapping/" + ids)
-        .then(function (response) {
-            console.log(response.data)
-            $scope.game.platforms = response.data
-            console.log($scope.game.platforms);
-        })
-        ids = ""
-        for(var i = 0; i < data['character'].length; i++) {
-            ids += data.character[i] + ",";
-        }
-        $http.get("/api/character_mapping/" + ids)
-        .then(function (response) {
-            console.log(response.data)
-            $scope.game.characters = response.data
-            console.log($scope.game.characters);
-        })
-
+        console.log($scope.game);
     })
 
     $scope.info = {};
-
 
     $scope.init = function() {
         console.log("Hello World from game");
