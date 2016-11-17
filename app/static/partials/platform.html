@@ -16,7 +16,7 @@
 				<p> Original Price: ${{platform.starting_price}} </p>
 				<p> Release Date: {{platform.release_date | date:"EEE, MMM dd, yyyy"}} </p>
 				<p> Number of Units Sold: {{platform.install_base | number:0}} </p>
-				<p><span ng-repeat="game in platform.games track by $index | limitTo:10">
+				<p><span ng-repeat="game in platform.games | limitTo:10">
 		    		{{$first ? 'Few of the Games on Platform: ' : ''}}<a href="#/game/{{game[0]}}">{{game[1]}}</a>{{$last ? '' : ', '}}
 				</span></p>
 			</div>

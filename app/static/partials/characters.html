@@ -1,5 +1,5 @@
 <div data-ng-controller="charactersCtrl" data-ng-init="" class="container">
-    <h1 align="center" class="white-color">Characters</h1>
+    <h1 align="center">Characters</h1>
 
     <table class="table table-striped">
         <thead>
@@ -39,12 +39,7 @@
                 <td>{{x.gender == 0 ? 'NA' : (x.gender == 1 ? 'Male' : 'Female')}}</td>
             </tr>
         </tbody>
-
     </table>
-
-        <div align="center" class= "white-color">Showing {{(page-1)*25 + 1}}-{{(page-1)*25+25}} characters out of 33054 characters   
-        </div>
-    </div>
 
     <div class="container"> 
         <div align="center"> 
@@ -75,6 +70,12 @@
             </nav>
         </div>
     </div>
+
+    <div class="container"> 
+        <div align="center" class= "white-color">Showing {{(page-1)*25 + 1}}-{{(page-1)*25+25}} characters out of 33054 characters
+        </div> 
+    </div>
+
 </div>
 
 
