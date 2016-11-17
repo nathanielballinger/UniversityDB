@@ -212,6 +212,14 @@ class SearchResult:
 		# Do something with searchText to create self.word_hits
 		self.word_hits = []
 
+		#ignore non-alpha characters, perserving whitespace, all lower case
+		lowerCaseSearchText = re.sub(r"[^A-Za-z\s]+", '', searchText.lower()).split()
+		nameWords = self.name.lower()
+		for word in lowerCaseSearchText:
+			if word in nameWords:
+				self.word_hits.append(word)
+		
+
 	def toJSON(self):
 		return model_to_dict(self)
 
