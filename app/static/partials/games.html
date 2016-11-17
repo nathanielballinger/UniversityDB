@@ -1,44 +1,40 @@
-<div data-ng-controller="gamesCtrl" data-ng-init="" class="container">
+<div ng-controller="gamesCtrl" data-ng-init="" class="container">
     <h1 align="center">Games</h1>
-    <div class="row">
-        <div class"col-md-6">
-            <p>Showing {{(page-1)*25 + 1}}-{{(page-1)*25+25}} games out of 51961 games </p>   
-        </div>
-        <div class"col-md-6">
-            <div class="btn-group">
-                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{sortVar}}<span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="" ng-click="sortBy('Name')">Name</a></li>
-                    <li><a href="" ng-click="sortBy('Release Date')">Release Date</a></li>
-                    <li><a href="" ng-click="sortBy('Genre')">Genre</a></li>
-                    <li><a href="" ng-click="sortBy('Developer/Publisher')">Developer/Publisher</a></li>
-                    <li><a href="" ng-click="sortBy('Platform')">Platform</a></li>
 
-                </ul>
-            </div>
-            <button ng-click="swapOrder()" type="button" class="btn btn-default">Swap Order</button>
-        </div>
-    </div>
     <table class="table table-responsive table-striped">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Icon</th>
-                <td>Name</td>
-                <td>Release Date</td>
-                <td>Platform</td>
-                <td>Aliases</td>
+                <td>#</td>
+                <td>Icon</td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                    Name</a> <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+                <td>                               
+                    <a href="javascript:void(0)" ng-click="sortType = 'release_date'; sortReverse = !sortReverse">
+                    Release Date</a> <span ng-show="sortType == 'release_date' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'release_date' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = '\u0022num platforms\u0022'; sortReverse = !sortReverse">
+                    No. of Platforms </a> <span ng-show="sortType == '\u0022num platforms\u0022' && !sortReverse"class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == '\u0022num platforms\u0022' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'aliases'; sortReverse = !sortReverse">
+                    Aliases </a> <span ng-show="sortType == 'aliases' && !sortReverse"class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'aliases' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
             </tr>            
         </thead>
         <tbody>
-            <tr ng-repeat="x in games track by $index">
+            <tr ng-repeat="x in games | orderBy:sortType:sortReverse">
                 <td>{{$index + 1}}</td>
                 <td><img src="{{x.tiny_image}}"</td>
                 <td><a href="/#/game/{{+x.id}}">{{ x.name }}</a></td>
-                <td>{{ x.release_date.toDateString() }}</td>
-                <td>{{ x.platforms[0].name }}</td>
+                <td>{{ x.release_date.toDateString() || "Unknown"}}</td>
+                <td>{{ x["num platforms"] }}</td>
                 <td>{{x.aliases ? x.aliases : "Unkown"}} </td>
             </tr>
         </tbody>
@@ -74,4 +70,11 @@
             </nav>
         </div>
     </div>
+
+    <div class="container"> 
+        <div align="center" class= "white-color">
+            Showing {{(page-1)*25 + 1}}-{{(page-1)*25+25}} games out of 51961 games
+        </div> 
+    </div>
+
 </div>

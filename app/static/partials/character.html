@@ -13,7 +13,7 @@
 		        <p> Birthday: {{character.birthday}} </p>
 		        <p> Gender: {{character.gender == 0 ? 'NA' : (character.gender == 1 ? 'Male' : 'Female')}} </p>
 		        <p> Description: {{character.deck}} </p>
-				<p>First appearance in: <a href="#/game/{{character.first_appeared_in_game}}"> {{character.first_appeared_in_game}} </a> </p> 
+				<p>First appearance in: <a href="#/game/{{character.first_appeared_in_game[0]}}"> {{character.first_appeared_in_game[1]}} </a> </p> 
 			</div>
 		</div>
 

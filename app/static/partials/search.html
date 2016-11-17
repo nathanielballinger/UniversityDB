@@ -1,0 +1,34 @@
+<div ng-controller="searchCtrl" data-ng-init="" class="container">
+    <h1 align="center">Search Results</h1>
+    
+    <div ng-show="!results" class="row">
+        <div class="col-md-12">
+            <div class="thumbnail gray-thumbnail">
+                No Results Found.
+            </div>
+        </div>
+    </div>
+
+    <table ng-show="results" class="table table-striped">
+        <thead>
+            <tr>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'pillar'; sortReverse = !sortReverse">
+                    Pillar </a> <span ng-show="sortType == 'pillar' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'pillar' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                    Name</a> <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
+            </tr>            
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in results  | orderBy:sortType:sortReverse">
+                <td>{{x.pillar}}</td>
+                <td><a href="/#/{{x.pillar}}/{{+x.id}}"><p ng-bind-html="x.name | highlightWords:x.word_hits"></p></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

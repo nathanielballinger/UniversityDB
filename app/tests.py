@@ -1,7 +1,7 @@
 from io             import StringIO
 from unittest       import main, TestCase, TextTestRunner, makeSuite
 #Only add app. before models when you want to run the DO server
-from app.models 		import *
+from models		import *
 
 class TestCases (TestCase):
 
@@ -280,6 +280,34 @@ class TestCases (TestCase):
 		self.assertTrue(Character.query.get(600000) is None)
 
 	# ------
+	# SearchResults
+	# ------
+
+	def test_case_searchResult_1(self):
+		searchResult1 = SearchResult(1, "Search 1", "Game", "Mario")
+
+		self.assertEqual(searchResult1.id, 1)
+		self.assertEqual(searchResult1.pillar, "Game")
+
+	def test_case_searchResult_2(self):
+		searchResult2 = SearchResult(2, "Search 2", "Platform", "Nintendo")
+
+		self.assertEqual(searchResult2.id, 2)
+		self.assertEqual(searchResult2.pillar, "Platform")
+
+	def test_case_searchResult_3(self):
+		searchResult3 = SearchResult(3, "Search 3", "Character", "Brock")
+
+		self.assertEqual(searchResult3.id, 3)
+		self.assertEqual(searchResult3.pillar, "Character")
+
+	def test_case_searchResult_4(self):
+		searchResult4 = SearchResult(" ", " ", " ", " ")
+
+		self.assertEqual(searchResult4.id, " ")
+		self.assertEqual(searchResult4.pillar, " ")
+
+	# ------
 	# Game Serialize
 	# ------
 
@@ -292,7 +320,7 @@ class TestCases (TestCase):
 		test = {'id': "13328", 'name': "Wii Sports", 'release_date': "2006-11-19 00:00:00", \
 		'description': "Packaged with the Wii (except Japan), Wii Sports allows players to compete with friends in tennis, bowling, boxing, baseball, and golf.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
-		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/", 'character': None}
+		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/", 'character': None, 'search_vector': None}
 		self.assertEqual(obj, test)
 
 	def test_game_serialize_2(self):
@@ -304,7 +332,7 @@ class TestCases (TestCase):
 		test = {'id': "52537", 'name': "LEGO Star Wars: The Force Awakens", 'release_date': "2016-06-28 00:00:00", \
 		'description': "LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg", \
-		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/", 'character': None}
+		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/", 'character': None, 'search_vector': None}
 		self.assertEqual(obj, test)
 
 	def test_game_serialize_3(self):
@@ -316,55 +344,30 @@ class TestCases (TestCase):
 		test = {'id': "41088", 'name': "Pokémon X/Y", 'release_date': "2013-10-12 00:00:00", \
 		'description': "The first Pokémon games on the 3DS and the first to be released simultaneously worldwide.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2482818-pokemonxy.jpg", \
-		'platforms': [], 'aliases': "Pokemon X/Y\nPokemon Y", 'site_detail_url': "http://www.giantbomb.com/pokemon-xy/3030-41088/", 'character': None}
-		self.assertEqual(obj, test)
-
-	# ------
-	# Character Serialize
-	# ------
-
-	def test_character_serialize_1(self):
-		obj = Character("177", "Mario", "Jun 2, 1981", "1", \
-			"Originally a carpenter named Jumpman, this Italian plumber has gone on to become the most recognizable video game character of them all, starring in a veritable pantheon of titles like kart racing and sports. He has been voiced by Charles Martinet for nearly 20 years.", \
-			"DESCRIPTION", \
-			"http://www.giantbomb.com/api/image/square_mini/2555000-2339414779-Mario.png", "http://www.giantbomb.com/api/image/scale_medium/2555000-2339414779-Mario.png", \
-			"http://www.giantbomb.com/mario/3005-177/", "Jumpman\r\nBaby Mario", "311")
-		obj = obj.serialize()
-		test = {'id': "177", 'name': "Mario", 'birthday': "Jun 2, 1981", 'gender': "1", \
-		'deck': "Originally a carpenter named Jumpman, this Italian plumber has gone on to become the most recognizable video game character of them all, starring in a veritable pantheon of titles like kart racing and sports. He has been voiced by Charles Martinet for nearly 20 years.", \
-		'description': "DESCRIPTION", \
-		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2555000-2339414779-Mario.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2555000-2339414779-Mario.png", \
-		'site_detail_url': "http://www.giantbomb.com/mario/3005-177/", 'aliases': "Jumpman\r\nBaby Mario", 'first_appeared_in_game': "311"}
-		self.assertEqual(obj, test)
-
-	def test_character_serialize_2(self):
-		obj = Character("5766", "Brock", None, "1", \
-			"\"The Rock-Solid Pokémon Trainer!\"", \
-			"DESCRIPTION", \
-			"http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
-			"http://www.giantbomb.com/brock/3005-5766/", None, "3966")
-		obj = obj.serialize()
-		test = {'id': "5766", 'name': "Brock", 'birthday': None, 'gender': "1", \
-		'deck': "\"The Rock-Solid Pokémon Trainer!\"", \
-		'description': "DESCRIPTION", \
-		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
-		'site_detail_url': "http://www.giantbomb.com/brock/3005-5766/", 'aliases': None, 'first_appeared_in_game': "3966"}
+		'platforms': [], 'aliases': "Pokemon X/Y\nPokemon Y", 'site_detail_url': "http://www.giantbomb.com/pokemon-xy/3030-41088/", 'character': None, 'search_vector': None}
 		self.assertEqual(obj, test)
 
 	# ------
 	# Serialize_Table for each object
 	# ------
 
-	def test_game_serialize_table(self):
-		obj = Game("13328", "Wii Sports", "2006-11-19 00:00:00", \
-			"Packaged with the Wii (except Japan), Wii Sports allows players to compete with friends in tennis, bowling, boxing, baseball, and golf.", \
-			"http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
-			"PLATFORMS", None, "http://www.giantbomb.com/wii-sports/3030-13328/")
+	def test_game_serialize_table_1(self):
+		obj = Game("52537", "LEGO Star Wars: The Force Awakens", "2016-06-28 00:00:00", \
+			"LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.",\
+			"http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg",\
+			"PLATFORMS", None, "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/")
 		obj = obj.serialize_table()
-		test = {"id": "13328","name": "Wii Sports", "release_date": "2006-11-19 00:00:00", "aliases": None, "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", "characters": None}
-		self.assertEqual(obj, test)
+		test = {"id": "52537","name": "LEGO Star Wars: The Force Awakens", "release_date": "2016-06-28 00:00:00", "aliases": None, "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", "num platforms": 12}
 
-	def test_platform_serialize_table(self):
+	def test_game_serialize_table_2(self):
+		obj = Game("41088", "Pokémon X/Y", "2013-10-12 00:00:00", \
+			"The first Pokémon games on the 3DS and the first to be released simultaneously worldwide.", \
+			"http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", "http://www.giantbomb.com/api/image/scale_medium/2482818-pokemonxy.jpg",\
+			"PLATFORMS", "Pokemon X/Y\nPokemon Y", "http://www.giantbomb.com/pokemon-xy/3030-41088/")
+		obj = obj.serialize_table()
+		test = {"id": "41088","name": "Pokémon X/Y", "release_date": "2013-10-12 00:00:00", "aliases": "Pokemon X/Y\nPokemon Y", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", "num platforms": 2}
+
+	def test_platform_serialize_table_1(self):
 		obj = Platform("117", "Nintendo 3DS", "2011-02-26 00:00:00", "Nintendo", "249.00", "51630000", \
 			"The Nintendo 3DS is a portable game console produced by Nintendo. The handheld features stereoscopic 3D technology that doesn't require glasses. It was released in Japan on February 26, 2011 and in North America on March 27, 2011.", \
 			True, "3DS", "http://www.giantbomb.com/nintendo-3ds/3045-117/",\
@@ -373,17 +376,22 @@ class TestCases (TestCase):
 		test = {"id": "117", "name": "Nintendo 3DS", "release_date": "2011-02-26 00:00:00", "company": "Nintendo", "starting_price": "249.00", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/1686079-3dshw11911.jpg"}
 		self.assertEqual(obj, test)
 
-	def test_character_serialize_table(self):
-		obj = Character("2", "Sub-Zero", None, "1", \
-			"Kuai Liang, known as Tundra, became an assassin for the Lin Kuei after he and his brother were abducted by the clan. After the death of his brother Bi Han, Kuai Liang assumed the mantle of Sub-Zero to honor his memory.", \
-			"Sub-Zero is a video game character from the Mortal Kombat series and one of the original characters in the first Mortal Kombat game in 1992. A mainstay of the series, Sub-Zero is the only character who has appeared in every main Mortal Kombat fighting game. The character also appears in many other Mortal Kombat media works such as the Mortal Kombat live action film series and animated series.", \
-			"http://www.giantbomb.com/api/image/square_mini/2663932-cds.jpeg", "http://www.giantbomb.com/api/image/scale_medium/2663932-cds.jpeg", \
-			"http://www.giantbomb.com/sub-zero/3005-2/", "LK-520\r\nTundra\r\nCyber Sub-Zero\r\nKuai Liang", "25042")
+	def test_platform_serialize_table_2(self):
+		obj = Platform("20", "Xbox 360", "2005-11-22 00:00:00", "Microsoft Studios", "399.00", "80000000", \
+			"The Xbox 360 is the second game console produced by Microsoft Corporation and is the successor to the original Xbox.", \
+			True, "360\nXenon", "http://www.giantbomb.com/xbox-360/3045-20/",\
+			"http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg", "http://www.giantbomb.com/api/image/scale_medium/195092-xbox_360_console_02.jpg")
 		obj = obj.serialize_table()
-		test = {"id": "2", "gender": "1", "name": "Sub-Zero", "aliases": "LK-520\r\nTundra\r\nCyber Sub-Zero\r\nKuai Liang", "first_appeared_in_game": "25042", "deck": "Kuai Liang, known as Tundra, became an assassin for the Lin Kuei after he and his brother were abducted by the clan. After the death of his brother Bi Han, Kuai Liang assumed the mantle of Sub-Zero to honor his memory.", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2663932-cds.jpeg", "birthday": None}
-		self.assertEqual(obj, test)
+		test = {"id": "20", "name": "Xbox 360", "release_date": "2005-11-22 00:00:00", "company": "Microsoft Studios", "starting_price": "399.00", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg"}
 
-
+	def test_character_serialize_table(self):
+		obj = Character("5766", "Brock", None, "1", \
+			"\"The Rock-Solid Pokémon Trainer!\"", \
+			"DESCRIPTION", \
+			"http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
+			"http://www.giantbomb.com/brock/3005-5766/", None, "3966")
+		obj = obj.serialize_table()
+		test = {"id": "5766", "gender": "1", "name": "Brock", "aliases": None, "first_appeared_in_game": "3966", "deck": "\"The Rock-Solid Pokémon Trainer!\"", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "birthday": None}
 
 # ----
 # Main

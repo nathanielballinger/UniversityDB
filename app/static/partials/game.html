@@ -12,11 +12,11 @@
 				<p> Name: {{game.name}}</p>
 		        <p> Aliases: {{game.aliases.split("\r\n").join(", ")}}</p>
 		        <p> Original Release date: {{game.release_date}} </p> 
-				<p><span ng-repeat="platform in game.platforms">
-		    		{{$first ? 'Platforms: ' : ''}}<a href="#/platform/{{platform['id']}}">{{platform['name']}}</a>{{$last ? '' : ', '}}
+				<p><span ng-repeat="platform in game.platforms track by $index">
+		    		{{$first ? 'Platforms: ' : ''}}<a href="#/platform/{{platform[0]}}">{{platform[1]}}</a>{{$last ? '' : ', '}}
 				</span></p>
-				<p><span ng-repeat="character in game.characters">
-		    		{{$first ? 'Characters: ' : ''}}<a href="#/character/{{character.id}}">{{character.name}}</a>{{$last ? '' : ', '}}
+				<p><span ng-repeat="character in game.character track by $index">
+		    		{{$first ? 'Characters: ' : ''}}<a href="#/character/{{character[0]}}">{{character[1]}}</a>{{$last ? '' : ', '}}
 				</span></p>
 			</div>
 		</div>
