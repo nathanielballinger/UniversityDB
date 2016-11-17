@@ -18,10 +18,12 @@
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
-</td><td width="25%" valign=top><a href="models.html">models</a><br>
+<a href="models.html">models</a><br>
 </td><td width="25%" valign=top><a href="re.html">re</a><br>
+<a href="requests.html">requests</a><br>
 </td><td width="25%" valign=top><a href="time.html">time</a><br>
-</td></tr></table></td></tr></table><p>
+<a href="urllib.html">urllib</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -30,19 +32,18 @@
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><dl><dt><a name="-api_characters_id"><strong>api_characters_id</strong></a>(id)</dt></dl>
  <dl><dt><a name="-api_characters_offset"><strong>api_characters_offset</strong></a>(offset)</dt></dl>
- <dl><dt><a name="-api_game_id"><strong>api_game_id</strong></a>(id)</dt></dl>
+ <dl><dt><a name="-api_games_id"><strong>api_games_id</strong></a>(id)</dt></dl>
  <dl><dt><a name="-api_games_offset"><strong>api_games_offset</strong></a>(offset)</dt></dl>
  <dl><dt><a name="-api_platforms_id"><strong>api_platforms_id</strong></a>(id)</dt></dl>
  <dl><dt><a name="-api_platforms_offset"><strong>api_platforms_offset</strong></a>(offset)</dt></dl>
  <dl><dt><a name="-api_root"><strong>api_root</strong></a>()</dt><dd><tt>#&nbsp;api&nbsp;interface</tt></dd></dl>
  <dl><dt><a name="-api_runtests"><strong>api_runtests</strong></a>()</dt></dl>
- <dl><dt><a name="-getCharacter"><strong>getCharacter</strong></a>()</dt><dd><tt>#GET&nbsp;Request&nbsp;for&nbsp;a&nbsp;single&nbsp;character</tt></dd></dl>
- <dl><dt><a name="-getCharacterable"><strong>getCharacterable</strong></a>()</dt><dd><tt>#Get&nbsp;request&nbsp;for&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;Characters</tt></dd></dl>
- <dl><dt><a name="-getGame"><strong>getGame</strong></a>()</dt><dd><tt>#GET&nbsp;Request&nbsp;for&nbsp;a&nbsp;single&nbsp;Game</tt></dd></dl>
- <dl><dt><a name="-getGameTable"><strong>getGameTable</strong></a>()</dt><dd><tt>#Get&nbsp;request&nbsp;for&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;games</tt></dd></dl>
- <dl><dt><a name="-getPlatform"><strong>getPlatform</strong></a>()</dt><dd><tt>#GET&nbsp;Request&nbsp;for&nbsp;a&nbsp;single&nbsp;Platform</tt></dd></dl>
- <dl><dt><a name="-getPlatformTable"><strong>getPlatformTable</strong></a>()</dt><dd><tt>#Get&nbsp;request&nbsp;for&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;platforms</tt></dd></dl>
  <dl><dt><a name="-index"><strong>index</strong></a>()</dt></dl>
+ <dl><dt><a name="-research_papers_year"><strong>research_papers_year</strong></a>(year)</dt></dl>
+ <dl><dt><a name="-search_result_all"><strong>search_result_all</strong></a>(text)</dt></dl>
+ <dl><dt><a name="-search_result_characters"><strong>search_result_characters</strong></a>(text)</dt></dl>
+ <dl><dt><a name="-search_result_games"><strong>search_result_games</strong></a>(text)</dt></dl>
+ <dl><dt><a name="-search_result_platforms"><strong>search_result_platforms</strong></a>(text)</dt></dl>
  <dl><dt><a name="-shell_context"><strong>shell_context</strong></a>()</dt></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -52,12 +53,9 @@
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><strong>app</strong> = &lt;Flask 'models'&gt;<br>
-<strong>characterDict</strong> = {}<br>
 <strong>db</strong> = &lt;SQLAlchemy engine='postgresql://localhost/swe2'&gt;<br>
-<strong>g</strong> = None<br>
-<strong>gameDict</strong> = {}<br>
 <strong>i</strong> = 49<br>
 <strong>manager</strong> = &lt;flask_script.Manager object&gt;<br>
-<strong>platformDict</strong> = {}<br>
+<strong>p</strong> = &lt;models.Character object&gt;<br>
 <strong>request</strong> = &lt;LocalProxy unbound&gt;</td></tr></table>
 </body></html>
