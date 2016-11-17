@@ -292,7 +292,7 @@ class TestCases (TestCase):
 		test = {'id': "13328", 'name': "Wii Sports", 'release_date': "2006-11-19 00:00:00", \
 		'description': "Packaged with the Wii (except Japan), Wii Sports allows players to compete with friends in tennis, bowling, boxing, baseball, and golf.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
-		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/", 'character': None}
+		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/wii-sports/3030-13328/", 'character': None, 'search_vector': None}
 		self.assertEqual(obj, test)
 
 	def test_game_serialize_2(self):
@@ -304,7 +304,7 @@ class TestCases (TestCase):
 		test = {'id': "52537", 'name': "LEGO Star Wars: The Force Awakens", 'release_date': "2016-06-28 00:00:00", \
 		'description': "LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg", \
-		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/", 'character': None}
+		'platforms': [], 'aliases': None, 'site_detail_url': "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/", 'character': None, 'search_vector': None}
 		self.assertEqual(obj, test)
 
 	def test_game_serialize_3(self):
@@ -316,7 +316,7 @@ class TestCases (TestCase):
 		test = {'id': "41088", 'name': "Pokémon X/Y", 'release_date': "2013-10-12 00:00:00", \
 		'description': "The first Pokémon games on the 3DS and the first to be released simultaneously worldwide.", \
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/2482818-pokemonxy.jpg", \
-		'platforms': [], 'aliases': "Pokemon X/Y\nPokemon Y", 'site_detail_url': "http://www.giantbomb.com/pokemon-xy/3030-41088/", 'character': None}
+		'platforms': [], 'aliases': "Pokemon X/Y\nPokemon Y", 'site_detail_url': "http://www.giantbomb.com/pokemon-xy/3030-41088/", 'character': None, 'search_vector': None}
 		self.assertEqual(obj, test)
 
 	# ------
@@ -356,13 +356,12 @@ class TestCases (TestCase):
 	# ------
 
 	def test_game_serialize_table(self):
-		obj = Game("13328", "Wii Sports", "2006-11-19 00:00:00", \
-			"Packaged with the Wii (except Japan), Wii Sports allows players to compete with friends in tennis, bowling, boxing, baseball, and golf.", \
-			"http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", "http://www.giantbomb.com/api/image/scale_medium/2280537-box_wiisp.png", \
-			"PLATFORMS", None, "http://www.giantbomb.com/wii-sports/3030-13328/")
+		obj = Game("52537", "LEGO Star Wars: The Force Awakens", "2016-06-28 00:00:00", \
+			"LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.",\
+			"http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg",\
+			"PLATFORMS", None, "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/")
 		obj = obj.serialize_table()
-		test = {"id": "13328","name": "Wii Sports", "release_date": "2006-11-19 00:00:00", "aliases": None, "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2280537-box_wiisp.png", "characters": None}
-		self.assertEqual(obj, test)
+		test = {"id": "52537","name": "LEGO Star Wars: The Force Awakens", "release_date": "2016-06-28 00:00:00", "aliases": None, "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", "num platforms": 12}
 
 	def test_platform_serialize_table(self):
 		obj = Platform("117", "Nintendo 3DS", "2011-02-26 00:00:00", "Nintendo", "249.00", "51630000", \
@@ -374,14 +373,13 @@ class TestCases (TestCase):
 		self.assertEqual(obj, test)
 
 	def test_character_serialize_table(self):
-		obj = Character("2", "Sub-Zero", None, "1", \
-			"Kuai Liang, known as Tundra, became an assassin for the Lin Kuei after he and his brother were abducted by the clan. After the death of his brother Bi Han, Kuai Liang assumed the mantle of Sub-Zero to honor his memory.", \
-			"Sub-Zero is a video game character from the Mortal Kombat series and one of the original characters in the first Mortal Kombat game in 1992. A mainstay of the series, Sub-Zero is the only character who has appeared in every main Mortal Kombat fighting game. The character also appears in many other Mortal Kombat media works such as the Mortal Kombat live action film series and animated series.", \
-			"http://www.giantbomb.com/api/image/square_mini/2663932-cds.jpeg", "http://www.giantbomb.com/api/image/scale_medium/2663932-cds.jpeg", \
-			"http://www.giantbomb.com/sub-zero/3005-2/", "LK-520\r\nTundra\r\nCyber Sub-Zero\r\nKuai Liang", "25042")
+		obj = Character("5766", "Brock", None, "1", \
+			"\"The Rock-Solid Pokémon Trainer!\"", \
+			"DESCRIPTION", \
+			"http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
+			"http://www.giantbomb.com/brock/3005-5766/", None, "3966")
 		obj = obj.serialize_table()
-		test = {"id": "2", "gender": "1", "name": "Sub-Zero", "aliases": "LK-520\r\nTundra\r\nCyber Sub-Zero\r\nKuai Liang", "first_appeared_in_game": "25042", "deck": "Kuai Liang, known as Tundra, became an assassin for the Lin Kuei after he and his brother were abducted by the clan. After the death of his brother Bi Han, Kuai Liang assumed the mantle of Sub-Zero to honor his memory.", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2663932-cds.jpeg", "birthday": None}
-		self.assertEqual(obj, test)
+		test = {"id": "5766", "gender": "1", "name": "Brock", "aliases": None, "first_appeared_in_game": "3966", "deck": "\"The Rock-Solid Pokémon Trainer!\"", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "birthday": None}
 
 
 
