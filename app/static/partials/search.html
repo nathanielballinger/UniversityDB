@@ -1,7 +1,15 @@
-<div data-ng-controller="searchCtrl" data-ng-init="" class="container">
+<div ng-controller="searchCtrl" data-ng-init="" class="container">
     <h1 align="center">Search Results</h1>
     
-    <table class="table table-striped">
+    <div ng-show="!results" class="row">
+        <div class="col-md-12">
+            <div class="thumbnail gray-thumbnail">
+                No Results Found.
+            </div>
+        </div>
+    </div>
+
+    <table ng-show="results" class="table table-striped">
         <thead>
             <tr>
                 <td>
@@ -17,9 +25,9 @@
             </tr>            
         </thead>
         <tbody>
-            <tr ng-repeat="x in results">
+            <tr ng-repeat="x in results  | orderBy:sortType:sortReverse">
                 <td>{{x.pillar}}</td>
-                <td><a href="/#/{{x.pillar}}/{{+x.id}}">{{ x.name }}</a></td>
+                <td><a href="/#/{{x.pillar}}/{{+x.id}}"><p ng-bind-html="x.name | highlightWords:x.word_hits"></p></a></td>
             </tr>
         </tbody>
     </table>

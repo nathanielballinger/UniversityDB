@@ -10,6 +10,11 @@ h3 {
   text-align: center;
 }
 
+.ui-match { 
+  background: magenta; 
+  color: #fff; 
+}
+
 .override-bootstrap {
   margin: 2em;
   padding-top: 55px;

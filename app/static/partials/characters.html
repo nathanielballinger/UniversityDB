@@ -30,7 +30,7 @@
             </tr>            
         </thead>
         <tbody>
-            <tr ng-repeat="x in characters | orderBy:sortType:sortReverse | filter:search">
+            <tr ng-repeat="x in characters | orderBy:sortType:sortReverse">
                 <td>{{$index + 1}}</td>
                 <td><a href="/#/character/{{+x.id}}">{{ x.name }}</a></td>
                 <td><a href="/#/game/{{+x.first_appeared_in_game[0]}}">{{ x.first_appeared_in_game[1]}}</a></td>

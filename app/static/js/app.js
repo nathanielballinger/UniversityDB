@@ -1,6 +1,6 @@
 'use strict';   // See note about 'use strict'; below
 
-var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngSanitize', 'ngCookies']);
 
 myApp.constant('_',
     window._
@@ -10,63 +10,76 @@ myApp.config(['$routeProvider',
      function($routeProvider) {
          $routeProvider.
              when('/', {
-                 templateUrl: '../static/partials/splash.html',
+                 templateUrl: '../static/partials/splash.html'
              }).
-             when('/about', {
-                 templateUrl: '../static/partials/about.html',
-                 controller: 'aboutCtrl'
+             when('/about/', {
+                 templateUrl: '../static/partials/about.html'
              }).
-             when('/games', {
-                 templateUrl: '../static/partials/games.html',
-                 controller: 'gamesCtrl'
+             when('/games/', {
+                 templateUrl: '../static/partials/games.html'
              }).
-             when('/platforms', {
-                 templateUrl: '../static/partials/platforms.html',
-                 controller: 'platformsCtrl',
+             when('/platforms/', {
+                 templateUrl: '../static/partials/platforms.html'
              }).
-             when('/characters', {
-                 templateUrl: '../static/partials/characters.html',
-                 controller: 'charactersCtrl',
+             when('/characters/', {
+                 templateUrl: '../static/partials/characters.html'
              }).
-             when('/game/:id', {
-                 templateUrl: '../static/partials/game.html',
-                 controller: 'gameCtrl',
+             when('/game/:id/', {
+                 templateUrl: '../static/partials/game.html'
              }).
-             when('/character/:id', {
-                 templateUrl: '../static/partials/character.html',
-                 controller: 'characterCtrl',
+             when('/character/:id/', {
+                 templateUrl: '../static/partials/character.html'
              }).
-             when('/platform/:id', {
-                 templateUrl: '../static/partials/platform.html',
-                 controller: 'platformCtrl',
+             when('/platform/:id/', {
+                 templateUrl: '../static/partials/platform.html'
              }).
-            when('/search', {
-                 templateUrl: '../static/partials/search.html',
-                 controller: 'searchCtrl',
+            when('/search/', {
+                 templateUrl: '../static/partials/search.html'
              }).
-            when('/papers/:year', {
-                 templateUrl: '../static/partials/papers.html',
-                 controller: 'papersCtrl',
+            when('/papers/:year/', {
+                 templateUrl: '../static/partials/papers.html'
              }).
              otherwise({
                  redirectTo: '/'
              });
     }]);
 
-
-myApp.factory('searchService', function() {
- var savedData = {};
- function set(data) {
-   savedData = data;
- }
- function get() {
-  return savedData;
- }
- return {
-  set: set,
-  get: get
- }
+myApp.filter('highlight', function () {
+    return function (text, search, caseSensitive) {
+        if (text && (search || angular.isNumber(search))) {
+            text = text.toString();
+            search = search.toString();
+            if (caseSensitive) {
+                return text.split(search).join('<span class="ui-match">' + search + '</span>');
+            } else {
+                return text.replace(new RegExp(search, 'gi'), '<span class="ui-match">$&</span>');
+            }
+        } else {
+            return text;
+        }
+    };
 });
+
+myApp.filter('highlightWords', function () {
+      return function (text, search) {
+        if (text && (search || angular.isNumber(search))) {
+          text = text.toString();
+//          search = search.toString();
+
+//          angular.forEach(search.split(/\s+/), function(word) {
+          angular.forEach(search, function(word) {
+            // reject some words from the filtering
+            if (['span', 'class', 'ui-match'].indexOf(word) < 0) {
+
+                var pattern = new RegExp("\\b" + word + "\\b", "gi");
+                text = text.replace(pattern, '<span class="ui-match">$&</span>');
+            }
+          });
+        }
+        return text;
+      };
+});
+
 
 var listVals = ["platforms", "games", "character", "first_appeared_in_game"];
 
@@ -120,7 +133,7 @@ function getObjectFromId(http, type, id) {
 }
 
 //var scope;
-myApp.controller('headerCtrl', function($rootScope, $scope, $http, $location, $window, searchService) {
+myApp.controller('headerCtrl', function($rootScope, $scope, $http, $location, $window, $cookieStore) {
     $scope.navCollapsed = true;
     $scope.refs = [];
     $scope.searchType = "All";
@@ -137,12 +150,17 @@ myApp.controller('headerCtrl', function($rootScope, $scope, $http, $location, $w
     };
 
     $scope.search = function(searchType, searchString) {
+        if(!searchString)
+            return;
         var searchObj = {"pillar": searchType,
                          "string": searchString};
-        searchService.set(searchObj);
-        $rootScope.$emit('searchChanged');
-        if($location.path() != "/search") {
-            $location.path("/search");
+        $cookieStore.remove('searchObj');
+        $cookieStore.put('searchObj', searchObj);
+        $rootScope.$emit("searchChanged");
+        if($location.path() != "/search/") {
+            $location.path("/search/");
+        } else {
+            $rootScope.$broadcast("searchChanged");
         }
     }
 
@@ -168,6 +186,8 @@ myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) 
                             "top_journal" : [],
                             "top_subject" : [] };
 
+    $scope.correctAnswers = [];
+
     for(var i = 0; i < 4; i++) {
         var newYear = year + i;
         $http.get('/researchpapers/' + newYear.toString())
@@ -184,21 +204,37 @@ myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) 
 
 })
 
-myApp.controller('searchCtrl', function($rootScope, $scope, $http, $location, searchService) {
-    var data = searchService.get();
+function createKeywords(results) {
+    for(var i = 0; i < results.length; i++) {
+        var x = results[i].word_hits.join();
+        x = "Mario";
+        results[i].keywords = x;
+    }
+    return results;
+}
+
+myApp.controller('searchCtrl', function($scope, $http, $location, $cookieStore) {
+    $scope.sortType = "name";
+    $scope.sortReverse = false;
+    $scope.search = "";
+
+    var data = $cookieStore.get('searchObj');
+    if(!data){
+        return;
+    }
     console.log(data);
     $http.get("/search/result/" + data.pillar.toLowerCase() + "/" + data.string)
     .then(function (response) {
-        $scope.results = response.data;
+        $scope.results = createKeywords(response.data);
         console.log($scope.results);          
     });
 
-    // This is to update search after the first search
-    $rootScope.$on('searchChanged', function (event, data) {
-        console.log(data);
+    // This is to update search if already on search page
+    $scope.$on('searchChanged', function (event) {
+        var data = $cookieStore.get('searchObj');
         $http.get("/search/result/" + data.pillar.toLowerCase() + "/" + data.string)
         .then(function (response) {
-            $scope.results = response.data;
+            $scope.results = createKeywords(response.data);
             console.log($scope.results);          
         });
     });
@@ -207,6 +243,7 @@ myApp.controller('searchCtrl', function($rootScope, $scope, $http, $location, se
 
 //Controller for all games
 myApp.controller('gamesCtrl', function($scope, $http){
+    console.log("HELLOO");
     $scope.page = 1
     $scope.pages = [1,2,3,4,5]
 
