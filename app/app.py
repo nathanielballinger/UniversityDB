@@ -194,20 +194,13 @@ def api_platforms_id(id):
 @app.route('/search/result/games/<text>')
 def search_result_games(text):
 	#Basic search algorithm
-	
-	search_text = '%'+text+'%'
 	returnlist = []
-	games = Game.query.filter(Game.name.like('search_text')).limit(25).all()
-	for game in games:
-		dict_game = {"pillar": "game", "name": game.name, "id": game.id}
-		returnlist.append(dict_game)
-	characters = Character.query.filter(Character.name.like(search_text)).limit(25)
-	return jsonify(returnlist)
-	
-	char_query = db.session.query(Character)
-	plat_query = db.session.query(Platform)
-	game_query = db.session.query(Game)
+	games_query = search(Game.query, text).limit(15)
+	for game in games_query.all():
+		search_result = SearchResult(game.id, game.name, "game", text)
+		returnlist.append(search_result.toJSON())
 
+	return jsonify(returnlist)
 	"""
 	query = search(query, 'first')
 	print query.first().name
@@ -217,34 +210,30 @@ def search_result_games(text):
 @app.route('/search/result/characters/<text>')
 def search_result_characters(text):
 	#Basic search algorithm
-	
-	search_text = '%'+text+'%'
 	returnlist = []
-	characters = Character.query.filter(Character.name.like(search_text)).limit(25)
-	for character in characters:
-		dict_game = {"pillar": "character", "name": character.name, "id": character.id}
-		returnlist.append(dict_game)
+	characters_query = search(Character.query, text).limit(15)
+	for character in characters_query.all():
+		search_result = SearchResult(character.id, character.name, "character", text)
+		returnlist.append(search_result.toJSON())
 	return jsonify(returnlist)
 
 @app.route('/search/result/platforms/<text>')
 def search_result_platforms(text):
 	#Basic search algorithm
-	
-	search_text = '%'+text+'%'
 	returnlist = []
-	platforms = Platform.query.filter(Platform.name.like(search_text)).limit(25)
-	for platform in platforms:
-		dict_game = {"pillar": "platform", "name": platform.name, "id": platform.id}
-		returnlist.append(dict_game)
+	platforms_query = search(Platform.query, text).limit(15)
+	for platform in platforms_query.all():
+		search_result = SearchResult(platform.id, platform.name, "platform", text)
+		returnlist.append(search_result.toJSON())
 	return jsonify(returnlist)
 
 @app.route('/search/result/all/<text>')
 def search_result_all(text):
 	#Basic search algorithm
 	returnlist = []
-	games_query = Game.query.search(text).limit(15)
-	characters_query = Character.query.search(text).limit(15)
-	platforms_query = Platform.query.search(text).limit(15)
+	games_query = search(Game.query, text).limit(15)
+	characters_query = search(Character.query, text).limit(15)
+	platforms_query = search(Platform.query, text).limit(15)
 
 	for game in games_query.all():
 		search_result = SearchResult(game.id, game.name, "game", text)
