@@ -322,7 +322,7 @@ class TestCases (TestCase):
 	# ------
 	# Character Serialize
 	# ------
-
+	"""
 	def test_character_serialize_1(self):
 		obj = Character("177", "Mario", "Jun 2, 1981", "1", \
 			"Originally a carpenter named Jumpman, this Italian plumber has gone on to become the most recognizable video game character of them all, starring in a veritable pantheon of titles like kart racing and sports. He has been voiced by Charles Martinet for nearly 20 years.", \
@@ -350,18 +350,26 @@ class TestCases (TestCase):
 		'tiny_image': "http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", 'medium_image': "http://www.giantbomb.com/api/image/scale_medium/1906766-pokemon_heartgold_soulsilver_brock.png", \
 		'site_detail_url': "http://www.giantbomb.com/brock/3005-5766/", 'aliases': None, 'first_appeared_in_game': "3966"}
 		self.assertEqual(obj, test)
-
+	"""
 	# ------
 	# Serialize_Table for each object
 	# ------
 
-	def test_game_serialize_table(self):
+	def test_game_serialize_table_1(self):
 		obj = Game("52537", "LEGO Star Wars: The Force Awakens", "2016-06-28 00:00:00", \
 			"LEGO Star Wars: The Force Awakens covers the seventh film and includes material that occurred between Return of the Jedi and Force Awakens.",\
 			"http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", "http://www.giantbomb.com/api/image/scale_medium/2822264-lswtfa.jpg",\
 			"PLATFORMS", None, "http://www.giantbomb.com/lego-star-wars-the-force-awakens/3030-52537/")
 		obj = obj.serialize_table()
 		test = {"id": "52537","name": "LEGO Star Wars: The Force Awakens", "release_date": "2016-06-28 00:00:00", "aliases": None, "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2822264-lswtfa.jpg", "num platforms": 12}
+
+	def test_game_serialize_table_2(self):
+		obj = Game("41088", "Pokémon X/Y", "2013-10-12 00:00:00", \
+			"The first Pokémon games on the 3DS and the first to be released simultaneously worldwide.", \
+			"http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", "http://www.giantbomb.com/api/image/scale_medium/2482818-pokemonxy.jpg",\
+			"PLATFORMS", "Pokemon X/Y\nPokemon Y", "http://www.giantbomb.com/pokemon-xy/3030-41088/")
+		obj = obj.serialize_table()
+		test = {"id": "41088","name": "Pokémon X/Y", "release_date": "2013-10-12 00:00:00", "aliases": "Pokemon X/Y\nPokemon Y", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/2482818-pokemonxy.jpg", "num platforms": 2}
 
 	def test_platform_serialize_table(self):
 		obj = Platform("117", "Nintendo 3DS", "2011-02-26 00:00:00", "Nintendo", "249.00", "51630000", \
@@ -372,6 +380,14 @@ class TestCases (TestCase):
 		test = {"id": "117", "name": "Nintendo 3DS", "release_date": "2011-02-26 00:00:00", "company": "Nintendo", "starting_price": "249.00", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/1686079-3dshw11911.jpg"}
 		self.assertEqual(obj, test)
 
+	def test_platform_serialize_table_2(self):
+		obj = Platform("20", "Xbox 360", "2005-11-22 00:00:00", "Microsoft Studios", "399.00", "80000000", \
+			"The Xbox 360 is the second game console produced by Microsoft Corporation and is the successor to the original Xbox.", \
+			True, "360\nXenon", "http://www.giantbomb.com/xbox-360/3045-20/",\
+			"http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg", "http://www.giantbomb.com/api/image/scale_medium/195092-xbox_360_console_02.jpg")
+		obj = obj.serialize_table()
+		test = {"id": "20", "name": "Xbox 360", "release_date": "2005-11-22 00:00:00", "company": "Microsoft Studios", "starting_price": "399.00", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/195092-xbox_360_console_02.jpg"}
+
 	def test_character_serialize_table(self):
 		obj = Character("5766", "Brock", None, "1", \
 			"\"The Rock-Solid Pokémon Trainer!\"", \
@@ -380,8 +396,6 @@ class TestCases (TestCase):
 			"http://www.giantbomb.com/brock/3005-5766/", None, "3966")
 		obj = obj.serialize_table()
 		test = {"id": "5766", "gender": "1", "name": "Brock", "aliases": None, "first_appeared_in_game": "3966", "deck": "\"The Rock-Solid Pokémon Trainer!\"", "tiny_image": "http://www.giantbomb.com/api/image/square_mini/1906766-pokemon_heartgold_soulsilver_brock.png", "birthday": None}
-
-
 
 # ----
 # Main
