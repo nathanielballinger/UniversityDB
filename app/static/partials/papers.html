@@ -1,26 +1,26 @@
 <div data-ng-controller="papersCtrl" data-ng-init="" class="container">
-    <h1 align="center">Papers</h1>
+    <h1 align="center">Research Paper Trivia for {{year}}</h1>
     
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <td>
-                    <a href="javascript:void(0)" ng-click="sortType = 'pillar'; sortReverse = !sortReverse">
-                    Pillar </a> <span ng-show="sortType == 'pillar' && !sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'pillar' && sortReverse" class="fa fa-caret-up"></span>
-                </td>
-                <td>
-                    <a href="javascript:void(0)" ng-click="sortType = 'name'; sortReverse = !sortReverse">
-                    Name</a> <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
-                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
-                </td>
-            </tr>            
-        </thead>
-        <tbody>
-            <tr ng-repeat="x in results">
-                <td>{{x.pillar}}</td>
-                <td><a href="/#/{{x.pillar}}/{{+x.id}}">{{ x.name }}</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="thumbnail gray-thumbnail">
+                <p> 1). How many papers were published in the year of {{year + 1831}}?</p>
+                <div ng-repeat="x in answerChoices.num_papers">
+                    <input type="radio" name="num_papers" ng-model="$parent.num_papers" ng-value="x" /> {{x}}<br>
+                </div>
+                <p> 2). What country had the most journals in the year of {{year + 1831}}?</p>
+                <div ng-repeat="x in answerChoices.top_country">
+                    <input type="radio" name="top_country" ng-model="$parent.top_country" ng-value="x" /> {{x}}<br>
+                </div>
+                <p> 3). What was the top jounal in the year of {{year + 1831}}?</p>
+                <div ng-repeat="x in answerChoices.top_journal track by $index">
+                    <input type="radio" name="top_journal" ng-model="$parent.top_journal" ng-value="x" /> {{x}}<br>
+                </div>
+                <p> 4). What was the top subject in the year of {{year + 1831}}?</p>
+                <div ng-repeat="x in answerChoices.top_subject track by $index">
+                    <input type="radio" name="top_subject" ng-model="$parent.top_subject" ng-value="x" /> {{x}}<br>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

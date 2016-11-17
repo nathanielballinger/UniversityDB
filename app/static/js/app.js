@@ -152,12 +152,36 @@ myApp.controller('headerCtrl', function($rootScope, $scope, $http, $location, $w
 
 myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) {
     var year = parseInt($routeParams.year) - 1831;
-    console.log(year);
-    $http.get('/researchpapers/' + year.toString())
-    .then(function (response) {
-        $scope.results = response.data;
-        console.log($scope.results);
-    });
+    
+    if(year < 1)
+        year = 1;
+    else if(year > 185)
+        year = 185;
+
+    $scope.year = year;
+
+    if(year > 182 && year <= 185)
+        year = 182;
+
+    $scope.answerChoices = {"num_papers" : [],
+                            "top_country": [],
+                            "top_journal" : [],
+                            "top_subject" : [] };
+
+    for(var i = 0; i < 4; i++) {
+        var newYear = year + i;
+        $http.get('/researchpapers/' + newYear.toString())
+        .then(function (response) {
+            var data = response.data;
+            console.log(data);
+            $scope.answerChoices.num_papers.push(data.num_papers);
+            $scope.answerChoices.top_country.push(data.top_country);
+            $scope.answerChoices.top_journal.push(data.top_journal);
+            $scope.answerChoices.top_subject.push(data.top_subject);
+        });
+    }
+
+
 })
 
 myApp.controller('searchCtrl', function($rootScope, $scope, $http, $location, searchService) {
