@@ -196,12 +196,18 @@ def api_platforms_id(id):
 def search_result_games(text):
 	#Basic search algorithm
 	returnlist = []
-	games_query = search(Game.query, text).limit(15)
+	resultDict = dict()
+	searchText = re.sub(r"[^A-Za-z\s]+", '', text).lower()
+	resultDict['search_text'] =  searchText
+
+	text.replace(" ", " or ")
+	games_query = search(Game.query, text)
 	for game in games_query.all():
 		search_result = SearchResult(game.id, game.name, "game", text)
 		returnlist.append(search_result.toJSON())
 
-	return jsonify(returnlist)
+	resultDict['results'] =  returnlist
+	return jsonify(resultDict)
 	"""
 	query = search(query, 'first')
 	print query.first().name
@@ -212,29 +218,48 @@ def search_result_games(text):
 def search_result_characters(text):
 	#Basic search algorithm
 	returnlist = []
-	characters_query = search(Character.query, text).limit(15)
+	resultDict = dict()
+	searchText = re.sub(r"[^A-Za-z\s]+", '', text).lower()
+	resultDict['search_text'] =  searchText
+	
+	text.replace(" ", " or ")
+	characters_query = search(Character.query, text)
 	for character in characters_query.all():
 		search_result = SearchResult(character.id, character.name, "character", text)
 		returnlist.append(search_result.toJSON())
-	return jsonify(returnlist)
+
+	resultDict['results'] =  returnlist
+	return jsonify(resultDict)
 
 @app.route('/search/result/platforms/<text>')
 def search_result_platforms(text):
 	#Basic search algorithm
 	returnlist = []
-	platforms_query = search(Platform.query, text).limit(15)
+	resultDict = dict()
+	searchText = re.sub(r"[^A-Za-z\s]+", '', text).lower()
+	resultDict['search_text'] =  searchText
+
+	text.replace(" ", " or ")
+	platforms_query = search(Platform.query, text)
 	for platform in platforms_query.all():
 		search_result = SearchResult(platform.id, platform.name, "platform", text)
 		returnlist.append(search_result.toJSON())
-	return jsonify(returnlist)
+
+	resultDict['results'] =  returnlist
+	return jsonify(resultDict)
 
 @app.route('/search/result/all/<text>')
 def search_result_all(text):
 	#Basic search algorithm
 	returnlist = []
-	games_query = search(Game.query, text).limit(15)
-	characters_query = search(Character.query, text).limit(15)
-	platforms_query = search(Platform.query, text).limit(15)
+	resultDict = dict()
+	searchText = re.sub(r"[^A-Za-z\s]+", '', text).lower()
+	resultDict['search_text'] =  searchText
+
+	text.replace(" ", " or ")
+	games_query = search(Game.query, text)
+	characters_query = search(Character.query, text)
+	platforms_query = search(Platform.query, text)
 
 	for game in games_query.all():
 		search_result = SearchResult(game.id, game.name, "game", text)
@@ -248,7 +273,8 @@ def search_result_all(text):
 		search_result = SearchResult(platform.id, platform.name, "platform", text)
 		returnlist.append(search_result.toJSON())
 
-	return jsonify(returnlist)
+	resultDict['results'] = returnlist
+	return jsonify(resultDict)
 
 	"""
 	search_text = '%'+text+'%'

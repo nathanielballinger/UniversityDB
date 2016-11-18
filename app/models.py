@@ -5,6 +5,7 @@ from flask_script import Manager, Shell
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_searchable import make_searchable, search
 from sqlalchemy_utils.types import TSVectorType
+from stop_words import get_stop_words
 import requests
 import json
 import urllib.request
@@ -204,20 +205,28 @@ class Character(db.Model):
 
 class SearchResult:
 
+	_stopWords = set(get_stop_words("en"))
+
 	def __init__(self, id, name, pillar, searchText):
 		self.id = id
 		self.name = name
 		self.pillar = pillar
+		self.type = True
+		self._filteredSearchText = re.sub(r"[^A-Za-z\s]+", '', searchText).lower()
+
 
 		# Do something with searchText to create self.word_hits
-		self.word_hits = []
+		word_hits = set(self._filteredSearchText.split())
+		setDiff = word_hits - SearchResult._stopWords
 
-		#ignore non-alpha characters, perserving whitespace
-		filteredSearchText = re.sub(r"[^A-Za-z\s]+", '', searchText).split()
+
 		nameWords = self.name.lower()
-		for word in filteredSearchText:
-			if word.lower() in nameWords:
-				self.word_hits.append(word)
+		for word in setDiff:
+			if not word.lower() in nameWords:
+				self.type = False
+				break
+
+
 		
 
 	def toJSON(self):
