@@ -200,7 +200,7 @@ def search_result_games(text):
 	searchText = re.sub(r"[^A-Za-z\s]+", '', text).lower()
 	resultDict['search_text'] =  searchText
 
-	text.replace(" ", " or ")
+	text = text.replace(" ", " or ")
 	games_query = search(Game.query, text)
 	for game in games_query.all():
 		search_result = SearchResult(game.id, game.name, "game", text)
@@ -222,7 +222,7 @@ def search_result_characters(text):
 	searchText = re.sub(r"[^A-Za-z\s]+", '', text).lower()
 	resultDict['search_text'] =  searchText
 	
-	text.replace(" ", " or ")
+	text = text.replace(" ", " or ")
 	characters_query = search(Character.query, text)
 	for character in characters_query.all():
 		search_result = SearchResult(character.id, character.name, "character", text)
@@ -239,7 +239,7 @@ def search_result_platforms(text):
 	searchText = re.sub(r"[^A-Za-z\s]+", '', text).lower()
 	resultDict['search_text'] =  searchText
 
-	text.replace(" ", " or ")
+	text = text.replace(" ", " or ")
 	platforms_query = search(Platform.query, text)
 	for platform in platforms_query.all():
 		search_result = SearchResult(platform.id, platform.name, "platform", text)
@@ -256,7 +256,7 @@ def search_result_all(text):
 	searchText = re.sub(r"[^A-Za-z\s]+", '', text).lower()
 	resultDict['search_text'] =  searchText
 
-	text.replace(" ", " or ")
+	text = text.replace(" ", " or ")
 	games_query = search(Game.query, text)
 	characters_query = search(Character.query, text)
 	platforms_query = search(Platform.query, text)
