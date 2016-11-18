@@ -23,12 +23,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe2'
 
 
-for i in range (0,50):
-	p = Character.query.filter_by(id = i).first()
-	if p is None:
-		continue
-	print(p.name)
-	print(p.first_appeared_in_game)
 
 @app.route("/")
 def index():
