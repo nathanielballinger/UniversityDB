@@ -162,9 +162,6 @@ myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) 
 
     $scope.year = year;
 
-    if(year > 182 && year <= 185)
-        year = 182;
-
     $scope.answerChoices = {"num_papers" : [],
                             "top_country": [],
                             "top_journal" : [],
@@ -172,8 +169,23 @@ myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) 
 
     $scope.correctAnswers = [];
 
-    for(var i = 0; i < 4; i++) {
-        var newYear = year + i;
+    $http.get('/researchpapers/' + year.toString())
+    .then(function (response) {
+        var data = response.data;
+        console.log(data);
+        $scope.correctAnswers.push(data.num_papers);
+        $scope.correctAnswers.push(data.top_country);
+        $scope.correctAnswers.push(data.top_journal);
+        $scope.correctAnswers.push(data.top_subject);
+        
+        $scope.answerChoices.num_papers.push(data.num_papers);
+        $scope.answerChoices.top_country.push(data.top_country);
+        $scope.answerChoices.top_journal.push(data.top_journal);
+        $scope.answerChoices.top_subject.push(data.top_subject);
+    });
+
+    for(var i = 0; i < 3; i++) {
+        var newYear = Math.floor(Math.random() * 184) + 1;
         $http.get('/researchpapers/' + newYear.toString())
         .then(function (response) {
             var data = response.data;
@@ -184,8 +196,27 @@ myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) 
             $scope.answerChoices.top_subject.push(data.top_subject);
         });
     }
+    $scope.random = function() {
+        return 0.5 - Math.random();
+    }
 
-
+    $scope.submitQuiz = function() {
+        var score = 0;
+        if($scope.correctAnswers[0] == $('input[name="num_papers"]:checked').val()) {
+            score += 1;
+        }
+        if($scope.correctAnswers[1] == $('input[name="top_country"]:checked').val()) {
+            score += 1;
+        }
+        if($scope.correctAnswers[2] == $('input[name="top_journal"]:checked').val()) {
+            score += 1;
+        }
+        if($scope.correctAnswers[3] == $('input[name="top_subject"]:checked').val()) {
+            score += 1;
+        }
+        $scope.score = score;
+        return;
+    }
 })
 
 myApp.controller('searchCtrl', function($scope, $http, $location, $cookieStore) {
@@ -339,6 +370,14 @@ myApp.controller('charactersCtrl', function($scope, $http){
     $scope.sortType = "name";
     $scope.sortReverse = false;
     $scope.search = "";
+
+    $scope.filterSort = function(sortType) {
+        return function(character) {
+            if(sortType == 'game_name')
+                return character.first_appeared_in_game[1].toString();
+            return character[sortType];
+        };
+    }
 
     var names = {};
     $http.get("api/characters/offset/1")

@@ -3724,5 +3724,3 @@
 [Fri Nov 18 02:18:15.478566 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]   File "/var/www/cs373f-idb/app/app.py", line 12, in <module>
 [Fri Nov 18 02:18:15.478574 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]     from app.tests import runTestsOut
 [Fri Nov 18 02:18:15.478588 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>
-[Fri Nov 18 02:18:15.478596 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]     from models \t\timport *
-[Fri Nov 18 02:18:15.478647 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208] ImportError: No module named 'models'
