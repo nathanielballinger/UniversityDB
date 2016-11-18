@@ -188,18 +188,9 @@ myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) 
 
 })
 
-function createKeywords(results) {
-    for(var i = 0; i < results.length; i++) {
-        var x = results[i].word_hits.join();
-        x = "Mario";
-        results[i].keywords = x;
-    }
-    return results;
-}
-
 myApp.controller('searchCtrl', function($scope, $http, $location, $cookieStore) {
-    $scope.sortType = "name";
-    $scope.sortReverse = false;
+    $scope.sortType = "type";
+    $scope.sortReverse = true;
     $scope.search = "";
 
     var data = $cookieStore.get('searchObj');
@@ -209,8 +200,9 @@ myApp.controller('searchCtrl', function($scope, $http, $location, $cookieStore) 
     console.log(data);
     $http.get("/search/result/" + data.pillar.toLowerCase() + "/" + data.string)
     .then(function (response) {
-        $scope.results = createKeywords(response.data);
-        console.log($scope.results);          
+        console.log(response.data);
+        $scope.results = response.data.results;
+        $scope.keyWords = response.data.search_text.split(" ");
     });
 
     // This is to update search if already on search page
@@ -218,8 +210,9 @@ myApp.controller('searchCtrl', function($scope, $http, $location, $cookieStore) 
         var data = $cookieStore.get('searchObj');
         $http.get("/search/result/" + data.pillar.toLowerCase() + "/" + data.string)
         .then(function (response) {
-            $scope.results = createKeywords(response.data);
-            console.log($scope.results);          
+            console.log(response.data);
+            $scope.results = response.data.results;
+            $scope.keyWords = response.data.search_text.split(" ");
         });
     });
 })

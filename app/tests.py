@@ -1,7 +1,7 @@
 from io             import StringIO
 from unittest       import main, TestCase, TextTestRunner, makeSuite
 #Only add app. before models when you want to run the DO server
-from models		import *
+from app.models 		import *
 
 class TestCases (TestCase):
 
@@ -306,6 +306,22 @@ class TestCases (TestCase):
 
 		self.assertEqual(searchResult4.id, " ")
 		self.assertEqual(searchResult4.pillar, " ")
+
+	def test_case_searchResult_5(self):
+		searchResult4 = SearchResult(1, "Name", "Game", "Pokemon")
+
+		self.assertEqual(searchResult4.id, 1)
+		self.assertEqual(searchResult4.name, "Name")
+		self.assertEqual(searchResult4.pillar, "Game")
+		self.assertEqual(searchResult4._filteredSearchText, "pokemon")
+
+	def test_case_searchResult_6(self):
+		searchResult4 = SearchResult(45, " ", "Platform", "mArio and sonic")
+
+		self.assertEqual(searchResult4.id, 45)
+		self.assertEqual(searchResult4.name, " ")
+		self.assertEqual(searchResult4.pillar, "Platform")
+		self.assertEqual(searchResult4._filteredSearchText, "mario and sonic")
 
 	# ------
 	# Game Serialize
