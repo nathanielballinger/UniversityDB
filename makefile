@@ -3,6 +3,19 @@ GIT_HOOKS = scripts/git/pre-commit
 # Set options like proxies here
 PIPOPTS =
 
+
+FILES :=                              \
+    .gitignore                        \
+    .travis.yml                       \
+    apiary.apib                       \
+    IDB1.log                          \
+    IDB2.log                          \
+    IDB3.log                          \
+    models.html                       \
+    app/models.py                     \
+    app/tests.py                      \
+    UML.pdf                           \
+
 init: hooks venv
 
 venv:
@@ -14,8 +27,12 @@ install: venv pkgs
 
 # Set up testing commands here; will be used in git hook
 test:
-	python3.5 app/tests.py
-	# venv/bin/py.test tests/
+	make check
+	venv/bin/python app/tests.py \
+		-v \
+		--cov=website \
+		--no-cov-on-fail \
+		tests/unit/
 
 # run in production mode, meant to run behind nginx proxy so bind to
 # localhost instead of 0.0.0.0
@@ -58,3 +75,27 @@ hooks:
 	# Set up any git hooks for development
 	cp $(GIT_HOOKS) .git/hooks
 	chmod 0755 $(GIT_HOOKS)
+
+check:
+	@not_found=0;                                 \
+    for i in $(FILES);                            \
+    do                                            \
+        if [ -e $$i ];                            \
+        then                                      \
+            echo "$$i found";                     \
+        else                                      \
+            echo "$$i NOT FOUND";                 \
+            not_found=`expr "$$not_found" + "1"`; \
+        fi                                        \
+    done;                                         \
+    if [ $$not_found -ne 0 ];                     \
+    then                                          \
+        echo "$$not_found failures";              \
+        exit 1;                                   \
+    fi;                                           \
+    echo "success";
+
+clean:
+	rm -f .coverage
+	find . -type f -name "*.py[co]" -delete
+	find . -type d -name "__pycache__" -delete
