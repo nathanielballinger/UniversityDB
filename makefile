@@ -28,11 +28,7 @@ install: venv pkgs
 # Set up testing commands here; will be used in git hook
 test:
 	make check
-	venv/bin/python app/tests.py \
-		-v \
-		--cov=website \
-		--no-cov-on-fail \
-		tests/unit/
+	
 
 # run in production mode, meant to run behind nginx proxy so bind to
 # localhost instead of 0.0.0.0
