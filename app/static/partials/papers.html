@@ -13,20 +13,23 @@
                     <input type="radio" name="top_country" ng-model="$parent.top_country" ng-value="x" /> {{x}}<br>
                 </div>
                 <p> 3). What was the top jounal in the year of {{year + 1831}}?</p>
-                <div ng-repeat="x in answerChoices.top_journal track by $index">
+                <div ng-repeat="x in answerChoices.top_journal">
                     <input type="radio" name="top_journal" ng-model="$parent.top_journal" ng-value="x" /> {{x}}<br>
                 </div>
                 <p> 4). What was the top subject in the year of {{year + 1831}}?</p>
-                <div ng-repeat="x in answerChoices.top_subject track by $index">
+                <div ng-repeat="x in answerChoices.top_subject">
                     <input type="radio" name="top_subject" ng-model="$parent.top_subject" ng-value="x" /> {{x}}<br>
                 </div>
                 <br>
                 <div>
-                    <button type="submit" class="btn btn-success">
+                    <button type="submit" class="btn btn-success" ng-click="submitQuiz()">
                         <i class="icon-circle-arrow-right icon-large"></i> Submit
                     </button>
                 </div>
                 <br>
+
+                <p ng-if="score > 2">Quiz Results: {{score}} / 4 Great Job! You passed!</p>
+                <p ng-if="score < 3">Quiz Results: {{score}} / 4 Booooo! Try again!</p>
                 <p>*These statistics on the journals in the year {{year + 1831}} were taken from researchpapers.me</p>
             </div>
         </div>

@@ -1,6 +1,3 @@
-
-Y
-
 #!/usr/bin/python3.5
 from flask import Flask, send_file, url_for, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
@@ -12,17 +9,17 @@ import time
 import re
 import requests
 import urllib.request
-from app.tests import runTestsOut
+from tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
-import app.models
-from app.models import Game, Character, Platform, db, Base, app, manager, SearchResult
+import models
+from models import Game, Character, Platform, db, Base, app, manager, SearchResult
 #Chris's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe2'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe2'
 #Abhi's DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe2'
 
 
 
