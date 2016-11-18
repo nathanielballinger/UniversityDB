@@ -63,7 +63,19 @@ img {
 	margin-top: 20px;
 }
 
+#splash-photo {
+  height: 90px;
+  width: 90px;
+}
 
+#about-photo {
+  height: 60px;
+  width: 60px;
+}
+
+#icon-group {
+  margin-bottom: 15px;
+}
  /*
   * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
   * for the full set of master styles used by the documentation samples

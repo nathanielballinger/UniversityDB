@@ -1,8 +1,51 @@
-<div class="container">
+<div ng-controller="splashCtrl" class="container">
+  <div class="row">
+    <div align="center" clas="col-md-6">
+      <div class="jumbotron">
+        <div>
+          <img id="splash-photo" src="static/img/game-controller.png"/>
+          <span style="font-size:26">VGIDB.me</span>
+        </div>
+        <div style="margin-top:15px" class="input-group input-group-lg">
+          <!--<span class="input-group-addon" id="sizing-addon1">@</span>-->
+          <input type="text" ng-model="searchString" class="form-control" placeholder="Search Here..." aria-describedby="sizing-addon1">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{searchType}} <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a href="javascript:void(0)" ng-click="searchType = 'All'">All</a></li>
+              <li><a href="javascript:void(0)" ng-click="searchType = 'Games'">Games</a></li>
+              <li><a href="javascript:void(0)" ng-click="searchType = 'Platforms'">Platforms</a></li>
+              <li><a href="javascript:void(0)" ng-click="searchType = 'Characters'">Characters</a></li>
+            </ul>
+          </div>
+        </div>
+        <div style="display:block; margin-top:15px">
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="search(searchType, searchString)">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="jumbotron" id="front-page-jumbo">
     <!--<h1>Hello, world!</h1>-->
     <h1 align="center">Welcome to the Video Game Character Database!</h1>
     <p align="center" ><a class="btn btn-primary btn-lg" href="#/about" role="button">Learn more</a></p>
+    <div align="center" class="row">
+      <div class="col-md-4 icon-group">
+        <img src="static/img/knight.png" alt="" id="splash-photo">
+        <span>Learn about the characters who inhabit our favorite video games</span>
+      </div>
+      <div class="col-md-4 icon-group">
+        <img src="static/img/game-console.png" alt="" id="splash-photo">
+        <span>Learn about the platforms that our favorite characters live on<</span>
+      </div>
+      <div class="col-md-4 icon-group">
+        <img src="static/img/gamer.png" alt="" id="splash-photo">
+        <span>Learn more about all of our favorite games</span>
+      </div>
+      <!--<div class="col-md-4">Learn about the characters who inhabit our favorite video games</div>
+      <div class="col-md-4">Learn about the platforms that our favorite characters live on</div>
+      <div class="col-md-4">Learn more about all of our favorite games</div>-->
+    </div>
   </div>
 </div>
 

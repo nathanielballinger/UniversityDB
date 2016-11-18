@@ -21,10 +21,10 @@
                     <div class="caption">
                         <h3>Christopher Collier</h3>
                         <p>Chris is a 5th year computer science major from UT. He enjoys playing music, running, and hanging out with friends. After graduation, Chris will be working as a Data Analytics consultant at Credera in Houston.</p>
-                        <p>Major Responsibilities: Team Manager, Technical Report, SQLAlchemy models, Schema/Pillar identification</p>
+                        <p>Major Responsibilities: Team Manager, Technical Report, Backend, SQLAlchemy models, Schema/Pillar identification</p>
                         <p>No. of Contributions: {{chris.contributions}}</p>
                         <p>No. of Issues: {{chris.issues}}</p>
-                        <p>No. of Unit Tests: 0</p>
+                        <p>No. of Unit Tests: 7</p>
                     </div>
                 </div>            
             </div>
@@ -39,7 +39,7 @@
                         <p>Major Responsibilities: Frontend, Github</p>
                         <p>No. of Contributions: {{abhi.contributions}}</p>
                         <p>No. of Issues: {{abhi.issues}}</p>
-                        <p>No. of Unit Tests: 0</p>
+                        <p>No. of Unit Tests: 7</p>
                     </div>
                 </div>            
             </div>
@@ -52,7 +52,7 @@
                         <p>Major Responsibilities: Unit Testing, Proofreader</p>
                         <p>No. of Contributions: {{keith.contributions}}</p>
                         <p>No. of Issues: {{keith.issues}}</p>
-                        <p>No. of Unit Tests: 11</p>
+                        <p>No. of Unit Tests: 12</p>
                     </div>
                 </div>            
             </div>
@@ -66,10 +66,10 @@
                     <div class="caption">
                         <h3>Nathaniel Ballinger</h3>
                         <p>Nathaniel is a 4th year Computer Science major at University of Texas at Austin. He is pursuing a career as a game developer, and loves composing music as a hobby.</p>
-                        <p>Major Responsibilities: UML Diagram, Model Structure Design</p>
+                        <p>Major Responsibilities: Backend, Search, UML Diagram, Model Structure Design</p>
                         <p>No. of Contributions: {{nathan.contributions}}</p>
                         <p>No. of Issues: {{nathan.issues}}</p>
-                        <p>No. of Unit Tests: 0</p>
+                        <p>No. of Unit Tests: 10</p>
                     </div>
                 </div>            
             </div>
@@ -82,6 +82,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="thumbnail gray-thumbnail">
+                    <img src="static/img/bars-chart.png" alt="" id="about-photo">
                     <h3>Team Statistics</h3>
                     <p>Total Number of Contributions: {{total.contributions}}</p>
                     <p>Total Number of Issues: {{total.issues}}</p>
@@ -90,6 +91,7 @@
             </div>
             <div class="col-md-4">
                 <div class="thumbnail gray-thumbnail">
+                    <img src="static/img/measuring.png" alt="" id="about-photo">
                     <h3>Tools</h3>
                     <p>SQLAlchemy</p>
                     <p>Apiary</p>
@@ -103,6 +105,7 @@
             </div>
             <div class="col-md-4">
                 <div class="thumbnail gray-thumbnail">
+                    <img src="static/img/maps-and-flags.png" alt="" id="about-photo">
                     <h3>Important Links</h3>
                     <p><a href="https://github.com/nathanielballinger/cs373-idb">Github Repository</a></p>
                     <p><a href="http://docs.vgidb1.apiary.io/#">Apiary API</a></p>
@@ -146,6 +149,9 @@
         </div>
         <div class="row">
             <div class="col-md-12">
+                <div class="thumbnail gray-thumbnail">
+                    <div class="spinner"></div>
+                </div>
                 <div ng-if="testOutput" class="thumbnail gray-thumbnail">
                     <p>{{testOutput}}</p>
                 </div>

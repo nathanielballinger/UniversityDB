@@ -3376,3 +3376,335 @@
 [Thu Nov 17 19:47:39.106689 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110]     return jsonify(Platform.query.get(id).serialize())
 [Thu Nov 17 19:47:39.106711 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110] AttributeError: 'NoneType' object has no attribute 'serialize'
 [Thu Nov 17 19:47:39.106794 2016] [wsgi:error] [pid 18472:tid 140330565314304] [client 162.243.14.196:34110] 
+[Thu Nov 17 21:02:18.201760 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062] [2016-11-17 21:02:18,191] ERROR in app: Exception on /researchpapers/144 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201873 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201889 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201902 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201914 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201928 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201940 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201952 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201964 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201977 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.201989 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202001 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202013 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202024 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202037 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202050 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202063 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202073 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202083 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202095 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202107 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202175 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202190 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202201 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202218 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:02:18.202279 2016] [wsgi:error] [pid 19619:tid 140690864445184] [client 128.62.52.100:17062] , referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321648 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958] [2016-11-17 21:02:20,318] ERROR in app: Exception on /researchpapers/147 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321683 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321690 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321696 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321701 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321707 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321712 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321718 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321723 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321728 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321734 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321739 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321744 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321750 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321755 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321760 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321782 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321788 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321794 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321799 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321805 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321810 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321815 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321820 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321829 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.321862 2016] [wsgi:error] [pid 19618:tid 140691017733888] [client 128.62.52.100:13958] , referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342610 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986] [2016-11-17 21:02:20,341] ERROR in app: Exception on /researchpapers/146 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342634 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342641 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342647 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342652 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342658 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342663 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342668 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342674 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342680 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342685 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342700 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342707 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342713 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342718 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342724 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342729 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342735 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342740 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342745 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342751 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342756 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342761 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342767 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342776 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.342808 2016] [wsgi:error] [pid 19618:tid 140690898016000] [client 128.62.52.100:14986] , referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353052 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972] [2016-11-17 21:02:20,351] ERROR in app: Exception on /researchpapers/145 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353087 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353100 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353111 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353120 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353130 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353159 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353170 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353179 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353189 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353199 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353213 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353224 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353235 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353245 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353256 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353268 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353279 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353290 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353301 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353312 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353323 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353337 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353350 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353367 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:02:20.353423 2016] [wsgi:error] [pid 19618:tid 140690872837888] [client 128.62.52.100:15972] , referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.866904 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741] [2016-11-17 21:02:56,865] ERROR in app: Exception on /researchpapers/144 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.866984 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.866993 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.866999 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867005 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867011 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867016 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867022 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867027 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867033 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867038 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867044 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867049 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867055 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867060 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867066 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867071 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867077 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867082 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867087 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867093 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867098 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867110 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867116 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867125 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.867157 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16741] , referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919032 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419] [2016-11-17 21:02:56,914] ERROR in app: Exception on /researchpapers/145 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919070 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919077 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919083 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919088 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919094 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919100 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919105 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919110 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919116 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919121 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919127 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919132 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919137 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919143 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919148 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919153 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919175 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919182 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919188 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919193 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919199 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919204 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919209 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919217 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919248 2016] [wsgi:error] [pid 19618:tid 140690763732736] [client 128.62.52.100:15419] , referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919829 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551] [2016-11-17 21:02:56,918] ERROR in app: Exception on /researchpapers/146 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919854 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919861 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919867 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919873 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919878 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919883 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919937 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919946 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919953 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919958 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919963 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919978 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919985 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919990 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.919996 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920001 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920006 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920012 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920017 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920022 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920028 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920033 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920038 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920047 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920080 2016] [wsgi:error] [pid 19618:tid 140690780518144] [client 128.62.52.100:13551] , referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920565 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799] [2016-11-17 21:02:56,918] ERROR in app: Exception on /researchpapers/147 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920590 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920597 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920602 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920608 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920614 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920619 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920633 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920639 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920645 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920650 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920656 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920661 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920667 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920672 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920677 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920683 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920688 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920693 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920699 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920704 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920709 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920714 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920720 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920728 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:02:56.920756 2016] [wsgi:error] [pid 19618:tid 140690755340032] [client 128.62.52.100:15799] , referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795320 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092] [2016-11-17 21:28:17,794] ERROR in app: Exception on /researchpapers/144 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795382 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795416 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795424 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795430 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795436 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795441 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795446 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795452 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795490 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795503 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795509 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795515 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795521 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795527 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795532 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795538 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795543 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795549 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795554 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795560 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795565 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795571 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795585 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795595 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.795630 2016] [wsgi:error] [pid 19618:tid 140690864445184] [client 128.62.52.100:17092] , referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.841948 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545] [2016-11-17 21:28:17,841] ERROR in app: Exception on /researchpapers/145 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.841987 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.841993 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842000 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842005 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842011 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842016 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842021 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842027 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842032 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842037 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842042 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842048 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842053 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842058 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842064 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842069 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842074 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842096 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842103 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842108 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842114 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842119 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842125 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842133 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.842163 2016] [wsgi:error] [pid 19618:tid 140690772125440] [client 128.62.52.100:13545] , referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857500 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906] [2016-11-17 21:28:17,856] ERROR in app: Exception on /researchpapers/147 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857542 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857555 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857566 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857577 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857589 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857599 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857610 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857616 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857621 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857627 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857632 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857637 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857664 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857671 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857677 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857682 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857688 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857693 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857699 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857704 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857709 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857715 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857720 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857729 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.857766 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.52.100:16906] , referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.883872 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476] [2016-11-17 21:28:17,883] ERROR in app: Exception on /researchpapers/146 [GET], referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.883950 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476] Traceback (most recent call last):, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.883958 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.883964 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     response = self.full_dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.883970 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.883976 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     rv = self.handle_user_exception(e), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.883981 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.883986 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     reraise(exc_type, exc_value, tb), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884015 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884021 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     raise value, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884027 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884032 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     rv = self.dispatch_request(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884038 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884043 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884049 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/var/www/cs373f-idb/app/app.py", line 54, in research_papers_year, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884054 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     my_dict = v.json(), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884059 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/lib/python3/dist-packages/requests/models.py", line 808, in json, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884065 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     return complexjson.loads(self.text, **kwargs), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884070 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/lib/python3.5/json/__init__.py", line 319, in loads, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884075 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     return _default_decoder.decode(s), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884081 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/lib/python3.5/json/decoder.py", line 339, in decode, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884086 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     obj, end = self.raw_decode(s, idx=_w(s, 0).end()), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884091 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]   File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884097 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476]     raise JSONDecodeError("Expecting value", s, err.value) from None, referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884105 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476] json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0), referer: http://vgidb.me/
+[Thu Nov 17 21:28:17.884139 2016] [wsgi:error] [pid 19618:tid 140690814088960] [client 128.62.52.100:15476] , referer: http://vgidb.me/
+[Thu Nov 17 23:53:14.707994 2016] [wsgi:error] [pid 19618:tid 140690788910848] [client 128.62.58.76:26122] mod_wsgi (pid=19618): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Thu Nov 17 23:53:14.708523 2016] [wsgi:error] [pid 19618:tid 140690788910848] [client 128.62.58.76:26122] OSError: failed to write data
+[Thu Nov 17 23:53:23.055750 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519] [2016-11-17 23:53:23,048] ERROR in app: Exception on /api/platforms/44 [GET]
+[Thu Nov 17 23:53:23.055833 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519] Traceback (most recent call last):
+[Thu Nov 17 23:53:23.055875 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1988, in wsgi_app
+[Thu Nov 17 23:53:23.055883 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]     response = self.full_dispatch_request()
+[Thu Nov 17 23:53:23.055919 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1641, in full_dispatch_request
+[Thu Nov 17 23:53:23.055928 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]     rv = self.handle_user_exception(e)
+[Thu Nov 17 23:53:23.055934 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1544, in handle_user_exception
+[Thu Nov 17 23:53:23.055939 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]     reraise(exc_type, exc_value, tb)
+[Thu Nov 17 23:53:23.055944 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]   File "/usr/local/lib/python3.5/dist-packages/flask/_compat.py", line 33, in reraise
+[Thu Nov 17 23:53:23.055950 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]     raise value
+[Thu Nov 17 23:53:23.055955 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1639, in full_dispatch_request
+[Thu Nov 17 23:53:23.055960 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]     rv = self.dispatch_request()
+[Thu Nov 17 23:53:23.055966 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]   File "/usr/local/lib/python3.5/dist-packages/flask/app.py", line 1625, in dispatch_request
+[Thu Nov 17 23:53:23.055971 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]     return self.view_functions[rule.endpoint](**req.view_args)
+[Thu Nov 17 23:53:23.055976 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]   File "/var/www/cs373f-idb/app/app.py", line 193, in api_platforms_id
+[Thu Nov 17 23:53:23.055981 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]     return jsonify(Platform.query.get(id).serialize())
+[Thu Nov 17 23:53:23.055991 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519] AttributeError: 'NoneType' object has no attribute 'serialize'
+[Thu Nov 17 23:53:23.056036 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519] 
