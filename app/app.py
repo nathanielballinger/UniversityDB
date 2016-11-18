@@ -1,6 +1,3 @@
-
-Y
-
 #!/usr/bin/python3.5
 from flask import Flask, send_file, url_for, jsonify, request
 from flask_sqlalchemy import SQLAlchemy

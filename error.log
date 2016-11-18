@@ -3708,3 +3708,11 @@
 [Thu Nov 17 23:53:23.055981 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]     return jsonify(Platform.query.get(id).serialize())
 [Thu Nov 17 23:53:23.055991 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519] AttributeError: 'NoneType' object has no attribute 'serialize'
 [Thu Nov 17 23:53:23.056036 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519] 
+[Fri Nov 18 01:16:00.345653 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919] mod_wsgi (pid=21025): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module., referer: http://vgidb.me/
+[Fri Nov 18 01:16:00.345787 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919] mod_wsgi (pid=21025): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'., referer: http://vgidb.me/
+[Fri Nov 18 01:16:00.346809 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919] Traceback (most recent call last):, referer: http://vgidb.me/
+[Fri Nov 18 01:16:00.346867 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>, referer: http://vgidb.me/
+[Fri Nov 18 01:16:00.346880 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919]     from app.app import app as application, referer: http://vgidb.me/
+[Fri Nov 18 01:16:00.346897 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919]   File "/var/www/cs373f-idb/app/app.py", line 2, in <module>, referer: http://vgidb.me/
+[Fri Nov 18 01:16:00.346906 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919]     Y, referer: http://vgidb.me/
+[Fri Nov 18 01:16:00.346997 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919] NameError: name 'Y' is not defined, referer: http://vgidb.me/
