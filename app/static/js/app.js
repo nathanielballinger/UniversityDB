@@ -202,9 +202,7 @@ myApp.controller('searchCtrl', function($scope, $http, $location, $cookieStore) 
     .then(function (response) {
         console.log(response.data);
         $scope.results = response.data.results;
-        console.log(response.data.search_text.split(" "));
-        $scope.keyWords = response.data.search_text.split();
-        console.log($scope.results);          
+        $scope.keyWords = response.data.search_text.split(" ");
     });
 
     // This is to update search if already on search page
@@ -214,8 +212,7 @@ myApp.controller('searchCtrl', function($scope, $http, $location, $cookieStore) 
         .then(function (response) {
             console.log(response.data);
             $scope.results = response.data.results;
-            $scope.keyWords = response.data.search_text.split();
-            console.log($scope.results);          
+            $scope.keyWords = response.data.search_text.split(" ");
         });
     });
 })
