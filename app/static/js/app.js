@@ -152,6 +152,15 @@ myApp.controller('headerCtrl', function($rootScope, $scope, $http, $location, $w
     //scope = $scope;
 })
 
+function shuffle(a) {
+    console.log(a);
+    for (let i = a.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
+    console.log(a);
+}
+
 myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) {
     var year = parseInt($routeParams.year) - 1831;
     
@@ -194,10 +203,12 @@ myApp.controller('papersCtrl', function($scope, $http, $location, $routeParams) 
             $scope.answerChoices.top_country.push(data.top_country);
             $scope.answerChoices.top_journal.push(data.top_journal);
             $scope.answerChoices.top_subject.push(data.top_subject);
+
+            shuffle($scope.answerChoices.num_papers);
+            shuffle($scope.answerChoices.top_country);
+            shuffle($scope.answerChoices.top_journal);
+            shuffle($scope.answerChoices.top_subject);
         });
-    }
-    $scope.random = function() {
-        return 0.5 - Math.random();
     }
 
     $scope.submitQuiz = function() {
