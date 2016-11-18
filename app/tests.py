@@ -310,7 +310,7 @@ class TestCases (TestCase):
 	def test_case_searchResult_5(self):
 		searchResult4 = SearchResult(1, "Name", "Game", "Pokemon")
 
-		self.assertEqual(searchResult4.id, " ")
+		self.assertEqual(searchResult4.id, 1)
 		self.assertEqual(searchResult4.name, "Name")
 		self.assertEqual(searchResult4.pillar, "Game")
 		self.assertEqual(searchResult4._filteredSearchText, "pokemon")
@@ -321,7 +321,7 @@ class TestCases (TestCase):
 		self.assertEqual(searchResult4.id, 45)
 		self.assertEqual(searchResult4.name, " ")
 		self.assertEqual(searchResult4.pillar, "Platform")
-		self.assertEqual(searchResult4._filteredSearchText, "mario sonic")
+		self.assertEqual(searchResult4._filteredSearchText, "mario and sonic")
 
 	# ------
 	# Game Serialize
