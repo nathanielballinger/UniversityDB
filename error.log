@@ -3708,3 +3708,11 @@
 [Thu Nov 17 23:53:23.055981 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519]     return jsonify(Platform.query.get(id).serialize())
 [Thu Nov 17 23:53:23.055991 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519] AttributeError: 'NoneType' object has no attribute 'serialize'
 [Thu Nov 17 23:53:23.056036 2016] [wsgi:error] [pid 19619:tid 140690847659776] [client 128.62.58.76:28519] 
+[Fri Nov 18 02:34:19.168233 2016] [wsgi:error] [pid 22076:tid 140668223612672] [client 128.62.58.76:28224] mod_wsgi (pid=22076): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Fri Nov 18 02:34:19.168540 2016] [wsgi:error] [pid 22076:tid 140668223612672] [client 128.62.58.76:28224] mod_wsgi (pid=22076): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Fri Nov 18 02:34:19.169169 2016] [wsgi:error] [pid 22076:tid 140668223612672] [client 128.62.58.76:28224] Traceback (most recent call last):
+[Fri Nov 18 02:34:19.169244 2016] [wsgi:error] [pid 22076:tid 140668223612672] [client 128.62.58.76:28224]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Fri Nov 18 02:34:19.169259 2016] [wsgi:error] [pid 22076:tid 140668223612672] [client 128.62.58.76:28224]     from app.app import app as application
+[Fri Nov 18 02:34:19.169275 2016] [wsgi:error] [pid 22076:tid 140668223612672] [client 128.62.58.76:28224]   File "/var/www/cs373f-idb/app/app.py", line 12, in <module>
+[Fri Nov 18 02:34:19.169283 2016] [wsgi:error] [pid 22076:tid 140668223612672] [client 128.62.58.76:28224]     from tests import runTestsOut
+[Fri Nov 18 02:34:19.169315 2016] [wsgi:error] [pid 22076:tid 140668223612672] [client 128.62.58.76:28224] ImportError: No module named 'tests'
