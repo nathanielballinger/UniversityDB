@@ -9,11 +9,11 @@ import time
 import re
 import requests
 import urllib.request
-from app.tests import runTestsOut
+from tests import runTestsOut
 
 #Only add app. on the next two lines when you want to run the DO server
-import app.models
-from app.models import Game, Character, Platform, db, Base, app, manager, SearchResult
+import models
+from models import Game, Character, Platform, db, Base, app, manager, SearchResult
 #Chris's DB
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
