@@ -3716,3 +3716,13 @@
 [Fri Nov 18 01:16:00.346897 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919]   File "/var/www/cs373f-idb/app/app.py", line 2, in <module>, referer: http://vgidb.me/
 [Fri Nov 18 01:16:00.346906 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919]     Y, referer: http://vgidb.me/
 [Fri Nov 18 01:16:00.346997 2016] [wsgi:error] [pid 21025:tid 140697063638784] [client 128.62.58.76:28919] NameError: name 'Y' is not defined, referer: http://vgidb.me/
+[Fri Nov 18 02:18:15.476999 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208] mod_wsgi (pid=21721): Target WSGI script '/var/www/cs373f-idb/app.wsgi' cannot be loaded as Python module.
+[Fri Nov 18 02:18:15.477308 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208] mod_wsgi (pid=21721): Exception occurred processing WSGI script '/var/www/cs373f-idb/app.wsgi'.
+[Fri Nov 18 02:18:15.478452 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208] Traceback (most recent call last):
+[Fri Nov 18 02:18:15.478535 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]   File "/var/www/cs373f-idb/app.wsgi", line 7, in <module>
+[Fri Nov 18 02:18:15.478550 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]     from app.app import app as application
+[Fri Nov 18 02:18:15.478566 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]   File "/var/www/cs373f-idb/app/app.py", line 12, in <module>
+[Fri Nov 18 02:18:15.478574 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]     from app.tests import runTestsOut
+[Fri Nov 18 02:18:15.478588 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]   File "/var/www/cs373f-idb/app/tests.py", line 4, in <module>
+[Fri Nov 18 02:18:15.478596 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208]     from models \t\timport *
+[Fri Nov 18 02:18:15.478647 2016] [wsgi:error] [pid 21721:tid 140217748530944] [client 128.62.58.76:26208] ImportError: No module named 'models'
