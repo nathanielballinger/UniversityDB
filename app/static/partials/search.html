@@ -1,7 +1,7 @@
 <div ng-controller="searchCtrl" data-ng-init="" class="container">
     <h1 align="center">Search Results</h1>
     
-    <div ng-show="!results" class="row">
+    <div ng-show="results.length == 0" class="row">
         <div class="col-md-12">
             <div class="thumbnail gray-thumbnail">
                 No Results Found.
@@ -22,12 +22,18 @@
                     Name</a> <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
                     <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
                 </td>
+                <td>
+                    <a href="javascript:void(0)" ng-click="sortType = 'type'; sortReverse = !sortReverse">
+                    Search Type</a> <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-down"></span>
+                    <span ng-show="sortType == 'type' && sortReverse" class="fa fa-caret-up"></span>
+                </td>
             </tr>            
         </thead>
         <tbody>
             <tr ng-repeat="x in results  | orderBy:sortType:sortReverse">
                 <td>{{x.pillar}}</td>
-                <td><a href="/#/{{x.pillar}}/{{+x.id}}"><p ng-bind-html="x.name | highlightWords:x.word_hits"></p></a></td>
+                <td><a href="/#/{{x.pillar}}/{{+x.id}}"><p ng-bind-html="x.name | highlightWords:$parent.keyWords"></p></a></td>
+                <td>{{x.type == true ? 'AND' : 'OR'}}</td>
             </tr>
         </tbody>
     </table>
