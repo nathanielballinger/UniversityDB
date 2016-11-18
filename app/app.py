@@ -16,11 +16,11 @@ import models
 from models import Game, Character, Platform, db, Base, app, manager, SearchResult
 
 #Chris's DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/swe2'
 #Digital Ocean DB
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gusman772:MrSayanCanSing2@localhost:5432/swe2'
 #Abhi's DB
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe2'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://swe:asdfzxc@localhost:9000/swe2'
 
 
 for i in range (0,50):
