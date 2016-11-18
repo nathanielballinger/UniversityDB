@@ -14,7 +14,7 @@ install: venv pkgs
 
 # Set up testing commands here; will be used in git hook
 test:
-	echo 'dummy check always passes; replace with tests when ready'
+	python3.5 app/tests.py
 	# venv/bin/py.test tests/
 
 # run in production mode, meant to run behind nginx proxy so bind to
