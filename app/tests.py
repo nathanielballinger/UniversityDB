@@ -321,7 +321,7 @@ class TestCases (TestCase):
 		self.assertEqual(searchResult4.id, 45)
 		self.assertEqual(searchResult4.name, " ")
 		self.assertEqual(searchResult4.pillar, "Platform")
-		self.assertEqual(searchResult4._filteredsearchText, "mario sonic")
+		self.assertEqual(searchResult4._filteredSearchText, "mario sonic")
 
 	# ------
 	# Game Serialize
